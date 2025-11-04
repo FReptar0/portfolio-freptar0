@@ -1,0 +1,356 @@
+{
+  "navigation": {
+    "about": "About",
+    "projects": "Projects",
+    "skills": "Skills",
+    "process": "Process",
+    "contact": "Contact"
+  },
+  "hero": {
+    "status": "Available for Projects",
+    "subtitle": "From Code to Architecture to Leadership",
+    "title": "I Build Systems",
+    "titleAccent": "That Scale",
+    "description": "Senior Software Engineer specializing in transforming complex technical challenges into elegant, profitable solutions",
+    "metrics": {
+      "experience": "Years Experience",
+      "projects": "Projects Shipped",
+      "value": "Value Delivered"
+    },
+    "cta": {
+      "primary": "View Success Stories",
+      "secondary": "Schedule a Call"
+    },
+    "valueProps": {
+      "fullStack": "Full-Stack Development",
+      "leadership": "Team Leadership",
+      "architecture": "System Architecture",
+      "devops": "DevOps & Cloud"
+    }
+  },
+  "trustSignals": {
+    "title": "Trusted By",
+    "subtitle": "Leading Companies and Startups",
+    "companies": {
+      "techCorp": "TechCorp Solutions",
+      "innovate": "Innovate Labs",
+      "dataFlow": "DataFlow Systems"
+    },
+    "stats": {
+      "satisfaction": "Client Satisfaction",
+      "retention": "Client Retention",
+      "onTime": "On Time & On Budget"
+    }
+  },
+  "timeline": {
+    "title": "My",
+    "titleAccent": "Journey",
+    "subtitle": "From developer to technical leader: A path of continuous growth",
+    "roles": {
+      "senior": {
+        "title": "Senior Software Engineer",
+        "company": "TechCorp Global",
+        "period": "2021 - Present",
+        "description": "Leading teams of 8+ engineers, defining architecture for enterprise-scale applications, and reducing infrastructure costs by 40%.",
+        "achievements": [
+          "Led microservices migration ($500K saved annually)",
+          "Mentored 5 junior developers to senior roles",
+          "Implemented CI/CD reducing deployment time by 70%"
+        ]
+      },
+      "mid": {
+        "title": "Software Engineer",
+        "company": "Innovate Digital",
+        "period": "2019 - 2021",
+        "description": "Built scalable features serving 100K+ users, optimized database performance, and collaborated with cross-functional teams.",
+        "achievements": [
+          "Developed AI-powered recommendation engine",
+          "Reduced database queries by 60%",
+          "Received 'Outstanding Contributor' award 2020"
+        ]
+      },
+      "junior": {
+        "title": "Junior Software Engineer",
+        "company": "StartupXYZ",
+        "period": "2018 - 2019",
+        "description": "Started my journey building web applications, learning scalable architecture, and contributing to product features.",
+        "achievements": [
+          "Shipped 50+ features in first year",
+          "Contributed to 200% increase in user engagement",
+          "Mastered TypeScript, React, and Node.js"
+        ]
+      }
+    }
+  },
+  "projects": {
+    "title": "Projects of",
+    "titleAccent": "Impact",
+    "subtitle": "Real-world case studies showing business outcomes",
+    "viewProject": "View Case Study",
+    "metrics": {
+      "revenue": "Revenue",
+      "users": "Users",
+      "performance": "Performance",
+      "efficiency": "Efficiency",
+      "satisfaction": "Satisfaction",
+      "retention": "Retention"
+    },
+    "items": {
+      "ecommerce": {
+        "title": "E-Commerce Platform",
+        "client": "Global Retail Client",
+        "timeline": "6 months • 2023",
+        "problem": "Legacy systems causing slow load times (8s+) and abandoned carts. Monolithic codebase made updates risky and slow.",
+        "solution": "Microservices architecture with Next.js, redis caching, and Stripe. Implemented CDN, image optimization, and automated testing.",
+        "impact": [
+          "Increased revenue by $2M through 1.2s load time",
+          "Reduced cart abandonment by 45%",
+          "Cut deployment time from 2 days to 1 hour"
+        ],
+        "tech": ["Next.js", "Node.js", "PostgreSQL", "Redis", "AWS"]
+      },
+      "analytics": {
+        "title": "Real-Time Analytics Dashboard",
+        "client": "B2B SaaS Company",
+        "timeline": "4 months • 2023",
+        "problem": "Batch data processing with 24-hour delay. Clients needed real-time insights for critical business decisions.",
+        "solution": "Streaming pipeline with Apache Kafka, ClickHouse for analytics, and React with D3.js for visualization. Real-time alerts via WebSockets.",
+        "impact": [
+          "Real-time data processing (<5s latency)",
+          "Customer satisfaction increased to 92%",
+          "Boosted retention by 35% with actionable insights"
+        ],
+        "tech": ["React", "TypeScript", "Kafka", "ClickHouse", "D3.js"]
+      },
+      "mobile": {
+        "title": "Fintech Mobile App",
+        "client": "Fintech Startup",
+        "timeline": "8 months • 2022",
+        "problem": "Slow native app with fragmented user experience across platforms. Maintenance costs were high with two codebases.",
+        "solution": "React Native with TypeScript, biometric authentication, and end-to-end encryption. Payment platform integration and regulatory compliance.",
+        "impact": [
+          "Reached 50K+ users in 3 months",
+          "Maintained 4.8-star rating (iOS & Android)",
+          "Reduced maintenance costs by 60% with single codebase"
+        ],
+        "tech": ["React Native", "TypeScript", "Firebase", "Plaid API"]
+      }
+    }
+  },
+  "skills": {
+    "title": "Technical Stack &",
+    "titleAccent": "Expertise",
+    "subtitle": "Deep skills where it matters, with real-world examples",
+    "categories": {
+      "frontend": {
+        "title": "Frontend Development",
+        "description": "Building user interfaces that delight and convert",
+        "items": [
+          {
+            "name": "React & Next.js",
+            "level": "Expert",
+            "context": "5+ years • 20+ production projects",
+            "examples": "E-commerce platform ($2M revenue), B2B SaaS analytics dashboard"
+          },
+          {
+            "name": "TypeScript",
+            "level": "Expert",
+            "context": "4+ years • Type-safety across the stack",
+            "examples": "Fintech mobile app (50K+ users), Real-time trading system"
+          },
+          {
+            "name": "Tailwind CSS",
+            "level": "Advanced",
+            "context": "3+ years • Custom design systems",
+            "examples": "Enterprise component library, Marketing site redesign"
+          }
+        ]
+      },
+      "backend": {
+        "title": "Backend Development",
+        "description": "Scalable architecture that grows with your business",
+        "items": [
+          {
+            "name": "Node.js & Express",
+            "level": "Expert",
+            "context": "5+ years • APIs handling millions of requests",
+            "examples": "REST API processing 10M requests/day, Real-time webhook system"
+          },
+          {
+            "name": "PostgreSQL & SQL",
+            "level": "Advanced",
+            "context": "4+ years • Complex database design",
+            "examples": "E-commerce platform (100K+ products), Multi-tenant CRM system"
+          },
+          {
+            "name": "Microservices Architecture",
+            "level": "Advanced",
+            "context": "3+ years • Distributed systems at scale",
+            "examples": "Monolith migration ($500K saved), Event-driven processing system"
+          }
+        ]
+      },
+      "devops": {
+        "title": "DevOps & Cloud",
+        "description": "Reliable deployments and infrastructure that scales",
+        "items": [
+          {
+            "name": "AWS & GCP",
+            "level": "Advanced",
+            "context": "4+ years • Infrastructure as code",
+            "examples": "Reduced cloud costs by 40%, Auto-scaling handling 10x spikes"
+          },
+          {
+            "name": "Docker & Kubernetes",
+            "level": "Intermediate",
+            "context": "3+ years • Containerized deployments",
+            "examples": "CI/CD setup (1-hour deployments), Microservices orchestration"
+          },
+          {
+            "name": "CI/CD",
+            "level": "Advanced",
+            "context": "4+ years • GitHub Actions, Jenkins",
+            "examples": "Reduced deployment time by 70%, Automated testing pipelines"
+          }
+        ]
+      },
+      "leadership": {
+        "title": "Technical Leadership",
+        "description": "Mentoring teams and driving strategic initiatives",
+        "items": [
+          {
+            "name": "System Architecture",
+            "level": "Advanced",
+            "context": "3+ years • Enterprise-scale applications",
+            "examples": "Designed microservices architecture, Technical design reviews"
+          },
+          {
+            "name": "Mentoring & Coaching",
+            "level": "Advanced",
+            "context": "5 engineers mentored to senior roles",
+            "examples": "Onboarding program, Technical workshops, Code reviews"
+          },
+          {
+            "name": "Project Management",
+            "level": "Advanced",
+            "context": "Led teams of 8+ engineers",
+            "examples": "On-time project delivery (95%), Agile methodology, Sprint planning"
+          }
+        ]
+      }
+    }
+  },
+  "process": {
+    "title": "How I",
+    "titleAccent": "Work",
+    "subtitle": "A proven process that delivers results on time and on budget",
+    "steps": {
+      "discovery": {
+        "title": "Discovery",
+        "description": "I analyze your business needs, technical constraints, and success criteria. No cookie-cutter solutions - every project is unique.",
+        "activities": [
+          "Stakeholder interviews",
+          "Technical audit",
+          "Requirements gathering",
+          "Success metrics definition"
+        ]
+      },
+      "architecture": {
+        "title": "Architecture",
+        "description": "Design scalable, maintainable solutions with clear milestones and realistic timelines. You'll know exactly what to expect.",
+        "activities": [
+          "System design",
+          "Technology selection",
+          "Risk assessment",
+          "Roadmap creation"
+        ]
+      },
+      "implementation": {
+        "title": "Implementation",
+        "description": "Agile development with continuous communication. You'll see progress every week, not just at the end.",
+        "activities": [
+          "Iterative development",
+          "Weekly demos",
+          "Code reviews",
+          "Quality assurance"
+        ]
+      },
+      "delivery": {
+        "title": "Delivery",
+        "description": "Smooth deployment, comprehensive documentation, and knowledge transfer. Your team will be fully equipped to maintain and extend the system.",
+        "activities": [
+          "Production deployment",
+          "Documentation",
+          "Team training",
+          "Post-launch support"
+        ]
+      }
+    },
+    "cta": {
+      "title": "Ready to start your project?",
+      "description": "Let's discuss your needs and create a custom plan that delivers real value to your business.",
+      "button": "Schedule a Free Consultation"
+    }
+  },
+  "contact": {
+    "title": "Let's Connect",
+    "subtitle": "Whether you have a project in mind, need consulting, or just want to chat about tech - I'd love to hear from you.",
+    "quickContact": "Quick Contact",
+    "email": {
+      "label": "Email",
+      "copy": "Click to copy",
+      "copied": "✓ Copied!"
+    },
+    "linkedin": {
+      "label": "LinkedIn",
+      "description": "Connect with me"
+    },
+    "github": {
+      "label": "GitHub",
+      "description": "Check out my code"
+    },
+    "calendar": {
+      "label": "Schedule a Call",
+      "description": "15-min intro call"
+    },
+    "responseTime": {
+      "title": "Quick Response",
+      "description": "I typically respond within 24 hours"
+    },
+    "form": {
+      "title": "Send a Message",
+      "name": "Name",
+      "namePlaceholder": "Your name",
+      "email": "Email",
+      "emailPlaceholder": "your.email@example.com",
+      "projectType": "Project Type",
+      "projectOptions": {
+        "fulltime": "Full-time opportunity",
+        "consulting": "Consulting project",
+        "contract": "Contract work",
+        "hello": "Just saying hi"
+      },
+      "message": "Message",
+      "messagePlaceholder": "Tell me about your project or opportunity...",
+      "submit": "Send Message",
+      "sending": "Sending...",
+      "success": "✓ Message Sent!",
+      "error": "Try Again",
+      "successMessage": "Thanks! I'll get back to you soon."
+    },
+    "availability": "Currently available for new projects"
+  },
+  "footer": {
+    "brand": "Fernando Rodriguez Memije",
+    "description": "Senior Software Engineer building scalable systems and leading high-performing teams.",
+    "quickLinks": "Quick Links",
+    "connect": "Connect",
+    "copyright": "All rights reserved.",
+    "builtWith": "Built with",
+    "using": "using Next.js & Tailwind CSS"
+  },
+  "loading": {
+    "title": "Loading Portfolio...",
+    "progress": "{{progress}}%"
+  }
+}

@@ -1,9 +1,11 @@
 "use client";
 
 import { useState, useEffect } from "react";
+import { useTranslations } from 'next-intl';
 
 export default function Hero() {
   const [isVisible, setIsVisible] = useState(false);
+  const t = useTranslations('hero');
 
   useEffect(() => {
     setIsVisible(true);
@@ -30,33 +32,32 @@ export default function Hero() {
               <span className="relative inline-flex rounded-full h-3 w-3" style={{ background: 'var(--success-500)' }}></span>
             </span>
             <span className="text-sm font-medium" style={{ color: 'var(--success-600)' }}>
-              Available for Projects
+              {t('status')}
             </span>
           </div>
 
           {/* Main Headline */}
           <div className="space-y-4">
             <p className="text-lg md:text-xl text-foreground/70 font-medium tracking-wide">
-              From Code to Architecture to Leadership
+              {t('subtitle')}
             </p>
             <h1 className="text-5xl md:text-7xl lg:text-8xl font-bold tracking-tight">
               <span style={{ background: 'var(--gradient-hero)', WebkitBackgroundClip: 'text', backgroundClip: 'text', WebkitTextFillColor: 'transparent', color: 'transparent' }}>
-                I Build Systems
+                {t('title')}
               </span>
               <br />
-              <span className="text-foreground">That Scale</span>
+              <span className="text-foreground">{t('titleAccent')}</span>
             </h1>
             <p className="text-xl md:text-2xl text-foreground/80 max-w-3xl mx-auto leading-relaxed">
-              Senior Software Engineer specializing in transforming complex
-              technical challenges into elegant, profitable solutions
+              {t('description')}
             </p>
           </div>
 
           {/* Metrics Bar */}
           <div className="flex flex-wrap justify-center gap-6 md:gap-12 py-2">
-            <MetricItem value="5+" label="Years Experience" />
-            <MetricItem value="20+" label="Projects Shipped" />
-            <MetricItem value="$2M+" label="Value Delivered" />
+            <MetricItem value="5+" label={t('metrics.experience')} />
+            <MetricItem value="20+" label={t('metrics.projects')} />
+            <MetricItem value="$2M+" label={t('metrics.value')} />
           </div>
 
           {/* CTAs */}
@@ -66,14 +67,14 @@ export default function Hero() {
               className="group relative px-8 py-4 text-white font-semibold rounded-2xl transition-all duration-300 hover:scale-105 min-w-[200px] overflow-hidden"
               style={{ background: 'var(--primary-600)' }}
             >
-              <span className="relative z-10">View Success Stories</span>
+              <span className="relative z-10">{t('cta.primary')}</span>
               <div className="absolute inset-0 rounded-2xl bg-gradient-hero opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
             </a>
             <a
               href="#contact"
               className="group px-8 py-4 glass hover:bg-white/20 dark:hover:bg-black/40 font-semibold rounded-2xl transition-all duration-300 hover:scale-105 min-w-[200px]"
             >
-              Schedule a Call
+              {t('cta.secondary')}
               <span className="inline-block ml-2 transition-transform group-hover:translate-x-1">
                 →
               </span>
@@ -82,10 +83,10 @@ export default function Hero() {
 
           {/* Value Props Pills */}
           <div className="flex flex-wrap justify-center gap-3 pt-2 mb-12">
-            <ValuePropPill text="Full-Stack Development" />
-            <ValuePropPill text="Team Leadership" />
-            <ValuePropPill text="System Architecture" />
-            <ValuePropPill text="DevOps & Cloud" />
+            <ValuePropPill text={t('valueProps.fullStack')} />
+            <ValuePropPill text={t('valueProps.leadership')} />
+            <ValuePropPill text={t('valueProps.architecture')} />
+            <ValuePropPill text={t('valueProps.devops')} />
           </div>
         </div>
       </div>

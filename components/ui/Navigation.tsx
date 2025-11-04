@@ -1,11 +1,15 @@
 "use client";
 
 import { useState, useEffect } from "react";
+import { useTranslations } from 'next-intl';
 import ThemeToggle from "./ThemeToggle";
+import LanguageToggle from "./LanguageToggle";
+import SearchBar from "./SearchBar";
 
 export default function Navigation() {
   const [isScrolled, setIsScrolled] = useState(false);
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
+  const t = useTranslations('navigation');
 
   useEffect(() => {
     const handleScroll = () => {
@@ -17,11 +21,11 @@ export default function Navigation() {
   }, []);
 
   const navLinks = [
-    { label: "About", href: "#timeline" },
-    { label: "Projects", href: "#projects" },
-    { label: "Skills", href: "#skills" },
-    { label: "Process", href: "#process" },
-    { label: "Contact", href: "#contact" },
+    { label: t('about'), href: "#timeline" },
+    { label: t('projects'), href: "#projects" },
+    { label: t('skills'), href: "#skills" },
+    { label: t('process'), href: "#process" },
+    { label: t('contact'), href: "#contact" },
   ];
 
   return (
@@ -44,7 +48,7 @@ export default function Navigation() {
           </a>
 
           {/* Desktop Navigation */}
-          <div className="hidden md:flex items-center gap-6">
+          <div className="hidden md:flex items-center gap-4">
             {navLinks.map((link) => (
               <a
                 key={link.href}
@@ -56,6 +60,8 @@ export default function Navigation() {
                 <span className="absolute bottom-0 left-0 w-0 h-0.5 group-hover:w-full transition-all duration-300" style={{ background: 'var(--accent-500)' }} />
               </a>
             ))}
+            <SearchBar />
+            <LanguageToggle />
             <ThemeToggle />
             <a
               href="#contact"
@@ -104,6 +110,14 @@ export default function Navigation() {
                 {link.label}
               </a>
             ))}
+            <div className="flex items-center justify-between pt-2 border-t" style={{ borderColor: 'var(--border-subtle)' }}>
+              <span className="text-sm font-medium">Search</span>
+              <SearchBar />
+            </div>
+            <div className="flex items-center justify-between pt-2 border-t" style={{ borderColor: 'var(--border-subtle)' }}>
+              <span className="text-sm font-medium">Language</span>
+              <LanguageToggle />
+            </div>
             <div className="flex items-center justify-between pt-2 border-t" style={{ borderColor: 'var(--border-subtle)' }}>
               <span className="text-sm font-medium">Theme</span>
               <ThemeToggle />

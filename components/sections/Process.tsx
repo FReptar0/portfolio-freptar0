@@ -1,65 +1,44 @@
 "use client";
 
-const processSteps = [
-  {
-    number: "1",
-    title: "Discovery",
-    description:
-      "I analyze your business needs, technical constraints, and success criteria. No cookie-cutter solutions - every project is unique.",
-    activities: [
-      "Stakeholder interviews",
-      "Technical audit",
-      "Requirements gathering",
-      "Success metrics definition",
-    ],
-    icon: "🔍",
-    color: "from-blue-500 to-cyan-500",
-  },
-  {
-    number: "2",
-    title: "Architecture",
-    description:
-      "Design scalable, maintainable solutions with clear milestones and realistic timelines. You'll know exactly what to expect.",
-    activities: [
-      "System design",
-      "Technology selection",
-      "Risk assessment",
-      "Roadmap creation",
-    ],
-    icon: "📐",
-    color: "from-purple-500 to-pink-500",
-  },
-  {
-    number: "3",
-    title: "Implementation",
-    description:
-      "Agile development with continuous communication. You'll see progress every week, not just at the end.",
-    activities: [
-      "Iterative development",
-      "Weekly demos",
-      "Code reviews",
-      "Quality assurance",
-    ],
-    icon: "⚡",
-    color: "from-orange-500 to-red-500",
-  },
-  {
-    number: "4",
-    title: "Delivery",
-    description:
-      "Smooth deployment, comprehensive documentation, and knowledge transfer. Your team will be fully equipped to maintain and extend the system.",
-    activities: [
-      "Production deployment",
-      "Documentation",
-      "Team training",
-      "Post-launch support",
-    ],
-    icon: "🚀",
-    color: "from-green-500 to-emerald-500",
-  },
-];
+import { useTranslations } from 'next-intl';
 
 export default function Process() {
+  const t = useTranslations('process');
+
+  const processSteps = [
+    {
+      number: "1",
+      title: t('steps.discovery.title'),
+      description: t('steps.discovery.description'),
+      activities: t.raw('steps.discovery.activities') as string[],
+      icon: "🔍",
+      color: "from-blue-500 to-cyan-500",
+    },
+    {
+      number: "2",
+      title: t('steps.architecture.title'),
+      description: t('steps.architecture.description'),
+      activities: t.raw('steps.architecture.activities') as string[],
+      icon: "📐",
+      color: "from-purple-500 to-pink-500",
+    },
+    {
+      number: "3",
+      title: t('steps.implementation.title'),
+      description: t('steps.implementation.description'),
+      activities: t.raw('steps.implementation.activities') as string[],
+      icon: "⚡",
+      color: "from-orange-500 to-red-500",
+    },
+    {
+      number: "4",
+      title: t('steps.delivery.title'),
+      description: t('steps.delivery.description'),
+      activities: t.raw('steps.delivery.activities') as string[],
+      icon: "🚀",
+      color: "from-green-500 to-emerald-500",
+    },
+  ];
   return (
     <section id="process" className="py-24 relative overflow-hidden">
       {/* Background decoration */}
@@ -68,10 +47,10 @@ export default function Process() {
       <div className="relative container mx-auto px-6 lg:px-8 max-w-7xl">
         <div className="text-center mb-16">
           <h2 className="text-4xl md:text-5xl font-bold mb-4">
-            How I <span className="bg-gradient-to-r from-primary-blue to-accent-purple bg-clip-text text-transparent">Work</span>
+            {t('title')} <span className="bg-gradient-to-r from-primary-blue to-accent-purple bg-clip-text text-transparent">{t('titleAccent')}</span>
           </h2>
           <p className="text-xl text-foreground/70 max-w-2xl mx-auto">
-            A proven process that delivers results on time and on budget
+            {t('subtitle')}
           </p>
         </div>
 
@@ -90,23 +69,23 @@ export default function Process() {
         {/* Mobile View - Vertical */}
         <div className="lg:hidden space-y-8 mb-24">
           {processSteps.map((step, index) => (
-            <ProcessCardMobile key={index} {...step} index={index} />
+            <ProcessCardMobile key={index} {...step} index={index} total={processSteps.length} />
           ))}
         </div>
 
         {/* Bottom CTA */}
         <div className="text-center apple-glass rounded-3xl p-8">
           <h3 className="text-2xl font-bold mb-4">
-            Ready to start your project?
+            {t('cta.title')}
           </h3>
           <p className="text-foreground/70 mb-6 max-w-2xl mx-auto">
-            Let's discuss your needs and create a custom plan that delivers real value to your business.
+            {t('cta.description')}
           </p>
           <a
             href="#contact"
             className="inline-block px-8 py-4 bg-primary-blue hover:bg-primary-blue/90 text-white font-semibold rounded-2xl transition-all duration-300 hover:scale-105 hover:shadow-xl"
           >
-            Schedule a Free Consultation
+            {t('cta.button')}
           </a>
         </div>
       </div>
@@ -177,6 +156,7 @@ function ProcessCardMobile({
   icon,
   color,
   index,
+  total,
 }: {
   number: string;
   title: string;
@@ -185,6 +165,7 @@ function ProcessCardMobile({
   icon: string;
   color: string;
   index: number;
+  total: number;
 }) {
   return (
     <div className="flex gap-4">
@@ -195,7 +176,7 @@ function ProcessCardMobile({
         >
           {number}
         </div>
-        {index < processSteps.length - 1 && (
+        {index < total - 1 && (
           <div className="w-1 flex-1 bg-gradient-to-b from-primary-blue to-transparent mt-2" />
         )}
       </div>

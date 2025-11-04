@@ -1,0 +1,356 @@
+{
+  "navigation": {
+    "about": "Sobre Mí",
+    "projects": "Proyectos",
+    "skills": "Habilidades",
+    "process": "Proceso",
+    "contact": "Contacto"
+  },
+  "hero": {
+    "status": "Disponible para Proyectos",
+    "subtitle": "Del Código a la Arquitectura al Liderazgo",
+    "title": "Construyo Sistemas",
+    "titleAccent": "Que Escalan",
+    "description": "Ingeniero de Software Senior especializado en transformar desafíos técnicos complejos en soluciones elegantes y rentables",
+    "metrics": {
+      "experience": "Años de Experiencia",
+      "projects": "Proyectos Enviados",
+      "value": "Valor Entregado"
+    },
+    "cta": {
+      "primary": "Ver Casos de Éxito",
+      "secondary": "Agendar una Llamada"
+    },
+    "valueProps": {
+      "fullStack": "Desarrollo Full-Stack",
+      "leadership": "Liderazgo de Equipos",
+      "architecture": "Arquitectura de Sistemas",
+      "devops": "DevOps y Nube"
+    }
+  },
+  "trustSignals": {
+    "title": "Con la Confianza de",
+    "subtitle": "Empresas Líderes y Startups",
+    "companies": {
+      "techCorp": "TechCorp Solutions",
+      "innovate": "Innovate Labs",
+      "dataFlow": "DataFlow Systems"
+    },
+    "stats": {
+      "satisfaction": "Satisfacción del Cliente",
+      "retention": "Retención de Clientes",
+      "onTime": "A Tiempo y Dentro del Presupuesto"
+    }
+  },
+  "timeline": {
+    "title": "Mi",
+    "titleAccent": "Trayectoria",
+    "subtitle": "De desarrollador a líder técnico: Un camino de crecimiento continuo",
+    "roles": {
+      "senior": {
+        "title": "Ingeniero de Software Senior",
+        "company": "TechCorp Global",
+        "period": "2021 - Presente",
+        "description": "Liderando equipos de 8+ ingenieros, definiendo la arquitectura para aplicaciones de escala empresarial, y reduciendo los costos de infraestructura en un 40%.",
+        "achievements": [
+          "Lideré la migración a microservicios ($500K ahorrados anualmente)",
+          "Mentorée a 5 desarrolladores junior hacia roles senior",
+          "Implementé CI/CD reduciendo el tiempo de despliegue en un 70%"
+        ]
+      },
+      "mid": {
+        "title": "Ingeniero de Software",
+        "company": "Innovate Digital",
+        "period": "2019 - 2021",
+        "description": "Construí funciones escalables sirviendo a 100K+ usuarios, optimicé el rendimiento de la base de datos, y colaboré con equipos multifuncionales.",
+        "achievements": [
+          "Desarrollé el motor de recomendaciones impulsado por IA",
+          "Reduje las consultas a la base de datos en un 60%",
+          "Recibí el premio 'Colaborador Sobresaliente' 2020"
+        ]
+      },
+      "junior": {
+        "title": "Ingeniero de Software Junior",
+        "company": "StartupXYZ",
+        "period": "2018 - 2019",
+        "description": "Comencé mi trayectoria construyendo aplicaciones web, aprendiendo arquitectura escalable, y contribuyendo a características del producto.",
+        "achievements": [
+          "Envié 50+ funciones en el primer año",
+          "Contribuí al aumento del 200% en el compromiso de los usuarios",
+          "Dominé TypeScript, React y Node.js"
+        ]
+      }
+    }
+  },
+  "projects": {
+    "title": "Proyectos de",
+    "titleAccent": "Impacto",
+    "subtitle": "Casos de estudio del mundo real mostrando resultados de negocio",
+    "viewProject": "Ver Caso de Estudio",
+    "metrics": {
+      "revenue": "Ingresos",
+      "users": "Usuarios",
+      "performance": "Rendimiento",
+      "efficiency": "Eficiencia",
+      "satisfaction": "Satisfacción",
+      "retention": "Retención"
+    },
+    "items": {
+      "ecommerce": {
+        "title": "Plataforma de E-Commerce",
+        "client": "Cliente Global de Retail",
+        "timeline": "6 meses • 2023",
+        "problem": "Los sistemas heredados causaban tiempos de carga lentos (8s+) y carritos abandonados. El código monolítico hacía que las actualizaciones fueran riesgosas y lentas.",
+        "solution": "Arquitectura de microservicios con Next.js, redis caching, y Stripe. Implementé CDN, optimización de imágenes, y pruebas automatizadas.",
+        "impact": [
+          "Aumenté los ingresos en $2M mediante tiempo de carga de 1.2s",
+          "Reduje los carritos abandonados en un 45%",
+          "Reduje el tiempo de despliegue de 2 días a 1 hora"
+        ],
+        "tech": ["Next.js", "Node.js", "PostgreSQL", "Redis", "AWS"]
+      },
+      "analytics": {
+        "title": "Panel de Análisis en Tiempo Real",
+        "client": "SaaS Empresa B2B",
+        "timeline": "4 meses • 2023",
+        "problem": "Procesamiento de datos por lotes con retraso de 24 horas. Los clientes necesitaban información en tiempo real para tomar decisiones comerciales críticas.",
+        "solution": "Pipeline de transmisión con Apache Kafka, ClickHouse para análisis, y React con D3.js para visualización. Alertas en tiempo real vía WebSockets.",
+        "impact": [
+          "Procesamiento de datos en tiempo real (<5s latencia)",
+          "Satisfacción del cliente aumentada a 92%",
+          "Aumenté la retención en un 35% con información procesable"
+        ],
+        "tech": ["React", "TypeScript", "Kafka", "ClickHouse", "D3.js"]
+      },
+      "mobile": {
+        "title": "Aplicación Móvil Fintech",
+        "client": "Startup Fintech",
+        "timeline": "8 meses • 2022",
+        "problem": "App nativa lenta con experiencia de usuario fragmentada entre plataformas. Los costos de mantenimiento eran altos con dos bases de código.",
+        "solution": "React Native con TypeScript, autenticación biométrica, y encriptación de extremo a extremo. Integración de plataformas de pago y cumplimiento normativo.",
+        "impact": [
+          "Alcancé 50K+ usuarios en 3 meses",
+          "Mantuve una calificación de 4.8 estrellas (iOS & Android)",
+          "Reduje los costos de mantenimiento en un 60% con una sola base de código"
+        ],
+        "tech": ["React Native", "TypeScript", "Firebase", "Plaid API"]
+      }
+    }
+  },
+  "skills": {
+    "title": "Pila Técnica y",
+    "titleAccent": "Experiencia",
+    "subtitle": "Habilidades profundas donde importa, con ejemplos del mundo real",
+    "categories": {
+      "frontend": {
+        "title": "Desarrollo Frontend",
+        "description": "Construyendo interfaces de usuario que deleitan y convierten",
+        "items": [
+          {
+            "name": "React & Next.js",
+            "level": "Experto",
+            "context": "5+ años • 20+ proyectos de producción",
+            "examples": "Plataforma de e-commerce ($2M ingresos), Panel de análisis B2B SaaS"
+          },
+          {
+            "name": "TypeScript",
+            "level": "Experto",
+            "context": "4+ años • Seguridad de tipos en toda la pila",
+            "examples": "Aplicación móvil fintech (50K+ usuarios), Sistema de trading en tiempo real"
+          },
+          {
+            "name": "Tailwind CSS",
+            "level": "Avanzado",
+            "context": "3+ años • Sistemas de diseño personalizado",
+            "examples": "Biblioteca de componentes empresariales, Rediseño de sitio de marketing"
+          }
+        ]
+      },
+      "backend": {
+        "title": "Desarrollo Backend",
+        "description": "Arquitectura escalable que crece con tu negocio",
+        "items": [
+          {
+            "name": "Node.js & Express",
+            "level": "Experto",
+            "context": "5+ años • APIs manejando millones de solicitudes",
+            "examples": "API REST procesando 10M solicitudes/día, Sistema de webhooks en tiempo real"
+          },
+          {
+            "name": "PostgreSQL & SQL",
+            "level": "Avanzado",
+            "context": "4+ años • Diseño de bases de datos complejas",
+            "examples": "Plataforma de e-commerce (100K+ productos), Sistema CRM multiempresa"
+          },
+          {
+            "name": "Arquitectura de Microservicios",
+            "level": "Avanzado",
+            "context": "3+ años • Sistemas distribuidos a escala",
+            "examples": "Migración de monolito ($500K ahorrados), Sistema de procesamiento de eventos"
+          }
+        ]
+      },
+      "devops": {
+        "title": "DevOps & Nube",
+        "description": "Despliegues confiables e infraestructura que escala",
+        "items": [
+          {
+            "name": "AWS & GCP",
+            "level": "Avanzado",
+            "context": "4+ años • Infraestructura como código",
+            "examples": "Reduje costos de nube en un 40%, Auto-escalado manejando picos de 10x"
+          },
+          {
+            "name": "Docker & Kubernetes",
+            "level": "Intermedio",
+            "context": "3+ años • Despliegues contenerizados",
+            "examples": "Configuración de CI/CD (despliegues de 1 hora), Orquestación de microservicios"
+          },
+          {
+            "name": "CI/CD",
+            "level": "Avanzado",
+            "context": "4+ años • GitHub Actions, Jenkins",
+            "examples": "Reduje el tiempo de despliegue en un 70%, Pipelines automatizados de pruebas"
+          }
+        ]
+      },
+      "leadership": {
+        "title": "Liderazgo Técnico",
+        "description": "Mentoreo de equipos y conducción de iniciativas estratégicas",
+        "items": [
+          {
+            "name": "Arquitectura de Sistemas",
+            "level": "Avanzado",
+            "context": "3+ años • Aplicaciones de escala empresarial",
+            "examples": "Diseñé arquitectura de microservicios, Revisiones de diseño técnico"
+          },
+          {
+            "name": "Mentoreo & Entrenamiento",
+            "level": "Avanzado",
+            "context": "5 ingenieros mentoreados hacia roles senior",
+            "examples": "Programa de incorporación, Talleres técnicos, Revisiones de código"
+          },
+          {
+            "name": "Gestión de Proyectos",
+            "level": "Avanzado",
+            "context": "Lideré equipos de 8+ ingenieros",
+            "examples": "Entrega de proyectos a tiempo (95%), Metodología ágil, Planificación de sprints"
+          }
+        ]
+      }
+    }
+  },
+  "process": {
+    "title": "Cómo",
+    "titleAccent": "Trabajo",
+    "subtitle": "Un proceso probado que entrega resultados a tiempo y dentro del presupuesto",
+    "steps": {
+      "discovery": {
+        "title": "Descubrimiento",
+        "description": "Analizo tus necesidades de negocio, restricciones técnicas y criterios de éxito. Sin soluciones predefinidas - cada proyecto es único.",
+        "activities": [
+          "Entrevistas con interesados",
+          "Auditoría técnica",
+          "Recopilación de requisitos",
+          "Definición de métricas de éxito"
+        ]
+      },
+      "architecture": {
+        "title": "Arquitectura",
+        "description": "Diseño de soluciones escalables y mantenibles con hitos claros y plazos realistas. Sabrás exactamente qué esperar.",
+        "activities": [
+          "Diseño del sistema",
+          "Selección de tecnología",
+          "Evaluación de riesgos",
+          "Creación de hoja de ruta"
+        ]
+      },
+      "implementation": {
+        "title": "Implementación",
+        "description": "Desarrollo ágil con comunicación continua. Verás el progreso cada semana, no solo al final.",
+        "activities": [
+          "Desarrollo iterativo",
+          "Demos semanales",
+          "Revisiones de código",
+          "Aseguramiento de calidad"
+        ]
+      },
+      "delivery": {
+        "title": "Entrega",
+        "description": "Despliegue sin problemas, documentación completa y transferencia de conocimiento. Tu equipo estará completamente equipado para mantener y extender el sistema.",
+        "activities": [
+          "Despliegue en producción",
+          "Documentación",
+          "Capacitación del equipo",
+          "Soporte posterior al lanzamiento"
+        ]
+      }
+    },
+    "cta": {
+      "title": "¿Listo para comenzar tu proyecto?",
+      "description": "Discutamos tus necesidades y creemos un plan personalizado que entregue valor real a tu negocio.",
+      "button": "Agendar una Consulta Gratuita"
+    }
+  },
+  "contact": {
+    "title": "Conectemos",
+    "subtitle": "Ya sea que tengas un proyecto en mente, necesites consultoría, o solo quieras charlar sobre tecnología - me encantaría escucharte.",
+    "quickContact": "Contacto Rápido",
+    "email": {
+      "label": "Correo Electrónico",
+      "copy": "Clic para copiar",
+      "copied": "✓ ¡Copiado!"
+    },
+    "linkedin": {
+      "label": "LinkedIn",
+      "description": "Conéctate conmigo"
+    },
+    "github": {
+      "label": "GitHub",
+      "description": "Revisa mi código"
+    },
+    "calendar": {
+      "label": "Agendar una Llamada",
+      "description": "Llamada de introducción de 15 min"
+    },
+    "responseTime": {
+      "title": "Respuesta Rápida",
+      "description": "Normalmente respondo dentro de 24 horas"
+    },
+    "form": {
+      "title": "Enviar un Mensaje",
+      "name": "Nombre",
+      "namePlaceholder": "Tu nombre",
+      "email": "Correo Electrónico",
+      "emailPlaceholder": "tu.correo@ejemplo.com",
+      "projectType": "Tipo de Proyecto",
+      "projectOptions": {
+        "fulltime": "Oportunidad de tiempo completo",
+        "consulting": "Proyecto de consultoría",
+        "contract": "Trabajo por contrato",
+        "hello": "Solo saludando"
+      },
+      "message": "Mensaje",
+      "messagePlaceholder": "Cuéntame sobre tu proyecto u oportunidad...",
+      "submit": "Enviar Mensaje",
+      "sending": "Enviando...",
+      "success": "✓ ¡Mensaje Enviado!",
+      "error": "Intentar de Nuevo",
+      "successMessage": "¡Gracias! Te responderé pronto."
+    },
+    "availability": "Actualmente disponible para nuevos proyectos"
+  },
+  "footer": {
+    "brand": "Fernando Rodriguez Memije",
+    "description": "Ingeniero de Software Senior construyendo sistemas escalables y liderando equipos de alto rendimiento.",
+    "quickLinks": "Enlaces Rápidos",
+    "connect": "Conectar",
+    "copyright": "Todos los derechos reservados.",
+    "builtWith": "Construido con",
+    "using": "usando Next.js y Tailwind CSS"
+  },
+  "loading": {
+    "title": "Cargando Portafolio...",
+    "progress": "{{progress}}%"
+  }
+}

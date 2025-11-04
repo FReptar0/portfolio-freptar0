@@ -1,7 +1,11 @@
 "use client";
 
+import { useTranslations } from 'next-intl';
+
 export default function Footer() {
   const currentYear = new Date().getFullYear();
+  const t = useTranslations('footer');
+  const tNav = useTranslations('navigation');
 
   return (
     <footer className="py-12" style={{ borderTop: '1px solid var(--border-subtle)' }}>
@@ -10,16 +14,16 @@ export default function Footer() {
           {/* Brand */}
           <div>
             <h3 className="text-xl font-bold mb-3" style={{ background: 'var(--gradient-hero)', WebkitBackgroundClip: 'text', backgroundClip: 'text', WebkitTextFillColor: 'transparent', color: 'transparent' }}>
-              Fernando Rodriguez Memije
+              {t('brand')}
             </h3>
             <p className="text-sm leading-relaxed" style={{ color: 'var(--text-secondary)' }}>
-              Senior Software Engineer building scalable systems and leading high-performing teams.
+              {t('description')}
             </p>
           </div>
 
           {/* Quick Links */}
           <div>
-            <h4 className="font-semibold mb-3">Quick Links</h4>
+            <h4 className="font-semibold mb-3">{t('quickLinks')}</h4>
             <ul className="space-y-2 text-sm">
               <li>
                 <a
@@ -27,7 +31,7 @@ export default function Footer() {
                   className="transition-colors hover:opacity-100"
                   style={{ color: 'var(--text-secondary)' }}
                 >
-                  About Me
+                  {tNav('about')}
                 </a>
               </li>
               <li>
@@ -36,7 +40,7 @@ export default function Footer() {
                   className="transition-colors hover:opacity-100"
                   style={{ color: 'var(--text-secondary)' }}
                 >
-                  Projects
+                  {tNav('projects')}
                 </a>
               </li>
               <li>
@@ -45,7 +49,7 @@ export default function Footer() {
                   className="transition-colors hover:opacity-100"
                   style={{ color: 'var(--text-secondary)' }}
                 >
-                  Skills
+                  {tNav('skills')}
                 </a>
               </li>
               <li>
@@ -54,7 +58,7 @@ export default function Footer() {
                   className="transition-colors hover:opacity-100"
                   style={{ color: 'var(--text-secondary)' }}
                 >
-                  Contact
+                  {tNav('contact')}
                 </a>
               </li>
             </ul>
@@ -62,7 +66,7 @@ export default function Footer() {
 
           {/* Social Links */}
           <div>
-            <h4 className="font-semibold mb-3">Connect</h4>
+            <h4 className="font-semibold mb-3">{t('connect')}</h4>
             <div className="flex gap-4">
               <a
                 href="https://github.com/freptar0"
@@ -112,12 +116,12 @@ export default function Footer() {
         {/* Bottom Bar */}
         <div className="pt-8 border-t border-foreground/10 flex flex-col md:flex-row justify-between items-center gap-4 text-sm text-foreground/60">
           <p>
-            &copy; {currentYear} Fernando Rodriguez Memije. All rights reserved.
+            &copy; {currentYear} {t('brand')}. {t('copyright')}
           </p>
           <div className="flex items-center gap-2">
-            <span>Built with</span>
+            <span>{t('builtWith')}</span>
             <span className="text-red-500">♥</span>
-            <span>using Next.js & Tailwind CSS</span>
+            <span>{t('using')}</span>
           </div>
         </div>
       </div>

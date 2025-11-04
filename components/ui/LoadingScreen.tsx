@@ -1,10 +1,12 @@
 "use client";
 
 import { useEffect, useState } from "react";
+import { useTranslations } from 'next-intl';
 
 export default function LoadingScreen() {
   const [progress, setProgress] = useState(0);
   const [isVisible, setIsVisible] = useState(true);
+  const t = useTranslations('loading');
 
   useEffect(() => {
     // Simulate loading progress
@@ -38,7 +40,7 @@ export default function LoadingScreen() {
 
         {/* Loading text */}
         <div className="space-y-2">
-          <p className="text-lg font-semibold">Loading Portfolio...</p>
+          <p className="text-lg font-semibold">{t('title')}</p>
           <p className="text-sm" style={{ color: 'var(--text-secondary)' }}>{progress}%</p>
         </div>
 

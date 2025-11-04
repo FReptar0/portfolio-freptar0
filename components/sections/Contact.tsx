@@ -1,10 +1,12 @@
 "use client";
 
 import { useState } from "react";
+import { useTranslations } from 'next-intl';
 
 export default function Contact() {
   const [copied, setCopied] = useState(false);
   const [formStatus, setFormStatus] = useState<"idle" | "sending" | "success" | "error">("idle");
+  const t = useTranslations('contact');
 
   const copyEmail = () => {
     navigator.clipboard.writeText("fmemije00@gmail.com");
@@ -28,10 +30,10 @@ export default function Contact() {
       <div className="container mx-auto px-6 lg:px-8 max-w-5xl">
         <div className="text-center mb-16">
           <h2 className="text-4xl md:text-5xl font-bold mb-4">
-            Let's <span style={{ background: 'var(--gradient-hero)', WebkitBackgroundClip: 'text', backgroundClip: 'text', WebkitTextFillColor: 'transparent', color: 'transparent' }}>Connect</span>
+            <span style={{ background: 'var(--gradient-hero)', WebkitBackgroundClip: 'text', backgroundClip: 'text', WebkitTextFillColor: 'transparent', color: 'transparent' }}>{t('title')}</span>
           </h2>
           <p className="text-xl text-foreground/70 max-w-2xl mx-auto">
-            Whether you have a project in mind, need consulting, or just want to chat about tech - I'd love to hear from you.
+            {t('subtitle')}
           </p>
         </div>
 
@@ -39,7 +41,7 @@ export default function Contact() {
           {/* Left Column - Quick Actions */}
           <div className="space-y-6">
             <div className="apple-glass rounded-3xl p-8">
-              <h3 className="text-2xl font-bold mb-6">Quick Contact</h3>
+              <h3 className="text-2xl font-bold mb-6">{t('quickContact')}</h3>
 
               <div className="space-y-4">
                 {/* Email */}
@@ -51,13 +53,13 @@ export default function Contact() {
                     📧
                   </div>
                   <div className="flex-1 text-left">
-                    <div className="font-semibold">Email</div>
+                    <div className="font-semibold">{t('email.label')}</div>
                     <div className="text-sm text-foreground/60">
                       fmemije00@gmail.com
                     </div>
                   </div>
                   <div className="text-sm font-medium" style={{ color: 'var(--accent-500)' }}>
-                    {copied ? "✓ Copied!" : "Click to copy"}
+                    {copied ? t('email.copied') : t('email.copy')}
                   </div>
                 </button>
 
@@ -72,9 +74,9 @@ export default function Contact() {
                     💼
                   </div>
                   <div className="flex-1 text-left">
-                    <div className="font-semibold">LinkedIn</div>
+                    <div className="font-semibold">{t('linkedin.label')}</div>
                     <div className="text-sm text-foreground/60">
-                      Connect with me
+                      {t('linkedin.description')}
                     </div>
                   </div>
                   <div className="text-foreground/60 group-hover:translate-x-1 transition-transform">
@@ -93,9 +95,9 @@ export default function Contact() {
                     💻
                   </div>
                   <div className="flex-1 text-left">
-                    <div className="font-semibold">GitHub</div>
+                    <div className="font-semibold">{t('github.label')}</div>
                     <div className="text-sm text-foreground/60">
-                      Check out my code
+                      {t('github.description')}
                     </div>
                   </div>
                   <div className="text-foreground/60 group-hover:translate-x-1 transition-transform">
@@ -112,9 +114,9 @@ export default function Contact() {
                     📅
                   </div>
                   <div className="flex-1 text-left">
-                    <div className="font-semibold">Schedule a Call</div>
+                    <div className="font-semibold">{t('calendar.label')}</div>
                     <div className="text-sm text-foreground/60">
-                      15-min intro call
+                      {t('calendar.description')}
                     </div>
                   </div>
                   <div className="text-foreground/60 group-hover:translate-x-1 transition-transform">
@@ -127,16 +129,16 @@ export default function Contact() {
             {/* Response Time */}
             <div className="apple-glass rounded-2xl p-6 text-center">
               <div className="text-3xl mb-2">⚡</div>
-              <div className="font-semibold mb-1">Quick Response</div>
+              <div className="font-semibold mb-1">{t('responseTime.title')}</div>
               <div className="text-sm text-foreground/60">
-                I typically respond within 24 hours
+                {t('responseTime.description')}
               </div>
             </div>
           </div>
 
           {/* Right Column - Contact Form */}
           <div className="apple-glass rounded-3xl p-8">
-            <h3 className="text-2xl font-bold mb-6">Send a Message</h3>
+            <h3 className="text-2xl font-bold mb-6">{t('form.title')}</h3>
 
             <form onSubmit={handleSubmit} className="space-y-6">
               <div>
@@ -144,14 +146,14 @@ export default function Contact() {
                   htmlFor="name"
                   className="block text-sm font-medium mb-2"
                 >
-                  Name
+                  {t('form.name')}
                 </label>
                 <input
                   type="text"
                   id="name"
                   required
                   className="w-full px-4 py-3 rounded-xl bg-foreground/5 border border-foreground/10 focus:border-primary-blue focus:outline-none transition-colors"
-                  placeholder="Your name"
+                  placeholder={t('form.namePlaceholder')}
                 />
               </div>
 
@@ -160,14 +162,14 @@ export default function Contact() {
                   htmlFor="email"
                   className="block text-sm font-medium mb-2"
                 >
-                  Email
+                  {t('form.email')}
                 </label>
                 <input
                   type="email"
                   id="email"
                   required
                   className="w-full px-4 py-3 rounded-xl bg-foreground/5 border border-foreground/10 focus:border-primary-blue focus:outline-none transition-colors"
-                  placeholder="your.email@example.com"
+                  placeholder={t('form.emailPlaceholder')}
                 />
               </div>
 
@@ -176,16 +178,16 @@ export default function Contact() {
                   htmlFor="project"
                   className="block text-sm font-medium mb-2"
                 >
-                  Project Type
+                  {t('form.projectType')}
                 </label>
                 <select
                   id="project"
                   className="w-full px-4 py-3 rounded-xl bg-foreground/5 border border-foreground/10 focus:border-primary-blue focus:outline-none transition-colors"
                 >
-                  <option>Full-time opportunity</option>
-                  <option>Consulting project</option>
-                  <option>Contract work</option>
-                  <option>Just saying hi</option>
+                  <option>{t('form.projectOptions.fulltime')}</option>
+                  <option>{t('form.projectOptions.consulting')}</option>
+                  <option>{t('form.projectOptions.contract')}</option>
+                  <option>{t('form.projectOptions.hello')}</option>
                 </select>
               </div>
 
@@ -194,14 +196,14 @@ export default function Contact() {
                   htmlFor="message"
                   className="block text-sm font-medium mb-2"
                 >
-                  Message
+                  {t('form.message')}
                 </label>
                 <textarea
                   id="message"
                   required
                   rows={4}
                   className="w-full px-4 py-3 rounded-xl bg-foreground/5 border border-foreground/10 focus:border-primary-blue focus:outline-none transition-colors resize-none"
-                  placeholder="Tell me about your project or opportunity..."
+                  placeholder={t('form.messagePlaceholder')}
                 />
               </div>
 
@@ -211,15 +213,15 @@ export default function Contact() {
                 className="w-full py-4 text-white font-semibold rounded-xl transition-all duration-300 hover:scale-[1.02] disabled:scale-100"
                 style={{ background: formStatus === "sending" ? 'var(--primary-400)' : 'var(--primary-600)' }}
               >
-                {formStatus === "sending" && "Sending..."}
-                {formStatus === "success" && "✓ Message Sent!"}
-                {formStatus === "idle" && "Send Message"}
-                {formStatus === "error" && "Try Again"}
+                {formStatus === "sending" && t('form.sending')}
+                {formStatus === "success" && t('form.success')}
+                {formStatus === "idle" && t('form.submit')}
+                {formStatus === "error" && t('form.error')}
               </button>
 
               {formStatus === "success" && (
                 <div className="text-center text-sm" style={{ color: 'var(--success-500)' }}>
-                  Thanks! I'll get back to you soon.
+                  {t('form.successMessage')}
                 </div>
               )}
             </form>
@@ -233,7 +235,7 @@ export default function Contact() {
               <span className="animate-ping absolute inline-flex h-full w-full rounded-full opacity-75" style={{ background: 'var(--success-500)' }}></span>
               <span className="relative inline-flex rounded-full h-2 w-2" style={{ background: 'var(--success-500)' }}></span>
             </span>
-            <span className="text-sm">Currently available for new projects</span>
+            <span className="text-sm">{t('availability')}</span>
           </div>
         </div>
       </div>
