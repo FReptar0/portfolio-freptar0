@@ -1,0 +1,120 @@
+"use client";
+
+import { useState, useEffect } from "react";
+
+export default function Hero() {
+  const [isVisible, setIsVisible] = useState(false);
+
+  useEffect(() => {
+    setIsVisible(true);
+  }, []);
+
+  return (
+    <section className="relative min-h-screen flex items-center justify-center overflow-hidden">
+      {/* Animated gradient background */}
+      <div className="absolute inset-0 apple-gradient-mesh opacity-50" />
+
+      {/* Glass morphism overlay */}
+      <div className="absolute inset-0 bg-gradient-to-b from-transparent via-background/50 to-background" />
+
+      <div className="relative z-10 container mx-auto px-6 lg:px-8 max-w-6xl">
+        <div
+          className={`text-center space-y-8 transition-all duration-1000 ${
+            isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-10"
+          }`}
+        >
+          {/* Status Badge */}
+          <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full glass border backdrop-blur-xl mt-12" style={{ borderColor: 'var(--success-500)' }}>
+            <span className="relative flex h-3 w-3">
+              <span className="animate-ping absolute inline-flex h-full w-full rounded-full opacity-75" style={{ background: 'var(--success-500)' }}></span>
+              <span className="relative inline-flex rounded-full h-3 w-3" style={{ background: 'var(--success-500)' }}></span>
+            </span>
+            <span className="text-sm font-medium" style={{ color: 'var(--success-600)' }}>
+              Available for Projects
+            </span>
+          </div>
+
+          {/* Main Headline */}
+          <div className="space-y-4">
+            <p className="text-lg md:text-xl text-foreground/70 font-medium tracking-wide">
+              From Code to Architecture to Leadership
+            </p>
+            <h1 className="text-5xl md:text-7xl lg:text-8xl font-bold tracking-tight">
+              <span style={{ background: 'var(--gradient-hero)', WebkitBackgroundClip: 'text', backgroundClip: 'text', WebkitTextFillColor: 'transparent', color: 'transparent' }}>
+                I Build Systems
+              </span>
+              <br />
+              <span className="text-foreground">That Scale</span>
+            </h1>
+            <p className="text-xl md:text-2xl text-foreground/80 max-w-3xl mx-auto leading-relaxed">
+              Senior Software Engineer specializing in transforming complex
+              technical challenges into elegant, profitable solutions
+            </p>
+          </div>
+
+          {/* Metrics Bar */}
+          <div className="flex flex-wrap justify-center gap-6 md:gap-12 py-2">
+            <MetricItem value="5+" label="Years Experience" />
+            <MetricItem value="20+" label="Projects Shipped" />
+            <MetricItem value="$2M+" label="Value Delivered" />
+          </div>
+
+          {/* CTAs */}
+          <div className="flex flex-col sm:flex-row gap-4 justify-center items-center pt-4">
+            <a
+              href="#projects"
+              className="group relative px-8 py-4 text-white font-semibold rounded-2xl transition-all duration-300 hover:scale-105 min-w-[200px] overflow-hidden"
+              style={{ background: 'var(--primary-600)' }}
+            >
+              <span className="relative z-10">View Success Stories</span>
+              <div className="absolute inset-0 rounded-2xl bg-gradient-hero opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
+            </a>
+            <a
+              href="#contact"
+              className="group px-8 py-4 glass hover:bg-white/20 dark:hover:bg-black/40 font-semibold rounded-2xl transition-all duration-300 hover:scale-105 min-w-[200px]"
+            >
+              Schedule a Call
+              <span className="inline-block ml-2 transition-transform group-hover:translate-x-1">
+                →
+              </span>
+            </a>
+          </div>
+
+          {/* Value Props Pills */}
+          <div className="flex flex-wrap justify-center gap-3 pt-2 mb-12">
+            <ValuePropPill text="Full-Stack Development" />
+            <ValuePropPill text="Team Leadership" />
+            <ValuePropPill text="System Architecture" />
+            <ValuePropPill text="DevOps & Cloud" />
+          </div>
+        </div>
+      </div>
+
+      {/* Scroll Indicator */}
+      <div className="absolute bottom-12 left-1/2 -translate-x-1/2 animate-bounce">
+        <div className="w-6 h-10 rounded-full border-2 border-foreground/30 flex items-start justify-center p-2">
+          <div className="w-1 h-3 rounded-full bg-foreground/30 animate-pulse" />
+        </div>
+      </div>
+    </section>
+  );
+}
+
+function MetricItem({ value, label }: { value: string; label: string }) {
+  return (
+    <div className="text-center">
+      <div className="text-4xl md:text-5xl font-bold" style={{ background: 'var(--gradient-hero)', WebkitBackgroundClip: 'text', backgroundClip: 'text', WebkitTextFillColor: 'transparent', color: 'transparent' }}>
+        {value}
+      </div>
+      <div className="text-sm md:text-base mt-1" style={{ color: 'var(--text-secondary)' }}>{label}</div>
+    </div>
+  );
+}
+
+function ValuePropPill({ text }: { text: string }) {
+  return (
+    <div className="px-4 py-2 glass rounded-full text-sm font-medium transition-all duration-300 hover:scale-105" style={{ borderColor: 'var(--accent-500)' }}>
+      {text}
+    </div>
+  );
+}
