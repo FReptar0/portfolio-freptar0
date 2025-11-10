@@ -80,6 +80,15 @@ export default function SearchBar() {
     setSearchQuery('');
   };
 
+  const handleSectionClick = (sectionId: string) => {
+    const element = document.getElementById(sectionId);
+    if (element) {
+      element.scrollIntoView({ behavior: 'smooth' });
+      setIsOpen(false);
+      setSearchQuery('');
+    }
+  };
+
   // Keyboard navigation inside the modal (Arrow keys + Enter)
   useEffect(() => {
     if (!isOpen) return;
@@ -113,7 +122,6 @@ export default function SearchBar() {
 
     document.addEventListener('keydown', onKeyDown);
     return () => document.removeEventListener('keydown', onKeyDown);
-  // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [isOpen, combinedResults, activeIndex]);
 
   // Focus the active item when activeIndex changes
@@ -122,15 +130,6 @@ export default function SearchBar() {
     const el = itemsRef.current[activeIndex];
     if (el) el.focus();
   }, [activeIndex]);
-
-  const handleSectionClick = (sectionId: string) => {
-    const element = document.getElementById(sectionId);
-    if (element) {
-      element.scrollIntoView({ behavior: 'smooth' });
-      setIsOpen(false);
-      setSearchQuery('');
-    }
-  };
 
   if (!isOpen) {
     return (

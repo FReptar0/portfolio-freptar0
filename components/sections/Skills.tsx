@@ -31,7 +31,7 @@ export default function Skills() {
         </div>
 
         <div className="grid md:grid-cols-2 gap-8">
-          {skillCategories.map((category: any, index: number) => (
+          {skillCategories.map((category: { title: string; icon: string; skills: Array<{ name: string; experience: string; level: number; project: string; }> }, index: number) => (
             <SkillCategory key={index} {...category} />
           ))}
         </div>

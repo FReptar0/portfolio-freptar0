@@ -8,7 +8,10 @@ export default function Hero() {
   const t = useTranslations('hero');
 
   useEffect(() => {
-    setIsVisible(true);
+    const timer = setTimeout(() => {
+      setIsVisible(true);
+    }, 0);
+    return () => clearTimeout(timer);
   }, []);
 
   return (

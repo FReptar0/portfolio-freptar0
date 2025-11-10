@@ -93,7 +93,7 @@ export default function Process() {
             <div className="absolute top-8 left-[12.5%] right-[12.5%] h-0.5 bg-gradient-to-r from-primary-blue via-accent-purple to-success-green opacity-40 -z-10" />
 
             {processSteps.map((step, index) => (
-              <ProcessCard key={index} {...step} index={index} />
+              <ProcessCard key={index} {...step} />
             ))}
           </div>
         </div>
@@ -132,7 +132,6 @@ function ProcessCard({
   activities,
   icon,
   color,
-  index,
 }: {
   number: string;
   title: string;
@@ -140,7 +139,6 @@ function ProcessCard({
   activities: string[];
   icon: string;
   color: string;
-  index: number;
 }) {
   return (
     <div className="group">
