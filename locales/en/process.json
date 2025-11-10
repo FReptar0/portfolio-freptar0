@@ -1,0 +1,44 @@
+{
+  "title": "How I",
+  "titleAccent": "Work",
+  "subtitle": "A proven process that delivers results on time and on budget",
+  "steps": {
+    "discovery": {
+      "title": "Discovery",
+      "description": "I analyze your business needs, technical constraints, and success criteria. No cookie-cutter solutions - every project is unique.",
+      "activity0": "Stakeholder interviews",
+      "activity1": "Technical audit",
+      "activity2": "Requirements gathering",
+      "activity3": "Success metrics definition"
+    },
+    "architecture": {
+      "title": "Architecture",
+      "description": "Design scalable, maintainable solutions with clear milestones and realistic timelines. You'll know exactly what to expect.",
+      "activity0": "System design",
+      "activity1": "Technology selection",
+      "activity2": "Risk assessment",
+      "activity3": "Roadmap creation"
+    },
+    "implementation": {
+      "title": "Implementation",
+      "description": "Agile development with continuous communication. You'll see progress every week, not just at the end.",
+      "activity0": "Iterative development",
+      "activity1": "Weekly demos",
+      "activity2": "Code reviews",
+      "activity3": "Quality assurance"
+    },
+    "delivery": {
+      "title": "Delivery",
+      "description": "Smooth deployment, comprehensive documentation, and knowledge transfer. Your team will be fully equipped to maintain and extend the system.",
+      "activity0": "Production deployment",
+      "activity1": "Documentation",
+      "activity2": "Team training",
+      "activity3": "Post-launch support"
+    }
+  },
+  "cta": {
+    "title": "Ready to start your project?",
+    "description": "Let's discuss your needs and create a custom plan that delivers real value to your business.",
+    "button": "Schedule a Free Consultation"
+  }
+}

@@ -2,6 +2,7 @@
 
 import { useState } from "react";
 import { useTranslations } from 'next-intl';
+import { Mail, Briefcase, Github, Calendar, Zap, ArrowRight } from 'lucide-react';
 
 export default function Contact() {
   const [copied, setCopied] = useState(false);
@@ -49,8 +50,8 @@ export default function Contact() {
                   onClick={copyEmail}
                   className="w-full glass-card rounded-2xl p-4 flex items-center gap-4 group"
                 >
-                  <div className="w-12 h-12 rounded-full bg-gradient-hero flex items-center justify-center text-white text-xl">
-                    📧
+                  <div className="w-12 h-12 rounded-full bg-gradient-hero flex items-center justify-center text-white">
+                    <Mail className="w-6 h-6" />
                   </div>
                   <div className="flex-1 text-left">
                     <div className="font-semibold">{t('email.label')}</div>
@@ -70,8 +71,8 @@ export default function Contact() {
                   rel="noopener noreferrer"
                   className="w-full apple-glass hover:bg-white/20 dark:hover:bg-black/40 rounded-2xl p-4 flex items-center gap-4 transition-all duration-300 hover:scale-[1.02] group"
                 >
-                  <div className="w-12 h-12 rounded-full bg-gradient-to-br from-primary-blue to-accent-purple flex items-center justify-center text-white text-xl">
-                    💼
+                  <div className="w-12 h-12 rounded-full bg-gradient-to-br from-primary-blue to-accent-purple flex items-center justify-center text-white">
+                    <Briefcase className="w-6 h-6" />
                   </div>
                   <div className="flex-1 text-left">
                     <div className="font-semibold">{t('linkedin.label')}</div>
@@ -79,9 +80,7 @@ export default function Contact() {
                       {t('linkedin.description')}
                     </div>
                   </div>
-                  <div className="text-foreground/60 group-hover:translate-x-1 transition-transform">
-                    →
-                  </div>
+                  <ArrowRight className="w-5 h-5 text-foreground/60 group-hover:translate-x-1 transition-transform" />
                 </a>
 
                 {/* GitHub */}
@@ -91,8 +90,8 @@ export default function Contact() {
                   rel="noopener noreferrer"
                   className="w-full apple-glass hover:bg-white/20 dark:hover:bg-black/40 rounded-2xl p-4 flex items-center gap-4 transition-all duration-300 hover:scale-[1.02] group"
                 >
-                  <div className="w-12 h-12 rounded-full bg-gradient-to-br from-primary-blue to-accent-purple flex items-center justify-center text-white text-xl">
-                    💻
+                  <div className="w-12 h-12 rounded-full bg-gradient-to-br from-primary-blue to-accent-purple flex items-center justify-center text-white">
+                    <Github className="w-6 h-6" />
                   </div>
                   <div className="flex-1 text-left">
                     <div className="font-semibold">{t('github.label')}</div>
@@ -100,9 +99,7 @@ export default function Contact() {
                       {t('github.description')}
                     </div>
                   </div>
-                  <div className="text-foreground/60 group-hover:translate-x-1 transition-transform">
-                    →
-                  </div>
+                  <ArrowRight className="w-5 h-5 text-foreground/60 group-hover:translate-x-1 transition-transform" />
                 </a>
 
                 {/* Calendar - placeholder for now */}
@@ -110,8 +107,8 @@ export default function Contact() {
                   href="#contact"
                   className="w-full apple-glass hover:bg-white/20 dark:hover:bg-black/40 rounded-2xl p-4 flex items-center gap-4 transition-all duration-300 hover:scale-[1.02] group"
                 >
-                  <div className="w-12 h-12 rounded-full bg-gradient-to-br from-primary-blue to-accent-purple flex items-center justify-center text-white text-xl">
-                    📅
+                  <div className="w-12 h-12 rounded-full bg-gradient-to-br from-primary-blue to-accent-purple flex items-center justify-center text-white">
+                    <Calendar className="w-6 h-6" />
                   </div>
                   <div className="flex-1 text-left">
                     <div className="font-semibold">{t('calendar.label')}</div>
@@ -119,16 +116,16 @@ export default function Contact() {
                       {t('calendar.description')}
                     </div>
                   </div>
-                  <div className="text-foreground/60 group-hover:translate-x-1 transition-transform">
-                    →
-                  </div>
+                  <ArrowRight className="w-5 h-5 text-foreground/60 group-hover:translate-x-1 transition-transform" />
                 </a>
               </div>
             </div>
 
             {/* Response Time */}
             <div className="apple-glass rounded-2xl p-6 text-center">
-              <div className="text-3xl mb-2">⚡</div>
+              <div className="mb-2 text-yellow-500">
+                <Zap className="w-8 h-8 mx-auto" />
+              </div>
               <div className="font-semibold mb-1">{t('responseTime.title')}</div>
               <div className="text-sm text-foreground/60">
                 {t('responseTime.description')}

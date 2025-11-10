@@ -1,0 +1,48 @@
+{
+  "title": "Let's Connect",
+  "subtitle": "Whether you have a project in mind, need consulting, or just want to chat about tech - I'd love to hear from you.",
+  "quickContact": "Quick Contact",
+  "email": {
+    "label": "Email",
+    "copy": "Click to copy",
+    "copied": "✓ Copied!"
+  },
+  "linkedin": {
+    "label": "LinkedIn",
+    "description": "Connect with me"
+  },
+  "github": {
+    "label": "GitHub",
+    "description": "Check out my code"
+  },
+  "calendar": {
+    "label": "Schedule a Call",
+    "description": "15-min intro call"
+  },
+  "responseTime": {
+    "title": "Quick Response",
+    "description": "I typically respond within 24 hours"
+  },
+  "form": {
+    "title": "Send a Message",
+    "name": "Name",
+    "namePlaceholder": "Your name",
+    "email": "Email",
+    "emailPlaceholder": "your.email@example.com",
+    "projectType": "Project Type",
+    "projectOptions": {
+      "fulltime": "Full-time opportunity",
+      "consulting": "Consulting project",
+      "contract": "Contract work",
+      "hello": "Just saying hi"
+    },
+    "message": "Message",
+    "messagePlaceholder": "Tell me about your project or opportunity...",
+    "submit": "Send Message",
+    "sending": "Sending...",
+    "success": "✓ Message Sent!",
+    "error": "Try Again",
+    "successMessage": "Thanks! I'll get back to you soon."
+  },
+  "availability": "Currently available for new projects"
+}

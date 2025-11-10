@@ -1,0 +1,22 @@
+{
+  "status": "Disponible para Proyectos",
+  "subtitle": "Del Código a la Arquitectura al Liderazgo",
+  "title": "Construyo Sistemas",
+  "titleAccent": "Que Escalan",
+  "description": "Ingeniero de Software Senior especializado en transformar desafíos técnicos complejos en soluciones elegantes y rentables",
+  "metrics": {
+    "experience": "Años de Experiencia",
+    "projects": "Proyectos Enviados",
+    "value": "Valor Entregado"
+  },
+  "cta": {
+    "primary": "Ver Casos de Éxito",
+    "secondary": "Agendar una Llamada"
+  },
+  "valueProps": {
+    "fullStack": "Desarrollo Full-Stack",
+    "leadership": "Liderazgo de Equipos",
+    "architecture": "Arquitectura de Sistemas",
+    "devops": "DevOps y Nube"
+  }
+}

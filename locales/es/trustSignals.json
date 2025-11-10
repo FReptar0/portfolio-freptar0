@@ -1,0 +1,23 @@
+{
+  "title": "Certificaciones y Tecnologías",
+  "testimonial0": {
+    "quote": "Fernando transformó nuestra arquitectura, reduciendo costos en 40% mientras mejoraba el rendimiento. Su liderazgo técnico fue invaluable.",
+    "author": "Sarah Chen",
+    "role": "CTO, TechCorp",
+    "company": "TechCorp"
+  },
+  "testimonial1": {
+    "quote": "La mejor contratación de ingeniería que hemos hecho. Fernando no solo escribe código - resuelve problemas de negocio con soluciones técnicas elegantes.",
+    "author": "Michael Rodriguez",
+    "role": "VP Ingeniería, DataFlow",
+    "company": "DataFlow"
+  },
+  "certifications": [
+    "AWS Certified",
+    "Google Cloud",
+    "Experto React",
+    "Especialista Node.js",
+    "TypeScript",
+    "Docker y K8s"
+  ]
+}

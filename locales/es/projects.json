@@ -1,0 +1,94 @@
+{
+  "title": "Historias de",
+  "titleAccent": "Éxito",
+  "subtitle": "Proyectos reales, resultados medibles, impacto duradero",
+  "sections": {
+    "challenge": "El Desafío",
+    "role": "Mi Rol",
+    "solution": "Solución", 
+    "impact": "Impacto en el Negocio"
+  },
+  "labels": {
+    "teamOf": "Equipo de",
+    "architecture": "Arquitectura:",
+    "ctaQuestion": "¿Quieres resultados similares para tu proyecto?",
+    "ctaButton": "Hablemos"
+  },
+  "items": {
+    "ecommerce": {
+      "title": "Transformación de Plataforma E-Commerce",
+      "businessProblem": "Sistema de e-commerce obsoleto causando $50K/mes en ingresos perdidos debido a tiempos de carga de 8 segundos y caídas frecuentes durante tráfico pico.",
+      "myContribution": {
+        "role": "Desarrollador Principal",
+        "teamSize": 5,
+        "responsibility0": "Diseñé la estrategia de migración a microservicios",
+        "responsibility1": "Lideré la optimización de rendimiento frontend", 
+        "responsibility2": "Implementé sistema de inventario en tiempo real"
+      },
+      "technicalSolution": {
+        "stack": ["React", "Next.js", "Node.js", "PostgreSQL", "Redis", "AWS"],
+        "architecture": "Microservicios",
+        "keyDecision0": "Migré a Next.js para SSR y mejor SEO",
+        "keyDecision1": "Implementé caché edge con CloudFront",
+        "keyDecision2": "Inventario en tiempo real con Redis pub/sub"
+      },
+      "businessImpact": {
+        "metric0": { "label": "Rendimiento", "value": "75% más rápido" },
+        "metric1": { "label": "Ingresos", "value": "$200K ahorros anuales" },
+        "metric2": { "label": "Escala", "value": "100K usuarios activos diarios" },
+        "metric3": { "label": "Tiempo activo", "value": "99.9% disponibilidad" }
+      },
+      "tags": ["Full-Stack", "Rendimiento", "E-Commerce"]
+    },
+    "analytics": {
+      "title": "Dashboard de Análisis en Tiempo Real",
+      "businessProblem": "El equipo de marketing no podía tomar decisiones basadas en datos debido a un retraso de 24 horas en los datos y proceso de reportes complejo.",
+      "myContribution": {
+        "role": "Líder Técnico",
+        "teamSize": 3,
+        "responsibility0": "Diseñé pipeline de datos en tiempo real",
+        "responsibility1": "Construí interfaz de dashboard interactiva",
+        "responsibility2": "Optimicé rendimiento de consultas"
+      },
+      "technicalSolution": {
+        "stack": ["React", "TypeScript", "Python", "Kafka", "TimescaleDB", "Docker"],
+        "architecture": "Basado en Eventos",
+        "keyDecision0": "Usé Kafka para streaming de eventos en tiempo real",
+        "keyDecision1": "TimescaleDB para optimización de datos de series temporales",
+        "keyDecision2": "Conexiones WebSocket para actualizaciones en vivo"
+      },
+      "businessImpact": {
+        "metric0": { "label": "Frescura de Datos", "value": "Tiempo real (< 1s)" },
+        "metric1": { "label": "Velocidad de Decisión", "value": "10x más rápido" },
+        "metric2": { "label": "Reducción de Costos", "value": "40% menos costos infra" },
+        "metric3": { "label": "Adopción de Usuario", "value": "95% uso del equipo" }
+      },
+      "tags": ["Ingeniería de Datos", "Tiempo Real", "Liderazgo"]
+    },
+    "mobile": {
+      "title": "App Móvil Multiplataforma",
+      "businessProblem": "La empresa necesitaba presencia móvil pero no podía permitirse equipos separados de iOS y Android. El tiempo de salida al mercado era crítico.",
+      "myContribution": {
+        "role": "Ingeniero Senior",
+        "teamSize": 4,
+        "responsibility0": "Lideré el diseño de arquitectura móvil",
+        "responsibility1": "Implementé características principales",
+        "responsibility2": "Configuré pipeline CI/CD"
+      },
+      "technicalSolution": {
+        "stack": ["React Native", "TypeScript", "GraphQL", "AWS Amplify", "Jest"],
+        "architecture": "Serverless",
+        "keyDecision0": "React Native para compartir código (90% compartido)",
+        "keyDecision1": "GraphQL para obtención eficiente de datos",
+        "keyDecision2": "AWS Amplify para configuración rápida del backend"
+      },
+      "businessImpact": {
+        "metric0": { "label": "Tiempo de Desarrollo", "value": "6 meses vs 12" },
+        "metric1": { "label": "Código Compartido", "value": "90% entre plataformas" },
+        "metric2": { "label": "Calificación App Store", "value": "4.8/5 estrellas" },
+        "metric3": { "label": "Usuarios Activos", "value": "50K+ descargas" }
+      },
+      "tags": ["Móvil", "Multiplataforma", "Serverless"]
+    }
+  }
+}

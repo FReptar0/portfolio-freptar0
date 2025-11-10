@@ -1,0 +1,43 @@
+{
+  "title": "Mi",
+  "titleAccent": "Trayectoria",
+  "subtitle": "De escribir mi primera línea de código a liderar equipos de ingeniería",
+  "roles": {
+    "junior": {
+      "year": "2019",
+      "role": "Desarrollador Junior",
+      "highlight": "Comenzó el Viaje",
+      "description0": "Aprendí fundamentos del desarrollo web",
+      "description1": "Primeros despliegues en producción",
+      "description2": "Contribuí a proyectos del equipo",
+      "color": "from-blue-400 to-blue-600"
+    },
+    "mid": {
+      "year": "2021",
+      "role": "Desarrollador Full-Stack",
+      "highlight": "Expandí Habilidades",
+      "description0": "Lideré primeros proyectos importantes",
+      "description1": "Dominé el stack tecnológico moderno",
+      "description2": "Construí aplicaciones escalables",
+      "color": "from-purple-400 to-purple-600"
+    },
+    "senior": {
+      "year": "2023",
+      "role": "Ingeniero Senior",
+      "highlight": "Enfoque en Arquitectura",
+      "description0": "Diseñé arquitecturas de sistemas",
+      "description1": "Mentoreé desarrolladores junior",
+      "description2": "Mejoré eficiencia del equipo en 60%",
+      "color": "from-indigo-400 to-indigo-600"
+    },
+    "lead": {
+      "year": "2024",
+      "role": "Líder Técnico",
+      "highlight": "Liderazgo",
+      "description0": "Liderando equipos multifuncionales",
+      "description1": "Dirigiendo estrategia técnica",
+      "description2": "Entregando $2M+ en valor",
+      "color": "from-cyan-400 to-cyan-600"
+    }
+  }
+}

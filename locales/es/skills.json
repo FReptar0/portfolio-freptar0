@@ -1,0 +1,109 @@
+{
+  "title": "Habilidades en",
+  "titleAccent": "Contexto",
+  "subtitle": "No solo palabras de moda - experiencia real con impacto medible",
+  "proficiencyLabels": {
+    "expert": "Experto",
+    "advanced": "Avanzado", 
+    "intermediate": "Intermedio",
+    "familiar": "Familiar"
+  },
+  "categories": [
+    {
+      "title": "Desarrollo Frontend",
+      "icon": "palette",
+      "skills": [
+        {
+          "name": "React / Next.js",
+          "experience": "4 años",
+          "level": 95,
+          "project": "Construí plataforma e-commerce sirviendo 100K usuarios"
+        },
+        {
+          "name": "TypeScript", 
+          "experience": "3 años",
+          "level": 90,
+          "project": "Sistemas type-safe reduciendo bugs en 60%"
+        },
+        {
+          "name": "Tailwind CSS",
+          "experience": "3 años",
+          "level": 90,
+          "project": "Desarrollo rápido de UI con diseño consistente"
+        }
+      ]
+    },
+    {
+      "title": "Backend e Infraestructura",
+      "icon": "cog",
+      "skills": [
+        {
+          "name": "Node.js / Express",
+          "experience": "5 años",
+          "level": 95,
+          "project": "APIs manejando 1M+ requests diarios"
+        },
+        {
+          "name": "Python / FastAPI",
+          "experience": "3 años", 
+          "level": 85,
+          "project": "Pipelines ML y sistemas de procesamiento de datos"
+        },
+        {
+          "name": "PostgreSQL / MongoDB",
+          "experience": "4 años",
+          "level": 90,
+          "project": "Consultas optimizadas para bases de datos 10TB+"
+        }
+      ]
+    },
+    {
+      "title": "DevOps y Cloud",
+      "icon": "cloud",
+      "skills": [
+        {
+          "name": "AWS / GCP",
+          "experience": "4 años",
+          "level": 90,
+          "project": "Infraestructura cloud ahorrando $200K anuales"
+        },
+        {
+          "name": "Docker / Kubernetes",
+          "experience": "3 años",
+          "level": 85,
+          "project": "Apps contenerizadas para escalado fluido"
+        },
+        {
+          "name": "Pipelines CI/CD",
+          "experience": "4 años",
+          "level": 90,
+          "project": "Despliegues automatizados, 50+ releases/mes"
+        }
+      ]
+    },
+    {
+      "title": "Liderazgo y Arquitectura",
+      "icon": "rocket",
+      "skills": [
+        {
+          "name": "Liderazgo de Equipo",
+          "experience": "2 años",
+          "level": 85,
+          "project": "Lideré equipo de 5 desarrolladores en proyectos críticos"
+        },
+        {
+          "name": "Diseño de Sistemas",
+          "experience": "3 años",
+          "level": 90,
+          "project": "Arquitecté sistemas manejando millones de usuarios"
+        },
+        {
+          "name": "Agile / Scrum",
+          "experience": "5 años",
+          "level": 95,
+          "project": "Entregué 20+ proyectos a tiempo y presupuesto"
+        }
+      ]
+    }
+  ]
+}

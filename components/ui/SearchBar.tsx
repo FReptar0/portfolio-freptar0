@@ -10,6 +10,7 @@ export default function SearchBar() {
   const [activeIndex, setActiveIndex] = useState<number | null>(null);
   const itemsRef = useRef<Array<HTMLButtonElement | null>>([]);
   const t = useTranslations();
+  const tSearch = useTranslations('search');
 
   // Shortcuts mapping (single-letter) for desktop navigation and shown in the UI
   const sectionShortcuts: Record<string, string> = {
@@ -195,7 +196,7 @@ export default function SearchBar() {
               type="text"
               value={searchQuery}
               onChange={(e) => { setSearchQuery(e.target.value); setActiveIndex(null); }}
-              placeholder="Search sections..."
+              placeholder={tSearch('placeholder')}
               className="w-full pl-12 pr-20 py-4 bg-foreground/5 border border-foreground/10 rounded-2xl focus:border-primary-blue focus:outline-none transition-colors text-lg"
               onKeyDown={(e) => {
                 // allow typing letters; also support pressing shortcut keys to immediately jump
@@ -223,7 +224,7 @@ export default function SearchBar() {
                   {idx === sectionCount && idx > 0 && (
                     <div className="px-4 py-2">
                       <div className="border-t border-foreground/10 mt-1 mb-3" />
-                      <div className="text-xs text-foreground/60 font-semibold">Contactos</div>
+                      <div className="text-xs text-foreground/60 font-semibold">{tSearch('contactsLabel')}</div>
                     </div>
                   )}
                   {item.type === 'section' && (
@@ -280,7 +281,7 @@ export default function SearchBar() {
                 </div>
               ))
             ) : (
-              <div className="px-4 py-8 text-center text-foreground/60">No results found</div>
+              <div className="px-4 py-8 text-center text-foreground/60">{tSearch('noResults')}</div>
             )}
           </div>
         </div>

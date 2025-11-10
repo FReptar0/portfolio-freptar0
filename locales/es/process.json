@@ -1,0 +1,44 @@
+{
+  "title": "Cómo",
+  "titleAccent": "Trabajo",
+  "subtitle": "Un proceso probado que entrega resultados a tiempo y dentro del presupuesto",
+  "steps": {
+    "discovery": {
+      "title": "Descubrimiento",
+      "description": "Analizo las necesidades de tu negocio, restricciones técnicas y criterios de éxito. No hay soluciones predeterminadas - cada proyecto es único.",
+      "activity0": "Entrevistas con stakeholders",
+      "activity1": "Auditoría técnica",
+      "activity2": "Recolección de requisitos",
+      "activity3": "Definición de métricas de éxito"
+    },
+    "architecture": {
+      "title": "Arquitectura",
+      "description": "Diseño soluciones escalables y mantenibles con hitos claros y cronogramas realistas. Sabrás exactamente qué esperar.",
+      "activity0": "Diseño de sistema",
+      "activity1": "Selección de tecnología",
+      "activity2": "Evaluación de riesgos",
+      "activity3": "Creación de hoja de ruta"
+    },
+    "implementation": {
+      "title": "Implementación",
+      "description": "Desarrollo ágil con comunicación continua. Verás progreso cada semana, no solo al final.",
+      "activity0": "Desarrollo iterativo",
+      "activity1": "Demos semanales",
+      "activity2": "Revisiones de código",
+      "activity3": "Aseguramiento de calidad"
+    },
+    "delivery": {
+      "title": "Entrega",
+      "description": "Despliegue fluido, documentación completa y transferencia de conocimiento. Tu equipo estará completamente equipado para mantener y extender el sistema.",
+      "activity0": "Despliegue a producción",
+      "activity1": "Documentación",
+      "activity2": "Capacitación del equipo",
+      "activity3": "Soporte post-lanzamiento"
+    }
+  },
+  "cta": {
+    "title": "¿Listo para comenzar tu proyecto?",
+    "description": "Discutamos tus necesidades y creemos un plan personalizado que entregue valor real a tu negocio.",
+    "button": "Agenda una Consulta Gratuita"
+  }
+}

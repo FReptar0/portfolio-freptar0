@@ -1,0 +1,48 @@
+{
+  "title": "Conectemos",
+  "subtitle": "Ya sea que tengas un proyecto en mente, necesites consultoría, o solo quieras charlar sobre tecnología - me encantaría escucharte.",
+  "quickContact": "Contacto Rápido",
+  "email": {
+    "label": "Email",
+    "copy": "Click para copiar",
+    "copied": "✓ ¡Copiado!"
+  },
+  "linkedin": {
+    "label": "LinkedIn",
+    "description": "Conecta conmigo"
+  },
+  "github": {
+    "label": "GitHub",
+    "description": "Revisa mi código"
+  },
+  "calendar": {
+    "label": "Agenda una Llamada",
+    "description": "Llamada intro de 15 min"
+  },
+  "responseTime": {
+    "title": "Respuesta Rápida",
+    "description": "Típicamente respondo dentro de 24 horas"
+  },
+  "form": {
+    "title": "Enviar un Mensaje",
+    "name": "Nombre",
+    "namePlaceholder": "Tu nombre",
+    "email": "Email",
+    "emailPlaceholder": "tu.email@ejemplo.com",
+    "projectType": "Tipo de Proyecto",
+    "projectOptions": {
+      "fulltime": "Oportunidad tiempo completo",
+      "consulting": "Proyecto de consultoría",
+      "contract": "Trabajo por contrato",
+      "hello": "Solo saludando"
+    },
+    "message": "Mensaje",
+    "messagePlaceholder": "Cuéntame sobre tu proyecto u oportunidad...",
+    "submit": "Enviar Mensaje",
+    "sending": "Enviando...",
+    "success": "✓ ¡Mensaje Enviado!",
+    "error": "Intentar de Nuevo",
+    "successMessage": "¡Gracias! Te responderé pronto."
+  },
+  "availability": "Actualmente disponible para nuevos proyectos"
+}

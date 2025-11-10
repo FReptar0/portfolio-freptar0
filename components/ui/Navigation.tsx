@@ -114,7 +114,7 @@ export default function Navigation() {
               className="px-6 py-2 text-white font-semibold rounded-full transition-all duration-300 hover:scale-105"
               style={{ background: 'var(--primary-600)' }}
             >
-              Hire Me
+              {t('hireMe')}
             </a>
           </div>
 
@@ -174,7 +174,7 @@ export default function Navigation() {
               className="block text-center px-6 py-3 text-white font-semibold rounded-full transition-colors"
               style={{ background: 'var(--primary-600)' }}
             >
-              Hire Me
+              {t('hireMe')}
             </a>
           </div>
         )}

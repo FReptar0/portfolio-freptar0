@@ -1,0 +1,22 @@
+{
+  "status": "Available for Projects",
+  "subtitle": "From Code to Architecture to Leadership",
+  "title": "I Build Systems",
+  "titleAccent": "That Scale",
+  "description": "Senior Software Engineer specializing in transforming complex technical challenges into elegant, profitable solutions",
+  "metrics": {
+    "experience": "Years Experience",
+    "projects": "Projects Shipped",
+    "value": "Value Delivered"
+  },
+  "cta": {
+    "primary": "View Success Stories",
+    "secondary": "Schedule a Call"
+  },
+  "valueProps": {
+    "fullStack": "Full-Stack Development",
+    "leadership": "Team Leadership",
+    "architecture": "System Architecture",
+    "devops": "DevOps & Cloud"
+  }
+}

@@ -1,0 +1,448 @@
+{
+  "navigation": {
+    "about": "Sobre Mí",
+    "projects": "Proyectos",
+    "skills": "Habilidades",
+    "process": "Proceso",
+    "contact": "Contacto",
+    "hireMe": "Contrátame"
+  },
+  "search": {
+    "placeholder": "Buscar secciones...",
+    "label": "Buscar",
+    "noResults": "No se encontraron resultados",
+    "contactsLabel": "Contactos"
+  },
+  "hero": {
+    "status": "Disponible para Proyectos",
+    "subtitle": "Del Código a la Arquitectura al Liderazgo",
+    "title": "Construyo Sistemas",
+    "titleAccent": "Que Escalan",
+    "description": "Ingeniero de Software Senior especializado en transformar desafíos técnicos complejos en soluciones elegantes y rentables",
+    "metrics": {
+      "experience": "Años de Experiencia",
+      "projects": "Proyectos Enviados",
+      "value": "Valor Entregado"
+    },
+    "cta": {
+      "primary": "Ver Casos de Éxito",
+      "secondary": "Agendar una Llamada"
+    },
+    "valueProps": {
+      "fullStack": "Desarrollo Full-Stack",
+      "leadership": "Liderazgo de Equipos",
+      "architecture": "Arquitectura de Sistemas",
+      "devops": "DevOps y Nube"
+    }
+  },
+  "trustSignals": {
+    "title": "Certificaciones y Tecnologías",
+    "testimonials": [
+      {
+        "quote": "Fernando transformó nuestra arquitectura, reduciendo costos en un 40% mientras mejoraba el rendimiento. Su liderazgo técnico fue invaluable.",
+        "author": "Sarah Chen",
+        "role": "CTO, TechCorp",
+        "company": "TechCorp"
+      },
+      {
+        "quote": "La mejor contratación de ingeniería que hemos hecho. Fernando no solo escribe código - resuelve problemas de negocio con soluciones técnicas elegantes.",
+        "author": "Michael Rodriguez",
+        "role": "VP Ingeniería, DataFlow",
+        "company": "DataFlow"
+      }
+    ],
+    "certifications": [
+      "Certificado AWS",
+      "Google Cloud",
+      "Experto React",
+      "Especialista Node.js",
+      "TypeScript",
+      "Docker y K8s"
+    ]
+  },
+  "timeline": {
+    "title": "Mi",
+    "titleAccent": "Trayectoria",
+    "subtitle": "De escribir mi primera línea de código a liderar equipos de ingeniería",
+    "roles": {
+      "junior": {
+        "year": "2019",
+        "role": "Desarrollador Junior",
+        "highlight": "Comenzó el Viaje",
+        "description": [
+          "Aprendí fundamentos del desarrollo web",
+          "Primeros despliegues en producción",
+          "Contribuí a proyectos del equipo"
+        ],
+        "color": "from-blue-400 to-blue-600"
+      },
+      "mid": {
+        "year": "2021",
+        "role": "Desarrollador Full-Stack",
+        "highlight": "Expandí Habilidades",
+        "description": [
+          "Lideré primeros proyectos importantes",
+          "Dominé el stack tecnológico moderno",
+          "Construí aplicaciones escalables"
+        ],
+        "color": "from-purple-400 to-purple-600"
+      },
+      "senior": {
+        "year": "2023",
+        "role": "Ingeniero Senior",
+        "highlight": "Enfoque en Arquitectura",
+        "description": [
+          "Diseñé arquitecturas de sistemas",
+          "Mentoreé desarrolladores junior",
+          "Mejoré eficiencia del equipo en 60%"
+        ],
+        "color": "from-indigo-400 to-indigo-600"
+      },
+      "lead": {
+        "year": "2024",
+        "role": "Líder Técnico",
+        "highlight": "Liderazgo",
+        "description": [
+          "Liderando equipos multifuncionales",
+          "Dirigiendo estrategia técnica",
+          "Entregando $2M+ en valor"
+        ],
+        "color": "from-cyan-400 to-cyan-600"
+      }
+    }
+  },
+  "projects": {
+    "title": "Historias de",
+    "titleAccent": "Éxito",
+    "subtitle": "Proyectos reales, resultados medibles, impacto duradero",
+    "sections": {
+      "challenge": "El Desafío",
+      "role": "Mi Rol",
+      "solution": "Solución", 
+      "impact": "Impacto en el Negocio"
+    },
+    "labels": {
+      "teamOf": "Equipo de",
+      "architecture": "Arquitectura:",
+      "ctaQuestion": "¿Quieres resultados similares para tu proyecto?",
+      "ctaButton": "Hablemos"
+    },
+    "items": {
+      "ecommerce": {
+        "title": "Transformación de Plataforma E-Commerce",
+        "businessProblem": "Sistema de e-commerce heredado causando $50K/mes en ingresos perdidos debido a tiempos de carga de 8 segundos y fallas frecuentes durante picos de tráfico.",
+        "myContribution": {
+          "role": "Desarrollador Líder",
+          "teamSize": 5,
+          "responsibilities": [
+            "Arquitecté estrategia de migración a microservicios",
+            "Lideré optimización de rendimiento frontend",
+            "Implementé sistema de inventario en tiempo real"
+          ]
+        },
+        "technicalSolution": {
+          "stack": ["React", "Next.js", "Node.js", "PostgreSQL", "Redis", "AWS"],
+          "architecture": "Microservicios",
+          "keyDecisions": [
+            "Migré a Next.js para SSR y mejor SEO",
+            "Implementé caché perimetral con CloudFront",
+            "Inventario en tiempo real con Redis pub/sub"
+          ]
+        },
+        "businessImpact": {
+          "metrics": [
+            { "label": "Rendimiento", "value": "75% tiempos de carga más rápidos" },
+            { "label": "Ingresos", "value": "$200K ahorros anuales" },
+            { "label": "Escala", "value": "100K usuarios activos diarios" },
+            { "label": "Disponibilidad", "value": "99.9% disponibilidad" }
+          ]
+        },
+        "tags": ["Full-Stack", "Rendimiento", "E-Commerce"]
+      },
+      "analytics": {
+        "title": "Panel de Análisis en Tiempo Real",
+        "businessProblem": "Equipo de marketing incapaz de tomar decisiones basadas en datos debido a retraso de datos de 24 horas y proceso de reportes complejo.",
+        "myContribution": {
+          "role": "Líder Técnico",
+          "teamSize": 3,
+          "responsibilities": [
+            "Diseñé pipeline de datos en tiempo real",
+            "Construí interfaz de panel interactivo",
+            "Optimicé rendimiento de consultas"
+          ]
+        },
+        "technicalSolution": {
+          "stack": ["React", "TypeScript", "Python", "Kafka", "TimescaleDB", "Docker"],
+          "architecture": "Dirigido por Eventos",
+          "keyDecisions": [
+            "Usé Kafka para streaming de eventos en tiempo real",
+            "TimescaleDB para optimización de datos de series temporales",
+            "Conexiones WebSocket para actualizaciones en vivo"
+          ]
+        },
+        "businessImpact": {
+          "metrics": [
+            { "label": "Frescura de Datos", "value": "Tiempo real (< 1s)" },
+            { "label": "Velocidad de Decisión", "value": "10x más rápido" },
+            { "label": "Reducción de Costos", "value": "40% menores costos infra" },
+            { "label": "Adopción de Usuario", "value": "95% uso del equipo" }
+          ]
+        },
+        "tags": ["Ingeniería de Datos", "Tiempo Real", "Liderazgo"]
+      },
+      "mobile": {
+        "title": "App Móvil Multiplataforma",
+        "businessProblem": "La empresa necesitaba presencia móvil pero no podía permitirse equipos separados de iOS y Android. El tiempo al mercado era crítico.",
+        "myContribution": {
+          "role": "Ingeniero Senior",
+          "teamSize": 4,
+          "responsibilities": [
+            "Lideré diseño de arquitectura móvil",
+            "Implementé características principales",
+            "Configuré pipeline CI/CD"
+          ]
+        },
+        "technicalSolution": {
+          "stack": ["React Native", "TypeScript", "GraphQL", "AWS Amplify", "Jest"],
+          "architecture": "Serverless",
+          "keyDecisions": [
+            "React Native para compartir código (90% compartido)",
+            "GraphQL para obtención eficiente de datos",
+            "AWS Amplify para configuración rápida de backend"
+          ]
+        },
+        "businessImpact": {
+          "metrics": [
+            { "label": "Tiempo de Desarrollo", "value": "6 meses vs 12" },
+            { "label": "Compartir Código", "value": "90% entre plataformas" },
+            { "label": "Calificación App Store", "value": "4.8/5 estrellas" },
+            { "label": "Usuarios Activos", "value": "50K+ descargas" }
+          ]
+        },
+        "tags": ["Móvil", "Multiplataforma", "Serverless"]
+      }
+    }
+  },
+  "skills": {
+    "title": "Habilidades en",
+    "titleAccent": "Contexto",
+    "subtitle": "No solo palabras de moda - experiencia real con impacto medible",
+    "proficiencyLabels": {
+      "expert": "Experto",
+      "advanced": "Avanzado", 
+      "intermediate": "Intermedio",
+      "familiar": "Familiar"
+    },
+    "categories": [
+      {
+        "title": "Desarrollo Frontend",
+        "icon": "🎨",
+        "skills": [
+          {
+            "name": "React / Next.js",
+            "experience": "4 años",
+            "level": 95,
+            "project": "Construí plataforma e-commerce sirviendo 100K usuarios"
+          },
+          {
+            "name": "TypeScript", 
+            "experience": "3 años",
+            "level": 90,
+            "project": "Sistemas type-safe reduciendo bugs en 60%"
+          },
+          {
+            "name": "Tailwind CSS",
+            "experience": "3 años",
+            "level": 90,
+            "project": "Desarrollo rápido de UI con diseño consistente"
+          }
+        ]
+      },
+      {
+        "title": "Backend e Infraestructura",
+        "icon": "⚙️",
+        "skills": [
+          {
+            "name": "Node.js / Express",
+            "experience": "5 años",
+            "level": 95,
+            "project": "APIs manejando 1M+ solicitudes diarias"
+          },
+          {
+            "name": "Python / FastAPI",
+            "experience": "3 años", 
+            "level": 85,
+            "project": "Pipelines ML y sistemas de procesamiento de datos"
+          },
+          {
+            "name": "PostgreSQL / MongoDB",
+            "experience": "4 años",
+            "level": 90,
+            "project": "Consultas optimizadas para bases de datos de 10TB+"
+          }
+        ]
+      },
+      {
+        "title": "DevOps y Nube",
+        "icon": "☁️",
+        "skills": [
+          {
+            "name": "AWS / GCP",
+            "experience": "4 años",
+            "level": 90,
+            "project": "Infraestructura en la nube ahorrando $200K anualmente"
+          },
+          {
+            "name": "Docker / Kubernetes",
+            "experience": "3 años",
+            "level": 85,
+            "project": "Apps contenerizadas para escalado sin problemas"
+          },
+          {
+            "name": "Pipelines CI/CD",
+            "experience": "4 años",
+            "level": 90,
+            "project": "Despliegues automatizados, 50+ releases/mes"
+          }
+        ]
+      },
+      {
+        "title": "Liderazgo y Arquitectura",
+        "icon": "🚀",
+        "skills": [
+          {
+            "name": "Liderazgo de Equipos",
+            "experience": "2 años",
+            "level": 85,
+            "project": "Lideré equipo de 5 desarrolladores en proyectos críticos"
+          },
+          {
+            "name": "Diseño de Sistemas",
+            "experience": "3 años",
+            "level": 90,
+            "project": "Arquitecté sistemas manejando millones de usuarios"
+          },
+          {
+            "name": "Agile / Scrum",
+            "experience": "5 años",
+            "level": 95,
+            "project": "Entregué 20+ proyectos a tiempo y dentro del presupuesto"
+          }
+        ]
+      }
+    ]
+  },
+  "process": {
+    "title": "Cómo",
+    "titleAccent": "Trabajo",
+    "subtitle": "Un proceso probado que entrega resultados a tiempo y dentro del presupuesto",
+    "steps": {
+      "discovery": {
+        "title": "Descubrimiento",
+        "description": "Analizo tus necesidades de negocio, restricciones técnicas y criterios de éxito. Sin soluciones predefinidas - cada proyecto es único.",
+        "activities": [
+          "Entrevistas con interesados",
+          "Auditoría técnica",
+          "Recopilación de requisitos",
+          "Definición de métricas de éxito"
+        ]
+      },
+      "architecture": {
+        "title": "Arquitectura",
+        "description": "Diseño de soluciones escalables y mantenibles con hitos claros y plazos realistas. Sabrás exactamente qué esperar.",
+        "activities": [
+          "Diseño del sistema",
+          "Selección de tecnología",
+          "Evaluación de riesgos",
+          "Creación de hoja de ruta"
+        ]
+      },
+      "implementation": {
+        "title": "Implementación",
+        "description": "Desarrollo ágil con comunicación continua. Verás el progreso cada semana, no solo al final.",
+        "activities": [
+          "Desarrollo iterativo",
+          "Demos semanales",
+          "Revisiones de código",
+          "Aseguramiento de calidad"
+        ]
+      },
+      "delivery": {
+        "title": "Entrega",
+        "description": "Despliegue sin problemas, documentación completa y transferencia de conocimiento. Tu equipo estará completamente equipado para mantener y extender el sistema.",
+        "activities": [
+          "Despliegue en producción",
+          "Documentación",
+          "Capacitación del equipo",
+          "Soporte posterior al lanzamiento"
+        ]
+      }
+    },
+    "cta": {
+      "title": "¿Listo para comenzar tu proyecto?",
+      "description": "Discutamos tus necesidades y creemos un plan personalizado que entregue valor real a tu negocio.",
+      "button": "Agendar una Consulta Gratuita"
+    }
+  },
+  "contact": {
+    "title": "Conectemos",
+    "subtitle": "Ya sea que tengas un proyecto en mente, necesites consultoría, o solo quieras charlar sobre tecnología - me encantaría escucharte.",
+    "quickContact": "Contacto Rápido",
+    "email": {
+      "label": "Correo Electrónico",
+      "copy": "Clic para copiar",
+      "copied": "✓ ¡Copiado!"
+    },
+    "linkedin": {
+      "label": "LinkedIn",
+      "description": "Conéctate conmigo"
+    },
+    "github": {
+      "label": "GitHub",
+      "description": "Revisa mi código"
+    },
+    "calendar": {
+      "label": "Agendar una Llamada",
+      "description": "Llamada de introducción de 15 min"
+    },
+    "responseTime": {
+      "title": "Respuesta Rápida",
+      "description": "Normalmente respondo dentro de 24 horas"
+    },
+    "form": {
+      "title": "Enviar un Mensaje",
+      "name": "Nombre",
+      "namePlaceholder": "Tu nombre",
+      "email": "Correo Electrónico",
+      "emailPlaceholder": "tu.correo@ejemplo.com",
+      "projectType": "Tipo de Proyecto",
+      "projectOptions": {
+        "fulltime": "Oportunidad de tiempo completo",
+        "consulting": "Proyecto de consultoría",
+        "contract": "Trabajo por contrato",
+        "hello": "Solo saludando"
+      },
+      "message": "Mensaje",
+      "messagePlaceholder": "Cuéntame sobre tu proyecto u oportunidad...",
+      "submit": "Enviar Mensaje",
+      "sending": "Enviando...",
+      "success": "✓ ¡Mensaje Enviado!",
+      "error": "Intentar de Nuevo",
+      "successMessage": "¡Gracias! Te responderé pronto."
+    },
+    "availability": "Actualmente disponible para nuevos proyectos"
+  },
+  "footer": {
+    "brand": "Fernando Rodriguez Memije",
+    "description": "Ingeniero de Software Senior construyendo sistemas escalables y liderando equipos de alto rendimiento.",
+    "quickLinks": "Enlaces Rápidos",
+    "connect": "Conectar",
+    "copyright": "Todos los derechos reservados.",
+    "builtWith": "Construido con",
+    "using": "usando Next.js y Tailwind CSS"
+  },
+  "loading": {
+    "title": "Cargando Portafolio...",
+    "progress": "{{progress}}%"
+  }
+}

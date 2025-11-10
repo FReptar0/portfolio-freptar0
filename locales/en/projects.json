@@ -1,0 +1,94 @@
+{
+  "title": "Success",
+  "titleAccent": "Stories",
+  "subtitle": "Real projects, measurable results, lasting impact",
+  "sections": {
+    "challenge": "The Challenge",
+    "role": "My Role",
+    "solution": "Solution", 
+    "impact": "Business Impact"
+  },
+  "labels": {
+    "teamOf": "Team of",
+    "architecture": "Architecture:",
+    "ctaQuestion": "Want similar results for your project?",
+    "ctaButton": "Let's Talk"
+  },
+  "items": {
+    "ecommerce": {
+      "title": "E-Commerce Platform Transformation",
+      "businessProblem": "Legacy e-commerce system causing $50K/month in lost revenue due to 8-second page loads and frequent crashes during peak traffic.",
+      "myContribution": {
+        "role": "Lead Developer",
+        "teamSize": 5,
+        "responsibility0": "Architected microservices migration strategy",
+        "responsibility1": "Led frontend performance optimization", 
+        "responsibility2": "Implemented real-time inventory system"
+      },
+      "technicalSolution": {
+        "stack": ["React", "Next.js", "Node.js", "PostgreSQL", "Redis", "AWS"],
+        "architecture": "Microservices",
+        "keyDecision0": "Migrated to Next.js for SSR and better SEO",
+        "keyDecision1": "Implemented edge caching with CloudFront",
+        "keyDecision2": "Real-time inventory with Redis pub/sub"
+      },
+      "businessImpact": {
+        "metric0": { "label": "Performance", "value": "75% faster load times" },
+        "metric1": { "label": "Revenue", "value": "$200K annual savings" },
+        "metric2": { "label": "Scale", "value": "100K daily active users" },
+        "metric3": { "label": "Uptime", "value": "99.9% availability" }
+      },
+      "tags": ["Full-Stack", "Performance", "E-Commerce"]
+    },
+    "analytics": {
+      "title": "Real-Time Analytics Dashboard",
+      "businessProblem": "Marketing team unable to make data-driven decisions due to 24-hour data lag and complex reporting process.",
+      "myContribution": {
+        "role": "Tech Lead",
+        "teamSize": 3,
+        "responsibility0": "Designed real-time data pipeline",
+        "responsibility1": "Built interactive dashboard UI",
+        "responsibility2": "Optimized query performance"
+      },
+      "technicalSolution": {
+        "stack": ["React", "TypeScript", "Python", "Kafka", "TimescaleDB", "Docker"],
+        "architecture": "Event-Driven",
+        "keyDecision0": "Used Kafka for real-time event streaming",
+        "keyDecision1": "TimescaleDB for time-series data optimization",
+        "keyDecision2": "WebSocket connections for live updates"
+      },
+      "businessImpact": {
+        "metric0": { "label": "Data Freshness", "value": "Real-time (< 1s)" },
+        "metric1": { "label": "Decision Speed", "value": "10x faster" },
+        "metric2": { "label": "Cost Reduction", "value": "40% lower infra costs" },
+        "metric3": { "label": "User Adoption", "value": "95% team usage" }
+      },
+      "tags": ["Data Engineering", "Real-Time", "Leadership"]
+    },
+    "mobile": {
+      "title": "Cross-Platform Mobile App",
+      "businessProblem": "Company needed mobile presence but couldn't afford separate iOS and Android teams. Time to market was critical.",
+      "myContribution": {
+        "role": "Senior Engineer",
+        "teamSize": 4,
+        "responsibility0": "Led mobile architecture design",
+        "responsibility1": "Implemented core features",
+        "responsibility2": "Set up CI/CD pipeline"
+      },
+      "technicalSolution": {
+        "stack": ["React Native", "TypeScript", "GraphQL", "AWS Amplify", "Jest"],
+        "architecture": "Serverless",
+        "keyDecision0": "React Native for code sharing (90% shared)",
+        "keyDecision1": "GraphQL for efficient data fetching",
+        "keyDecision2": "AWS Amplify for rapid backend setup"
+      },
+      "businessImpact": {
+        "metric0": { "label": "Development Time", "value": "6 months vs 12" },
+        "metric1": { "label": "Code Sharing", "value": "90% between platforms" },
+        "metric2": { "label": "App Store Rating", "value": "4.8/5 stars" },
+        "metric3": { "label": "Active Users", "value": "50K+ downloads" }
+      },
+      "tags": ["Mobile", "Cross-Platform", "Serverless"]
+    }
+  }
+}

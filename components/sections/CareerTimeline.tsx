@@ -1,66 +1,68 @@
 "use client";
 
 import { useState } from "react";
-
-const timelineData = [
-  {
-    year: "2019",
-    role: "Junior Developer",
-    highlight: "Started Journey",
-    description: [
-      "Learned fundamentals of web development",
-      "First production deployments",
-      "Contributed to team projects",
-    ],
-    color: "from-blue-400 to-blue-600",
-  },
-  {
-    year: "2021",
-    role: "Full-Stack Developer",
-    highlight: "Expanded Skills",
-    description: [
-      "Led first major projects",
-      "Mastered modern tech stack",
-      "Built scalable applications",
-    ],
-    color: "from-purple-400 to-purple-600",
-  },
-  {
-    year: "2023",
-    role: "Senior Engineer",
-    highlight: "Architecture Focus",
-    description: [
-      "Designed system architectures",
-      "Mentored junior developers",
-      "Improved team efficiency by 60%",
-    ],
-    color: "from-indigo-400 to-indigo-600",
-  },
-  {
-    year: "2024",
-    role: "Tech Lead",
-    highlight: "Leadership",
-    description: [
-      "Leading cross-functional teams",
-      "Driving technical strategy",
-      "Delivering $2M+ in value",
-    ],
-    color: "from-cyan-400 to-cyan-600",
-  },
-];
+import { useTranslations } from 'next-intl';
 
 export default function CareerTimeline() {
   const [activeIndex, setActiveIndex] = useState(3);
+  const t = useTranslations('timeline');
+
+  const timelineData = [
+    {
+      year: t('roles.junior.year'),
+      role: t('roles.junior.role'),
+      highlight: t('roles.junior.highlight'),
+      description: [
+        t('roles.junior.description0'),
+        t('roles.junior.description1'),
+        t('roles.junior.description2')
+      ],
+      color: t('roles.junior.color'),
+    },
+    {
+      year: t('roles.mid.year'),
+      role: t('roles.mid.role'),
+      highlight: t('roles.mid.highlight'),
+      description: [
+        t('roles.mid.description0'),
+        t('roles.mid.description1'),
+        t('roles.mid.description2')
+      ],
+      color: t('roles.mid.color'),
+    },
+    {
+      year: t('roles.senior.year'),
+      role: t('roles.senior.role'),
+      highlight: t('roles.senior.highlight'),
+      description: [
+        t('roles.senior.description0'),
+        t('roles.senior.description1'),
+        t('roles.senior.description2')
+      ],
+      color: t('roles.senior.color'),
+    },
+    {
+      year: t('roles.lead.year'),
+      role: t('roles.lead.role'),
+      highlight: t('roles.lead.highlight'),
+      description: [
+        t('roles.lead.description0'),
+        t('roles.lead.description1'),
+        t('roles.lead.description2')
+      ],
+      color: t('roles.lead.color'),
+    },
+  ];
 
   return (
     <section id="timeline" className="py-24 relative">
       <div className="container mx-auto px-6 lg:px-8 max-w-6xl">
         <div className="text-center mb-16">
           <h2 className="text-4xl md:text-5xl font-bold mb-4">
-            My <span className="bg-gradient-to-r from-primary-blue to-accent-purple bg-clip-text text-transparent">Journey</span>
+            {t('title')} <span className="bg-gradient-to-r from-primary-blue to-accent-purple bg-clip-text text-transparent">{t('titleAccent')}</span>
           </h2>
           <p className="text-xl text-foreground/70 max-w-2xl mx-auto">
-            From writing my first line of code to leading engineering teams
+            {t('subtitle')}
           </p>
         </div>
 
@@ -109,11 +111,13 @@ function TimelineNode({
   year: string;
   role: string;
   highlight: string;
-  description: string[];
+  description: string[] | any;
   color: string;
   isActive: boolean;
   onClick: () => void;
 }) {
+  // Handle both array and translated array format
+  const descriptionArray = Array.isArray(description) ? description : description;
   return (
     <div className="flex flex-col items-center w-64 group cursor-pointer" onClick={onClick}>
       {/* Year Badge */}
@@ -138,7 +142,7 @@ function TimelineNode({
           <h3 className="text-xl font-bold">{role}</h3>
         </div>
         <ul className="space-y-2 text-sm text-foreground/70">
-          {description.map((item, i) => (
+          {descriptionArray.map((item, i) => (
             <li key={i} className="flex items-start gap-2">
               <span className="text-primary-blue mt-1">•</span>
               <span>{item}</span>
@@ -162,11 +166,13 @@ function MobileTimelineNode({
   year: string;
   role: string;
   highlight: string;
-  description: string[];
+  description: string[] | any;
   color: string;
   isActive: boolean;
   onClick: () => void;
 }) {
+  // Handle both array and translated array format
+  const descriptionArray = Array.isArray(description) ? description : description;
   return (
     <div className="flex gap-4 cursor-pointer" onClick={onClick}>
       {/* Timeline indicator */}
@@ -192,7 +198,7 @@ function MobileTimelineNode({
         </div>
         <h3 className="text-xl font-bold mb-3">{role}</h3>
         <ul className="space-y-2 text-sm text-foreground/70">
-          {description.map((item, i) => (
+          {descriptionArray.map((item, i) => (
             <li key={i} className="flex items-start gap-2">
               <span className="text-primary-blue mt-1">•</span>
               <span>{item}</span>

@@ -1,6 +1,18 @@
 "use client";
 
 import { useTranslations } from 'next-intl';
+import { Search, Compass, Zap, Rocket } from 'lucide-react';
+
+const getIcon = (iconName: string, className?: string) => {
+  const iconProps = { className: className || "w-6 h-6" };
+  switch (iconName) {
+    case 'search': return <Search {...iconProps} />;
+    case 'compass': return <Compass {...iconProps} />;
+    case 'zap': return <Zap {...iconProps} />;
+    case 'rocket': return <Rocket {...iconProps} />;
+    default: return null;
+  }
+};
 
 export default function Process() {
   const t = useTranslations('process');
@@ -10,32 +22,52 @@ export default function Process() {
       number: "1",
       title: t('steps.discovery.title'),
       description: t('steps.discovery.description'),
-      activities: t.raw('steps.discovery.activities') as string[],
-      icon: "🔍",
+      activities: [
+        t('steps.discovery.activity0'),
+        t('steps.discovery.activity1'),
+        t('steps.discovery.activity2'),
+        t('steps.discovery.activity3')
+      ],
+      icon: "search",
       color: "from-blue-500 to-cyan-500",
     },
     {
       number: "2",
       title: t('steps.architecture.title'),
       description: t('steps.architecture.description'),
-      activities: t.raw('steps.architecture.activities') as string[],
-      icon: "📐",
+      activities: [
+        t('steps.architecture.activity0'),
+        t('steps.architecture.activity1'),
+        t('steps.architecture.activity2'),
+        t('steps.architecture.activity3')
+      ],
+      icon: "compass",
       color: "from-purple-500 to-pink-500",
     },
     {
       number: "3",
       title: t('steps.implementation.title'),
       description: t('steps.implementation.description'),
-      activities: t.raw('steps.implementation.activities') as string[],
-      icon: "⚡",
+      activities: [
+        t('steps.implementation.activity0'),
+        t('steps.implementation.activity1'),
+        t('steps.implementation.activity2'),
+        t('steps.implementation.activity3')
+      ],
+      icon: "zap",
       color: "from-orange-500 to-red-500",
     },
     {
       number: "4",
       title: t('steps.delivery.title'),
       description: t('steps.delivery.description'),
-      activities: t.raw('steps.delivery.activities') as string[],
-      icon: "🚀",
+      activities: [
+        t('steps.delivery.activity0'),
+        t('steps.delivery.activity1'),
+        t('steps.delivery.activity2'),
+        t('steps.delivery.activity3')
+      ],
+      icon: "rocket",
       color: "from-green-500 to-emerald-500",
     },
   ];
@@ -123,7 +155,7 @@ function ProcessCard({
 
       {/* Card */}
       <div className="apple-glass rounded-2xl p-6 h-full hover:scale-105 transition-all duration-300">
-        <div className="text-4xl mb-4">{icon}</div>
+        <div className="mb-4">{getIcon(icon, "w-12 h-12 text-white")}</div>
         <h3 className="text-xl font-bold mb-3">{title}</h3>
         <p className="text-sm text-foreground/70 leading-relaxed mb-4">
           {description}
@@ -183,7 +215,7 @@ function ProcessCardMobile({
 
       {/* Right side - Content */}
       <div className="apple-glass rounded-2xl p-6 flex-1">
-        <div className="text-3xl mb-3">{icon}</div>
+        <div className="mb-3">{getIcon(icon, "w-8 h-8 text-white")}</div>
         <h3 className="text-xl font-bold mb-2">{title}</h3>
         <p className="text-sm text-foreground/70 leading-relaxed mb-4">
           {description}

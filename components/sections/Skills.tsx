@@ -1,119 +1,37 @@
 "use client";
 
-const skillCategories = [
-  {
-    title: "Frontend Development",
-    icon: "🎨",
-    skills: [
-      {
-        name: "React / Next.js",
-        experience: "4 years",
-        level: 95,
-        project: "Built e-commerce platform serving 100K users",
-      },
-      {
-        name: "TypeScript",
-        experience: "3 years",
-        level: 90,
-        project: "Type-safe systems reducing bugs by 60%",
-      },
-      {
-        name: "Tailwind CSS",
-        experience: "3 years",
-        level: 90,
-        project: "Rapid UI development with consistent design",
-      },
-    ],
-  },
-  {
-    title: "Backend & Infrastructure",
-    icon: "⚙️",
-    skills: [
-      {
-        name: "Node.js / Express",
-        experience: "5 years",
-        level: 95,
-        project: "APIs handling 1M+ requests daily",
-      },
-      {
-        name: "Python / FastAPI",
-        experience: "3 years",
-        level: 85,
-        project: "ML pipelines and data processing systems",
-      },
-      {
-        name: "PostgreSQL / MongoDB",
-        experience: "4 years",
-        level: 90,
-        project: "Optimized queries for 10TB+ databases",
-      },
-    ],
-  },
-  {
-    title: "DevOps & Cloud",
-    icon: "☁️",
-    skills: [
-      {
-        name: "AWS / GCP",
-        experience: "4 years",
-        level: 90,
-        project: "Cloud infrastructure saving $200K annually",
-      },
-      {
-        name: "Docker / Kubernetes",
-        experience: "3 years",
-        level: 85,
-        project: "Containerized apps for seamless scaling",
-      },
-      {
-        name: "CI/CD Pipelines",
-        experience: "4 years",
-        level: 90,
-        project: "Automated deployments, 50+ releases/month",
-      },
-    ],
-  },
-  {
-    title: "Leadership & Architecture",
-    icon: "🚀",
-    skills: [
-      {
-        name: "Team Leadership",
-        experience: "2 years",
-        level: 85,
-        project: "Led team of 5 developers on critical projects",
-      },
-      {
-        name: "System Design",
-        experience: "3 years",
-        level: 90,
-        project: "Architected systems handling millions of users",
-      },
-      {
-        name: "Agile / Scrum",
-        experience: "5 years",
-        level: 95,
-        project: "Delivered 20+ projects on time and budget",
-      },
-    ],
-  },
-];
+import { useTranslations } from 'next-intl';
+import { Palette, Cog, Cloud, Rocket, Briefcase } from 'lucide-react';
+
+const getIcon = (iconName: string, className?: string) => {
+  const iconProps = { className: className || "w-8 h-8" };
+  switch (iconName) {
+    case 'palette': return <Palette {...iconProps} />;
+    case 'cog': return <Cog {...iconProps} />;
+    case 'cloud': return <Cloud {...iconProps} />;
+    case 'rocket': return <Rocket {...iconProps} />;
+    default: return null;
+  }
+};
 
 export default function Skills() {
+  const t = useTranslations('skills');
+
+  const skillCategories = t.raw('categories');
   return (
     <section id="skills" className="py-24 relative">
       <div className="container mx-auto px-6 lg:px-8 max-w-7xl">
         <div className="text-center mb-16">
           <h2 className="text-4xl md:text-5xl font-bold mb-4">
-            Skills in <span className="bg-gradient-to-r from-primary-blue to-accent-purple bg-clip-text text-transparent">Context</span>
+            {t('title')} <span className="bg-gradient-to-r from-primary-blue to-accent-purple bg-clip-text text-transparent">{t('titleAccent')}</span>
           </h2>
           <p className="text-xl text-foreground/70 max-w-2xl mx-auto">
-            Not just buzzwords - real experience with measurable impact
+            {t('subtitle')}
           </p>
         </div>
 
         <div className="grid md:grid-cols-2 gap-8">
-          {skillCategories.map((category, index) => (
+          {skillCategories.map((category: any, index: number) => (
             <SkillCategory key={index} {...category} />
           ))}
         </div>
@@ -139,7 +57,7 @@ function SkillCategory({
   return (
     <div className="apple-glass rounded-3xl p-8 hover:scale-[1.02] transition-transform duration-300">
       <div className="flex items-center gap-3 mb-6">
-        <span className="text-4xl">{icon}</span>
+        <div className="text-primary-blue">{getIcon(icon, "w-10 h-10")}</div>
         <h3 className="text-2xl font-bold">{title}</h3>
       </div>
 
@@ -163,10 +81,15 @@ function SkillItem({
   level: number;
   project: string;
 }) {
+  const t = useTranslations('skills');
+  
   // Map numeric level to a human-friendly label and a 0-5 dot indicator
   const filledDots = Math.round(level / 20); // 0-5
   const proficiencyLabel =
-    level >= 90 ? "Expert" : level >= 75 ? "Advanced" : level >= 50 ? "Intermediate" : "Familiar";
+    level >= 90 ? t('proficiencyLabels.expert') : 
+    level >= 75 ? t('proficiencyLabels.advanced') : 
+    level >= 50 ? t('proficiencyLabels.intermediate') : 
+    t('proficiencyLabels.familiar');
 
   return (
   <div className="space-y-3">
@@ -195,7 +118,10 @@ function SkillItem({
       </div>
 
       {/* Project Context */}
-      <p className="text-sm text-foreground/70 italic">💼 {project}</p>
+      <p className="text-sm text-foreground/70 italic flex items-start gap-2">
+        <Briefcase className="w-4 h-4 text-primary-blue mt-0.5 flex-shrink-0" />
+        {project}
+      </p>
     </div>
   );
 }

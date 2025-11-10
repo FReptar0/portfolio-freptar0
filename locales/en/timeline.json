@@ -1,0 +1,43 @@
+{
+  "title": "My",
+  "titleAccent": "Journey",
+  "subtitle": "From writing my first line of code to leading engineering teams",
+  "roles": {
+    "junior": {
+      "year": "2019",
+      "role": "Junior Developer",
+      "highlight": "Started Journey",
+      "description0": "Learned fundamentals of web development",
+      "description1": "First production deployments",
+      "description2": "Contributed to team projects",
+      "color": "from-blue-400 to-blue-600"
+    },
+    "mid": {
+      "year": "2021",
+      "role": "Full-Stack Developer",
+      "highlight": "Expanded Skills",
+      "description0": "Led first major projects",
+      "description1": "Mastered modern tech stack",
+      "description2": "Built scalable applications",
+      "color": "from-purple-400 to-purple-600"
+    },
+    "senior": {
+      "year": "2023",
+      "role": "Senior Engineer",
+      "highlight": "Architecture Focus",
+      "description0": "Designed system architectures",
+      "description1": "Mentored junior developers",
+      "description2": "Improved team efficiency by 60%",
+      "color": "from-indigo-400 to-indigo-600"
+    },
+    "lead": {
+      "year": "2024",
+      "role": "Tech Lead",
+      "highlight": "Leadership",
+      "description0": "Leading cross-functional teams",
+      "description1": "Driving technical strategy",
+      "description2": "Delivering $2M+ in value",
+      "color": "from-cyan-400 to-cyan-600"
+    }
+  }
+}

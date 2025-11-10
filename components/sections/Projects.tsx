@@ -1,6 +1,8 @@
 "use client";
 
 import { useState } from "react";
+import { useTranslations } from 'next-intl';
+import { Target, User, Settings, TrendingUp, CheckCircle, ArrowRight } from 'lucide-react';
 
 interface Project {
   id: string;
@@ -22,109 +24,109 @@ interface Project {
   tags: string[];
 }
 
-const projects: Project[] = [
-  {
-    id: "ecommerce-platform",
-    title: "E-Commerce Platform Transformation",
-    businessProblem:
-      "Legacy e-commerce system causing $50K/month in lost revenue due to 8-second page loads and frequent crashes during peak traffic.",
-    myContribution: {
-      role: "Lead Developer",
-      teamSize: 5,
-      responsibilities: [
-        "Architected microservices migration strategy",
-        "Led frontend performance optimization",
-        "Implemented real-time inventory system",
-      ],
-    },
-    technicalSolution: {
-      stack: ["React", "Next.js", "Node.js", "PostgreSQL", "Redis", "AWS"],
-      architecture: "Microservices",
-      keyDecisions: [
-        "Migrated to Next.js for SSR and better SEO",
-        "Implemented edge caching with CloudFront",
-        "Real-time inventory with Redis pub/sub",
-      ],
-    },
-    businessImpact: {
-      metrics: [
-        { label: "Performance", value: "75% faster load times" },
-        { label: "Revenue", value: "$200K annual savings" },
-        { label: "Scale", value: "100K daily active users" },
-        { label: "Uptime", value: "99.9% availability" },
-      ],
-    },
-    tags: ["Full-Stack", "Performance", "E-Commerce"],
-  },
-  {
-    id: "data-analytics",
-    title: "Real-Time Analytics Dashboard",
-    businessProblem:
-      "Marketing team unable to make data-driven decisions due to 24-hour data lag and complex reporting process.",
-    myContribution: {
-      role: "Tech Lead",
-      teamSize: 3,
-      responsibilities: [
-        "Designed real-time data pipeline",
-        "Built interactive dashboard UI",
-        "Optimized query performance",
-      ],
-    },
-    technicalSolution: {
-      stack: ["React", "TypeScript", "Python", "Kafka", "TimescaleDB", "Docker"],
-      architecture: "Event-Driven",
-      keyDecisions: [
-        "Used Kafka for real-time event streaming",
-        "TimescaleDB for time-series data optimization",
-        "WebSocket connections for live updates",
-      ],
-    },
-    businessImpact: {
-      metrics: [
-        { label: "Data Freshness", value: "Real-time (< 1s)" },
-        { label: "Decision Speed", value: "10x faster" },
-        { label: "Cost Reduction", value: "40% lower infra costs" },
-        { label: "User Adoption", value: "95% team usage" },
-      ],
-    },
-    tags: ["Data Engineering", "Real-Time", "Leadership"],
-  },
-  {
-    id: "mobile-app",
-    title: "Cross-Platform Mobile App",
-    businessProblem:
-      "Company needed mobile presence but couldn't afford separate iOS and Android teams. Time to market was critical.",
-    myContribution: {
-      role: "Senior Engineer",
-      teamSize: 4,
-      responsibilities: [
-        "Led mobile architecture design",
-        "Implemented core features",
-        "Set up CI/CD pipeline",
-      ],
-    },
-    technicalSolution: {
-      stack: ["React Native", "TypeScript", "GraphQL", "AWS Amplify", "Jest"],
-      architecture: "Serverless",
-      keyDecisions: [
-        "React Native for code sharing (90% shared)",
-        "GraphQL for efficient data fetching",
-        "AWS Amplify for rapid backend setup",
-      ],
-    },
-    businessImpact: {
-      metrics: [
-        { label: "Development Time", value: "6 months vs 12" },
-        { label: "Code Sharing", value: "90% between platforms" },
-        { label: "App Store Rating", value: "4.8/5 stars" },
-        { label: "Active Users", value: "50K+ downloads" },
-      ],
-    },
-    tags: ["Mobile", "Cross-Platform", "Serverless"],
-  },
-];
 
 export default function Projects() {
+  const t = useTranslations('projects');
+  
+  const projects = [
+    {
+      id: "ecommerce",
+      title: t('items.ecommerce.title'),
+      businessProblem: t('items.ecommerce.businessProblem'),
+      myContribution: {
+        role: t('items.ecommerce.myContribution.role'),
+        teamSize: t.raw('items.ecommerce.myContribution.teamSize') as number,
+        responsibilities: [
+          t('items.ecommerce.myContribution.responsibility0'),
+          t('items.ecommerce.myContribution.responsibility1'),
+          t('items.ecommerce.myContribution.responsibility2')
+        ],
+      },
+      technicalSolution: {
+        stack: t.raw('items.ecommerce.technicalSolution.stack') as string[],
+        architecture: t('items.ecommerce.technicalSolution.architecture'),
+        keyDecisions: [
+          t('items.ecommerce.technicalSolution.keyDecision0'),
+          t('items.ecommerce.technicalSolution.keyDecision1'),
+          t('items.ecommerce.technicalSolution.keyDecision2')
+        ],
+      },
+      businessImpact: {
+        metrics: [
+          { label: t('items.ecommerce.businessImpact.metric0.label'), value: t('items.ecommerce.businessImpact.metric0.value') },
+          { label: t('items.ecommerce.businessImpact.metric1.label'), value: t('items.ecommerce.businessImpact.metric1.value') },
+          { label: t('items.ecommerce.businessImpact.metric2.label'), value: t('items.ecommerce.businessImpact.metric2.value') },
+          { label: t('items.ecommerce.businessImpact.metric3.label'), value: t('items.ecommerce.businessImpact.metric3.value') }
+        ],
+      },
+      tags: t.raw('items.ecommerce.tags') as string[],
+    },
+    {
+      id: "analytics", 
+      title: t('items.analytics.title'),
+      businessProblem: t('items.analytics.businessProblem'),
+      myContribution: {
+        role: t('items.analytics.myContribution.role'),
+        teamSize: t.raw('items.analytics.myContribution.teamSize') as number,
+        responsibilities: [
+          t('items.analytics.myContribution.responsibility0'),
+          t('items.analytics.myContribution.responsibility1'),
+          t('items.analytics.myContribution.responsibility2')
+        ],
+      },
+      technicalSolution: {
+        stack: t.raw('items.analytics.technicalSolution.stack') as string[],
+        architecture: t('items.analytics.technicalSolution.architecture'),
+        keyDecisions: [
+          t('items.analytics.technicalSolution.keyDecision0'),
+          t('items.analytics.technicalSolution.keyDecision1'),
+          t('items.analytics.technicalSolution.keyDecision2')
+        ],
+      },
+      businessImpact: {
+        metrics: [
+          { label: t('items.analytics.businessImpact.metric0.label'), value: t('items.analytics.businessImpact.metric0.value') },
+          { label: t('items.analytics.businessImpact.metric1.label'), value: t('items.analytics.businessImpact.metric1.value') },
+          { label: t('items.analytics.businessImpact.metric2.label'), value: t('items.analytics.businessImpact.metric2.value') },
+          { label: t('items.analytics.businessImpact.metric3.label'), value: t('items.analytics.businessImpact.metric3.value') }
+        ],
+      },
+      tags: t.raw('items.analytics.tags') as string[],
+    },
+    {
+      id: "mobile",
+      title: t('items.mobile.title'),
+      businessProblem: t('items.mobile.businessProblem'),
+      myContribution: {
+        role: t('items.mobile.myContribution.role'),
+        teamSize: t.raw('items.mobile.myContribution.teamSize') as number,
+        responsibilities: [
+          t('items.mobile.myContribution.responsibility0'),
+          t('items.mobile.myContribution.responsibility1'),
+          t('items.mobile.myContribution.responsibility2')
+        ],
+      },
+      technicalSolution: {
+        stack: t.raw('items.mobile.technicalSolution.stack') as string[],
+        architecture: t('items.mobile.technicalSolution.architecture'),
+        keyDecisions: [
+          t('items.mobile.technicalSolution.keyDecision0'),
+          t('items.mobile.technicalSolution.keyDecision1'),
+          t('items.mobile.technicalSolution.keyDecision2')
+        ],
+      },
+      businessImpact: {
+        metrics: [
+          { label: t('items.mobile.businessImpact.metric0.label'), value: t('items.mobile.businessImpact.metric0.value') },
+          { label: t('items.mobile.businessImpact.metric1.label'), value: t('items.mobile.businessImpact.metric1.value') },
+          { label: t('items.mobile.businessImpact.metric2.label'), value: t('items.mobile.businessImpact.metric2.value') },
+          { label: t('items.mobile.businessImpact.metric3.label'), value: t('items.mobile.businessImpact.metric3.value') }
+        ],
+      },
+      tags: t.raw('items.mobile.tags') as string[],
+    },
+  ];
+
   const [selectedProject, setSelectedProject] = useState<string>(projects[0].id);
   const project = projects.find((p) => p.id === selectedProject) || projects[0];
 
@@ -133,10 +135,10 @@ export default function Projects() {
       <div className="container mx-auto px-6 lg:px-8 max-w-7xl">
         <div className="text-center mb-16">
           <h2 className="text-4xl md:text-5xl font-bold mb-4">
-            Success <span className="bg-gradient-to-r from-primary-blue to-accent-purple bg-clip-text text-transparent">Stories</span>
+            {t('title')} <span className="bg-gradient-to-r from-primary-blue to-accent-purple bg-clip-text text-transparent">{t('titleAccent')}</span>
           </h2>
           <p className="text-xl text-foreground/70 max-w-2xl mx-auto">
-            Real projects, measurable results, lasting impact
+            {t('subtitle')}
           </p>
         </div>
 
@@ -165,7 +167,8 @@ export default function Projects() {
               {/* Problem */}
               <div>
                 <h3 className="text-2xl font-bold mb-4 flex items-center gap-2">
-                  <span className="text-3xl">🎯</span> The Challenge
+                  <Target className="w-8 h-8 text-red-500" />
+                  {t('sections.challenge')}
                 </h3>
                 <p className="text-foreground/80 leading-relaxed">
                   {project.businessProblem}
@@ -175,7 +178,8 @@ export default function Projects() {
               {/* My Role */}
               <div>
                 <h3 className="text-2xl font-bold mb-4 flex items-center gap-2">
-                  <span className="text-3xl">👤</span> My Role
+                  <User className="w-8 h-8 text-blue-500" />
+                  {t('sections.role')}
                 </h3>
                 <div className="space-y-3">
                   <div className="flex items-center gap-4">
@@ -183,13 +187,13 @@ export default function Projects() {
                       {project.myContribution.role}
                     </span>
                     <span className="text-sm text-foreground/60">
-                      Team of {project.myContribution.teamSize}
+                      {t('labels.teamOf')} {project.myContribution.teamSize}
                     </span>
                   </div>
                   <ul className="space-y-2">
                     {project.myContribution.responsibilities.map((resp, i) => (
                       <li key={i} className="flex items-start gap-2">
-                        <span className="text-primary-blue mt-1">✓</span>
+                        <CheckCircle className="w-4 h-4 text-green-500 mt-1 flex-shrink-0" />
                         <span className="text-foreground/80">{resp}</span>
                       </li>
                     ))}
@@ -200,12 +204,13 @@ export default function Projects() {
               {/* Technical Solution */}
               <div>
                 <h3 className="text-2xl font-bold mb-4 flex items-center gap-2">
-                  <span className="text-3xl">⚙️</span> Solution
+                  <Settings className="w-8 h-8 text-gray-600" />
+                  {t('sections.solution')}
                 </h3>
                 <div className="space-y-4">
                   <div>
                     <p className="text-sm font-semibold text-foreground/60 mb-2">
-                      Architecture: {project.technicalSolution.architecture}
+                      {t('labels.architecture')} {project.technicalSolution.architecture}
                     </p>
                     <div className="flex flex-wrap gap-2">
                       {project.technicalSolution.stack.map((tech) => (
@@ -221,7 +226,7 @@ export default function Projects() {
                   <ul className="space-y-2">
                     {project.technicalSolution.keyDecisions.map((decision, i) => (
                       <li key={i} className="flex items-start gap-2 text-sm">
-                        <span className="text-accent-purple mt-1">→</span>
+                        <ArrowRight className="w-4 h-4 text-purple-500 mt-1 flex-shrink-0" />
                         <span className="text-foreground/70">{decision}</span>
                       </li>
                     ))}
@@ -233,7 +238,8 @@ export default function Projects() {
             {/* Right Column - Impact */}
             <div>
               <h3 className="text-2xl font-bold mb-6 flex items-center gap-2">
-                <span className="text-3xl">📈</span> Business Impact
+                <TrendingUp className="w-8 h-8 text-green-500" />
+                {t('sections.impact')}
               </h3>
               <div className="grid grid-cols-2 gap-4">
                 {project.businessImpact.metrics.map((metric, i) => (
@@ -266,13 +272,13 @@ export default function Projects() {
               {/* CTA */}
               <div className="mt-8 p-6 bg-gradient-to-r from-primary-blue/20 to-accent-purple/20 rounded-2xl">
                 <p className="text-lg font-semibold mb-4">
-                  Want similar results for your project?
+                  {t('labels.ctaQuestion')}
                 </p>
                 <a
                   href="#contact"
                   className="inline-block px-6 py-3 bg-primary-blue hover:bg-primary-blue/90 text-white font-semibold rounded-xl transition-all duration-300 hover:scale-105"
                 >
-                  Let's Talk
+                  {t('labels.ctaButton')}
                 </a>
               </div>
             </div>
