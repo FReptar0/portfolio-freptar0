@@ -12,7 +12,7 @@ export default function Hero() {
   }, []);
 
   return (
-    <section className="relative min-h-screen flex items-center justify-center overflow-hidden">
+    <section className="relative min-h-screen flex items-center justify-center overflow-hidden pt-20 md:pt-0">
       {/* Animated gradient background */}
       <div className="absolute inset-0 apple-gradient-mesh opacity-50" />
 
@@ -26,7 +26,7 @@ export default function Hero() {
           }`}
         >
           {/* Status Badge */}
-          <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full glass border backdrop-blur-xl mt-12" style={{ borderColor: 'var(--success-500)' }}>
+          <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full glass border backdrop-blur-xl mt-12 mb-6" style={{ borderColor: 'var(--success-500)' }}>
             <span className="relative flex h-3 w-3">
               <span className="animate-ping absolute inline-flex h-full w-full rounded-full opacity-75" style={{ background: 'var(--success-500)' }}></span>
               <span className="relative inline-flex rounded-full h-3 w-3" style={{ background: 'var(--success-500)' }}></span>
@@ -91,8 +91,8 @@ export default function Hero() {
         </div>
       </div>
 
-      {/* Scroll Indicator */}
-      <div className="absolute bottom-12 left-1/2 -translate-x-1/2 animate-bounce">
+      {/* Scroll Indicator (hidden on mobile to avoid overlapping value chips) */}
+      <div aria-hidden="true" className="hidden sm:block absolute bottom-12 left-1/2 -translate-x-1/2 animate-bounce pointer-events-none">
         <div className="w-6 h-10 rounded-full border-2 border-foreground/30 flex items-start justify-center p-2">
           <div className="w-1 h-3 rounded-full bg-foreground/30 animate-pulse" />
         </div>

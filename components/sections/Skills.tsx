@@ -163,28 +163,39 @@ function SkillItem({
   level: number;
   project: string;
 }) {
+  // Map numeric level to a human-friendly label and a 0-5 dot indicator
+  const filledDots = Math.round(level / 20); // 0-5
+  const proficiencyLabel =
+    level >= 90 ? "Expert" : level >= 75 ? "Advanced" : level >= 50 ? "Intermediate" : "Familiar";
+
   return (
-    <div className="space-y-2">
+  <div className="space-y-3">
       <div className="flex justify-between items-center">
         <div>
           <h4 className="font-semibold text-lg">{name}</h4>
           <p className="text-sm text-foreground/60">{experience}</p>
         </div>
-        <span className="text-sm font-bold text-primary-blue">{level}%</span>
-      </div>
 
-      {/* Progress Bar */}
-      <div className="relative h-2 bg-foreground/10 rounded-full overflow-hidden">
-        <div
-          className="absolute top-0 left-0 h-full bg-gradient-to-r from-primary-blue to-accent-purple rounded-full transition-all duration-1000 ease-out"
-          style={{ width: `${level}%` }}
-        />
+        {/* Dots + label instead of percent */}
+        <div className="flex items-center gap-3" aria-label={`${proficiencyLabel} proficiency`}>
+          <div className="flex items-center gap-2" aria-hidden="true">
+            {[0, 1, 2, 3, 4].map((i) => (
+              <span
+                key={i}
+                className={`w-3 h-3 rounded-full transition-colors transform ${
+                  i < filledDots
+                    ? "bg-primary-blue shadow-md scale-100"
+                    : "bg-foreground/20 ring-1 ring-foreground/6"
+                }`}
+              />
+            ))}
+          </div>
+          <span className="text-sm font-semibold text-foreground/70">{proficiencyLabel}</span>
+        </div>
       </div>
 
       {/* Project Context */}
-      <p className="text-sm text-foreground/70 italic">
-        💼 {project}
-      </p>
+      <p className="text-sm text-foreground/70 italic">💼 {project}</p>
     </div>
   );
 }

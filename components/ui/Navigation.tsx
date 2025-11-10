@@ -28,14 +28,60 @@ export default function Navigation() {
     { label: t('contact'), href: "#contact" },
   ];
 
+  // Desktop single-letter shortcuts (only when not focused in an input)
+  const desktopShortcuts: Record<string, string> = {
+    a: 'timeline', // About / Timeline
+    p: 'projects',
+    s: 'skills',
+    o: 'process', // 'o' from prOcess
+    c: 'contact',
+  };
+
+  useEffect(() => {
+    const onKey = (e: KeyboardEvent) => {
+      // Only on desktop sizes
+      if (!window.matchMedia('(min-width: 768px)').matches) return;
+      // Ignore if modifiers present
+      if (e.metaKey || e.ctrlKey || e.altKey) return;
+      // Ignore when focusing inputs or contentEditable
+      const active = document.activeElement as HTMLElement | null;
+      if (!active) return;
+      const tag = active.tagName?.toLowerCase();
+      const isInput = tag === 'input' || tag === 'textarea' || active.isContentEditable;
+      if (isInput) return;
+
+      const key = e.key.toLowerCase();
+      const target = desktopShortcuts[key];
+      if (target) {
+        const el = document.getElementById(target);
+        if (el) {
+          el.scrollIntoView({ behavior: 'smooth' });
+        }
+      }
+    };
+
+    window.addEventListener('keydown', onKey);
+    return () => window.removeEventListener('keydown', onKey);
+  }, []);
+
   return (
-    <nav
-      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
-        isScrolled
-          ? "glass shadow-lg py-4"
-          : "bg-transparent py-6"
-      }`}
-    >
+    <>
+      {/* Background overlay when mobile menu is open to improve contrast */}
+      {isMobileMenuOpen && (
+        <div
+          aria-hidden="true"
+          onClick={() => setIsMobileMenuOpen(false)}
+          className="fixed inset-0 bg-black/40 backdrop-blur-sm z-40"
+        />
+      )}
+
+      <nav
+        className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
+          isScrolled
+            ? "glass shadow-lg py-4"
+            : "bg-transparent py-6"
+        }`}
+      >
       <div className="container mx-auto px-6 lg:px-8 max-w-7xl">
         <div className="flex items-center justify-between">
           {/* Logo */}
@@ -134,5 +180,6 @@ export default function Navigation() {
         )}
       </div>
     </nav>
+    </>
   );
 }

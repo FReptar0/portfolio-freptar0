@@ -7,7 +7,25 @@ export default function SearchBar() {
   const [isOpen, setIsOpen] = useState(false);
   const [searchQuery, setSearchQuery] = useState('');
   const inputRef = useRef<HTMLInputElement>(null);
+  const [activeIndex, setActiveIndex] = useState<number | null>(null);
+  const itemsRef = useRef<Array<HTMLButtonElement | null>>([]);
   const t = useTranslations();
+
+  // Shortcuts mapping (single-letter) for desktop navigation and shown in the UI
+  const sectionShortcuts: Record<string, string> = {
+    timeline: 'A',
+    projects: 'P',
+    skills: 'S',
+    process: 'O', // 'O' from prOcess
+    contact: 'C',
+  };
+
+  // Contact / social quick actions (placeholders, update with real links)
+  const contacts = [
+    { id: 'linkedin', label: 'LinkedIn', href: 'https://linkedin.com', key: 'L' },
+    { id: 'github', label: 'GitHub', href: 'https://github.com', key: 'G' },
+    { id: 'email', label: 'Email', href: 'mailto:you@example.com', key: 'E' },
+  ];
 
   // Handle keyboard shortcut (Cmd/Ctrl + K)
   useEffect(() => {
@@ -46,6 +64,63 @@ export default function SearchBar() {
   const filteredSections = sections.filter(section =>
     section.label.toLowerCase().includes(searchQuery.toLowerCase())
   );
+
+  // Combined items for keyboard navigation when showing results/quick links
+  const combinedResults = (searchQuery ? filteredSections : sections).map(s => ({
+    type: 'section', id: s.id, label: s.label, href: `#${s.id}`, key: sectionShortcuts[s.id] || ''
+  })).concat(contacts.map(c => ({ type: 'contact', ...c })));
+
+  // Count how many section items are shown (used to render a separator before contacts)
+  const sectionCount = (searchQuery ? filteredSections.length : sections.length);
+
+  const handleContactClick = (href: string) => {
+    window.open(href, '_blank');
+    setIsOpen(false);
+    setSearchQuery('');
+  };
+
+  // Keyboard navigation inside the modal (Arrow keys + Enter)
+  useEffect(() => {
+    if (!isOpen) return;
+
+    const onKeyDown = (e: KeyboardEvent) => {
+      if (e.key === 'ArrowDown') {
+        e.preventDefault();
+        setActiveIndex((prev) => {
+          const next = prev === null ? 0 : Math.min((prev ?? 0) + 1, combinedResults.length - 1);
+          return next;
+        });
+      }
+
+      if (e.key === 'ArrowUp') {
+        e.preventDefault();
+        setActiveIndex((prev) => {
+          const next = prev === null ? combinedResults.length - 1 : Math.max((prev ?? 0) - 1, 0);
+          return next;
+        });
+      }
+
+      if (e.key === 'Enter' && activeIndex !== null) {
+        e.preventDefault();
+        const item = combinedResults[activeIndex];
+        if (item) {
+          if (item.type === 'section') handleSectionClick(item.id);
+          else if (item.type === 'contact') handleContactClick(item.href);
+        }
+      }
+    };
+
+    document.addEventListener('keydown', onKeyDown);
+    return () => document.removeEventListener('keydown', onKeyDown);
+  // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [isOpen, combinedResults, activeIndex]);
+
+  // Focus the active item when activeIndex changes
+  useEffect(() => {
+    if (activeIndex === null) return;
+    const el = itemsRef.current[activeIndex];
+    if (el) el.focus();
+  }, [activeIndex]);
 
   const handleSectionClick = (sectionId: string) => {
     const element = document.getElementById(sectionId);
@@ -119,81 +194,95 @@ export default function SearchBar() {
               ref={inputRef}
               type="text"
               value={searchQuery}
-              onChange={(e) => setSearchQuery(e.target.value)}
+              onChange={(e) => { setSearchQuery(e.target.value); setActiveIndex(null); }}
               placeholder="Search sections..."
               className="w-full pl-12 pr-20 py-4 bg-foreground/5 border border-foreground/10 rounded-2xl focus:border-primary-blue focus:outline-none transition-colors text-lg"
+              onKeyDown={(e) => {
+                // allow typing letters; also support pressing shortcut keys to immediately jump
+                const key = e.key.toUpperCase();
+                // If user presses a mapped shortcut while focused in input and there is no modifier, act on it
+                const mapped = combinedResults.find(item => item.key === key);
+                if (mapped && key.length === 1 && !e.metaKey && !e.ctrlKey && !e.altKey) {
+                  e.preventDefault();
+                  if (mapped.type === 'section') handleSectionClick(mapped.id);
+                  else if (mapped.type === 'contact') handleContactClick(mapped.href);
+                }
+              }}
             />
             <kbd className="absolute right-4 top-1/2 -translate-y-1/2 px-3 py-1.5 text-xs font-semibold text-foreground/60 bg-foreground/5 border border-foreground/10 rounded-lg">
               ESC
             </kbd>
           </div>
 
-          {/* Results */}
-          {searchQuery && (
-            <div className="mt-4 space-y-1 max-h-96 overflow-y-auto">
-              {filteredSections.length > 0 ? (
-                filteredSections.map((section) => (
-                  <button
-                    key={section.id}
-                    onClick={() => handleSectionClick(section.id)}
-                    className="w-full text-left px-4 py-3 rounded-xl hover:bg-foreground/5 transition-colors flex items-center gap-3"
-                  >
-                    <svg
-                      className="w-5 h-5 text-primary-blue"
-                      fill="none"
-                      stroke="currentColor"
-                      viewBox="0 0 24 24"
+          {/* Combined Results (sections + contacts) - keyboard navigable */}
+          <div className="mt-4 space-y-2 max-h-96 overflow-y-auto" role="listbox" aria-activedescendant={activeIndex !== null ? `search-item-${activeIndex}` : undefined}>
+            {combinedResults.length > 0 ? (
+              combinedResults.map((item, idx) => (
+                <div key={`${item.type}-${item.id || item.label}`} className="w-full">
+                  {/* Render a separator + label before the contacts block for visual separation */}
+                  {idx === sectionCount && idx > 0 && (
+                    <div className="px-4 py-2">
+                      <div className="border-t border-foreground/10 mt-1 mb-3" />
+                      <div className="text-xs text-foreground/60 font-semibold">Contactos</div>
+                    </div>
+                  )}
+                  {item.type === 'section' && (
+                    <button
+                      id={`search-item-${idx}`}
+                      ref={(el) => { itemsRef.current[idx] = el; }}
+                      onClick={() => handleSectionClick(item.id)}
+                      className={`w-full text-left px-4 py-3 rounded-xl hover:bg-foreground/5 transition-colors flex items-center justify-between gap-3 ${activeIndex === idx ? 'ring-2 ring-primary-blue/30' : ''}`}
+                      role="option"
+                      aria-selected={activeIndex === idx}
                     >
-                      <path
-                        strokeLinecap="round"
-                        strokeLinejoin="round"
-                        strokeWidth={2}
-                        d="M13 7l5 5m0 0l-5 5m5-5H6"
-                      />
-                    </svg>
-                    <span className="font-medium">{section.label}</span>
-                  </button>
-                ))
-              ) : (
-                <div className="px-4 py-8 text-center text-foreground/60">
-                  No results found
-                </div>
-              )}
-            </div>
-          )}
+                      <div className="flex items-center gap-3">
+                        <svg
+                          className="w-5 h-5 text-primary-blue"
+                          fill="none"
+                          stroke="currentColor"
+                          viewBox="0 0 24 24"
+                        >
+                          <path
+                            strokeLinecap="round"
+                            strokeLinejoin="round"
+                            strokeWidth={2}
+                            d="M13 7l5 5m0 0l-5 5m5-5H6"
+                          />
+                        </svg>
+                        <span className="font-medium">{item.label}</span>
+                      </div>
+                      <div className="flex items-center gap-3">
+                        <kbd className="px-2 py-1 text-xs font-semibold text-foreground/60 bg-foreground/5 border border-foreground/10 rounded">{item.key}</kbd>
+                      </div>
+                    </button>
+                  )}
 
-          {/* Quick Links (when no search query) */}
-          {!searchQuery && (
-            <div className="mt-4">
-              <p className="text-sm text-foreground/60 mb-2 px-2">
-                Quick Links
-              </p>
-              <div className="space-y-1">
-                {sections.map((section) => (
-                  <button
-                    key={section.id}
-                    onClick={() => handleSectionClick(section.id)}
-                    className="w-full text-left px-4 py-3 rounded-xl hover:bg-foreground/5 transition-colors flex items-center gap-3"
-                  >
-                    <svg
-                      className="w-5 h-5 text-primary-blue"
-                      fill="none"
-                      stroke="currentColor"
-                      viewBox="0 0 24 24"
+                  {item.type === 'contact' && (
+                    <button
+                      id={`search-item-${idx}`}
+                      ref={(el) => { itemsRef.current[idx] = el; }}
+                      onClick={() => handleContactClick(item.href)}
+                      className={`w-full text-left px-4 py-3 rounded-xl hover:bg-foreground/5 transition-colors flex items-center justify-between gap-3 ${activeIndex === idx ? 'ring-2 ring-primary-blue/30' : ''}`}
+                      role="option"
+                      aria-selected={activeIndex === idx}
                     >
-                      <path
-                        strokeLinecap="round"
-                        strokeLinejoin="round"
-                        strokeWidth={2}
-                        d="M13 7l5 5m0 0l-5 5m5-5H6"
-                      />
-                    </svg>
-                    <span className="font-medium">{section.label}</span>
-                  </button>
-                ))}
-              </div>
-            </div>
-          )}
+                      <div className="flex items-center gap-3">
+                        <svg className="w-5 h-5 text-primary-blue" viewBox="0 0 24 24" fill="none" stroke="currentColor">
+                          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 2v20" />
+                        </svg>
+                        <span className="font-medium">{item.label}</span>
+                      </div>
+                      <div className="flex items-center gap-3">
+                        <kbd className="px-2 py-1 text-xs font-semibold text-foreground/60 bg-foreground/5 border border-foreground/10 rounded">{item.key}</kbd>
+                      </div>
+                    </button>
+                  )}
+                </div>
+              ))
+            ) : (
+              <div className="px-4 py-8 text-center text-foreground/60">No results found</div>
+            )}
+          </div>
         </div>
       </div>
     </>
