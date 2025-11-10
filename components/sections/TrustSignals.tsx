@@ -8,6 +8,16 @@ export default function TrustSignals() {
   return (
     <section className="py-20 relative">
       <div className="container mx-auto px-6 lg:px-8 max-w-6xl">
+        {/* Main Section Header */}
+        <div className="text-center mb-16">
+          <h2 className="text-4xl md:text-5xl font-bold mb-4">
+            {t('mainTitle')} <span className="bg-gradient-to-r from-primary-blue to-accent-purple bg-clip-text text-transparent">& Expertise</span>
+          </h2>
+          <p className="text-xl text-foreground/70 max-w-3xl mx-auto">
+            {t('mainSubtitle')}
+          </p>
+        </div>
+
         {/* Testimonials */}
         <div className="grid md:grid-cols-2 gap-6 mb-16">
           <TestimonialCard
@@ -27,7 +37,7 @@ export default function TrustSignals() {
         {/* Certifications & Skills Badges */}
         <div className="text-center">
           <h3 className="text-lg font-semibold mb-6" style={{ color: 'var(--text-secondary)' }}>
-            {t('title')}
+            {t('certificationsTitle')}
           </h3>
           <div className="flex flex-wrap justify-center gap-4">
             {t.raw('certifications').map((cert: string, index: number) => (
