@@ -1,6 +1,6 @@
 "use client";
 
-import { useState, useEffect } from "react";
+import { useState, useEffect, useCallback } from "react";
 import { useTranslations } from 'next-intl';
 import ThemeToggle from "./ThemeToggle";
 import LanguageToggle from "./LanguageToggle";
@@ -28,41 +28,41 @@ export default function Navigation() {
     { label: t('contact'), href: "#contact" },
   ];
 
-  // Desktop single-letter shortcuts (only when not focused in an input)
-  const desktopShortcuts: Record<string, string> = {
-    a: 'timeline', // About / Timeline
-    p: 'projects',
-    s: 'skills',
-    o: 'process', // 'o' from prOcess
-    c: 'contact',
-  };
-
-  useEffect(() => {
-    const onKey = (e: KeyboardEvent) => {
-      // Only on desktop sizes
-      if (!window.matchMedia('(min-width: 768px)').matches) return;
-      // Ignore if modifiers present
-      if (e.metaKey || e.ctrlKey || e.altKey) return;
-      // Ignore when focusing inputs or contentEditable
-      const active = document.activeElement as HTMLElement | null;
-      if (!active) return;
-      const tag = active.tagName?.toLowerCase();
-      const isInput = tag === 'input' || tag === 'textarea' || active.isContentEditable;
-      if (isInput) return;
-
-      const key = e.key.toLowerCase();
-      const target = desktopShortcuts[key];
-      if (target) {
-        const el = document.getElementById(target);
-        if (el) {
-          el.scrollIntoView({ behavior: 'smooth' });
-        }
-      }
+  const handleKeyDown = useCallback((e: KeyboardEvent) => {
+    // Desktop single-letter shortcuts (only when not focused in an input)
+    const desktopShortcuts: Record<string, string> = {
+      a: 'timeline', // About / Timeline
+      p: 'projects',
+      s: 'skills',
+      o: 'process', // 'o' from prOcess
+      c: 'contact',
     };
 
-    window.addEventListener('keydown', onKey);
-    return () => window.removeEventListener('keydown', onKey);
+    // Only on desktop sizes
+    if (!window.matchMedia('(min-width: 768px)').matches) return;
+    // Ignore if modifiers present
+    if (e.metaKey || e.ctrlKey || e.altKey) return;
+    // Ignore when focusing inputs or contentEditable
+    const active = document.activeElement as HTMLElement | null;
+    if (!active) return;
+    const tag = active.tagName?.toLowerCase();
+    const isInput = tag === 'input' || tag === 'textarea' || active.isContentEditable;
+    if (isInput) return;
+
+    const key = e.key.toLowerCase();
+    const target = desktopShortcuts[key];
+    if (target) {
+      const el = document.getElementById(target);
+      if (el) {
+        el.scrollIntoView({ behavior: 'smooth' });
+      }
+    }
   }, []);
+
+  useEffect(() => {
+    window.addEventListener('keydown', handleKeyDown);
+    return () => window.removeEventListener('keydown', handleKeyDown);
+  }, [handleKeyDown]);
 
   return (
     <>
@@ -82,7 +82,7 @@ export default function Navigation() {
             : "bg-transparent py-6"
         }`}
       >
-      <div className="container mx-auto px-6 lg:px-8 max-w-7xl">
+      <div className="container mx-auto px-4 sm:px-6 lg:px-8 max-w-7xl">
         <div className="flex items-center justify-between">
           {/* Logo */}
           <a
@@ -144,7 +144,7 @@ export default function Navigation() {
 
         {/* Mobile Menu */}
         {isMobileMenuOpen && (
-          <div className="md:hidden mt-4 glass rounded-2xl p-6 space-y-4">
+          <div className="md:hidden mt-4 glass rounded-2xl p-4 sm:p-6 space-y-4">
             {navLinks.map((link) => (
               <a
                 key={link.href}

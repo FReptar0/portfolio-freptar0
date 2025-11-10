@@ -68,8 +68,8 @@ export default function CareerTimeline() {
 
         {/* Desktop Timeline */}
         <div className="hidden lg:block relative">
-          <div className="flex justify-between items-start relative">
-            {/* Timeline Line - connecting circles only */}
+          <div className="flex justify-between items-start relative gap-4 max-w-6xl mx-auto">
+            {/* Timeline Line - connecting circles only; use percentage insets like Process to match length */}
             <div className="absolute top-10 left-[12.5%] right-[12.5%] h-0.5 bg-gradient-to-r from-primary-blue via-accent-purple to-primary-blue opacity-40 -z-10" />
 
             {timelineData.map((item, index) => (
@@ -119,7 +119,7 @@ function TimelineNode({
   // Handle both array and translated array format
   const descriptionArray = Array.isArray(description) ? description : description;
   return (
-    <div className="flex flex-col items-center w-64 group cursor-pointer" onClick={onClick}>
+    <div className="flex flex-col items-center flex-1 group cursor-pointer" onClick={onClick}>
       {/* Year Badge */}
       <div
         className={`w-20 h-20 rounded-full bg-gradient-to-br ${color} flex items-center justify-center text-white font-bold text-xl mb-4 transition-all duration-300 shadow-lg group-hover:scale-110 ${
@@ -131,7 +131,7 @@ function TimelineNode({
 
       {/* Content Card */}
       <div
-        className={`apple-glass rounded-2xl p-6 w-full transition-all duration-300 group-hover:scale-105 ${
+        className={`apple-glass rounded-2xl p-6 w-full max-w-xs transition-all duration-300 group-hover:scale-105 ${
           isActive ? "ring-2 ring-primary-blue/50 shadow-xl" : ""
         }`}
       >

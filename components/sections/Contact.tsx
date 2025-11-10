@@ -38,28 +38,28 @@ export default function Contact() {
           </p>
         </div>
 
-        <div className="grid md:grid-cols-2 gap-8">
+        <div className="grid md:grid-cols-2 gap-6 lg:gap-8">
           {/* Left Column - Quick Actions */}
           <div className="space-y-6">
-            <div className="apple-glass rounded-3xl p-8">
+            <div className="apple-glass rounded-3xl p-6 sm:p-8">
               <h3 className="text-2xl font-bold mb-6">{t('quickContact')}</h3>
 
               <div className="space-y-4">
                 {/* Email */}
                 <button
                   onClick={copyEmail}
-                  className="w-full glass-card rounded-2xl p-4 flex items-center gap-4 group"
+                  className="w-full glass-card rounded-2xl p-3 sm:p-4 flex items-center gap-3 sm:gap-4 group"
                 >
                   <div className="w-12 h-12 rounded-full bg-gradient-hero flex items-center justify-center text-white">
                     <Mail className="w-6 h-6" />
                   </div>
                   <div className="flex-1 text-left">
                     <div className="font-semibold">{t('email.label')}</div>
-                    <div className="text-sm text-foreground/60">
+                    <div className="text-sm text-foreground/60 truncate">
                       fmemije00@gmail.com
                     </div>
                   </div>
-                  <div className="text-sm font-medium" style={{ color: 'var(--accent-500)' }}>
+                  <div className="text-xs sm:text-sm font-medium hidden sm:block" style={{ color: 'var(--accent-500)' }}>
                     {copied ? t('email.copied') : t('email.copy')}
                   </div>
                 </button>
@@ -69,7 +69,7 @@ export default function Contact() {
                   href="https://linkedin.com/in/fernandomemije"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="w-full apple-glass hover:bg-white/20 dark:hover:bg-black/40 rounded-2xl p-4 flex items-center gap-4 transition-all duration-300 hover:scale-[1.02] group"
+                  className="w-full apple-glass hover:bg-white/20 dark:hover:bg-black/40 rounded-2xl p-3 sm:p-4 flex items-center gap-3 sm:gap-4 transition-all duration-300 hover:scale-[1.02] group"
                 >
                   <div className="w-12 h-12 rounded-full bg-gradient-to-br from-primary-blue to-accent-purple flex items-center justify-center text-white">
                     <Briefcase className="w-6 h-6" />
@@ -88,7 +88,7 @@ export default function Contact() {
                   href="https://github.com/freptar0"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="w-full apple-glass hover:bg-white/20 dark:hover:bg-black/40 rounded-2xl p-4 flex items-center gap-4 transition-all duration-300 hover:scale-[1.02] group"
+                  className="w-full apple-glass hover:bg-white/20 dark:hover:bg-black/40 rounded-2xl p-3 sm:p-4 flex items-center gap-3 sm:gap-4 transition-all duration-300 hover:scale-[1.02] group"
                 >
                   <div className="w-12 h-12 rounded-full bg-gradient-to-br from-primary-blue to-accent-purple flex items-center justify-center text-white">
                     <Github className="w-6 h-6" />
@@ -105,7 +105,7 @@ export default function Contact() {
                 {/* Calendar - placeholder for now */}
                 <a
                   href="#contact"
-                  className="w-full apple-glass hover:bg-white/20 dark:hover:bg-black/40 rounded-2xl p-4 flex items-center gap-4 transition-all duration-300 hover:scale-[1.02] group"
+                  className="w-full apple-glass hover:bg-white/20 dark:hover:bg-black/40 rounded-2xl p-3 sm:p-4 flex items-center gap-3 sm:gap-4 transition-all duration-300 hover:scale-[1.02] group"
                 >
                   <div className="w-12 h-12 rounded-full bg-gradient-to-br from-primary-blue to-accent-purple flex items-center justify-center text-white">
                     <Calendar className="w-6 h-6" />
@@ -134,7 +134,7 @@ export default function Contact() {
           </div>
 
           {/* Right Column - Contact Form */}
-          <div className="apple-glass rounded-3xl p-8">
+          <div className="apple-glass rounded-3xl p-6 sm:p-8">
             <h3 className="text-2xl font-bold mb-6">{t('form.title')}</h3>
 
             <form onSubmit={handleSubmit} className="space-y-6">

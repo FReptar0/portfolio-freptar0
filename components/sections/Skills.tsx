@@ -55,7 +55,7 @@ function SkillCategory({
   }>;
 }) {
   return (
-    <div className="apple-glass rounded-3xl p-8 hover:scale-[1.02] transition-transform duration-300">
+    <div className="apple-glass rounded-3xl p-6 sm:p-8 hover:scale-[1.02] transition-transform duration-300">
       <div className="flex items-center gap-3 mb-6">
         <div className="text-primary-blue">{getIcon(icon, "w-10 h-10")}</div>
         <h3 className="text-2xl font-bold">{title}</h3>

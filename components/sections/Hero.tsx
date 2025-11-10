@@ -64,7 +64,7 @@ export default function Hero() {
           <div className="flex flex-col sm:flex-row gap-4 justify-center items-center pt-4">
             <a
               href="#projects"
-              className="group relative px-8 py-4 text-white font-semibold rounded-2xl transition-all duration-300 hover:scale-105 min-w-[200px] overflow-hidden"
+              className="group relative px-6 sm:px-8 py-4 text-white font-semibold rounded-2xl transition-all duration-300 hover:scale-105 sm:min-w-[200px] overflow-hidden"
               style={{ background: 'var(--primary-600)' }}
             >
               <span className="relative z-10">{t('cta.primary')}</span>
@@ -72,7 +72,7 @@ export default function Hero() {
             </a>
             <a
               href="#contact"
-              className="group px-8 py-4 glass hover:bg-white/20 dark:hover:bg-black/40 font-semibold rounded-2xl transition-all duration-300 hover:scale-105 min-w-[200px]"
+              className="group px-6 sm:px-8 py-4 glass hover:bg-white/20 dark:hover:bg-black/40 font-semibold rounded-2xl transition-all duration-300 hover:scale-105 sm:min-w-[200px]"
             >
               {t('cta.secondary')}
               <span className="inline-block ml-2 transition-transform group-hover:translate-x-1">
@@ -90,7 +90,7 @@ export default function Hero() {
           </div>
         </div>
       </div>
-
+      
       {/* Scroll Indicator (hidden on mobile to avoid overlapping value chips) */}
       <div aria-hidden="true" className="hidden sm:block absolute bottom-12 left-1/2 -translate-x-1/2 animate-bounce pointer-events-none">
         <div className="w-6 h-10 rounded-full border-2 border-foreground/30 flex items-start justify-center p-2">

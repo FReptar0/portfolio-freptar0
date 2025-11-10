@@ -160,7 +160,7 @@ export default function Projects() {
         </div>
 
         {/* Project Details */}
-        <div className="apple-glass rounded-3xl p-8 md:p-12">
+        <div className="apple-glass rounded-3xl p-6 sm:p-8 md:p-12">
           <div className="grid md:grid-cols-2 gap-8 mb-8">
             {/* Left Column */}
             <div className="space-y-8">
@@ -241,7 +241,7 @@ export default function Projects() {
                 <TrendingUp className="w-8 h-8 text-green-500" />
                 {t('sections.impact')}
               </h3>
-              <div className="grid grid-cols-2 gap-4">
+              <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                 {project.businessImpact.metrics.map((metric, i) => (
                   <div
                     key={i}
