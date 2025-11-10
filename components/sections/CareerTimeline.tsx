@@ -111,7 +111,7 @@ function TimelineNode({
   year: string;
   role: string;
   highlight: string;
-  description: string[] | any;
+  description: string[];
   color: string;
   isActive: boolean;
   onClick: () => void;
@@ -142,7 +142,7 @@ function TimelineNode({
           <h3 className="text-xl font-bold">{role}</h3>
         </div>
         <ul className="space-y-2 text-sm text-foreground/70">
-          {descriptionArray.map((item, i) => (
+          {descriptionArray.map((item: string, i: number) => (
             <li key={i} className="flex items-start gap-2">
               <span className="text-primary-blue mt-1">•</span>
               <span>{item}</span>
@@ -166,7 +166,7 @@ function MobileTimelineNode({
   year: string;
   role: string;
   highlight: string;
-  description: string[] | any;
+  description: string[];
   color: string;
   isActive: boolean;
   onClick: () => void;
@@ -198,7 +198,7 @@ function MobileTimelineNode({
         </div>
         <h3 className="text-xl font-bold mb-3">{role}</h3>
         <ul className="space-y-2 text-sm text-foreground/70">
-          {descriptionArray.map((item, i) => (
+          {descriptionArray.map((item: string, i: number) => (
             <li key={i} className="flex items-start gap-2">
               <span className="text-primary-blue mt-1">•</span>
               <span>{item}</span>

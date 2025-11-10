@@ -1,5 +1,6 @@
 "use client";
 
+import React from 'react';
 import { usePathname, useRouter } from 'next/navigation';
 import { useLocale } from 'next-intl';
 import { locales } from '@/i18n';
@@ -26,24 +27,22 @@ export default function LanguageToggle() {
       aria-label="Toggle language"
     >
       <div className="flex items-center gap-1 text-sm font-medium">
-        {locales.map((loc) => (
-          <span
-            key={loc}
-            className={`uppercase transition-all duration-300 ${
-              locale === loc
-                ? 'text-foreground font-bold'
-                : 'text-foreground/40 hover:text-foreground/60'
-            }`}
-          >
-            {loc}
-          </span>
-        )).reduce((prev, curr, index) => [
-          prev,
-          <span key={`sep-${index}`} className="text-foreground/30 mx-1">
-            /
-          </span>,
-          curr
-        ])}
+        {locales.map((loc, index) => (
+          <React.Fragment key={loc}>
+            <span
+              className={`uppercase transition-all duration-300 ${
+                locale === loc
+                  ? 'text-foreground font-bold'
+                  : 'text-foreground/40 hover:text-foreground/60'
+              }`}
+            >
+              {loc}
+            </span>
+            {index < locales.length - 1 && (
+              <span className="text-foreground/30 mx-1">/</span>
+            )}
+          </React.Fragment>
+        ))}
       </div>
 
       {/* Language icon */}
