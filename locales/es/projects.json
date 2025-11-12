@@ -66,11 +66,11 @@
       "tags": ["Integración", "Tiempo Real", "Monitoreo"]
     },
     "cardeal": {
-      "title": "Cardeal - Plataforma de Renta de Autos",
+      "title": "Qardeal - Plataforma de Renta de Autos",
       "businessProblem": "El negocio de renta de autos necesitaba una plataforma de reservas moderna con procesamiento de pagos, generación de facturas y controles administrativos para competir en el mercado digital.",
       "myContribution": {
         "role": "Desarrollador Full-Stack",
-        "teamSize": 2,
+        "teamSize": 4,
         "responsibility0": "Construí frontend Next.js y flujo de reservas",
         "responsibility1": "Integré pasarelas de pago y facturación XML",
         "responsibility2": "Configuré pipeline CI/CD y dashboards admin"

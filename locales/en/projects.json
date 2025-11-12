@@ -66,11 +66,11 @@
       "tags": ["Integration", "Real-Time", "Monitoring"]
     },
     "cardeal": {
-      "title": "Cardeal - Car Rental Platform",
+      "title": "Qardeal - Car Rental Platform",
       "businessProblem": "Car rental business needed modern booking platform with payment processing, invoice generation, and administrative controls to compete in digital marketplace.",
       "myContribution": {
         "role": "Full-Stack Developer",
-        "teamSize": 2,
+        "teamSize": 4,
         "responsibility0": "Built Next.js frontend and booking flow",
         "responsibility1": "Integrated payment gateways and XML invoicing",
         "responsibility2": "Set up CI/CD pipeline and admin dashboards"
