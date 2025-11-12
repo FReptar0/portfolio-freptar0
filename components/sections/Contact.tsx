@@ -66,7 +66,7 @@ export default function Contact() {
 
                 {/* LinkedIn */}
                 <a
-                  href="https://linkedin.com/in/fernandomemije"
+                  href="https://linkedin.com/in/fernando-rm"
                   target="_blank"
                   rel="noopener noreferrer"
                   className="w-full apple-glass hover:bg-white/20 dark:hover:bg-black/40 rounded-2xl p-3 sm:p-4 flex items-center gap-3 sm:gap-4 transition-all duration-300 hover:scale-[1.02] group"

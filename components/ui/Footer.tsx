@@ -80,7 +80,7 @@ export default function Footer() {
                 </svg>
               </a>
               <a
-                href="https://linkedin.com/in/fernandomemije"
+                href="https://linkedin.com/in/fernando-rm"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="social-icon w-10 h-10 rounded-full flex items-center justify-center transition-all duration-300 hover:scale-110"
