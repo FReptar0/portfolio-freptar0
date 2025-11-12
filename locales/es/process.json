@@ -1,47 +1,47 @@
 {
   "title": "Mi Proceso de",
   "titleAccent": "Desarrollo",
-  "subtitle": "Mi flujo de trabajo como Desarrollador Full Stack Senior se enfoca en escalabilidad, mantenibilidad y colaboración entre equipos. Cada etapa asegura calidad y consistencia en todos los proyectos.",
+  "subtitle": "Como ingeniero líder en proyectos como Qardeal, mi flujo de trabajo se enfoca en arquitectura de sistemas de extremo a extremo, desarrollo de backend central y liderazgo de equipos. Cada etapa asegura soluciones escalables y mantenibles.",
   "steps": {
     "discovery": {
       "title": "Investigación y Descubrimiento",
-      "description": "Entender las metas del cliente, limitaciones y usuarios. Definir métricas de éxito y viabilidad.",
-      "activity0": "Análisis de objetivos comerciales",
-      "activity1": "Evaluación de limitaciones técnicas",
-      "activity2": "Recolección de requerimientos de usuario",
-      "activity3": "Definición de métricas de éxito"
+      "description": "Liderar sesiones de descubrimiento técnico, analizar requerimientos de negocio y evaluar necesidades de arquitectura del sistema. Definir viabilidad técnica y métricas de éxito.",
+      "activity0": "Liderazgo de descubrimiento técnico",
+      "activity1": "Evaluación de arquitectura del sistema",
+      "activity2": "Análisis de requerimientos de backend",
+      "activity3": "Definición de métricas de rendimiento"
     },
     "architecture": {
       "title": "Arquitectura y Planeación",
-      "description": "Diseñar arquitectura de sistema escalable, seleccionar stack (Next.js, Spring Boot, PostgreSQL, Docker) y planificar hitos y CI/CD.",
-      "activity0": "Diseño de arquitectura de sistema",
-      "activity1": "Selección de stack tecnológico",
-      "activity2": "Planeación de hitos",
-      "activity3": "Configuración de pipeline CI/CD"
+      "description": "Liderar el diseño de arquitectura central, seleccionar stack tecnológico óptimo y establecer patrones de infraestructura backend. Planificar fases de desarrollo y estrategia de despliegue.",
+      "activity0": "Liderazgo de arquitectura del sistema central",
+      "activity1": "Diseño de stack tecnológico backend",
+      "activity2": "Planificación de hitos de desarrollo",
+      "activity3": "Diseño de pipeline de infraestructura"
     },
     "implementation": {
       "title": "Desarrollo e Integración",
-      "description": "Implementar módulos frontend y backend, integrar APIs y servicios, realizar revisiones de código y aplicar arquitectura limpia.",
-      "activity0": "Desarrollo frontend y backend",
-      "activity1": "Integración de APIs",
-      "activity2": "Revisiones de código",
-      "activity3": "Aplicación de arquitectura limpia"
+      "description": "Liderar desarrollo de backend central, coordinar implementación full-stack y asegurar calidad de código a través de revisiones. Mantener arquitectura limpia en todas las capas.",
+      "activity0": "Liderazgo de desarrollo de backend central",
+      "activity1": "Coordinación de integración full-stack",
+      "activity2": "Liderazgo de revisión técnica de código",
+      "activity3": "Aplicación de calidad de arquitectura"
     },
     "delivery": {
       "title": "Pruebas y Aseguramiento de Calidad",
-      "description": "Pruebas automatizadas, auditorías de rendimiento y QA manual para casos extremos para asegurar confiabilidad en producción.",
-      "activity0": "Implementación de pruebas automatizadas",
-      "activity1": "Auditorías de rendimiento",
-      "activity2": "QA manual para casos extremos",
-      "activity3": "Validación de confiabilidad en producción"
+      "description": "Liderar implementación de estrategia de pruebas, realizar optimización de rendimiento y asegurar confiabilidad del sistema a través de procesos QA integrales.",
+      "activity0": "Liderazgo de estrategia de pruebas",
+      "activity1": "Optimización de rendimiento de backend",
+      "activity2": "Validación de integración del sistema",
+      "activity3": "Evaluación de preparación para producción"
     },
     "monitoring": {
       "title": "Despliegue y Monitoreo",
-      "description": "Desplegar en Vercel o entornos conteneurizados, configurar CI/CD, monitorear tiempo de actividad y rendimiento, y ejecutar mejoras post-lanzamiento.",
-      "activity0": "Despliegue en producción",
-      "activity1": "Configuración de CI/CD",
-      "activity2": "Configuración de monitoreo de rendimiento",
-      "activity3": "Mejoras post-lanzamiento"
+      "description": "Liderar estrategia de despliegue en producción, configurar sistemas de monitoreo y supervisar optimización de rendimiento post-lanzamiento y mejoras del sistema.",
+      "activity0": "Liderazgo de despliegue en producción",
+      "activity1": "Configuración de infraestructura",
+      "activity2": "Implementación de monitoreo del sistema",
+      "activity3": "Coordinación de mejora continua"
     }
   },
   "cta": {

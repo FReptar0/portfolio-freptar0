@@ -1,47 +1,47 @@
 {
   "title": "My Development",
   "titleAccent": "Process",
-  "subtitle": "My workflow as a Senior Full Stack Developer focuses on scalability, maintainability, and cross-team collaboration. Each stage ensures quality and consistency across projects.",
+  "subtitle": "As lead engineer on projects like Qardeal, my workflow focuses on end-to-end system architecture, core backend development, and cross-team leadership. Each stage ensures scalable, maintainable solutions.",
   "steps": {
     "discovery": {
       "title": "Research & Discovery",
-      "description": "Understand client's goals, constraints and users. Define success metrics and feasibility.",
-      "activity0": "Business goals analysis",
-      "activity1": "Technical constraints assessment",
-      "activity2": "User requirements gathering",
-      "activity3": "Success metrics definition"
+      "description": "Lead technical discovery sessions, analyze business requirements, and assess system architecture needs. Define technical feasibility and success metrics.",
+      "activity0": "Technical discovery leadership",
+      "activity1": "System architecture assessment",
+      "activity2": "Backend requirements analysis",
+      "activity3": "Performance metrics definition"
     },
     "architecture": {
       "title": "Architecture & Planning",
-      "description": "Design scalable system architecture, select stack (Next.js, Spring Boot, PostgreSQL, Docker) and plan milestones and CI/CD.",
-      "activity0": "System architecture design",
-      "activity1": "Technology stack selection",
-      "activity2": "Milestone planning",
-      "activity3": "CI/CD pipeline setup"
+      "description": "Lead core architecture design, select optimal technology stack, and establish backend infrastructure patterns. Plan development phases and deployment strategy.",
+      "activity0": "Core system architecture leadership",
+      "activity1": "Backend technology stack design",
+      "activity2": "Development milestone planning",
+      "activity3": "Infrastructure pipeline design"
     },
     "implementation": {
       "title": "Development & Integration",
-      "description": "Implement frontend and backend modules, integrate APIs and services, perform code reviews and enforce clean architecture.",
-      "activity0": "Frontend & backend development",
-      "activity1": "API integration",
-      "activity2": "Code reviews",
-      "activity3": "Clean architecture enforcement"
+      "description": "Lead core backend development, coordinate full-stack implementation, and ensure code quality through reviews. Maintain clean architecture across all layers.",
+      "activity0": "Core backend development leadership",
+      "activity1": "Full-stack integration coordination",
+      "activity2": "Technical code review leadership",
+      "activity3": "Architecture quality enforcement"
     },
     "delivery": {
       "title": "Testing & Quality Assurance",
-      "description": "Automated tests, performance audits and manual QA for edge cases to ensure production reliability.",
-      "activity0": "Automated testing implementation",
-      "activity1": "Performance audits",
-      "activity2": "Manual QA for edge cases",
-      "activity3": "Production reliability validation"
+      "description": "Lead testing strategy implementation, conduct performance optimization, and ensure system reliability through comprehensive QA processes.",
+      "activity0": "Testing strategy leadership",
+      "activity1": "Backend performance optimization",
+      "activity2": "System integration validation",
+      "activity3": "Production readiness assessment"
     },
     "monitoring": {
       "title": "Deployment & Monitoring",
-      "description": "Deploy to Vercel or containerized environments, configure CI/CD, monitor uptime and performance, and run post-launch improvements.",
-      "activity0": "Production deployment",
-      "activity1": "CI/CD configuration",
-      "activity2": "Performance monitoring setup",
-      "activity3": "Post-launch improvements"
+      "description": "Lead production deployment strategy, configure monitoring systems, and oversee post-launch performance optimization and system improvements.",
+      "activity0": "Production deployment leadership",
+      "activity1": "Infrastructure configuration",
+      "activity2": "System monitoring implementation",
+      "activity3": "Continuous improvement coordination"
     }
   },
   "cta": {

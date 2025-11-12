@@ -3,16 +3,28 @@
   "mainSubtitle": "Testimonios de clientes y credenciales técnicas que demuestran experiencia comprobada y confiabilidad",
   "certificationsTitle": "Certificaciones y Tecnologías",
   "testimonial0": {
-    "quote": "Fernando transformó nuestra arquitectura, reduciendo costos en 40% mientras mejoraba el rendimiento. Su liderazgo técnico fue invaluable.",
-    "author": "Sarah Chen",
-    "role": "CTO, TechCorp",
-    "company": "TechCorp"
+    "quote": "Fernando entregó SageConnect, nuestra plataforma integral de logística. Su experiencia en desarrollo full-stack e integración de sistemas fue crucial para nuestras operaciones.",
+    "author": "Equipo de Operaciones",
+    "role": "Operaciones Logísticas",
+    "company": "Charger Logistics"
   },
   "testimonial1": {
-    "quote": "La mejor contratación de ingeniería que hemos hecho. Fernando no solo escribe código - resuelve problemas de negocio con soluciones técnicas elegantes.",
-    "author": "Michael Rodriguez",
-    "role": "VP Ingeniería, DataFlow",
-    "company": "DataFlow"
+    "quote": "El sistema SageSync que Fernando desarrolló ha optimizado nuestras operaciones de procesamiento de cobre. Su liderazgo técnico en la implementación de SageConnect fue excepcional.",
+    "author": "Equipo de Ingeniería",
+    "role": "Ingeniería de Procesos",
+    "company": "Capstone Copper"
+  },
+  "testimonial2": {
+    "quote": "Las soluciones técnicas de Fernando transformaron nuestras operaciones. Sus habilidades de optimización de sistemas optimizaron nuestra cadena de suministro de remodelación en todas las ubicaciones.",
+    "author": "Cuauhtémoc Villarreal",
+    "role": "Director de Operaciones",
+    "company": "Inova Recubrimientos"
+  },
+  "testimonial3": {
+    "quote": "El sistema de gestión de gimnasio que Fernando construyó ha revolucionado cómo operamos. Su experiencia full-stack y comprensión del negocio marcaron la diferencia.",
+    "author": "Gabriel Souza",
+    "role": "Propietario",
+    "company": "Steel Zone Gym"
   },
   "certifications": [
     "AWS Certified",
@@ -20,6 +32,8 @@
     "Experto React",
     "Especialista Node.js",
     "TypeScript",
-    "Docker y K8s"
+    "Docker y K8s",
+    "Spring Boot",
+    "PostgreSQL"
   ]
 }
