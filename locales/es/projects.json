@@ -1,6 +1,6 @@
 {
-  "title": "Historias de",
-  "titleAccent": "Éxito",
+  "title": "Proyectos",
+  "titleAccent": "Destacados",
   "subtitle": "Proyectos reales, resultados medibles, impacto duradero",
   "sections": {
     "challenge": "El Desafío",
@@ -15,80 +15,130 @@
     "ctaButton": "Hablemos"
   },
   "items": {
-    "ecommerce": {
-      "title": "Transformación de Plataforma E-Commerce",
-      "businessProblem": "Sistema de e-commerce obsoleto causando $50K/mes en ingresos perdidos debido a tiempos de carga de 8 segundos y caídas frecuentes durante tráfico pico.",
+    "sageconnect": {
+      "title": "SageConnect - Plataforma de Integración ERP",
+      "businessProblem": "El procesamiento manual de datos entre Sage 300 ERP y portales de proveedores causaba errores frecuentes, retrasos y flujos de trabajo ineficientes en múltiples departamentos afectando a más de 200 empleados.",
       "myContribution": {
-        "role": "Desarrollador Principal",
-        "teamSize": 5,
-        "responsibility0": "Diseñé la estrategia de migración a microservicios",
-        "responsibility1": "Lideré la optimización de rendimiento frontend", 
-        "responsibility2": "Implementé sistema de inventario en tiempo real"
-      },
-      "technicalSolution": {
-        "stack": ["React", "Next.js", "Node.js", "PostgreSQL", "Redis", "AWS"],
-        "architecture": "Microservicios",
-        "keyDecision0": "Migré a Next.js para SSR y mejor SEO",
-        "keyDecision1": "Implementé caché edge con CloudFront",
-        "keyDecision2": "Inventario en tiempo real con Redis pub/sub"
-      },
-      "businessImpact": {
-        "metric0": { "label": "Rendimiento", "value": "75% más rápido" },
-        "metric1": { "label": "Ingresos", "value": "$200K ahorros anuales" },
-        "metric2": { "label": "Escala", "value": "100K usuarios activos diarios" },
-        "metric3": { "label": "Tiempo activo", "value": "99.9% disponibilidad" }
-      },
-      "tags": ["Full-Stack", "Rendimiento", "E-Commerce"]
-    },
-    "analytics": {
-      "title": "Dashboard de Análisis en Tiempo Real",
-      "businessProblem": "El equipo de marketing no podía tomar decisiones basadas en datos debido a un retraso de 24 horas en los datos y proceso de reportes complejo.",
-      "myContribution": {
-        "role": "Líder Técnico",
-        "teamSize": 3,
-        "responsibility0": "Diseñé pipeline de datos en tiempo real",
-        "responsibility1": "Construí interfaz de dashboard interactiva",
-        "responsibility2": "Optimicé rendimiento de consultas"
-      },
-      "technicalSolution": {
-        "stack": ["React", "TypeScript", "Python", "Kafka", "TimescaleDB", "Docker"],
-        "architecture": "Basado en Eventos",
-        "keyDecision0": "Usé Kafka para streaming de eventos en tiempo real",
-        "keyDecision1": "TimescaleDB para optimización de datos de series temporales",
-        "keyDecision2": "Conexiones WebSocket para actualizaciones en vivo"
-      },
-      "businessImpact": {
-        "metric0": { "label": "Frescura de Datos", "value": "Tiempo real (< 1s)" },
-        "metric1": { "label": "Velocidad de Decisión", "value": "10x más rápido" },
-        "metric2": { "label": "Reducción de Costos", "value": "40% menos costos infra" },
-        "metric3": { "label": "Adopción de Usuario", "value": "95% uso del equipo" }
-      },
-      "tags": ["Ingeniería de Datos", "Tiempo Real", "Liderazgo"]
-    },
-    "mobile": {
-      "title": "App Móvil Multiplataforma",
-      "businessProblem": "La empresa necesitaba presencia móvil pero no podía permitirse equipos separados de iOS y Android. El tiempo de salida al mercado era crítico.",
-      "myContribution": {
-        "role": "Ingeniero Senior",
+        "role": "Desarrollador Líder",
         "teamSize": 4,
-        "responsibility0": "Lideré el diseño de arquitectura móvil",
-        "responsibility1": "Implementé características principales",
-        "responsibility2": "Configuré pipeline CI/CD"
+        "responsibility0": "Diseñé la arquitectura del sistema de automatización",
+        "responsibility1": "Desarrollé microservicios Spring Boot",
+        "responsibility2": "Implementé CI/CD con Jenkins"
       },
       "technicalSolution": {
-        "stack": ["React Native", "TypeScript", "GraphQL", "AWS Amplify", "Jest"],
-        "architecture": "Serverless",
-        "keyDecision0": "React Native para compartir código (90% compartido)",
-        "keyDecision1": "GraphQL para obtención eficiente de datos",
-        "keyDecision2": "AWS Amplify para configuración rápida del backend"
+        "stack": ["Spring Boot", "Java", "MySQL", "Docker", "Jenkins"],
+        "architecture": "Microservicios",
+        "keyDecision0": "Spring Boot para integración empresarial robusta",
+        "keyDecision1": "Contenedores Docker para despliegues consistentes",
+        "keyDecision2": "MySQL para procesamiento confiable de transacciones"
       },
       "businessImpact": {
-        "metric0": { "label": "Tiempo de Desarrollo", "value": "6 meses vs 12" },
-        "metric1": { "label": "Código Compartido", "value": "90% entre plataformas" },
-        "metric2": { "label": "Calificación App Store", "value": "4.8/5 estrellas" },
-        "metric3": { "label": "Usuarios Activos", "value": "50K+ descargas" }
+        "metric0": { "label": "Reducción de Errores", "value": "95% menos errores manuales" },
+        "metric1": { "label": "Eficiencia del Personal", "value": "200+ empleados optimizados" },
+        "metric2": { "label": "Tiempo de Procesamiento", "value": "80% flujos más rápidos" },
+        "metric3": { "label": "Automatización", "value": "100% sincronización de proveedores" }
       },
-      "tags": ["Móvil", "Multiplataforma", "Serverless"]
+      "tags": ["Empresarial", "Integración", "Automatización"]
+    },
+    "sagesync": {
+      "title": "SageSync - Servicio de Sincronización de Inventario",
+      "businessProblem": "Los sistemas de inventario desconectados entre Sage 300 ERP y Fracttal CMMS llevaban a discrepancias de stock, reconciliación manual y falta de visibilidad en tiempo real.",
+      "myContribution": {
+        "role": "Desarrollador Full-Stack",
+        "teamSize": 3,
+        "responsibility0": "Diseñé arquitectura de sincronización en tiempo real",
+        "responsibility1": "Construí dashboards de monitoreo",
+        "responsibility2": "Implementé gestión de tokens OAuth2"
+      },
+      "technicalSolution": {
+        "stack": ["Node.js", "Express", "PostgreSQL", "OAuth2", "Docker"],
+        "architecture": "Basado en Eventos",
+        "keyDecision0": "Node.js para procesamiento de eventos en tiempo real",
+        "keyDecision1": "OAuth2 para autenticación segura de API",
+        "keyDecision2": "PostgreSQL para persistencia confiable de datos"
+      },
+      "businessImpact": {
+        "metric0": { "label": "Precisión de Sync", "value": "99.9% consistencia de datos" },
+        "metric1": { "label": "Actualizaciones en Tiempo Real", "value": "< 30s latencia de sync" },
+        "metric2": { "label": "Trabajo Manual", "value": "90% reducción" },
+        "metric3": { "label": "Tiempo Activo del Sistema", "value": "99.5% disponibilidad" }
+      },
+      "tags": ["Integración", "Tiempo Real", "Monitoreo"]
+    },
+    "cardeal": {
+      "title": "Cardeal - Plataforma de Renta de Autos",
+      "businessProblem": "El negocio de renta de autos necesitaba una plataforma de reservas moderna con procesamiento de pagos, generación de facturas y controles administrativos para competir en el mercado digital.",
+      "myContribution": {
+        "role": "Desarrollador Full-Stack",
+        "teamSize": 2,
+        "responsibility0": "Construí frontend Next.js y flujo de reservas",
+        "responsibility1": "Integré pasarelas de pago y facturación XML",
+        "responsibility2": "Configuré pipeline CI/CD y dashboards admin"
+      },
+      "technicalSolution": {
+        "stack": ["Next.js", "React", "Node.js", "MongoDB", "Vercel"],
+        "architecture": "Serverless",
+        "keyDecision0": "Next.js para páginas de reserva optimizadas para SEO",
+        "keyDecision1": "MongoDB para datos flexibles de reservas",
+        "keyDecision2": "Vercel para despliegues sin problemas"
+      },
+      "businessImpact": {
+        "metric0": { "label": "Tiempo de Lanzamiento", "value": "4 meses de entrega" },
+        "metric1": { "label": "Conversión de Reservas", "value": "35% aumento" },
+        "metric2": { "label": "Eficiencia Admin", "value": "70% operaciones más rápidas" },
+        "metric3": { "label": "Éxito de Pagos", "value": "99.2% tasa de transacción" }
+      },
+      "tags": ["E-Commerce", "Pagos", "Full-Stack"]
+    },
+    "odoo": {
+      "title": "Inova - Módulos Personalizados Odoo",
+      "businessProblem": "Los procesos manuales de facturación, errores de validación RFC y restricciones de pago causaban inexactitudes de facturación y requerían intervención manual extensiva.",
+      "myContribution": {
+        "role": "Desarrollador Python",
+        "teamSize": 2,
+        "responsibility0": "Desarrollé módulos personalizados Odoo",
+        "responsibility1": "Automaticé flujos de facturación y validación",
+        "responsibility2": "Integré controles de restricción de pagos"
+      },
+      "technicalSolution": {
+        "stack": ["Python", "Odoo", "PostgreSQL", "Apache POI"],
+        "architecture": "Modular",
+        "keyDecision0": "Módulos Python para integración con framework Odoo",
+        "keyDecision1": "PostgreSQL para manejo robusto de datos",
+        "keyDecision2": "Apache POI para procesamiento de documentos"
+      },
+      "businessImpact": {
+        "metric0": { "label": "Precisión de Facturación", "value": "98% reducción de errores" },
+        "metric1": { "label": "Trabajo Manual", "value": "85% automatización" },
+        "metric2": { "label": "Velocidad de Procesamiento", "value": "60% facturación más rápida" },
+        "metric3": { "label": "Validación RFC", "value": "100% automatizada" }
+      },
+      "tags": ["ERP", "Automatización", "Proceso de Negocio"]
+    },
+    "gymmanager": {
+      "title": "Gym Manager - Plataforma de Operaciones",
+      "businessProblem": "Los gimnasios locales necesitaban un sistema asequible de gestión de membresías con dashboards de KPI y capacidades de reportes para operaciones eficientes y seguimiento de crecimiento.",
+      "myContribution": {
+        "role": "Desarrollador Full-Stack",
+        "teamSize": 1,
+        "responsibility0": "Diseñé sistema de gestión de membresías",
+        "responsibility1": "Construí dashboards de KPI y analíticas",
+        "responsibility2": "Optimicé para despliegue rápido"
+      },
+      "technicalSolution": {
+        "stack": ["Next.js", "React", "PostgreSQL", "Vercel"],
+        "architecture": "Serverless",
+        "keyDecision0": "Next.js para interfaz admin rápida y SEO-friendly",
+        "keyDecision1": "PostgreSQL para datos confiables de membresías",
+        "keyDecision2": "Vercel para hosting costo-efectivo"
+      },
+      "businessImpact": {
+        "metric0": { "label": "Tiempo de Configuración", "value": "2 horas de despliegue" },
+        "metric1": { "label": "Eficiencia Admin", "value": "75% ahorro de tiempo" },
+        "metric2": { "label": "Retención de Miembros", "value": "20% mejora" },
+        "metric3": { "label": "Ahorro de Costos", "value": "90% vs alternativas" }
+      },
+      "tags": ["SaaS", "Analíticas", "Pequeño Negocio"]
     }
   }
 }

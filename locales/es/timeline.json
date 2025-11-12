@@ -1,42 +1,42 @@
 {
-  "title": "Mi",
-  "titleAccent": "Trayectoria",
+  "title": "Línea de Tiempo",
+  "titleAccent": "Profesional",
   "subtitle": "De escribir mi primera línea de código a liderar equipos de ingeniería",
   "roles": {
-    "junior": {
-      "year": "2019",
-      "role": "Desarrollador Junior",
-      "highlight": "Comenzó el Viaje",
-      "description0": "Aprendí fundamentos del desarrollo web",
-      "description1": "Primeros despliegues en producción",
-      "description2": "Contribuí a proyectos del equipo",
+    "university": {
+      "year": "2021",
+      "role": "Desarrollador de Software",
+      "highlight": "Proyectos Universitarios",
+      "description0": "Proyectos académicos y startups enfocados en gestión de empleados",
+      "description1": "Generación de documentos e integraciones",
+      "description2": "Construí bases en desarrollo de software",
       "color": "from-blue-400 to-blue-600"
     },
-    "mid": {
-      "year": "2021",
-      "role": "Desarrollador Full-Stack",
-      "highlight": "Expandí Habilidades",
-      "description0": "Lideré primeros proyectos importantes",
-      "description1": "Dominé el stack tecnológico moderno",
-      "description2": "Construí aplicaciones escalables",
+    "sageconnect": {
+      "year": "2023",
+      "role": "Ingeniero de Software",
+      "highlight": "Proyecto SageConnect",
+      "description0": "Entregué sistemas de automatización de datos reduciendo errores manuales a cero",
+      "description1": "Mejoré el rendimiento operacional entre departamentos",
+      "description2": "Construí integraciones Spring Boot de grado empresarial",
       "color": "from-purple-400 to-purple-600"
     },
-    "senior": {
-      "year": "2023",
-      "role": "Ingeniero Senior",
-      "highlight": "Enfoque en Arquitectura",
-      "description0": "Diseñé arquitecturas de sistemas",
-      "description1": "Mentoreé desarrolladores junior",
-      "description2": "Mejoré eficiencia del equipo en 60%",
+    "cardeal": {
+      "year": "2024",
+      "role": "Desarrollador Full Stack",
+      "highlight": "Qardeal / Cardeal (contrato)",
+      "description0": "Desarrollo central de plataforma de reservas de renta de autos",
+      "description1": "Implementé CI/CD e integraciones de pago",
+      "description2": "Frontend Next.js con experiencia de usuario fluida",
       "color": "from-indigo-400 to-indigo-600"
     },
-    "lead": {
-      "year": "2024",
-      "role": "Líder Técnico",
-      "highlight": "Liderazgo",
-      "description0": "Liderando equipos multifuncionales",
-      "description1": "Dirigiendo estrategia técnica",
-      "description2": "Entregando $2M+ en valor",
+    "tersoft": {
+      "year": "2025",
+      "role": "Desarrollador Full Stack Senior",
+      "highlight": "Tersoft.mx",
+      "description0": "Desarrollador líder en proyectos de automatización e integración",
+      "description1": "Sistemas de responsivas y gestión de accesos",
+      "description2": "Liderando estrategia técnica y desarrollo de equipos",
       "color": "from-cyan-400 to-cyan-600"
     }
   }

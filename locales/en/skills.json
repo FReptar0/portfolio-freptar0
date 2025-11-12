@@ -1,107 +1,137 @@
 {
-  "title": "Skills in",
-  "titleAccent": "Context",
+  "title": "Technical",
+  "titleAccent": "Skills",
   "subtitle": "Not just buzzwords - real experience with measurable impact",
   "proficiencyLabels": {
     "expert": "Expert",
-    "advanced": "Advanced", 
+    "advanced": "Advanced",
     "intermediate": "Intermediate",
     "familiar": "Familiar"
   },
   "categories": [
     {
-      "title": "Frontend Development",
-      "icon": "palette",
+      "title": "Programming Languages",
+      "icon": "code",
       "skills": [
         {
-          "name": "React / Next.js",
+          "name": "JavaScript",
           "experience": "4 years",
           "level": 95,
-          "project": "Built e-commerce platform serving 100K users"
+          "project": "Built complex web applications and automation systems"
         },
         {
-          "name": "TypeScript", 
+          "name": "TypeScript",
           "experience": "3 years",
           "level": 90,
           "project": "Type-safe systems reducing bugs by 60%"
         },
         {
-          "name": "Tailwind CSS",
+          "name": "Java",
           "experience": "3 years",
-          "level": 90,
-          "project": "Rapid UI development with consistent design"
+          "level": 85,
+          "project": "Enterprise-grade Spring Boot applications"
+        },
+        {
+          "name": "Python",
+          "experience": "2 years",
+          "level": 80,
+          "project": "Odoo modules and automation scripts"
         }
       ]
     },
     {
-      "title": "Backend & Infrastructure",
-      "icon": "cog",
+      "title": "Frameworks & Libraries",
+      "icon": "palette",
       "skills": [
         {
-          "name": "Node.js / Express",
-          "experience": "5 years",
+          "name": "Next.js",
+          "experience": "3 years",
           "level": 95,
-          "project": "APIs handling 1M+ requests daily"
+          "project": "Cardeal platform with SSR and payment integration"
         },
         {
-          "name": "Python / FastAPI",
-          "experience": "3 years", 
-          "level": 85,
-          "project": "ML pipelines and data processing systems"
+          "name": "React",
+          "experience": "4 years",
+          "level": 95,
+          "project": "Multiple dashboard and booking platforms"
         },
         {
-          "name": "PostgreSQL / MongoDB",
+          "name": "Node.js",
           "experience": "4 years",
           "level": 90,
-          "project": "Optimized queries for 10TB+ databases"
+          "project": "SageSync real-time inventory synchronization"
+        },
+        {
+          "name": "Spring Boot",
+          "experience": "3 years",
+          "level": 85,
+          "project": "SageConnect ERP integration platform"
+        },
+        {
+          "name": "Express",
+          "experience": "3 years",
+          "level": 85,
+          "project": "RESTful APIs and microservices architecture"
         }
       ]
     },
     {
-      "title": "DevOps & Cloud",
+      "title": "Databases & Data Management",
+      "icon": "database",
+      "skills": [
+        {
+          "name": "MySQL",
+          "experience": "4 years",
+          "level": 90,
+          "project": "SageConnect transaction processing and ERP data"
+        },
+        {
+          "name": "PostgreSQL",
+          "experience": "3 years",
+          "level": 85,
+          "project": "SageSync inventory management and analytics"
+        },
+        {
+          "name": "MongoDB",
+          "experience": "2 years",
+          "level": 80,
+          "project": "Cardeal booking data and document storage"
+        }
+      ]
+    },
+    {
+      "title": "Cloud & DevOps",
       "icon": "cloud",
       "skills": [
         {
-          "name": "AWS / GCP",
-          "experience": "4 years",
-          "level": 90,
-          "project": "Cloud infrastructure saving $200K annually"
-        },
-        {
-          "name": "Docker / Kubernetes",
-          "experience": "3 years",
-          "level": 85,
-          "project": "Containerized apps for seamless scaling"
-        },
-        {
-          "name": "CI/CD Pipelines",
-          "experience": "4 years",
-          "level": 90,
-          "project": "Automated deployments, 50+ releases/month"
-        }
-      ]
-    },
-    {
-      "title": "Leadership & Architecture",
-      "icon": "rocket",
-      "skills": [
-        {
-          "name": "Team Leadership",
+          "name": "AWS",
           "experience": "2 years",
-          "level": 85,
-          "project": "Led team of 5 developers on critical projects"
+          "level": 75,
+          "project": "Cloud infrastructure and serverless deployments"
         },
         {
-          "name": "System Design",
+          "name": "Docker",
           "experience": "3 years",
-          "level": 90,
-          "project": "Architected systems handling millions of users"
+          "level": 85,
+          "project": "Containerized microservices across all projects"
         },
         {
-          "name": "Agile / Scrum",
-          "experience": "5 years",
-          "level": 95,
-          "project": "Delivered 20+ projects on time and budget"
+          "name": "Jenkins",
+          "experience": "2 years",
+          "level": 80,
+          "project": "SageConnect CI/CD automation pipeline"
+        },
+        {
+          "name": "Vercel",
+          "experience": "2 years",
+          "level": 90,
+          "project": "Next.js deployments for multiple client projects"
+        },
+        {
+          "name": "GitHub Actions",
+          "experience": "2 years",
+          "level": 80,
+          "project": "Automated testing and deployment workflows"
         }
       ]
     }

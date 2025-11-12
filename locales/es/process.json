@@ -1,44 +1,52 @@
 {
-  "title": "Cómo",
-  "titleAccent": "Trabajo",
-  "subtitle": "Un proceso probado que entrega resultados a tiempo y dentro del presupuesto",
+  "title": "Mi Proceso de",
+  "titleAccent": "Desarrollo",
+  "subtitle": "Mi flujo de trabajo como Desarrollador Full Stack Senior se enfoca en escalabilidad, mantenibilidad y colaboración entre equipos. Cada etapa asegura calidad y consistencia en todos los proyectos.",
   "steps": {
     "discovery": {
-      "title": "Descubrimiento",
-      "description": "Analizo las necesidades de tu negocio, restricciones técnicas y criterios de éxito. No hay soluciones predeterminadas - cada proyecto es único.",
-      "activity0": "Entrevistas con stakeholders",
-      "activity1": "Auditoría técnica",
-      "activity2": "Recolección de requisitos",
+      "title": "Investigación y Descubrimiento",
+      "description": "Entender las metas del cliente, limitaciones y usuarios. Definir métricas de éxito y viabilidad.",
+      "activity0": "Análisis de objetivos comerciales",
+      "activity1": "Evaluación de limitaciones técnicas",
+      "activity2": "Recolección de requerimientos de usuario",
       "activity3": "Definición de métricas de éxito"
     },
     "architecture": {
-      "title": "Arquitectura",
-      "description": "Diseño soluciones escalables y mantenibles con hitos claros y cronogramas realistas. Sabrás exactamente qué esperar.",
-      "activity0": "Diseño de sistema",
-      "activity1": "Selección de tecnología",
-      "activity2": "Evaluación de riesgos",
-      "activity3": "Creación de hoja de ruta"
+      "title": "Arquitectura y Planeación",
+      "description": "Diseñar arquitectura de sistema escalable, seleccionar stack (Next.js, Spring Boot, PostgreSQL, Docker) y planificar hitos y CI/CD.",
+      "activity0": "Diseño de arquitectura de sistema",
+      "activity1": "Selección de stack tecnológico",
+      "activity2": "Planeación de hitos",
+      "activity3": "Configuración de pipeline CI/CD"
     },
     "implementation": {
-      "title": "Implementación",
-      "description": "Desarrollo ágil con comunicación continua. Verás progreso cada semana, no solo al final.",
-      "activity0": "Desarrollo iterativo",
-      "activity1": "Demos semanales",
+      "title": "Desarrollo e Integración",
+      "description": "Implementar módulos frontend y backend, integrar APIs y servicios, realizar revisiones de código y aplicar arquitectura limpia.",
+      "activity0": "Desarrollo frontend y backend",
+      "activity1": "Integración de APIs",
       "activity2": "Revisiones de código",
-      "activity3": "Aseguramiento de calidad"
+      "activity3": "Aplicación de arquitectura limpia"
     },
     "delivery": {
-      "title": "Entrega",
-      "description": "Despliegue fluido, documentación completa y transferencia de conocimiento. Tu equipo estará completamente equipado para mantener y extender el sistema.",
-      "activity0": "Despliegue a producción",
-      "activity1": "Documentación",
-      "activity2": "Capacitación del equipo",
-      "activity3": "Soporte post-lanzamiento"
+      "title": "Pruebas y Aseguramiento de Calidad",
+      "description": "Pruebas automatizadas, auditorías de rendimiento y QA manual para casos extremos para asegurar confiabilidad en producción.",
+      "activity0": "Implementación de pruebas automatizadas",
+      "activity1": "Auditorías de rendimiento",
+      "activity2": "QA manual para casos extremos",
+      "activity3": "Validación de confiabilidad en producción"
+    },
+    "monitoring": {
+      "title": "Despliegue y Monitoreo",
+      "description": "Desplegar en Vercel o entornos conteneurizados, configurar CI/CD, monitorear tiempo de actividad y rendimiento, y ejecutar mejoras post-lanzamiento.",
+      "activity0": "Despliegue en producción",
+      "activity1": "Configuración de CI/CD",
+      "activity2": "Configuración de monitoreo de rendimiento",
+      "activity3": "Mejoras post-lanzamiento"
     }
   },
   "cta": {
-    "title": "¿Listo para comenzar tu proyecto?",
+    "title": "¿Listo para iniciar tu proyecto?",
     "description": "Discutamos tus necesidades y creemos un plan personalizado que entregue valor real a tu negocio.",
-    "button": "Agenda una Consulta Gratuita"
+    "button": "Programa una Consulta Gratuita"
   }
 }

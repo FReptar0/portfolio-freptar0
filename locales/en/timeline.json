@@ -1,42 +1,42 @@
 {
-  "title": "My",
-  "titleAccent": "Journey",
+  "title": "Professional",
+  "titleAccent": "Timeline",
   "subtitle": "From writing my first line of code to leading engineering teams",
   "roles": {
-    "junior": {
-      "year": "2019",
-      "role": "Junior Developer",
-      "highlight": "Started Journey",
-      "description0": "Learned fundamentals of web development",
-      "description1": "First production deployments",
-      "description2": "Contributed to team projects",
+    "university": {
+      "year": "2021",
+      "role": "Software Developer",
+      "highlight": "University Projects",
+      "description0": "Academic and startup projects focused on employee management",
+      "description1": "Document generation and integrations",
+      "description2": "Built foundations in software development",
       "color": "from-blue-400 to-blue-600"
     },
-    "mid": {
-      "year": "2021",
-      "role": "Full-Stack Developer",
-      "highlight": "Expanded Skills",
-      "description0": "Led first major projects",
-      "description1": "Mastered modern tech stack",
-      "description2": "Built scalable applications",
+    "sageconnect": {
+      "year": "2023",
+      "role": "Software Engineer",
+      "highlight": "SageConnect Project",
+      "description0": "Delivered data automation systems reducing manual errors to zero",
+      "description1": "Improved operational throughput across departments",
+      "description2": "Built enterprise-grade Spring Boot integrations",
       "color": "from-purple-400 to-purple-600"
     },
-    "senior": {
-      "year": "2023",
-      "role": "Senior Engineer",
-      "highlight": "Architecture Focus",
-      "description0": "Designed system architectures",
-      "description1": "Mentored junior developers",
-      "description2": "Improved team efficiency by 60%",
+    "cardeal": {
+      "year": "2024",
+      "role": "Full Stack Developer",
+      "highlight": "Qardeal / Cardeal (contract)",
+      "description0": "Core development of car rental booking platform",
+      "description1": "Implemented CI/CD and payment integrations",
+      "description2": "Next.js frontend with seamless user experience",
       "color": "from-indigo-400 to-indigo-600"
     },
-    "lead": {
-      "year": "2024",
-      "role": "Tech Lead",
-      "highlight": "Leadership",
-      "description0": "Leading cross-functional teams",
-      "description1": "Driving technical strategy",
-      "description2": "Delivering $2M+ in value",
+    "tersoft": {
+      "year": "2025",
+      "role": "Senior Full Stack Developer",
+      "highlight": "Tersoft.mx",
+      "description0": "Lead developer on automation and integration projects",
+      "description1": "Responsivas and access management systems",
+      "description2": "Leading technical strategy and team development",
       "color": "from-cyan-400 to-cyan-600"
     }
   }

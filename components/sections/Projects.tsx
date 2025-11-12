@@ -30,100 +30,164 @@ export default function Projects() {
   
   const projects = [
     {
-      id: "ecommerce",
-      title: t('items.ecommerce.title'),
-      businessProblem: t('items.ecommerce.businessProblem'),
+      id: "sageconnect",
+      title: t('items.sageconnect.title'),
+      businessProblem: t('items.sageconnect.businessProblem'),
       myContribution: {
-        role: t('items.ecommerce.myContribution.role'),
-        teamSize: t.raw('items.ecommerce.myContribution.teamSize') as number,
+        role: t('items.sageconnect.myContribution.role'),
+        teamSize: t.raw('items.sageconnect.myContribution.teamSize') as number,
         responsibilities: [
-          t('items.ecommerce.myContribution.responsibility0'),
-          t('items.ecommerce.myContribution.responsibility1'),
-          t('items.ecommerce.myContribution.responsibility2')
+          t('items.sageconnect.myContribution.responsibility0'),
+          t('items.sageconnect.myContribution.responsibility1'),
+          t('items.sageconnect.myContribution.responsibility2')
         ],
       },
       technicalSolution: {
-        stack: t.raw('items.ecommerce.technicalSolution.stack') as string[],
-        architecture: t('items.ecommerce.technicalSolution.architecture'),
+        stack: t.raw('items.sageconnect.technicalSolution.stack') as string[],
+        architecture: t('items.sageconnect.technicalSolution.architecture'),
         keyDecisions: [
-          t('items.ecommerce.technicalSolution.keyDecision0'),
-          t('items.ecommerce.technicalSolution.keyDecision1'),
-          t('items.ecommerce.technicalSolution.keyDecision2')
+          t('items.sageconnect.technicalSolution.keyDecision0'),
+          t('items.sageconnect.technicalSolution.keyDecision1'),
+          t('items.sageconnect.technicalSolution.keyDecision2')
         ],
       },
       businessImpact: {
         metrics: [
-          { label: t('items.ecommerce.businessImpact.metric0.label'), value: t('items.ecommerce.businessImpact.metric0.value') },
-          { label: t('items.ecommerce.businessImpact.metric1.label'), value: t('items.ecommerce.businessImpact.metric1.value') },
-          { label: t('items.ecommerce.businessImpact.metric2.label'), value: t('items.ecommerce.businessImpact.metric2.value') },
-          { label: t('items.ecommerce.businessImpact.metric3.label'), value: t('items.ecommerce.businessImpact.metric3.value') }
+          { label: t('items.sageconnect.businessImpact.metric0.label'), value: t('items.sageconnect.businessImpact.metric0.value') },
+          { label: t('items.sageconnect.businessImpact.metric1.label'), value: t('items.sageconnect.businessImpact.metric1.value') },
+          { label: t('items.sageconnect.businessImpact.metric2.label'), value: t('items.sageconnect.businessImpact.metric2.value') },
+          { label: t('items.sageconnect.businessImpact.metric3.label'), value: t('items.sageconnect.businessImpact.metric3.value') }
         ],
       },
-      tags: t.raw('items.ecommerce.tags') as string[],
+      tags: t.raw('items.sageconnect.tags') as string[],
     },
     {
-      id: "analytics", 
-      title: t('items.analytics.title'),
-      businessProblem: t('items.analytics.businessProblem'),
+      id: "sagesync", 
+      title: t('items.sagesync.title'),
+      businessProblem: t('items.sagesync.businessProblem'),
       myContribution: {
-        role: t('items.analytics.myContribution.role'),
-        teamSize: t.raw('items.analytics.myContribution.teamSize') as number,
+        role: t('items.sagesync.myContribution.role'),
+        teamSize: t.raw('items.sagesync.myContribution.teamSize') as number,
         responsibilities: [
-          t('items.analytics.myContribution.responsibility0'),
-          t('items.analytics.myContribution.responsibility1'),
-          t('items.analytics.myContribution.responsibility2')
+          t('items.sagesync.myContribution.responsibility0'),
+          t('items.sagesync.myContribution.responsibility1'),
+          t('items.sagesync.myContribution.responsibility2')
         ],
       },
       technicalSolution: {
-        stack: t.raw('items.analytics.technicalSolution.stack') as string[],
-        architecture: t('items.analytics.technicalSolution.architecture'),
+        stack: t.raw('items.sagesync.technicalSolution.stack') as string[],
+        architecture: t('items.sagesync.technicalSolution.architecture'),
         keyDecisions: [
-          t('items.analytics.technicalSolution.keyDecision0'),
-          t('items.analytics.technicalSolution.keyDecision1'),
-          t('items.analytics.technicalSolution.keyDecision2')
+          t('items.sagesync.technicalSolution.keyDecision0'),
+          t('items.sagesync.technicalSolution.keyDecision1'),
+          t('items.sagesync.technicalSolution.keyDecision2')
         ],
       },
       businessImpact: {
         metrics: [
-          { label: t('items.analytics.businessImpact.metric0.label'), value: t('items.analytics.businessImpact.metric0.value') },
-          { label: t('items.analytics.businessImpact.metric1.label'), value: t('items.analytics.businessImpact.metric1.value') },
-          { label: t('items.analytics.businessImpact.metric2.label'), value: t('items.analytics.businessImpact.metric2.value') },
-          { label: t('items.analytics.businessImpact.metric3.label'), value: t('items.analytics.businessImpact.metric3.value') }
+          { label: t('items.sagesync.businessImpact.metric0.label'), value: t('items.sagesync.businessImpact.metric0.value') },
+          { label: t('items.sagesync.businessImpact.metric1.label'), value: t('items.sagesync.businessImpact.metric1.value') },
+          { label: t('items.sagesync.businessImpact.metric2.label'), value: t('items.sagesync.businessImpact.metric2.value') },
+          { label: t('items.sagesync.businessImpact.metric3.label'), value: t('items.sagesync.businessImpact.metric3.value') }
         ],
       },
-      tags: t.raw('items.analytics.tags') as string[],
+      tags: t.raw('items.sagesync.tags') as string[],
     },
     {
-      id: "mobile",
-      title: t('items.mobile.title'),
-      businessProblem: t('items.mobile.businessProblem'),
+      id: "cardeal",
+      title: t('items.cardeal.title'),
+      businessProblem: t('items.cardeal.businessProblem'),
       myContribution: {
-        role: t('items.mobile.myContribution.role'),
-        teamSize: t.raw('items.mobile.myContribution.teamSize') as number,
+        role: t('items.cardeal.myContribution.role'),
+        teamSize: t.raw('items.cardeal.myContribution.teamSize') as number,
         responsibilities: [
-          t('items.mobile.myContribution.responsibility0'),
-          t('items.mobile.myContribution.responsibility1'),
-          t('items.mobile.myContribution.responsibility2')
+          t('items.cardeal.myContribution.responsibility0'),
+          t('items.cardeal.myContribution.responsibility1'),
+          t('items.cardeal.myContribution.responsibility2')
         ],
       },
       technicalSolution: {
-        stack: t.raw('items.mobile.technicalSolution.stack') as string[],
-        architecture: t('items.mobile.technicalSolution.architecture'),
+        stack: t.raw('items.cardeal.technicalSolution.stack') as string[],
+        architecture: t('items.cardeal.technicalSolution.architecture'),
         keyDecisions: [
-          t('items.mobile.technicalSolution.keyDecision0'),
-          t('items.mobile.technicalSolution.keyDecision1'),
-          t('items.mobile.technicalSolution.keyDecision2')
+          t('items.cardeal.technicalSolution.keyDecision0'),
+          t('items.cardeal.technicalSolution.keyDecision1'),
+          t('items.cardeal.technicalSolution.keyDecision2')
         ],
       },
       businessImpact: {
         metrics: [
-          { label: t('items.mobile.businessImpact.metric0.label'), value: t('items.mobile.businessImpact.metric0.value') },
-          { label: t('items.mobile.businessImpact.metric1.label'), value: t('items.mobile.businessImpact.metric1.value') },
-          { label: t('items.mobile.businessImpact.metric2.label'), value: t('items.mobile.businessImpact.metric2.value') },
-          { label: t('items.mobile.businessImpact.metric3.label'), value: t('items.mobile.businessImpact.metric3.value') }
+          { label: t('items.cardeal.businessImpact.metric0.label'), value: t('items.cardeal.businessImpact.metric0.value') },
+          { label: t('items.cardeal.businessImpact.metric1.label'), value: t('items.cardeal.businessImpact.metric1.value') },
+          { label: t('items.cardeal.businessImpact.metric2.label'), value: t('items.cardeal.businessImpact.metric2.value') },
+          { label: t('items.cardeal.businessImpact.metric3.label'), value: t('items.cardeal.businessImpact.metric3.value') }
         ],
       },
-      tags: t.raw('items.mobile.tags') as string[],
+      tags: t.raw('items.cardeal.tags') as string[],
+    },
+    {
+      id: "odoo",
+      title: t('items.odoo.title'),
+      businessProblem: t('items.odoo.businessProblem'),
+      myContribution: {
+        role: t('items.odoo.myContribution.role'),
+        teamSize: t.raw('items.odoo.myContribution.teamSize') as number,
+        responsibilities: [
+          t('items.odoo.myContribution.responsibility0'),
+          t('items.odoo.myContribution.responsibility1'),
+          t('items.odoo.myContribution.responsibility2')
+        ],
+      },
+      technicalSolution: {
+        stack: t.raw('items.odoo.technicalSolution.stack') as string[],
+        architecture: t('items.odoo.technicalSolution.architecture'),
+        keyDecisions: [
+          t('items.odoo.technicalSolution.keyDecision0'),
+          t('items.odoo.technicalSolution.keyDecision1'),
+          t('items.odoo.technicalSolution.keyDecision2')
+        ],
+      },
+      businessImpact: {
+        metrics: [
+          { label: t('items.odoo.businessImpact.metric0.label'), value: t('items.odoo.businessImpact.metric0.value') },
+          { label: t('items.odoo.businessImpact.metric1.label'), value: t('items.odoo.businessImpact.metric1.value') },
+          { label: t('items.odoo.businessImpact.metric2.label'), value: t('items.odoo.businessImpact.metric2.value') },
+          { label: t('items.odoo.businessImpact.metric3.label'), value: t('items.odoo.businessImpact.metric3.value') }
+        ],
+      },
+      tags: t.raw('items.odoo.tags') as string[],
+    },
+    {
+      id: "gymmanager",
+      title: t('items.gymmanager.title'),
+      businessProblem: t('items.gymmanager.businessProblem'),
+      myContribution: {
+        role: t('items.gymmanager.myContribution.role'),
+        teamSize: t.raw('items.gymmanager.myContribution.teamSize') as number,
+        responsibilities: [
+          t('items.gymmanager.myContribution.responsibility0'),
+          t('items.gymmanager.myContribution.responsibility1'),
+          t('items.gymmanager.myContribution.responsibility2')
+        ],
+      },
+      technicalSolution: {
+        stack: t.raw('items.gymmanager.technicalSolution.stack') as string[],
+        architecture: t('items.gymmanager.technicalSolution.architecture'),
+        keyDecisions: [
+          t('items.gymmanager.technicalSolution.keyDecision0'),
+          t('items.gymmanager.technicalSolution.keyDecision1'),
+          t('items.gymmanager.technicalSolution.keyDecision2')
+        ],
+      },
+      businessImpact: {
+        metrics: [
+          { label: t('items.gymmanager.businessImpact.metric0.label'), value: t('items.gymmanager.businessImpact.metric0.value') },
+          { label: t('items.gymmanager.businessImpact.metric1.label'), value: t('items.gymmanager.businessImpact.metric1.value') },
+          { label: t('items.gymmanager.businessImpact.metric2.label'), value: t('items.gymmanager.businessImpact.metric2.value') },
+          { label: t('items.gymmanager.businessImpact.metric3.label'), value: t('items.gymmanager.businessImpact.metric3.value') }
+        ],
+      },
+      tags: t.raw('items.gymmanager.tags') as string[],
     },
   ];
 

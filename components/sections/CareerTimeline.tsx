@@ -9,48 +9,48 @@ export default function CareerTimeline() {
 
   const timelineData = [
     {
-      year: t('roles.junior.year'),
-      role: t('roles.junior.role'),
-      highlight: t('roles.junior.highlight'),
+      year: t('roles.university.year'),
+      role: t('roles.university.role'),
+      highlight: t('roles.university.highlight'),
       description: [
-        t('roles.junior.description0'),
-        t('roles.junior.description1'),
-        t('roles.junior.description2')
+        t('roles.university.description0'),
+        t('roles.university.description1'),
+        t('roles.university.description2')
       ],
-      color: t('roles.junior.color'),
+      color: t('roles.university.color'),
     },
     {
-      year: t('roles.mid.year'),
-      role: t('roles.mid.role'),
-      highlight: t('roles.mid.highlight'),
+      year: t('roles.sageconnect.year'),
+      role: t('roles.sageconnect.role'),
+      highlight: t('roles.sageconnect.highlight'),
       description: [
-        t('roles.mid.description0'),
-        t('roles.mid.description1'),
-        t('roles.mid.description2')
+        t('roles.sageconnect.description0'),
+        t('roles.sageconnect.description1'),
+        t('roles.sageconnect.description2')
       ],
-      color: t('roles.mid.color'),
+      color: t('roles.sageconnect.color'),
     },
     {
-      year: t('roles.senior.year'),
-      role: t('roles.senior.role'),
-      highlight: t('roles.senior.highlight'),
+      year: t('roles.cardeal.year'),
+      role: t('roles.cardeal.role'),
+      highlight: t('roles.cardeal.highlight'),
       description: [
-        t('roles.senior.description0'),
-        t('roles.senior.description1'),
-        t('roles.senior.description2')
+        t('roles.cardeal.description0'),
+        t('roles.cardeal.description1'),
+        t('roles.cardeal.description2')
       ],
-      color: t('roles.senior.color'),
+      color: t('roles.cardeal.color'),
     },
     {
-      year: t('roles.lead.year'),
-      role: t('roles.lead.role'),
-      highlight: t('roles.lead.highlight'),
+      year: t('roles.tersoft.year'),
+      role: t('roles.tersoft.role'),
+      highlight: t('roles.tersoft.highlight'),
       description: [
-        t('roles.lead.description0'),
-        t('roles.lead.description1'),
-        t('roles.lead.description2')
+        t('roles.tersoft.description0'),
+        t('roles.tersoft.description1'),
+        t('roles.tersoft.description2')
       ],
-      color: t('roles.lead.color'),
+      color: t('roles.tersoft.color'),
     },
   ];
 
