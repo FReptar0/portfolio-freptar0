@@ -1,6 +1,44 @@
 import { NextRequest, NextResponse } from 'next/server';
 import { ZodError } from 'zod';
+import { Resend } from 'resend';
+import { render } from '@react-email/components';
 import { contactFormSchema, turnstileVerificationSchema } from '@/lib/validations/contact';
+import ContactConfirmationEmail from '@/emails/contact-confirmation';
+
+const resend = new Resend(process.env.RESEND_API_KEY);
+
+async function sendConfirmationEmail(data: {
+  name: string;
+  email: string;
+  project: string;
+  message: string;
+}): Promise<void> {
+  try {
+    // Create a snippet of the message (first 100 characters + "...")
+    const messageSnippet = data.message.length > 100 
+      ? `${data.message.substring(0, 100)}...`
+      : data.message;
+
+    const emailHtml = await render(ContactConfirmationEmail({
+      name: data.name,
+      email: data.email,
+      project: data.project,
+      messageSnippet,
+    }));
+
+    await resend.emails.send({
+      from: 'noreply@fmemije.com',
+      to: data.email,
+      subject: `Thanks for reaching out! - Fernando Rodriguez`,
+      html: emailHtml,
+    });
+
+    console.log('Confirmation email sent successfully to:', data.email);
+  } catch (error) {
+    // Log the error but don't throw - we don't want email failures to break the form submission
+    console.error('Failed to send confirmation email:', error);
+  }
+}
 
 async function verifyTurnstileToken(token: string): Promise<boolean> {
   // Allow bypass in development when explicitly enabled via env var
@@ -98,38 +136,15 @@ export async function POST(request: NextRequest) {
       message: data.message,
     };
 
-    // Here you would typically:
-    // 1. Save to database
-    // 2. Send email notification
-    // 3. Send to external service (like Resend, SendGrid, etc.)
-    
-    // For now, we'll just log the contact attempt
+    // Log the contact attempt
     console.log('New contact form submission:', {
       timestamp: new Date().toISOString(),
       ...sanitizedData,
       ip: request.headers.get('x-forwarded-for') || request.headers.get('x-real-ip') || 'unknown',
     });
 
-    // TODO: Implement actual email sending or database storage
-    // Example with a service like Resend:
-    /*
-    const { Resend } = require('resend');
-    const resend = new Resend(process.env.RESEND_API_KEY);
-    
-    await resend.emails.send({
-      from: 'onboarding@resend.dev',
-      to: 'hi@fernandomemije.dev',
-      subject: `New contact from ${sanitizedData.name}`,
-      html: `
-        <h2>New Contact Form Submission</h2>
-        <p><strong>Name:</strong> ${sanitizedData.name}</p>
-        <p><strong>Email:</strong> ${sanitizedData.email}</p>
-        <p><strong>Project Type:</strong> ${sanitizedData.project}</p>
-        <p><strong>Message:</strong></p>
-        <p>${sanitizedData.message.replace(/\n/g, '<br>')}</p>
-      `,
-    });
-    */
+    // Send confirmation email to the user
+    await sendConfirmationEmail(sanitizedData);
 
     return NextResponse.json(
       { message: 'Message sent successfully' },
