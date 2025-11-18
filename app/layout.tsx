@@ -1,8 +1,13 @@
 import * as React from "react";
+import dynamic from "next/dynamic";
 import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
 import { ThemeProvider } from "@/components/theme-provider";
-import { SpeedInsights } from "@vercel/speed-insights/next"
+
+const SpeedInsights = dynamic(
+    () => import("@vercel/speed-insights/next").then((mod) => mod.SpeedInsights),
+    { ssr: false }
+);
 
 const geistSans = Geist({
     variable: "--font-geist-sans",
