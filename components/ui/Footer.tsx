@@ -91,7 +91,7 @@ export default function Footer() {
                 </svg>
               </a>
               <a
-                href="mailto:fmemije00@gmail.com"
+                href="mailto:hi@fernandomemije.dev"
                 className="social-icon w-10 h-10 rounded-full flex items-center justify-center transition-all duration-300 hover:scale-110"
                 aria-label="Email"
               >

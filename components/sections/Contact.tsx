@@ -10,7 +10,7 @@ export default function Contact() {
   const t = useTranslations('contact');
 
   const copyEmail = () => {
-    navigator.clipboard.writeText("fmemije00@gmail.com");
+    navigator.clipboard.writeText("hi@fernandomemije.dev");
     setCopied(true);
     setTimeout(() => setCopied(false), 2000);
   };
@@ -56,7 +56,7 @@ export default function Contact() {
                   <div className="flex-1 text-left">
                     <div className="font-semibold">{t('email.label')}</div>
                     <div className="text-sm text-foreground/60 truncate">
-                      fmemije00@gmail.com
+                      hi@fernandomemije.dev
                     </div>
                   </div>
                   <div className="text-xs sm:text-sm font-medium hidden sm:block" style={{ color: 'var(--accent-500)' }}>

@@ -26,7 +26,7 @@ export const metadata: Metadata = {
     title: "Fernando Rodriguez Memije | Senior Software Engineer",
     description:
       "Senior Software Engineer specializing in scalable systems and modern web architecture. Available for consulting and full-time opportunities.",
-    url: "https://fmemije.com",
+    url: "https://fernandomemije.dev/",
     siteName: "Fernando Rodriguez Memije Portfolio",
     locale: "en_US",
     type: "website",
