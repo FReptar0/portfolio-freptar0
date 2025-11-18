@@ -31,6 +31,7 @@
     "emailPlaceholder": "your.email@example.com",
     "projectType": "Project Type",
     "projectOptions": {
+      "select": "Select project type...",
       "fulltime": "Full-time opportunity",
       "consulting": "Consulting project",
       "contract": "Contract work",
@@ -42,7 +43,9 @@
     "sending": "Sending...",
     "success": "✓ Message Sent!",
     "error": "Try Again",
-    "successMessage": "Thanks! I'll get back to you soon."
+    "successMessage": "Thanks! I'll get back to you soon.",
+    "captchaRequired": "Please complete the security check",
+    "securityNotice": "This form is protected by Cloudflare Turnstile to prevent spam."
   },
   "availability": "Currently available for new projects"
 }
