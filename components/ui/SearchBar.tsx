@@ -25,7 +25,7 @@ export default function SearchBar() {
   const contacts = [
     { id: 'linkedin', label: 'LinkedIn', href: 'https://linkedin.com', key: 'L' },
     { id: 'github', label: 'GitHub', href: 'https://github.com', key: 'G' },
-    { id: 'email', label: 'Email', href: 'mailto:you@example.com', key: 'E' },
+    { id: 'email', label: 'Email', href: 'mailto:hi@fernandomemije.dev', key: 'E' },
   ];
 
   // Handle keyboard shortcut (Cmd/Ctrl + K)
