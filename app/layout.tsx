@@ -1,13 +1,9 @@
 import * as React from "react";
-import dynamic from "next/dynamic";
+import SpeedInsightsClient from "@/components/SpeedInsightsClient";
 import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
 import { ThemeProvider } from "@/components/theme-provider";
 
-const SpeedInsights = dynamic(
-    () => import("@vercel/speed-insights/next").then((mod) => mod.SpeedInsights),
-    { ssr: false }
-);
 
 const geistSans = Geist({
     variable: "--font-geist-sans",
@@ -44,7 +40,7 @@ export default function RootLayout({
                 >
                     {children}
                 </ThemeProvider>
-                <SpeedInsights />
+                    <SpeedInsightsClient />
             </body>
         </html>
     );
