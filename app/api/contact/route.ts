@@ -5,7 +5,8 @@ import { render } from '@react-email/components';
 import { contactFormSchema, turnstileVerificationSchema } from '@/lib/validations/contact';
 import ContactConfirmationEmailEn from '@/emails/contact-confirmation-en';
 import ContactConfirmationEmailEs from '@/emails/contact-confirmation-es';
-import { supabase, type ContactSubmissionInsert } from '@/lib/supabase';
+import { getSupabase, type ContactSubmissionInsert } from '@/lib/supabase';
+import { sendTelegramNotification, type TelegramMessage } from '@/lib/telegram';
 
 const resend = new Resend(process.env.RESEND_API_KEY);
 
@@ -32,6 +33,7 @@ async function saveContactSubmission(data: {
       status: 'new',
     };
 
+    const supabase = getSupabase();
     const { data: result, error } = await supabase
       .from('contact_submissions')
       .insert([submission])
@@ -53,6 +55,7 @@ async function saveContactSubmission(data: {
 
 async function updateEmailStatus(submissionId: string, emailSent: boolean): Promise<void> {
   try {
+    const supabase = getSupabase();
     const { error } = await supabase
       .from('contact_submissions')
       .update({
@@ -237,6 +240,27 @@ export async function POST(request: NextRequest) {
     // Update email status in database if submission was saved
     if (submissionId) {
       await updateEmailStatus(submissionId, emailSent);
+    }
+
+    // Send Telegram notification
+    try {
+      const telegramData: TelegramMessage = {
+        name: sanitizedData.name,
+        email: sanitizedData.email,
+        project: sanitizedData.project,
+        message: sanitizedData.message,
+        locale: sanitizedData.locale,
+        ip: request.headers.get('x-forwarded-for') || request.headers.get('x-real-ip') || undefined,
+        submissionId: submissionId || undefined,
+      };
+      
+      const telegramSent = await sendTelegramNotification(telegramData);
+      if (telegramSent) {
+        console.log('Telegram notification sent successfully');
+      }
+    } catch (error) {
+      // Log the error but don't fail the form submission
+      console.error('Failed to send Telegram notification:', error);
     }
 
     return NextResponse.json(
