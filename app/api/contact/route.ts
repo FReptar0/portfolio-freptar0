@@ -5,7 +5,7 @@ import { render } from '@react-email/components';
 import { contactFormSchema, turnstileVerificationSchema } from '@/lib/validations/contact';
 import ContactConfirmationEmailEn from '@/emails/contact-confirmation-en';
 import ContactConfirmationEmailEs from '@/emails/contact-confirmation-es';
-import { supabase, type ContactSubmissionInsert } from '@/lib/supabase';
+import { getSupabase, type ContactSubmissionInsert } from '@/lib/supabase';
 
 const resend = new Resend(process.env.RESEND_API_KEY);
 
@@ -32,6 +32,7 @@ async function saveContactSubmission(data: {
       status: 'new',
     };
 
+    const supabase = getSupabase();
     const { data: result, error } = await supabase
       .from('contact_submissions')
       .insert([submission])
@@ -53,6 +54,7 @@ async function saveContactSubmission(data: {
 
 async function updateEmailStatus(submissionId: string, emailSent: boolean): Promise<void> {
   try {
+    const supabase = getSupabase();
     const { error } = await supabase
       .from('contact_submissions')
       .update({
