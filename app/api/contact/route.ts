@@ -26,8 +26,10 @@ async function sendConfirmationEmail(data: {
       messageSnippet,
     }));
 
+    const fromEmail = process.env.CONTACT_FROM_EMAIL ?? 'noreply@fernandomemije.dev';
+
     await resend.emails.send({
-      from: 'noreply@fernandomemije.dev',
+      from: fromEmail,
       to: data.email,
       subject: `Thanks for reaching out! - Fernando Rodriguez`,
       html: emailHtml,
