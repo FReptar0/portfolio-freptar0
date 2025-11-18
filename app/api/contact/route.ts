@@ -5,8 +5,69 @@ import { render } from '@react-email/components';
 import { contactFormSchema, turnstileVerificationSchema } from '@/lib/validations/contact';
 import ContactConfirmationEmailEn from '@/emails/contact-confirmation-en';
 import ContactConfirmationEmailEs from '@/emails/contact-confirmation-es';
+import { supabase, type ContactSubmissionInsert } from '@/lib/supabase';
 
 const resend = new Resend(process.env.RESEND_API_KEY);
+
+async function saveContactSubmission(data: {
+  name: string;
+  email: string;
+  project: string;
+  message: string;
+  locale: string;
+}, request: NextRequest, turnstileVerified: boolean): Promise<string | null> {
+  try {
+    const ip = request.headers.get('x-forwarded-for') || request.headers.get('x-real-ip') || undefined;
+    const userAgent = request.headers.get('user-agent') || undefined;
+
+    const submission: ContactSubmissionInsert = {
+      name: data.name,
+      email: data.email,
+      project: data.project,
+      message: data.message,
+      locale: data.locale,
+      ip_address: ip,
+      user_agent: userAgent,
+      turnstile_verified: turnstileVerified,
+      status: 'new',
+    };
+
+    const { data: result, error } = await supabase
+      .from('contact_submissions')
+      .insert([submission])
+      .select('id')
+      .single();
+
+    if (error) {
+      console.error('Failed to save contact submission:', error);
+      return null;
+    }
+
+    console.log('Contact submission saved successfully with ID:', result.id);
+    return result.id;
+  } catch (error) {
+    console.error('Error saving contact submission:', error);
+    return null;
+  }
+}
+
+async function updateEmailStatus(submissionId: string, emailSent: boolean): Promise<void> {
+  try {
+    const { error } = await supabase
+      .from('contact_submissions')
+      .update({
+        email_sent: emailSent,
+        email_sent_at: emailSent ? new Date().toISOString() : null,
+      })
+      .eq('id', submissionId);
+
+    if (error) {
+      console.error('Failed to update email status:', error);
+    }
+  } catch (error) {
+    console.error('Error updating email status:', error);
+  }
+}
 
 async function sendConfirmationEmail(data: {
   name: string;
@@ -148,15 +209,35 @@ export async function POST(request: NextRequest) {
       locale: data.locale || 'en',
     };
 
+    // Save contact submission to Supabase
+    const submissionId = await saveContactSubmission(sanitizedData, request, isValidToken);
+    
+    if (!submissionId) {
+      // Log the error but don't fail the form submission
+      console.error('Failed to save contact submission to database');
+    }
+
     // Log the contact attempt
     console.log('New contact form submission:', {
       timestamp: new Date().toISOString(),
+      submissionId,
       ...sanitizedData,
       ip: request.headers.get('x-forwarded-for') || request.headers.get('x-real-ip') || 'unknown',
     });
 
     // Send confirmation email to the user
-    await sendConfirmationEmail(sanitizedData);
+    let emailSent = false;
+    try {
+      await sendConfirmationEmail(sanitizedData);
+      emailSent = true;
+    } catch (error) {
+      console.error('Failed to send confirmation email:', error);
+    }
+
+    // Update email status in database if submission was saved
+    if (submissionId) {
+      await updateEmailStatus(submissionId, emailSent);
+    }
 
     return NextResponse.json(
       { message: 'Message sent successfully' },
