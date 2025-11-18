@@ -3,7 +3,8 @@ import { ZodError } from 'zod';
 import { Resend } from 'resend';
 import { render } from '@react-email/components';
 import { contactFormSchema, turnstileVerificationSchema } from '@/lib/validations/contact';
-import ContactConfirmationEmail from '@/emails/contact-confirmation';
+import ContactConfirmationEmailEn from '@/emails/contact-confirmation-en';
+import ContactConfirmationEmailEs from '@/emails/contact-confirmation-es';
 
 const resend = new Resend(process.env.RESEND_API_KEY);
 
@@ -12,6 +13,7 @@ async function sendConfirmationEmail(data: {
   email: string;
   project: string;
   message: string;
+  locale: string;
 }): Promise<void> {
   try {
     // Create a snippet of the message (first 100 characters + "...")
@@ -19,7 +21,14 @@ async function sendConfirmationEmail(data: {
       ? `${data.message.substring(0, 100)}...`
       : data.message;
 
-    const emailHtml = await render(ContactConfirmationEmail({
+    // Determine which email template and subject to use based on locale
+    const isSpanish = data.locale === 'es';
+    const EmailComponent = isSpanish ? ContactConfirmationEmailEs : ContactConfirmationEmailEn;
+    const subject = isSpanish 
+      ? '¡Gracias por contactarme! - Fernando Rodriguez'
+      : 'Thanks for reaching out! - Fernando Rodriguez';
+
+    const emailHtml = await render(EmailComponent({
       name: data.name,
       email: data.email,
       project: data.project,
@@ -31,7 +40,7 @@ async function sendConfirmationEmail(data: {
     await resend.emails.send({
       from: fromEmail,
       to: data.email,
-      subject: `Thanks for reaching out! - Fernando Rodriguez`,
+      subject,
       html: emailHtml,
     });
 
@@ -136,6 +145,7 @@ export async function POST(request: NextRequest) {
       email: data.email,
       project: data.project,
       message: data.message,
+      locale: data.locale || 'en',
     };
 
     // Log the contact attempt

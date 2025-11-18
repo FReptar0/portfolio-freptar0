@@ -29,13 +29,18 @@ export const contactFormSchema = z.object({
   
   'cf-turnstile-response': z
     .string()
-    .min(1, 'validation.captcha.required')
+    .min(1, 'validation.captcha.required'),
+  
+  locale: z
+    .string()
+    .optional()
+    .default('en')
 });
 
 export type ContactFormData = z.infer<typeof contactFormSchema>;
 
 // Frontend validation schema (without Turnstile token for real-time validation)
-export const frontendContactFormSchema = contactFormSchema.omit({ 'cf-turnstile-response': true });
+export const frontendContactFormSchema = contactFormSchema.omit({ 'cf-turnstile-response': true, locale: true });
 export type FrontendContactFormData = z.infer<typeof frontendContactFormSchema>;
 
 // Turnstile verification response schema

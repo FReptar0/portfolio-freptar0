@@ -1,7 +1,7 @@
 "use client";
 
 import { useState, useRef, useCallback, useEffect } from "react";
-import { useTranslations } from 'next-intl';
+import { useTranslations, useLocale } from 'next-intl';
 import { Mail, Briefcase, Github, Calendar, Zap, ArrowRight, AlertCircle, CheckCircle2, Info } from 'lucide-react';
 import { Turnstile, TurnstileInstance } from '@marsidev/react-turnstile';
 import { frontendContactFormSchema } from '@/lib/validations/contact';
@@ -20,6 +20,7 @@ export default function Contact() {
   });
   const turnstileRef = useRef<TurnstileInstance>(null);
   const t = useTranslations('contact');
+  const locale = useLocale();
   // Allow bypass in development when NEXT_PUBLIC_TURNSTILE_BYPASS_DEV=true
   const bypassTurnstile = process.env.NEXT_PUBLIC_TURNSTILE_BYPASS_DEV === 'true';
 
@@ -158,6 +159,7 @@ export default function Contact() {
             ...validation.data,
             // When bypassing in dev, send a placeholder token so server-side Zod validation passes
             'cf-turnstile-response': turnstileToken ?? (bypassTurnstile ? 'bypass-dev' : ''),
+            locale: locale,
           }),
       });
 

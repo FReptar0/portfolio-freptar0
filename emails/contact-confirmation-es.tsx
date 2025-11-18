@@ -10,42 +10,43 @@ import {
   Row,
   Column,
 } from '@react-email/components';
-interface ContactConfirmationEmailProps {
+
+interface ContactConfirmationEmailEsProps {
   name: string;
   email: string;
   project: string;
   messageSnippet: string;
 }
 
-export const ContactConfirmationEmail = ({
+export const ContactConfirmationEmailEs = ({
   name,
   email,
   project,
   messageSnippet,
-}: ContactConfirmationEmailProps) => {
+}: ContactConfirmationEmailEsProps) => {
   return (
     <Html>
       <Head />
-      <Preview>Thanks for reaching out, {name}! I'll get back to you soon.</Preview>
+      <Preview>¡Gracias por contactarme, {name}! Te responderé pronto.</Preview>
       <Body style={main}>
         <Container style={container}>
           <Section style={header}>
-            <Heading style={h1}>Thanks for reaching out!</Heading>
+            <Heading style={h1}>¡Gracias por contactarme!</Heading>
           </Section>
 
           <Section style={content}>
             <Text style={text}>
-              Hi <strong>{name}</strong>,
+              Hola <strong>{name}</strong>,
             </Text>
             <Text style={text}>
-              Thank you for contacting me through my portfolio website. I&apos;ve received your message and wanted to confirm that it came through successfully.
+              Gracias por contactarme a través de mi sitio web de portafolio. He recibido tu mensaje y quería confirmar que llegó exitosamente.
             </Text>
             
             <Section style={summarySection}>
-              <Heading style={h2}>What you submitted:</Heading>
+              <Heading style={h2}>Lo que enviaste:</Heading>
               <Row>
                 <Column>
-                  <Text style={labelText}>Name:</Text>
+                  <Text style={labelText}>Nombre:</Text>
                 </Column>
                 <Column>
                   <Text style={valueText}>{name}</Text>
@@ -61,7 +62,7 @@ export const ContactConfirmationEmail = ({
               </Row>
               <Row>
                 <Column>
-                  <Text style={labelText}>Project Type:</Text>
+                  <Text style={labelText}>Tipo de Proyecto:</Text>
                 </Column>
                 <Column>
                   <Text style={valueText}>{project}</Text>
@@ -69,31 +70,31 @@ export const ContactConfirmationEmail = ({
               </Row>
               <Row>
                 <Column style={{ width: '100%' }}>
-                  <Text style={labelText}>Message snippet:</Text>
+                  <Text style={labelText}>Fragmento del mensaje:</Text>
                   <Text style={snippetText}>&ldquo;{messageSnippet}&rdquo;</Text>
                 </Column>
               </Row>
             </Section>
 
             <Text style={text}>
-              I&apos;ll review your message carefully and get back to you within 24 hours. If your project is time-sensitive, feel free to reach out to me directly on LinkedIn.
+              Revisaré tu mensaje cuidadosamente y te responderé dentro de las próximas 24 horas. Si tu proyecto es urgente, no dudes en contactarme directamente por <a href="https://linkedin.com/in/fernando-rm" style={link}>LinkedIn</a>.
             </Text>
 
             <Text style={text}>
-              Thanks again for your interest in working together!
+              ¡Gracias nuevamente por tu interés en trabajar juntos!
             </Text>
 
             <Text style={signature}>
-              Best regards,<br />
+              Saludos cordiales,<br />
               <strong>Fernando Rodriguez</strong><br />
-              Senior Frontend Developer<br />
+              Ingeniero de Software Senior<br />
               <a href="https://fernandomemije.dev" style={link}>fernandomemije.dev</a>
             </Text>
           </Section>
 
           <Section style={footer}>
             <Text style={footerText}>
-              This is an automated confirmation email. Please do not reply to this message.
+              Este es un email de confirmación automático. Por favor no responder a este mensaje.
             </Text>
           </Section>
         </Container>
@@ -102,16 +103,16 @@ export const ContactConfirmationEmail = ({
   );
 };
 
-ContactConfirmationEmail.PreviewProps = {
-  name: 'John Smith',
-  email: 'john@example.com',
-  project: 'Full-time Position',
-  messageSnippet: 'I&apos;m interested in discussing a frontend developer position at our startup...',
-} as ContactConfirmationEmailProps;
+ContactConfirmationEmailEs.PreviewProps = {
+  name: 'Juan Pérez',
+  email: 'juan@example.com',
+  project: 'Posición Tiempo Completo',
+  messageSnippet: 'Estoy interesado en discutir una posición de desarrollador frontend en nuestra startup...',
+} as ContactConfirmationEmailEsProps;
 
-export default ContactConfirmationEmail;
+export default ContactConfirmationEmailEs;
 
-// Styles
+// Styles (same as English version)
 const main = {
   backgroundColor: '#ffffff',
   fontFamily: '-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Oxygen-Sans,Ubuntu,Cantarell,"Helvetica Neue",sans-serif',
