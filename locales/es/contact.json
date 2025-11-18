@@ -47,5 +47,40 @@
     "captchaRequired": "Por favor completa la verificación de seguridad",
     "securityNotice": "Este formulario está protegido por Cloudflare Turnstile para prevenir spam."
   },
+  "validation": {
+    "name": {
+      "required": "¿Cómo te puedo llamar? Por favor ingresa tu nombre.",
+      "tooShort": "¿Podrías proporcionar tu nombre completo? Al menos 2 caracteres por favor.",
+      "tooLong": "¡Ese es un nombre largo! Por favor mantelo bajo 100 caracteres.",
+      "invalidChars": "Por favor usa solo letras, espacios, guiones y apostrofes en tu nombre."
+    },
+    "email": {
+      "required": "Necesitaré tu email para responderte. Por favor ingrésalo aquí.",
+      "invalid": "Esta no parece una dirección de email válida. ¿Podrías verificarla?",
+      "tooLong": "Esa dirección de email parece muy larga. Por favor mantela bajo 100 caracteres."
+    },
+    "project": {
+      "required": "Ayúdame a entender cómo puedo ayudarte. Por favor selecciona un tipo de proyecto.",
+      "tooLong": "Por favor mantén el tipo de proyecto bajo 100 caracteres."
+    },
+    "message": {
+      "required": "¡Me encantaría escuchar sobre tu proyecto! Por favor cuéntame qué tienes en mente.",
+      "tooShort": "¿Podrías contarme un poco más? Por favor escribe al menos 10 caracteres.",
+      "tooLong": "¡Ese es mucho detalle! Por favor mantén tu mensaje bajo 2000 caracteres."
+    },
+    "captcha": {
+      "required": "Por favor completa la verificación de seguridad para enviar tu mensaje."
+    }
+  },
+  "fieldHelp": {
+    "name": "Tu nombre o como te gustaría que te llame",
+    "email": "Donde puedo contactarte de vuelta",
+    "project": "¿En qué tipo de colaboración estás interesado?",
+    "message": "¡Cuéntame sobre tu proyecto, objetivos, o simplemente saluda!"
+  },
+  "characterCount": {
+    "remaining": "{count, number} caracteres restantes",
+    "over": "{count, number} caracteres sobre el límite"
+  },
   "availability": "Actualmente disponible para nuevos proyectos"
 }

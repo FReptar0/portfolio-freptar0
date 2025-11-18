@@ -47,5 +47,40 @@
     "captchaRequired": "Please complete the security check",
     "securityNotice": "This form is protected by Cloudflare Turnstile to prevent spam."
   },
+  "validation": {
+    "name": {
+      "required": "What should I call you? Please enter your name.",
+      "tooShort": "Could you provide your full name? At least 2 characters please.",
+      "tooLong": "That's a long name! Please keep it under 100 characters.",
+      "invalidChars": "Please use only letters, spaces, hyphens, and apostrophes in your name."
+    },
+    "email": {
+      "required": "I'll need your email to get back to you. Please enter it here.",
+      "invalid": "This doesn't look like a valid email address. Could you double-check it?",
+      "tooLong": "That email address seems too long. Please keep it under 100 characters."
+    },
+    "project": {
+      "required": "Help me understand how I can help you. Please select a project type.",
+      "tooLong": "Please keep the project type under 100 characters."
+    },
+    "message": {
+      "required": "I'd love to hear about your project! Please tell me what you have in mind.",
+      "tooShort": "Could you tell me a bit more? Please write at least 10 characters.",
+      "tooLong": "That's a lot of detail! Please keep your message under 2000 characters."
+    },
+    "captcha": {
+      "required": "Please complete the security verification to send your message."
+    }
+  },
+  "fieldHelp": {
+    "name": "Your first name or how you'd like to be addressed",
+    "email": "Where I can reach you back",
+    "project": "What type of collaboration are you interested in?",
+    "message": "Tell me about your project, goals, or just say hello!"
+  },
+  "characterCount": {
+    "remaining": "{count, number} characters remaining",
+    "over": "{count, number} characters over the limit"
+  },
   "availability": "Currently available for new projects"
 }

@@ -1,8 +1,8 @@
 "use client";
 
-import { useState, useRef } from "react";
+import { useState, useRef, useCallback, useEffect } from "react";
 import { useTranslations } from 'next-intl';
-import { Mail, Briefcase, Github, Calendar, Zap, ArrowRight } from 'lucide-react';
+import { Mail, Briefcase, Github, Calendar, Zap, ArrowRight, AlertCircle, CheckCircle2, Info } from 'lucide-react';
 import { Turnstile, TurnstileInstance } from '@marsidev/react-turnstile';
 import { frontendContactFormSchema } from '@/lib/validations/contact';
 import type { FrontendContactFormData } from '@/lib/validations/contact';
@@ -12,6 +12,12 @@ export default function Contact() {
   const [formStatus, setFormStatus] = useState<"idle" | "sending" | "success" | "error">("idle");
   const [turnstileToken, setTurnstileToken] = useState<string | null>(null);
   const [validationErrors, setValidationErrors] = useState<Record<string, string>>({});
+  const [fieldStates, setFieldStates] = useState<Record<string, 'idle' | 'valid' | 'invalid'>>({});
+  const [showFieldHelp, setShowFieldHelp] = useState<Record<string, boolean>>({});
+  const [characterCounts, setCharacterCounts] = useState<Record<string, number>>({
+    name: 0,
+    message: 0
+  });
   const turnstileRef = useRef<TurnstileInstance>(null);
   const t = useTranslations('contact');
   // Allow bypass in development when NEXT_PUBLIC_TURNSTILE_BYPASS_DEV=true
@@ -21,6 +27,89 @@ export default function Contact() {
     navigator.clipboard.writeText("hi@fernandomemije.dev");
     setCopied(true);
     setTimeout(() => setCopied(false), 2000);
+  };
+
+  // Real-time field validation
+  const validateField = useCallback((fieldName: string, value: string) => {
+    const fieldSchema = frontendContactFormSchema.shape[fieldName as keyof FrontendContactFormData];
+    if (!fieldSchema) return;
+
+    const result = fieldSchema.safeParse(value);
+    
+    setValidationErrors(prev => {
+      const newErrors = { ...prev };
+      if (result.success) {
+        delete newErrors[fieldName];
+        setFieldStates(prevStates => ({ ...prevStates, [fieldName]: 'valid' }));
+      } else {
+        const errorMessage = result.error.errors[0]?.message || '';
+        newErrors[fieldName] = t(errorMessage);
+        setFieldStates(prevStates => ({ ...prevStates, [fieldName]: 'invalid' }));
+      }
+      return newErrors;
+    });
+  }, [t]);
+
+  // Handle field changes with real-time validation
+  const handleFieldChange = useCallback((fieldName: string, value: string) => {
+    // Update character count for relevant fields
+    if (fieldName === 'name' || fieldName === 'message') {
+      setCharacterCounts(prev => ({ ...prev, [fieldName]: value.length }));
+    }
+
+    // Debounced validation (validate after user stops typing)
+    const timeoutId = setTimeout(() => {
+      validateField(fieldName, value);
+    }, 300);
+
+    return () => clearTimeout(timeoutId);
+  }, [validateField]);
+
+  // Handle field focus
+  const handleFieldFocus = useCallback((fieldName: string) => {
+    setShowFieldHelp(prev => ({ ...prev, [fieldName]: true }));
+    setFieldStates(prevStates => ({ 
+      ...prevStates, 
+      [fieldName]: prevStates[fieldName] || 'idle' 
+    }));
+  }, []);
+
+  // Handle field blur
+  const handleFieldBlur = useCallback((fieldName: string, value: string) => {
+    setShowFieldHelp(prev => ({ ...prev, [fieldName]: false }));
+    // Immediate validation on blur
+    validateField(fieldName, value);
+  }, [validateField]);
+
+  // Helper component for field icons
+  const FieldIcon = ({ fieldName }: { fieldName: string }) => {
+    const state = fieldStates[fieldName];
+    if (state === 'valid') {
+      return <CheckCircle2 className="w-5 h-5 text-green-500" />;
+    } else if (state === 'invalid') {
+      return <AlertCircle className="w-5 h-5 text-red-500" />;
+    } else if (showFieldHelp[fieldName]) {
+      return <Info className="w-5 h-5 text-blue-500" />;
+    }
+    return null;
+  };
+
+  // Helper component for character count
+  const CharacterCount = ({ fieldName, maxLength }: { fieldName: string; maxLength: number }) => {
+    const count = characterCounts[fieldName] || 0;
+    const remaining = maxLength - count;
+    const isOverLimit = remaining < 0;
+    
+    return (
+      <div className={`text-xs transition-colors ${
+        isOverLimit ? 'text-red-500' : remaining < 50 ? 'text-yellow-500' : 'text-foreground/50'
+      }`}>
+        {isOverLimit 
+          ? t('characterCount.over', { count: Math.abs(remaining) })
+          : t('characterCount.remaining', { count: remaining })
+        }
+      </div>
+    );
   };
 
   const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
@@ -45,11 +134,14 @@ export default function Contact() {
     
     if (!validation.success) {
       const errors: Record<string, string> = {};
+      const fieldStatesUpdate: Record<string, 'idle' | 'valid' | 'invalid'> = {};
       validation.error.errors.forEach((error) => {
         const field = error.path[0] as string;
-        errors[field] = error.message;
+        errors[field] = t(error.message);
+        fieldStatesUpdate[field] = 'invalid';
       });
       setValidationErrors(errors);
+      setFieldStates(prev => ({ ...prev, ...fieldStatesUpdate }));
       setFormStatus("error");
       return;
     }
@@ -208,103 +300,184 @@ export default function Contact() {
             <h3 className="text-2xl font-bold mb-6">{t('form.title')}</h3>
 
             <form onSubmit={handleSubmit} className="space-y-6">
-              <div>
+              <div className="space-y-2">
                 <label
                   htmlFor="name"
-                  className="block text-sm font-medium mb-2"
+                  className="flex items-center justify-between text-sm font-medium"
                 >
-                  {t('form.name')}
+                  <span>{t('form.name')}</span>
+                  <FieldIcon fieldName="name" />
                 </label>
-                <input
-                  type="text"
-                  id="name"
-                  name="name"
-                  required
-                  className={`w-full px-4 py-3 rounded-xl bg-foreground/5 border focus:outline-none transition-colors ${
-                    validationErrors.name 
-                      ? 'border-red-500 focus:border-red-500' 
-                      : 'border-foreground/10 focus:border-primary-blue'
-                  }`}
-                  placeholder={t('form.namePlaceholder')}
-                />
-                {validationErrors.name && (
-                  <p className="mt-1 text-sm text-red-500">{validationErrors.name}</p>
-                )}
+                <div className="relative">
+                  <input
+                    type="text"
+                    id="name"
+                    name="name"
+                    required
+                    maxLength={100}
+                    className={`w-full px-4 py-3 pr-12 rounded-xl bg-foreground/5 border focus:outline-none transition-all duration-200 ${
+                      fieldStates.name === 'valid'
+                        ? 'border-green-500 focus:border-green-500 focus:ring-2 focus:ring-green-500/20'
+                        : fieldStates.name === 'invalid'
+                        ? 'border-red-500 focus:border-red-500 focus:ring-2 focus:ring-red-500/20'
+                        : 'border-foreground/10 focus:border-primary-blue focus:ring-2 focus:ring-primary-blue/20'
+                    }`}
+                    placeholder={t('form.namePlaceholder')}
+                    onFocus={() => handleFieldFocus('name')}
+                    onBlur={(e) => handleFieldBlur('name', e.target.value)}
+                    onChange={(e) => handleFieldChange('name', e.target.value)}
+                  />
+                </div>
+                <div className="flex justify-between items-start min-h-[1rem]">
+                  <div className="flex-1">
+                    {showFieldHelp.name && (
+                      <p className="text-xs text-foreground/60 animate-in fade-in slide-in-from-top-1 duration-200">
+                        {t('fieldHelp.name')}
+                      </p>
+                    )}
+                    {validationErrors.name && (
+                      <p className="text-sm text-red-500 animate-in fade-in slide-in-from-top-1 duration-200 flex items-center gap-1">
+                        <AlertCircle className="w-4 h-4" />
+                        {validationErrors.name}
+                      </p>
+                    )}
+                  </div>
+                  <CharacterCount fieldName="name" maxLength={100} />
+                </div>
               </div>
 
-              <div>
+              <div className="space-y-2">
                 <label
                   htmlFor="email"
-                  className="block text-sm font-medium mb-2"
+                  className="flex items-center justify-between text-sm font-medium"
                 >
-                  {t('form.email')}
+                  <span>{t('form.email')}</span>
+                  <FieldIcon fieldName="email" />
                 </label>
-                <input
-                  type="email"
-                  id="email"
-                  name="email"
-                  required
-                  className={`w-full px-4 py-3 rounded-xl bg-foreground/5 border focus:outline-none transition-colors ${
-                    validationErrors.email 
-                      ? 'border-red-500 focus:border-red-500' 
-                      : 'border-foreground/10 focus:border-primary-blue'
-                  }`}
-                  placeholder={t('form.emailPlaceholder')}
-                />
-                {validationErrors.email && (
-                  <p className="mt-1 text-sm text-red-500">{validationErrors.email}</p>
-                )}
+                <div className="relative">
+                  <input
+                    type="email"
+                    id="email"
+                    name="email"
+                    required
+                    maxLength={100}
+                    className={`w-full px-4 py-3 pr-12 rounded-xl bg-foreground/5 border focus:outline-none transition-all duration-200 ${
+                      fieldStates.email === 'valid'
+                        ? 'border-green-500 focus:border-green-500 focus:ring-2 focus:ring-green-500/20'
+                        : fieldStates.email === 'invalid'
+                        ? 'border-red-500 focus:border-red-500 focus:ring-2 focus:ring-red-500/20'
+                        : 'border-foreground/10 focus:border-primary-blue focus:ring-2 focus:ring-primary-blue/20'
+                    }`}
+                    placeholder={t('form.emailPlaceholder')}
+                    onFocus={() => handleFieldFocus('email')}
+                    onBlur={(e) => handleFieldBlur('email', e.target.value)}
+                    onChange={(e) => handleFieldChange('email', e.target.value)}
+                  />
+                </div>
+                <div className="min-h-[1rem]">
+                  {showFieldHelp.email && (
+                    <p className="text-xs text-foreground/60 animate-in fade-in slide-in-from-top-1 duration-200">
+                      {t('fieldHelp.email')}
+                    </p>
+                  )}
+                  {validationErrors.email && (
+                    <p className="text-sm text-red-500 animate-in fade-in slide-in-from-top-1 duration-200 flex items-center gap-1">
+                      <AlertCircle className="w-4 h-4" />
+                      {validationErrors.email}
+                    </p>
+                  )}
+                </div>
               </div>
 
-              <div>
+              <div className="space-y-2">
                 <label
                   htmlFor="project"
-                  className="block text-sm font-medium mb-2"
+                  className="flex items-center justify-between text-sm font-medium"
                 >
-                  {t('form.projectType')}
+                  <span>{t('form.projectType')}</span>
+                  <FieldIcon fieldName="project" />
                 </label>
-                <select
-                  id="project"
-                  name="project"
-                  className={`w-full px-4 py-3 rounded-xl bg-foreground/5 border focus:outline-none transition-colors ${
-                    validationErrors.project 
-                      ? 'border-red-500 focus:border-red-500' 
-                      : 'border-foreground/10 focus:border-primary-blue'
-                  }`}
-                >
-                  <option value="">{t('form.projectOptions.select')}</option>
-                  <option value={t('form.projectOptions.fulltime')}>{t('form.projectOptions.fulltime')}</option>
-                  <option value={t('form.projectOptions.consulting')}>{t('form.projectOptions.consulting')}</option>
-                  <option value={t('form.projectOptions.contract')}>{t('form.projectOptions.contract')}</option>
-                  <option value={t('form.projectOptions.hello')}>{t('form.projectOptions.hello')}</option>
-                </select>
-                {validationErrors.project && (
-                  <p className="mt-1 text-sm text-red-500">{validationErrors.project}</p>
-                )}
+                <div className="relative">
+                  <select
+                    id="project"
+                    name="project"
+                    className={`w-full px-4 py-3 pr-12 rounded-xl bg-foreground/5 border focus:outline-none transition-all duration-200 ${
+                      fieldStates.project === 'valid'
+                        ? 'border-green-500 focus:border-green-500 focus:ring-2 focus:ring-green-500/20'
+                        : fieldStates.project === 'invalid'
+                        ? 'border-red-500 focus:border-red-500 focus:ring-2 focus:ring-red-500/20'
+                        : 'border-foreground/10 focus:border-primary-blue focus:ring-2 focus:ring-primary-blue/20'
+                    }`}
+                    onFocus={() => handleFieldFocus('project')}
+                    onBlur={(e) => handleFieldBlur('project', e.target.value)}
+                    onChange={(e) => handleFieldChange('project', e.target.value)}
+                  >
+                    <option value="">{t('form.projectOptions.select')}</option>
+                    <option value={t('form.projectOptions.fulltime')}>{t('form.projectOptions.fulltime')}</option>
+                    <option value={t('form.projectOptions.consulting')}>{t('form.projectOptions.consulting')}</option>
+                    <option value={t('form.projectOptions.contract')}>{t('form.projectOptions.contract')}</option>
+                    <option value={t('form.projectOptions.hello')}>{t('form.projectOptions.hello')}</option>
+                  </select>
+                </div>
+                <div className="min-h-[1rem]">
+                  {showFieldHelp.project && (
+                    <p className="text-xs text-foreground/60 animate-in fade-in slide-in-from-top-1 duration-200">
+                      {t('fieldHelp.project')}
+                    </p>
+                  )}
+                  {validationErrors.project && (
+                    <p className="text-sm text-red-500 animate-in fade-in slide-in-from-top-1 duration-200 flex items-center gap-1">
+                      <AlertCircle className="w-4 h-4" />
+                      {validationErrors.project}
+                    </p>
+                  )}
+                </div>
               </div>
 
-              <div>
+              <div className="space-y-2">
                 <label
                   htmlFor="message"
-                  className="block text-sm font-medium mb-2"
+                  className="flex items-center justify-between text-sm font-medium"
                 >
-                  {t('form.message')}
+                  <span>{t('form.message')}</span>
+                  <FieldIcon fieldName="message" />
                 </label>
-                <textarea
-                  id="message"
-                  name="message"
-                  required
-                  rows={4}
-                  className={`w-full px-4 py-3 rounded-xl bg-foreground/5 border focus:outline-none transition-colors resize-none ${
-                    validationErrors.message 
-                      ? 'border-red-500 focus:border-red-500' 
-                      : 'border-foreground/10 focus:border-primary-blue'
-                  }`}
-                  placeholder={t('form.messagePlaceholder')}
-                />
-                {validationErrors.message && (
-                  <p className="mt-1 text-sm text-red-500">{validationErrors.message}</p>
-                )}
+                <div className="relative">
+                  <textarea
+                    id="message"
+                    name="message"
+                    required
+                    rows={4}
+                    maxLength={2000}
+                    className={`w-full px-4 py-3 pr-12 rounded-xl bg-foreground/5 border focus:outline-none transition-all duration-200 resize-none ${
+                      fieldStates.message === 'valid'
+                        ? 'border-green-500 focus:border-green-500 focus:ring-2 focus:ring-green-500/20'
+                        : fieldStates.message === 'invalid'
+                        ? 'border-red-500 focus:border-red-500 focus:ring-2 focus:ring-red-500/20'
+                        : 'border-foreground/10 focus:border-primary-blue focus:ring-2 focus:ring-primary-blue/20'
+                    }`}
+                    placeholder={t('form.messagePlaceholder')}
+                    onFocus={() => handleFieldFocus('message')}
+                    onBlur={(e) => handleFieldBlur('message', e.target.value)}
+                    onChange={(e) => handleFieldChange('message', e.target.value)}
+                  />
+                </div>
+                <div className="flex justify-between items-start min-h-[1rem]">
+                  <div className="flex-1">
+                    {showFieldHelp.message && (
+                      <p className="text-xs text-foreground/60 animate-in fade-in slide-in-from-top-1 duration-200">
+                        {t('fieldHelp.message')}
+                      </p>
+                    )}
+                    {validationErrors.message && (
+                      <p className="text-sm text-red-500 animate-in fade-in slide-in-from-top-1 duration-200 flex items-center gap-1">
+                        <AlertCircle className="w-4 h-4" />
+                        {validationErrors.message}
+                      </p>
+                    )}
+                  </div>
+                  <CharacterCount fieldName="message" maxLength={2000} />
+                </div>
               </div>
 
               {/* Invisible Turnstile CAPTCHA */}

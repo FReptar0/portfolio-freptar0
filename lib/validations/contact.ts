@@ -3,33 +3,33 @@ import { z } from 'zod';
 export const contactFormSchema = z.object({
   name: z
     .string()
-    .min(1, 'Name is required')
-    .min(2, 'Name must be at least 2 characters')
-    .max(100, 'Name must be less than 100 characters')
-    .regex(/^[a-zA-Z\s\u00C0-\u017F-']+$/, 'Name can only contain letters, spaces, hyphens, and apostrophes'),
+    .min(1, 'validation.name.required')
+    .min(2, 'validation.name.tooShort')
+    .max(100, 'validation.name.tooLong')
+    .regex(/^[a-zA-Z\s\u00C0-\u017F-']+$/, 'validation.name.invalidChars'),
   
   email: z
     .string()
-    .min(1, 'Email is required')
-    .email('Please enter a valid email address')
-    .max(100, 'Email must be less than 100 characters')
+    .min(1, 'validation.email.required')
+    .email('validation.email.invalid')
+    .max(100, 'validation.email.tooLong')
     .toLowerCase(),
   
   project: z
     .string()
-    .min(1, 'Project type is required')
-    .max(100, 'Project type must be less than 100 characters'),
+    .min(1, 'validation.project.required')
+    .max(100, 'validation.project.tooLong'),
   
   message: z
     .string()
-    .min(1, 'Message is required')
-    .min(10, 'Message must be at least 10 characters')
-    .max(2000, 'Message must be less than 2000 characters')
+    .min(1, 'validation.message.required')
+    .min(10, 'validation.message.tooShort')
+    .max(2000, 'validation.message.tooLong')
     .trim(),
   
   'cf-turnstile-response': z
     .string()
-    .min(1, 'CAPTCHA verification is required')
+    .min(1, 'validation.captcha.required')
 });
 
 export type ContactFormData = z.infer<typeof contactFormSchema>;
