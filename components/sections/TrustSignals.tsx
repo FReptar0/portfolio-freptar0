@@ -17,7 +17,7 @@ export default function TrustSignals() {
   const t = useTranslations('trustSignals');
   const [api, setApi] = useState<CarouselApi>();
   const [current, setCurrent] = useState(0);
-  const [count, setCount] = useState(0);
+  const [, setCount] = useState(0);
   const [isDesktop, setIsDesktop] = useState(false);
 
   // Define all available testimonials explicitly
@@ -53,13 +53,13 @@ export default function TrustSignals() {
     const checkDesktop = () => {
       setIsDesktop(window.innerWidth >= 768);
     };
-    
+
     // Set initial value
     checkDesktop();
-    
+
     // Add event listener
     window.addEventListener('resize', checkDesktop);
-    
+
     // Cleanup
     return () => window.removeEventListener('resize', checkDesktop);
   }, []);
@@ -69,7 +69,6 @@ export default function TrustSignals() {
       return;
     }
 
-    setCount(api.scrollSnapList().length);
     setCurrent(api.selectedScrollSnap());
 
     api.on("select", () => {
@@ -82,7 +81,7 @@ export default function TrustSignals() {
   const currentDotIndex = isDesktop ? Math.floor(current / 2) : current;
 
   return (
-    <section className="py-20 relative">
+    <section className="py-24 relative">
       <div className="container mx-auto px-6 lg:px-8 max-w-6xl">
         {/* Main Section Header */}
         <div className="text-center mb-16">
@@ -95,7 +94,7 @@ export default function TrustSignals() {
         </div>
 
         {/* Testimonials Carousel */}
-        <div className="mb-16">
+        <div className="mb-24">
           <div className="relative max-w-7xl mx-auto px-4">
             <Carousel
               setApi={setApi}
@@ -113,7 +112,7 @@ export default function TrustSignals() {
                 }),
               ]}
             >
-              <CarouselContent className="-ml-2 md:-ml-4">
+              <CarouselContent className="-ml-2 md:-ml-4 mt-1">
                 {testimonials.map((testimonial, index) => (
                   <CarouselItem key={index} className="pl-2 md:pl-4 md:basis-1/2">
                     <TestimonialCard
@@ -125,27 +124,26 @@ export default function TrustSignals() {
                   </CarouselItem>
                 ))}
               </CarouselContent>
-              
+
               {/* Navigation buttons with proper positioning */}
-              <CarouselPrevious className="absolute -left-2 md:-left-6 top-1/2 -translate-y-1/2 h-10 w-10 border-0 bg-white/10 backdrop-blur-sm hover:bg-white/20 transition-all duration-300 hover:scale-110 shadow-lg" />
-              <CarouselNext className="absolute -right-2 md:-right-6 top-1/2 -translate-y-1/2 h-10 w-10 border-0 bg-white/10 backdrop-blur-sm hover:bg-white/20 transition-all duration-300 hover:scale-110 shadow-lg" />
+              <CarouselPrevious className="absolute -left-4 md:-left-6 top-1/2 -translate-y-1/2 h-10 w-10 border-0 bg-white/10 backdrop-blur-sm hover:bg-white/20 transition-all duration-300 hover:scale-110 shadow-lg" />
+              <CarouselNext className="absolute -right-4 md:-right-6 top-1/2 -translate-y-1/2 h-10 w-10 border-0 bg-white/10 backdrop-blur-sm hover:bg-white/20 transition-all duration-300 hover:scale-110 shadow-lg" />
             </Carousel>
 
             {/* Dots Indicator */}
-            <div className="flex justify-center mt-8 space-x-3">
+            <div className="flex justify-center mt-8 space-x-3 mt-2">
               {Array.from({ length: totalDots }).map((_, index) => {
                 const isActive = index === currentDotIndex;
                 const targetSlide = isDesktop ? index * 2 : index;
-                
+
                 return (
                   <button
                     key={index}
                     onClick={() => api?.scrollTo(targetSlide)}
-                    className={`h-2 rounded-full transition-all duration-300 ${
-                      isActive
-                        ? 'w-8 bg-gradient-to-r from-primary-blue to-accent-purple'
-                        : 'w-2 bg-foreground/20 hover:bg-foreground/40'
-                    }`}
+                    className={`h-2 rounded-full transition-all duration-300 ${isActive
+                      ? 'w-8 bg-gradient-to-r from-primary-blue to-accent-purple'
+                      : 'w-2 bg-foreground/20 hover:bg-foreground/40'
+                      }`}
                     aria-label={`Go to slide ${index + 1}`}
                   />
                 );
@@ -185,18 +183,18 @@ function TestimonialCard({
     <div className="glass-card rounded-2xl p-6 md:p-8 h-full min-h-[280px] flex flex-col relative overflow-hidden group hover:shadow-xl transition-all duration-500">
       {/* Background decoration */}
       <div className="absolute top-0 right-0 w-20 h-20 bg-gradient-to-br from-primary-blue/10 to-accent-purple/10 rounded-full -translate-y-8 translate-x-8 group-hover:scale-150 transition-transform duration-700"></div>
-      
+
       {/* Quote icon */}
       <div className="relative z-10">
         <svg className="w-8 h-8 text-primary-blue/60 mb-4" fill="currentColor" viewBox="0 0 24 24">
-          <path d="M14.017 21v-7.391c0-5.704 3.731-9.57 8.983-10.609l.995 2.151c-2.432.917-3.995 3.638-3.995 5.849h4v10h-10zm-14.017 0v-7.391c0-5.704 3.748-9.57 9-10.609l.996 2.151c-2.433.917-3.996 3.638-3.996 5.849h4v10h-10z"/>
+          <path d="M14.017 21v-7.391c0-5.704 3.731-9.57 8.983-10.609l.995 2.151c-2.432.917-3.995 3.638-3.995 5.849h4v10h-10zm-14.017 0v-7.391c0-5.704 3.748-9.57 9-10.609l.996 2.151c-2.433.917-3.996 3.638-3.996 5.849h4v10h-10z" />
         </svg>
       </div>
 
       {/* Quote text */}
       <div className="flex-grow relative z-10">
         <p className="text-base md:text-lg leading-relaxed text-foreground/80 mb-6 italic">
-          "{quote}"
+          &quot;{quote}&quot;
         </p>
       </div>
 
