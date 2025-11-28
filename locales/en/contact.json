@@ -41,7 +41,7 @@
     "messagePlaceholder": "Tell me about your project or opportunity...",
     "submit": "Send Message",
     "sending": "Sending...",
-    "success": "✓ Message Sent!",
+    "success": "Message Sent!",
     "error": "Try Again",
     "successMessage": "Thanks! I'll get back to you soon.",
     "captchaRequired": "Please complete the security check",

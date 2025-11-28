@@ -57,7 +57,7 @@ export default function Contact() {
     if (!fieldSchema) return;
 
     const result = fieldSchema.safeParse(value);
-    
+
     setValidationErrors(prev => {
       const newErrors = { ...prev };
       if (result.success) {
@@ -90,9 +90,9 @@ export default function Contact() {
   // Handle field focus
   const handleFieldFocus = useCallback((fieldName: string) => {
     setShowFieldHelp(prev => ({ ...prev, [fieldName]: true }));
-    setFieldStates(prevStates => ({ 
-      ...prevStates, 
-      [fieldName]: prevStates[fieldName] || 'idle' 
+    setFieldStates(prevStates => ({
+      ...prevStates,
+      [fieldName]: prevStates[fieldName] || 'idle'
     }));
   }, []);
 
@@ -121,12 +121,11 @@ export default function Contact() {
     const count = characterCounts[fieldName] || 0;
     const remaining = maxLength - count;
     const isOverLimit = remaining < 0;
-    
+
     return (
-      <div className={`text-xs transition-colors ${
-        isOverLimit ? 'text-red-500' : remaining < 50 ? 'text-yellow-500' : 'text-foreground/50'
-      }`}>
-        {isOverLimit 
+      <div className={`text-xs transition-colors ${isOverLimit ? 'text-red-500' : remaining < 50 ? 'text-yellow-500' : 'text-foreground/50'
+        }`}>
+        {isOverLimit
           ? t('characterCount.over', { count: Math.abs(remaining) })
           : t('characterCount.remaining', { count: remaining })
         }
@@ -152,7 +151,9 @@ export default function Contact() {
       return;
     }
 
-    const formData = new FormData(e.currentTarget);
+    // Store form reference before async operations (React event pooling)
+    const form = e.currentTarget;
+    const formData = new FormData(form);
     const formValues: FrontendContactFormData = {
       name: formData.get('name') as string,
       email: formData.get('email') as string,
@@ -187,12 +188,12 @@ export default function Contact() {
         headers: {
           'Content-Type': 'application/json',
         },
-          body: JSON.stringify({
-            ...validation.data,
-            // When bypassing in dev, send a placeholder token so server-side Zod validation passes
-            'cf-turnstile-response': turnstileToken ?? (bypassTurnstile ? 'bypass-dev' : ''),
-            locale: locale,
-          }),
+        body: JSON.stringify({
+          ...validation.data,
+          // When bypassing in dev, send a placeholder token so server-side Zod validation passes
+          'cf-turnstile-response': turnstileToken ?? (bypassTurnstile ? 'bypass-dev' : ''),
+          locale: locale,
+        }),
       });
 
       let result;
@@ -212,7 +213,7 @@ export default function Contact() {
         setShowToast(true);
 
         // Reset form and all states
-        e.currentTarget.reset();
+        form.reset();
         setTurnstileToken(null);
         setValidationErrors({});
         setFieldStates({});
@@ -394,13 +395,12 @@ export default function Contact() {
                     name="name"
                     required
                     maxLength={100}
-                    className={`w-full px-4 py-3 pr-12 rounded-xl bg-foreground/5 border focus:outline-none transition-all duration-200 ${
-                      fieldStates.name === 'valid'
-                        ? 'border-green-500 focus:border-green-500 focus:ring-2 focus:ring-green-500/20'
-                        : fieldStates.name === 'invalid'
+                    className={`w-full px-4 py-3 pr-12 rounded-xl bg-foreground/5 border focus:outline-none transition-all duration-200 ${fieldStates.name === 'valid'
+                      ? 'border-green-500 focus:border-green-500 focus:ring-2 focus:ring-green-500/20'
+                      : fieldStates.name === 'invalid'
                         ? 'border-red-500 focus:border-red-500 focus:ring-2 focus:ring-red-500/20'
                         : 'border-foreground/10 focus:border-primary-blue focus:ring-2 focus:ring-primary-blue/20'
-                    }`}
+                      }`}
                     placeholder={t('form.namePlaceholder')}
                     onFocus={() => handleFieldFocus('name')}
                     onBlur={(e) => handleFieldBlur('name', e.target.value)}
@@ -440,13 +440,12 @@ export default function Contact() {
                     name="email"
                     required
                     maxLength={100}
-                    className={`w-full px-4 py-3 pr-12 rounded-xl bg-foreground/5 border focus:outline-none transition-all duration-200 ${
-                      fieldStates.email === 'valid'
-                        ? 'border-green-500 focus:border-green-500 focus:ring-2 focus:ring-green-500/20'
-                        : fieldStates.email === 'invalid'
+                    className={`w-full px-4 py-3 pr-12 rounded-xl bg-foreground/5 border focus:outline-none transition-all duration-200 ${fieldStates.email === 'valid'
+                      ? 'border-green-500 focus:border-green-500 focus:ring-2 focus:ring-green-500/20'
+                      : fieldStates.email === 'invalid'
                         ? 'border-red-500 focus:border-red-500 focus:ring-2 focus:ring-red-500/20'
                         : 'border-foreground/10 focus:border-primary-blue focus:ring-2 focus:ring-primary-blue/20'
-                    }`}
+                      }`}
                     placeholder={t('form.emailPlaceholder')}
                     onFocus={() => handleFieldFocus('email')}
                     onBlur={(e) => handleFieldBlur('email', e.target.value)}
@@ -480,13 +479,12 @@ export default function Contact() {
                   <select
                     id="project"
                     name="project"
-                    className={`w-full px-4 py-3 pr-12 rounded-xl bg-foreground/5 border focus:outline-none transition-all duration-200 ${
-                      fieldStates.project === 'valid'
-                        ? 'border-green-500 focus:border-green-500 focus:ring-2 focus:ring-green-500/20'
-                        : fieldStates.project === 'invalid'
+                    className={`w-full px-4 py-3 pr-12 rounded-xl bg-foreground/5 border focus:outline-none transition-all duration-200 ${fieldStates.project === 'valid'
+                      ? 'border-green-500 focus:border-green-500 focus:ring-2 focus:ring-green-500/20'
+                      : fieldStates.project === 'invalid'
                         ? 'border-red-500 focus:border-red-500 focus:ring-2 focus:ring-red-500/20'
                         : 'border-foreground/10 focus:border-primary-blue focus:ring-2 focus:ring-primary-blue/20'
-                    }`}
+                      }`}
                     onFocus={() => handleFieldFocus('project')}
                     onBlur={(e) => handleFieldBlur('project', e.target.value)}
                     onChange={(e) => handleFieldChange('project', e.target.value)}
@@ -528,13 +526,12 @@ export default function Contact() {
                     required
                     rows={4}
                     maxLength={2000}
-                    className={`w-full px-4 py-3 pr-12 rounded-xl bg-foreground/5 border focus:outline-none transition-all duration-200 resize-none ${
-                      fieldStates.message === 'valid'
-                        ? 'border-green-500 focus:border-green-500 focus:ring-2 focus:ring-green-500/20'
-                        : fieldStates.message === 'invalid'
+                    className={`w-full px-4 py-3 pr-12 rounded-xl bg-foreground/5 border focus:outline-none transition-all duration-200 resize-none ${fieldStates.message === 'valid'
+                      ? 'border-green-500 focus:border-green-500 focus:ring-2 focus:ring-green-500/20'
+                      : fieldStates.message === 'invalid'
                         ? 'border-red-500 focus:border-red-500 focus:ring-2 focus:ring-red-500/20'
                         : 'border-foreground/10 focus:border-primary-blue focus:ring-2 focus:ring-primary-blue/20'
-                    }`}
+                      }`}
                     placeholder={t('form.messagePlaceholder')}
                     onFocus={() => handleFieldFocus('message')}
                     onBlur={(e) => handleFieldBlur('message', e.target.value)}
@@ -646,9 +643,8 @@ export default function Contact() {
       {showToast && (
         <div className="fixed bottom-6 right-6 z-50 animate-in slide-in-from-bottom-5 fade-in duration-300">
           <div
-            className={`apple-glass rounded-2xl px-6 py-4 shadow-lg flex items-center gap-3 min-w-[300px] ${
-              toastType === "success" ? "border-l-4 border-green-500" : "border-l-4 border-red-500"
-            }`}
+            className={`apple-glass rounded-2xl px-6 py-4 shadow-lg flex items-center gap-3 min-w-[300px] ${toastType === "success" ? "border-l-4 border-green-500" : "border-l-4 border-red-500"
+              }`}
           >
             {toastType === "success" ? (
               <div className="w-10 h-10 rounded-full bg-green-500/20 flex items-center justify-center">
