@@ -219,6 +219,10 @@ export default function Contact() {
         setToastType("error");
         setShowToast(true);
 
+        // Reset Turnstile to get a new token for retry
+        setTurnstileToken(null);
+        turnstileRef.current?.reset();
+
         setTimeout(() => {
           setShowToast(false);
           setFormStatus("idle");
@@ -228,6 +232,10 @@ export default function Contact() {
       setFormStatus("error");
       setToastType("error");
       setShowToast(true);
+
+      // Reset Turnstile to get a new token for retry
+      setTurnstileToken(null);
+      turnstileRef.current?.reset();
 
       setTimeout(() => {
         setShowToast(false);
