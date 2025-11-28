@@ -2,7 +2,7 @@
 
 import { useState, useRef, useCallback, useEffect } from "react";
 import { useTranslations, useLocale } from 'next-intl';
-import { Mail, Briefcase, Github, Calendar, Zap, ArrowRight, AlertCircle, CheckCircle2, Info } from 'lucide-react';
+import { Mail, Briefcase, Github, Calendar, Zap, ArrowRight, AlertCircle, CheckCircle2, Info, Loader2, Send, X } from 'lucide-react';
 import { Turnstile, TurnstileInstance } from '@marsidev/react-turnstile';
 import { frontendContactFormSchema } from '@/lib/validations/contact';
 import type { FrontendContactFormData } from '@/lib/validations/contact';
@@ -18,7 +18,11 @@ export default function Contact() {
     name: 0,
     message: 0
   });
+  const [isFormValid, setIsFormValid] = useState(false);
+  const [showToast, setShowToast] = useState(false);
+  const [toastType, setToastType] = useState<"success" | "error">("success");
   const turnstileRef = useRef<TurnstileInstance>(null);
+  const isSubmittingRef = useRef(false);
   const t = useTranslations('contact');
   const locale = useLocale();
   // Allow bypass in development when NEXT_PUBLIC_TURNSTILE_BYPASS_DEV=true
@@ -29,6 +33,13 @@ export default function Contact() {
     setCopied(true);
     setTimeout(() => setCopied(false), 2000);
   };
+
+  // Track form validity based on field states
+  useEffect(() => {
+    const requiredFields = ['name', 'email', 'project', 'message'];
+    const allFieldsValid = requiredFields.every(field => fieldStates[field] === 'valid');
+    setIsFormValid(allFieldsValid);
+  }, [fieldStates]);
 
   // Real-time field validation
   const validateField = useCallback((fieldName: string, value: string) => {
@@ -115,10 +126,19 @@ export default function Contact() {
 
   const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
+
+    // Submission lock to prevent multiple rapid submissions
+    if (isSubmittingRef.current) {
+      return;
+    }
+
     setValidationErrors({});
-    
+
     if (!turnstileToken && !bypassTurnstile) {
       setFormStatus("error");
+      setToastType("error");
+      setShowToast(true);
+      setTimeout(() => setShowToast(false), 3000);
       return;
     }
 
@@ -132,7 +152,7 @@ export default function Contact() {
 
     // Frontend validation using Zod
     const validation = frontendContactFormSchema.safeParse(formValues);
-    
+
     if (!validation.success) {
       const errors: Record<string, string> = {};
       const fieldStatesUpdate: Record<string, 'idle' | 'valid' | 'invalid'> = {};
@@ -147,6 +167,8 @@ export default function Contact() {
       return;
     }
 
+    // Set submission lock and status
+    isSubmittingRef.current = true;
     setFormStatus("sending");
 
     try {
@@ -167,11 +189,23 @@ export default function Contact() {
 
       if (response.ok) {
         setFormStatus("success");
+        setToastType("success");
+        setShowToast(true);
+
+        // Reset form and all states
         e.currentTarget.reset();
         setTurnstileToken(null);
         setValidationErrors({});
+        setFieldStates({});
+        setCharacterCounts({ name: 0, message: 0 });
+        setIsFormValid(false);
         turnstileRef.current?.reset();
-        setTimeout(() => setFormStatus("idle"), 3000);
+
+        // Hide toast and reset form status
+        setTimeout(() => {
+          setShowToast(false);
+          setFormStatus("idle");
+        }, 5000);
       } else {
         // Handle server validation errors
         if (result.details) {
@@ -182,11 +216,26 @@ export default function Contact() {
           setValidationErrors(serverErrors);
         }
         setFormStatus("error");
-        setTimeout(() => setFormStatus("idle"), 3000);
+        setToastType("error");
+        setShowToast(true);
+
+        setTimeout(() => {
+          setShowToast(false);
+          setFormStatus("idle");
+        }, 5000);
       }
     } catch {
       setFormStatus("error");
-      setTimeout(() => setFormStatus("idle"), 3000);
+      setToastType("error");
+      setShowToast(true);
+
+      setTimeout(() => {
+        setShowToast(false);
+        setFormStatus("idle");
+      }, 5000);
+    } finally {
+      // Release submission lock
+      isSubmittingRef.current = false;
     }
   };
 
@@ -514,21 +563,39 @@ export default function Contact() {
 
               <button
                 type="submit"
-                disabled={formStatus === "sending" || (!turnstileToken && !bypassTurnstile)}
-                className="w-full py-4 text-white font-semibold rounded-xl transition-all duration-300 hover:scale-[1.02] disabled:scale-100 disabled:opacity-50"
-                style={{ background: formStatus === "sending" || (!turnstileToken && !bypassTurnstile) ? 'var(--primary-400)' : 'var(--primary-600)' }}
+                disabled={formStatus === "sending" || !isFormValid || (!turnstileToken && !bypassTurnstile)}
+                className="w-full py-4 text-white font-semibold rounded-xl transition-all duration-300 hover:scale-[1.02] active:scale-[0.98] disabled:scale-100 disabled:opacity-50 disabled:cursor-not-allowed flex items-center justify-center gap-2"
+                style={{
+                  background: formStatus === "sending" || !isFormValid || (!turnstileToken && !bypassTurnstile)
+                    ? 'var(--primary-400)'
+                    : 'var(--primary-600)'
+                }}
               >
-                {formStatus === "sending" && t('form.sending')}
-                {formStatus === "success" && t('form.success')}
-                {formStatus === "idle" && t('form.submit')}
-                {formStatus === "error" && t('form.error')}
+                {formStatus === "sending" && (
+                  <>
+                    <Loader2 className="w-5 h-5 animate-spin" />
+                    <span>{t('form.sending')}</span>
+                  </>
+                )}
+                {formStatus === "success" && (
+                  <>
+                    <CheckCircle2 className="w-5 h-5" />
+                    <span>{t('form.success')}</span>
+                  </>
+                )}
+                {formStatus === "idle" && (
+                  <>
+                    <Send className="w-5 h-5" />
+                    <span>{t('form.submit')}</span>
+                  </>
+                )}
+                {formStatus === "error" && (
+                  <>
+                    <AlertCircle className="w-5 h-5" />
+                    <span>{t('form.error')}</span>
+                  </>
+                )}
               </button>
-
-              {formStatus === "success" && (
-                <div className="text-center text-sm" style={{ color: 'var(--success-500)' }}>
-                  {t('form.successMessage')}
-                </div>
-              )}
             </form>
           </div>
         </div>
@@ -544,6 +611,44 @@ export default function Contact() {
           </div>
         </div>
       </div>
+
+      {/* Toast Notification */}
+      {showToast && (
+        <div className="fixed bottom-6 right-6 z-50 animate-in slide-in-from-bottom-5 fade-in duration-300">
+          <div
+            className={`apple-glass rounded-2xl px-6 py-4 shadow-lg flex items-center gap-3 min-w-[300px] ${
+              toastType === "success" ? "border-l-4 border-green-500" : "border-l-4 border-red-500"
+            }`}
+          >
+            {toastType === "success" ? (
+              <div className="w-10 h-10 rounded-full bg-green-500/20 flex items-center justify-center">
+                <CheckCircle2 className="w-6 h-6 text-green-500" />
+              </div>
+            ) : (
+              <div className="w-10 h-10 rounded-full bg-red-500/20 flex items-center justify-center">
+                <AlertCircle className="w-6 h-6 text-red-500" />
+              </div>
+            )}
+            <div className="flex-1">
+              <div className="font-semibold">
+                {toastType === "success" ? t('form.success') : t('form.error')}
+              </div>
+              <div className="text-sm text-foreground/70">
+                {toastType === "success"
+                  ? t('form.successMessage')
+                  : "There was an error sending your message. Please try again."}
+              </div>
+            </div>
+            <button
+              onClick={() => setShowToast(false)}
+              className="w-8 h-8 rounded-full hover:bg-foreground/10 flex items-center justify-center transition-colors"
+              aria-label="Close notification"
+            >
+              <X className="w-4 h-4" />
+            </button>
+          </div>
+        </div>
+      )}
     </section>
   );
 }
