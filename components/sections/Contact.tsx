@@ -26,13 +26,23 @@ export default function Contact() {
   const t = useTranslations('contact');
   const locale = useLocale();
   // Allow bypass in development when NEXT_PUBLIC_TURNSTILE_BYPASS_DEV=true
-  const bypassTurnstile = process.env.NEXT_PUBLIC_TURNSTILE_BYPASS_DEV === 'true';
+  // Also bypass if site key is not configured
+  const bypassTurnstile = process.env.NEXT_PUBLIC_TURNSTILE_BYPASS_DEV === 'true' || !process.env.NEXT_PUBLIC_TURNSTILE_SITE_KEY;
 
   const copyEmail = () => {
     navigator.clipboard.writeText("hi@fernandomemije.dev");
     setCopied(true);
     setTimeout(() => setCopied(false), 2000);
   };
+
+  // Log Turnstile bypass status for debugging
+  useEffect(() => {
+    console.log('🔒 Turnstile Configuration:', {
+      bypassEnabled: bypassTurnstile,
+      hasSiteKey: !!process.env.NEXT_PUBLIC_TURNSTILE_SITE_KEY,
+      bypassEnvVar: process.env.NEXT_PUBLIC_TURNSTILE_BYPASS_DEV,
+    });
+  }, [bypassTurnstile]);
 
   // Track form validity based on field states
   useEffect(() => {
@@ -185,7 +195,16 @@ export default function Contact() {
           }),
       });
 
-      const result = await response.json();
+      let result;
+      try {
+        result = await response.json();
+      } catch (jsonError) {
+        console.error('Failed to parse response JSON:', jsonError);
+        throw new Error('Invalid response from server');
+      }
+
+      console.log('Response status:', response.status, 'Response ok:', response.ok);
+      console.log('Response body:', result);
 
       if (response.ok) {
         setFormStatus("success");
@@ -228,7 +247,8 @@ export default function Contact() {
           setFormStatus("idle");
         }, 5000);
       }
-    } catch {
+    } catch (error) {
+      console.error('Form submission error:', error);
       setFormStatus("error");
       setToastType("error");
       setShowToast(true);
