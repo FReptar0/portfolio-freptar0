@@ -185,7 +185,16 @@ export default function Contact() {
           }),
       });
 
-      const result = await response.json();
+      let result;
+      try {
+        result = await response.json();
+      } catch (jsonError) {
+        console.error('Failed to parse response JSON:', jsonError);
+        throw new Error('Invalid response from server');
+      }
+
+      console.log('Response status:', response.status, 'Response ok:', response.ok);
+      console.log('Response body:', result);
 
       if (response.ok) {
         setFormStatus("success");
@@ -228,7 +237,8 @@ export default function Contact() {
           setFormStatus("idle");
         }, 5000);
       }
-    } catch {
+    } catch (error) {
+      console.error('Form submission error:', error);
       setFormStatus("error");
       setToastType("error");
       setShowToast(true);
