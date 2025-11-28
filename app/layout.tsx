@@ -1,5 +1,6 @@
 import * as React from "react";
 import SpeedInsightsClient from "@/components/SpeedInsightsClient";
+import AnalyticsClient from "@/components/AnalyticsClient";
 import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
 import { ThemeProvider } from "@/components/theme-provider";
@@ -40,7 +41,8 @@ export default function RootLayout({
                 >
                     {children}
                 </ThemeProvider>
-                    <SpeedInsightsClient />
+                <SpeedInsightsClient />
+                <AnalyticsClient />
             </body>
         </html>
     );
