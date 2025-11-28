@@ -26,13 +26,23 @@ export default function Contact() {
   const t = useTranslations('contact');
   const locale = useLocale();
   // Allow bypass in development when NEXT_PUBLIC_TURNSTILE_BYPASS_DEV=true
-  const bypassTurnstile = process.env.NEXT_PUBLIC_TURNSTILE_BYPASS_DEV === 'true';
+  // Also bypass if site key is not configured
+  const bypassTurnstile = process.env.NEXT_PUBLIC_TURNSTILE_BYPASS_DEV === 'true' || !process.env.NEXT_PUBLIC_TURNSTILE_SITE_KEY;
 
   const copyEmail = () => {
     navigator.clipboard.writeText("hi@fernandomemije.dev");
     setCopied(true);
     setTimeout(() => setCopied(false), 2000);
   };
+
+  // Log Turnstile bypass status for debugging
+  useEffect(() => {
+    console.log('🔒 Turnstile Configuration:', {
+      bypassEnabled: bypassTurnstile,
+      hasSiteKey: !!process.env.NEXT_PUBLIC_TURNSTILE_SITE_KEY,
+      bypassEnvVar: process.env.NEXT_PUBLIC_TURNSTILE_BYPASS_DEV,
+    });
+  }, [bypassTurnstile]);
 
   // Track form validity based on field states
   useEffect(() => {
