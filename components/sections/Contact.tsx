@@ -548,7 +548,9 @@ export default function Contact() {
                     onSuccess={(token) => setTurnstileToken(token)}
                     onError={() => {
                       setTurnstileToken(null);
-                      setFormStatus("error");
+                      // Don't set formStatus to error here - only show error state
+                      // when user actually tries to submit. Button will be disabled
+                      // due to missing token, which is the correct behavior.
                     }}
                     onExpire={() => setTurnstileToken(null)}
                     options={{
