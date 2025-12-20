@@ -5,7 +5,7 @@
   "sections": {
     "challenge": "El Desafío",
     "role": "Mi Rol",
-    "solution": "Solución", 
+    "solution": "Solución",
     "impact": "Impacto en el Negocio"
   },
   "labels": {
@@ -22,23 +22,43 @@
         "role": "Desarrollador Líder",
         "teamSize": 4,
         "responsibility0": "Diseñé la arquitectura del sistema de automatización",
-        "responsibility1": "Desarrollé microservicios Spring Boot",
-        "responsibility2": "Implementé CI/CD con Jenkins"
+        "responsibility1": "Desarrollé servicios backend en JavaScript",
+        "responsibility2": "Construí el sistema completo desde cero"
       },
       "technicalSolution": {
-        "stack": ["Spring Boot", "Java", "MySQL", "Docker", "Jenkins"],
+        "stack": [
+          "JavaScript",
+          "SQL Server",
+          "Docker"
+        ],
         "architecture": "Microservicios",
-        "keyDecision0": "Spring Boot para integración empresarial robusta",
+        "keyDecision0": "JavaScript para desarrollo ágil y mantenible",
         "keyDecision1": "Contenedores Docker para despliegues consistentes",
-        "keyDecision2": "MySQL para procesamiento confiable de transacciones"
+        "keyDecision2": "SQL Server para procesamiento confiable de transacciones"
       },
       "businessImpact": {
-        "metric0": { "label": "Reducción de Errores", "value": "95% menos errores manuales" },
-        "metric1": { "label": "Eficiencia del Personal", "value": "200+ empleados optimizados" },
-        "metric2": { "label": "Tiempo de Procesamiento", "value": "80% flujos más rápidos" },
-        "metric3": { "label": "Automatización", "value": "100% sincronización de proveedores" }
+        "metric0": {
+          "label": "Reducción de Errores",
+          "value": "95% menos errores manuales"
+        },
+        "metric1": {
+          "label": "Eficiencia del Personal",
+          "value": "200+ empleados optimizados"
+        },
+        "metric2": {
+          "label": "Tiempo de Procesamiento",
+          "value": "80% flujos más rápidos"
+        },
+        "metric3": {
+          "label": "Automatización",
+          "value": "100% sincronización de proveedores"
+        }
       },
-      "tags": ["Empresarial", "Integración", "Automatización"]
+      "tags": [
+        "Empresarial",
+        "Integración",
+        "Automatización"
+      ]
     },
     "sagesync": {
       "title": "SageSync - Servicio de Sincronización de Inventario",
@@ -51,19 +71,41 @@
         "responsibility2": "Implementé gestión de tokens OAuth2"
       },
       "technicalSolution": {
-        "stack": ["Node.js", "Express", "PostgreSQL", "OAuth2", "Docker"],
+        "stack": [
+          "Node.js",
+          "Express",
+          "PostgreSQL",
+          "OAuth2",
+          "Docker"
+        ],
         "architecture": "Basado en Eventos",
         "keyDecision0": "Node.js para procesamiento de eventos en tiempo real",
         "keyDecision1": "OAuth2 para autenticación segura de API",
         "keyDecision2": "PostgreSQL para persistencia confiable de datos"
       },
       "businessImpact": {
-        "metric0": { "label": "Precisión de Sync", "value": "99.9% consistencia de datos" },
-        "metric1": { "label": "Actualizaciones en Tiempo Real", "value": "< 30s latencia de sync" },
-        "metric2": { "label": "Trabajo Manual", "value": "90% reducción" },
-        "metric3": { "label": "Tiempo Activo del Sistema", "value": "99.5% disponibilidad" }
+        "metric0": {
+          "label": "Precisión de Sync",
+          "value": "99.9% consistencia de datos"
+        },
+        "metric1": {
+          "label": "Actualizaciones en Tiempo Real",
+          "value": "< 30s latencia de sync"
+        },
+        "metric2": {
+          "label": "Trabajo Manual",
+          "value": "90% reducción"
+        },
+        "metric3": {
+          "label": "Tiempo Activo del Sistema",
+          "value": "99.5% disponibilidad"
+        }
       },
-      "tags": ["Integración", "Tiempo Real", "Monitoreo"]
+      "tags": [
+        "Integración",
+        "Tiempo Real",
+        "Monitoreo"
+      ]
     },
     "cardeal": {
       "title": "Qardeal - Plataforma de Renta de Autos",
@@ -76,19 +118,41 @@
         "responsibility2": "Configuré pipeline CI/CD y dashboards admin"
       },
       "technicalSolution": {
-        "stack": ["Next.js", "React", "Node.js", "MongoDB", "Vercel"],
+        "stack": [
+          "Next.js",
+          "React",
+          "Node.js",
+          "MongoDB",
+          "Vercel"
+        ],
         "architecture": "Serverless",
         "keyDecision0": "Next.js para páginas de reserva optimizadas para SEO",
         "keyDecision1": "MongoDB para datos flexibles de reservas",
         "keyDecision2": "Vercel para despliegues sin problemas"
       },
       "businessImpact": {
-        "metric0": { "label": "Tiempo de Lanzamiento", "value": "4 meses de entrega" },
-        "metric1": { "label": "Conversión de Reservas", "value": "35% aumento" },
-        "metric2": { "label": "Eficiencia Admin", "value": "70% operaciones más rápidas" },
-        "metric3": { "label": "Éxito de Pagos", "value": "99.2% tasa de transacción" }
+        "metric0": {
+          "label": "Tiempo de Lanzamiento",
+          "value": "4 meses de entrega"
+        },
+        "metric1": {
+          "label": "Conversión de Reservas",
+          "value": "35% aumento"
+        },
+        "metric2": {
+          "label": "Eficiencia Admin",
+          "value": "70% operaciones más rápidas"
+        },
+        "metric3": {
+          "label": "Éxito de Pagos",
+          "value": "99.2% tasa de transacción"
+        }
       },
-      "tags": ["E-Commerce", "Pagos", "Full-Stack"]
+      "tags": [
+        "E-Commerce",
+        "Pagos",
+        "Full-Stack"
+      ]
     },
     "odoo": {
       "title": "Inova - Módulos Personalizados Odoo",
@@ -101,19 +165,40 @@
         "responsibility2": "Integré controles de restricción de pagos"
       },
       "technicalSolution": {
-        "stack": ["Python", "Odoo", "PostgreSQL", "Apache POI"],
+        "stack": [
+          "Python",
+          "Odoo",
+          "PostgreSQL",
+          "Apache POI"
+        ],
         "architecture": "Modular",
         "keyDecision0": "Módulos Python para integración con framework Odoo",
         "keyDecision1": "PostgreSQL para manejo robusto de datos",
         "keyDecision2": "Apache POI para procesamiento de documentos"
       },
       "businessImpact": {
-        "metric0": { "label": "Precisión de Facturación", "value": "98% reducción de errores" },
-        "metric1": { "label": "Trabajo Manual", "value": "85% automatización" },
-        "metric2": { "label": "Velocidad de Procesamiento", "value": "60% facturación más rápida" },
-        "metric3": { "label": "Validación RFC", "value": "100% automatizada" }
+        "metric0": {
+          "label": "Precisión de Facturación",
+          "value": "98% reducción de errores"
+        },
+        "metric1": {
+          "label": "Trabajo Manual",
+          "value": "85% automatización"
+        },
+        "metric2": {
+          "label": "Velocidad de Procesamiento",
+          "value": "60% facturación más rápida"
+        },
+        "metric3": {
+          "label": "Validación RFC",
+          "value": "100% automatizada"
+        }
       },
-      "tags": ["ERP", "Automatización", "Proceso de Negocio"]
+      "tags": [
+        "ERP",
+        "Automatización",
+        "Proceso de Negocio"
+      ]
     },
     "gymmanager": {
       "title": "Gym Manager - Plataforma de Operaciones",
@@ -126,19 +211,40 @@
         "responsibility2": "Optimicé para despliegue rápido"
       },
       "technicalSolution": {
-        "stack": ["Next.js", "React", "PostgreSQL", "Vercel"],
+        "stack": [
+          "Next.js",
+          "React",
+          "PostgreSQL",
+          "Vercel"
+        ],
         "architecture": "Serverless",
         "keyDecision0": "Next.js para interfaz admin rápida y SEO-friendly",
         "keyDecision1": "PostgreSQL para datos confiables de membresías",
         "keyDecision2": "Vercel para hosting costo-efectivo"
       },
       "businessImpact": {
-        "metric0": { "label": "Tiempo de Configuración", "value": "2 horas de despliegue" },
-        "metric1": { "label": "Eficiencia Admin", "value": "75% ahorro de tiempo" },
-        "metric2": { "label": "Retención de Miembros", "value": "20% mejora" },
-        "metric3": { "label": "Ahorro de Costos", "value": "90% vs alternativas" }
+        "metric0": {
+          "label": "Tiempo de Configuración",
+          "value": "2 horas de despliegue"
+        },
+        "metric1": {
+          "label": "Eficiencia Admin",
+          "value": "75% ahorro de tiempo"
+        },
+        "metric2": {
+          "label": "Retención de Miembros",
+          "value": "20% mejora"
+        },
+        "metric3": {
+          "label": "Ahorro de Costos",
+          "value": "90% vs alternativas"
+        }
       },
-      "tags": ["SaaS", "Analíticas", "Pequeño Negocio"]
+      "tags": [
+        "SaaS",
+        "Analíticas",
+        "Pequeño Negocio"
+      ]
     }
   }
 }

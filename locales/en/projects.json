@@ -5,7 +5,7 @@
   "sections": {
     "challenge": "The Challenge",
     "role": "My Role",
-    "solution": "Solution", 
+    "solution": "Solution",
     "impact": "Business Impact"
   },
   "labels": {
@@ -22,23 +22,43 @@
         "role": "Lead Developer",
         "teamSize": 4,
         "responsibility0": "Architected automation system design",
-        "responsibility1": "Developed Spring Boot microservices",
-        "responsibility2": "Implemented CI/CD with Jenkins"
+        "responsibility1": "Developed backend services in JavaScript",
+        "responsibility2": "Built the complete system from scratch"
       },
       "technicalSolution": {
-        "stack": ["Spring Boot", "Java", "MySQL", "Docker", "Jenkins"],
+        "stack": [
+          "JavaScript",
+          "SQL Server",
+          "Docker"
+        ],
         "architecture": "Microservices",
-        "keyDecision0": "Spring Boot for robust enterprise integration",
+        "keyDecision0": "JavaScript for agile and maintainable development",
         "keyDecision1": "Docker containers for consistent deployments",
-        "keyDecision2": "MySQL for reliable transaction processing"
+        "keyDecision2": "SQL Server for reliable transaction processing"
       },
       "businessImpact": {
-        "metric0": { "label": "Error Reduction", "value": "95% fewer manual errors" },
-        "metric1": { "label": "Staff Efficiency", "value": "200+ staff streamlined" },
-        "metric2": { "label": "Processing Time", "value": "80% faster workflows" },
-        "metric3": { "label": "Automation", "value": "100% supplier sync" }
+        "metric0": {
+          "label": "Error Reduction",
+          "value": "95% fewer manual errors"
+        },
+        "metric1": {
+          "label": "Staff Efficiency",
+          "value": "200+ staff streamlined"
+        },
+        "metric2": {
+          "label": "Processing Time",
+          "value": "80% faster workflows"
+        },
+        "metric3": {
+          "label": "Automation",
+          "value": "100% supplier sync"
+        }
       },
-      "tags": ["Enterprise", "Integration", "Automation"]
+      "tags": [
+        "Enterprise",
+        "Integration",
+        "Automation"
+      ]
     },
     "sagesync": {
       "title": "SageSync - Inventory Synchronization Service",
@@ -51,19 +71,41 @@
         "responsibility2": "Implemented OAuth2 token management"
       },
       "technicalSolution": {
-        "stack": ["Node.js", "Express", "PostgreSQL", "OAuth2", "Docker"],
+        "stack": [
+          "Node.js",
+          "Express",
+          "SQL Server",
+          "OAuth2",
+          "Docker"
+        ],
         "architecture": "Event-Driven",
         "keyDecision0": "Node.js for real-time event processing",
         "keyDecision1": "OAuth2 for secure API authentication",
-        "keyDecision2": "PostgreSQL for reliable data persistence"
+        "keyDecision2": "SQL Server for reliable data persistence"
       },
       "businessImpact": {
-        "metric0": { "label": "Sync Accuracy", "value": "99.9% data consistency" },
-        "metric1": { "label": "Real-time Updates", "value": "< 30s sync latency" },
-        "metric2": { "label": "Manual Work", "value": "90% reduction" },
-        "metric3": { "label": "System Uptime", "value": "99.5% availability" }
+        "metric0": {
+          "label": "Sync Accuracy",
+          "value": "99.9% data consistency"
+        },
+        "metric1": {
+          "label": "Real-time Updates",
+          "value": "< 30s sync latency"
+        },
+        "metric2": {
+          "label": "Manual Work",
+          "value": "90% reduction"
+        },
+        "metric3": {
+          "label": "System Uptime",
+          "value": "99.5% availability"
+        }
       },
-      "tags": ["Integration", "Real-Time", "Monitoring"]
+      "tags": [
+        "Integration",
+        "Real-Time",
+        "Monitoring"
+      ]
     },
     "cardeal": {
       "title": "Qardeal - Car Rental Platform",
@@ -76,19 +118,41 @@
         "responsibility2": "Set up CI/CD pipeline and admin dashboards"
       },
       "technicalSolution": {
-        "stack": ["Next.js", "React", "Node.js", "MongoDB", "Vercel"],
+        "stack": [
+          "Next.js",
+          "React",
+          "Node.js",
+          "MongoDB",
+          "Vercel"
+        ],
         "architecture": "Serverless",
         "keyDecision0": "Next.js for SEO-optimized booking pages",
         "keyDecision1": "MongoDB for flexible booking data",
         "keyDecision2": "Vercel for seamless deployments"
       },
       "businessImpact": {
-        "metric0": { "label": "Time to Market", "value": "4 months delivery" },
-        "metric1": { "label": "Booking Conversion", "value": "35% increase" },
-        "metric2": { "label": "Admin Efficiency", "value": "70% faster operations" },
-        "metric3": { "label": "Payment Success", "value": "99.2% transaction rate" }
+        "metric0": {
+          "label": "Time to Market",
+          "value": "4 months delivery"
+        },
+        "metric1": {
+          "label": "Booking Conversion",
+          "value": "35% increase"
+        },
+        "metric2": {
+          "label": "Admin Efficiency",
+          "value": "70% faster operations"
+        },
+        "metric3": {
+          "label": "Payment Success",
+          "value": "99.2% transaction rate"
+        }
       },
-      "tags": ["E-Commerce", "Payments", "Full-Stack"]
+      "tags": [
+        "E-Commerce",
+        "Payments",
+        "Full-Stack"
+      ]
     },
     "odoo": {
       "title": "Inova - Odoo Custom Modules",
@@ -101,19 +165,40 @@
         "responsibility2": "Integrated payment restriction controls"
       },
       "technicalSolution": {
-        "stack": ["Python", "Odoo", "PostgreSQL", "Apache POI"],
+        "stack": [
+          "Python",
+          "Odoo",
+          "PostgreSQL",
+          "Apache POI"
+        ],
         "architecture": "Modular",
         "keyDecision0": "Python modules for Odoo framework integration",
         "keyDecision1": "PostgreSQL for robust data handling",
         "keyDecision2": "Apache POI for document processing"
       },
       "businessImpact": {
-        "metric0": { "label": "Billing Accuracy", "value": "98% error reduction" },
-        "metric1": { "label": "Manual Work", "value": "85% automation" },
-        "metric2": { "label": "Processing Speed", "value": "60% faster billing" },
-        "metric3": { "label": "RFC Validation", "value": "100% automated" }
+        "metric0": {
+          "label": "Billing Accuracy",
+          "value": "98% error reduction"
+        },
+        "metric1": {
+          "label": "Manual Work",
+          "value": "85% automation"
+        },
+        "metric2": {
+          "label": "Processing Speed",
+          "value": "60% faster billing"
+        },
+        "metric3": {
+          "label": "RFC Validation",
+          "value": "100% automated"
+        }
       },
-      "tags": ["ERP", "Automation", "Business Process"]
+      "tags": [
+        "ERP",
+        "Automation",
+        "Business Process"
+      ]
     },
     "gymmanager": {
       "title": "Gym Manager - Operations Platform",
@@ -126,19 +211,40 @@
         "responsibility2": "Optimized for rapid deployment"
       },
       "technicalSolution": {
-        "stack": ["Next.js", "React", "PostgreSQL", "Vercel"],
+        "stack": [
+          "Next.js",
+          "React",
+          "PostgreSQL",
+          "Vercel"
+        ],
         "architecture": "Serverless",
         "keyDecision0": "Next.js for fast, SEO-friendly admin interface",
         "keyDecision1": "PostgreSQL for reliable membership data",
         "keyDecision2": "Vercel for cost-effective hosting"
       },
       "businessImpact": {
-        "metric0": { "label": "Setup Time", "value": "2 hours deployment" },
-        "metric1": { "label": "Admin Efficiency", "value": "75% time savings" },
-        "metric2": { "label": "Member Retention", "value": "20% improvement" },
-        "metric3": { "label": "Cost Savings", "value": "90% vs alternatives" }
+        "metric0": {
+          "label": "Setup Time",
+          "value": "2 hours deployment"
+        },
+        "metric1": {
+          "label": "Admin Efficiency",
+          "value": "75% time savings"
+        },
+        "metric2": {
+          "label": "Member Retention",
+          "value": "20% improvement"
+        },
+        "metric3": {
+          "label": "Cost Savings",
+          "value": "90% vs alternatives"
+        }
       },
-      "tags": ["SaaS", "Analytics", "Small Business"]
+      "tags": [
+        "SaaS",
+        "Analytics",
+        "Small Business"
+      ]
     }
   }
 }
