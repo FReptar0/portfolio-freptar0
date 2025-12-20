@@ -12,11 +12,14 @@
     "teamOf": "Team of",
     "architecture": "Architecture:",
     "ctaQuestion": "Want similar results for your project?",
-    "ctaButton": "Let's Talk"
+    "ctaButton": "Let's Talk",
+    "viewCode": "View Code",
+    "privateCode": "Private"
   },
   "items": {
     "sageconnect": {
       "title": "SageConnect - ERP Integration Platform",
+      "githubUrl": "https://github.com/FReptar0/sageconnect",
       "businessProblem": "Manual data processing between Sage 300 ERP and supplier portals was causing frequent errors, delays, and inefficient workflows across multiple departments affecting 200+ staff members.",
       "myContribution": {
         "role": "Lead Developer",
@@ -62,6 +65,7 @@
     },
     "sagesync": {
       "title": "SageSync - Inventory Synchronization Service",
+      "githubUrl": "https://github.com/FReptar0/sagesync",
       "businessProblem": "Disconnected inventory systems between Sage 300 ERP and Fracttal CMMS led to stock discrepancies, manual reconciliation, and lack of real-time visibility.",
       "myContribution": {
         "role": "Full-Stack Developer",
@@ -109,6 +113,7 @@
     },
     "cardeal": {
       "title": "Qardeal - Car Rental Platform",
+      "githubUrl": "",
       "businessProblem": "Car rental business needed modern booking platform with payment processing, invoice generation, and administrative controls to compete in digital marketplace.",
       "myContribution": {
         "role": "Full-Stack Developer",
@@ -156,6 +161,7 @@
     },
     "odoo": {
       "title": "Inova - Odoo Custom Modules",
+      "githubUrl": "",
       "businessProblem": "Manual billing processes, RFC validation errors, and payment restrictions were causing billing inaccuracies and requiring extensive manual intervention.",
       "myContribution": {
         "role": "Python Developer",
@@ -202,6 +208,7 @@
     },
     "gymmanager": {
       "title": "Gym Manager - Operations Platform",
+      "githubUrl": "",
       "businessProblem": "Local gyms needed affordable membership management system with KPI dashboards and reporting capabilities for efficient operations and growth tracking.",
       "myContribution": {
         "role": "Full-Stack Developer",

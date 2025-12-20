@@ -2,11 +2,12 @@
 
 import { useState } from "react";
 import { useTranslations } from 'next-intl';
-import { Target, User, Settings, TrendingUp, CheckCircle, ArrowRight } from 'lucide-react';
+import { Target, User, Settings, TrendingUp, CheckCircle, ArrowRight, Github, Lock } from 'lucide-react';
 
 interface Project {
   id: string;
   title: string;
+  githubUrl: string | null;
   businessProblem: string;
   myContribution: {
     role: string;
@@ -27,11 +28,12 @@ interface Project {
 
 export default function Projects() {
   const t = useTranslations('projects');
-  
+
   const projects = [
     {
       id: "sageconnect",
       title: t('items.sageconnect.title'),
+      githubUrl: t.raw('items.sageconnect.githubUrl') as string | null,
       businessProblem: t('items.sageconnect.businessProblem'),
       myContribution: {
         role: t('items.sageconnect.myContribution.role'),
@@ -62,8 +64,9 @@ export default function Projects() {
       tags: t.raw('items.sageconnect.tags') as string[],
     },
     {
-      id: "sagesync", 
+      id: "sagesync",
       title: t('items.sagesync.title'),
+      githubUrl: t.raw('items.sagesync.githubUrl') as string | null,
       businessProblem: t('items.sagesync.businessProblem'),
       myContribution: {
         role: t('items.sagesync.myContribution.role'),
@@ -96,6 +99,7 @@ export default function Projects() {
     {
       id: "cardeal",
       title: t('items.cardeal.title'),
+      githubUrl: t.raw('items.cardeal.githubUrl') as string | null,
       businessProblem: t('items.cardeal.businessProblem'),
       myContribution: {
         role: t('items.cardeal.myContribution.role'),
@@ -128,6 +132,7 @@ export default function Projects() {
     {
       id: "odoo",
       title: t('items.odoo.title'),
+      githubUrl: t.raw('items.odoo.githubUrl') as string | null,
       businessProblem: t('items.odoo.businessProblem'),
       myContribution: {
         role: t('items.odoo.myContribution.role'),
@@ -160,6 +165,7 @@ export default function Projects() {
     {
       id: "gymmanager",
       title: t('items.gymmanager.title'),
+      githubUrl: t.raw('items.gymmanager.githubUrl') as string | null,
       businessProblem: t('items.gymmanager.businessProblem'),
       myContribution: {
         role: t('items.gymmanager.myContribution.role'),
@@ -212,11 +218,10 @@ export default function Projects() {
             <button
               key={proj.id}
               onClick={() => setSelectedProject(proj.id)}
-              className={`px-6 py-3 rounded-xl font-medium transition-all duration-300 ${
-                selectedProject === proj.id
-                  ? "bg-primary-blue text-white shadow-lg shadow-primary-blue/30"
-                  : "apple-glass hover:scale-105"
-              }`}
+              className={`px-6 py-3 rounded-xl font-medium transition-all duration-300 ${selectedProject === proj.id
+                ? "bg-primary-blue text-white shadow-lg shadow-primary-blue/30"
+                : "apple-glass hover:scale-105"
+                }`}
             >
               {proj.title}
             </button>
@@ -225,6 +230,27 @@ export default function Projects() {
 
         {/* Project Details */}
         <div className="apple-glass rounded-3xl p-6 sm:p-8 md:p-12">
+          {/* GitHub Link - Prominent placement at top */}
+          <div className="mb-8 flex justify-end">
+            {project.githubUrl ? (
+              <a
+                href={project.githubUrl}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="group inline-flex items-center gap-3 px-6 py-3 bg-gradient-to-r from-primary-blue to-accent-purple text-white rounded-xl font-semibold transition-all duration-300 hover:scale-105 hover:shadow-xl hover:shadow-primary-blue/25"
+              >
+                <Github className="w-5 h-5" />
+                <span>{t('labels.viewCode')}</span>
+                <ArrowRight className="w-4 h-4 transition-transform duration-300 group-hover:translate-x-1" />
+              </a>
+            ) : (
+              <span className="inline-flex items-center gap-2 px-5 py-2.5 apple-glass rounded-xl text-foreground/40 text-sm font-medium">
+                <Lock className="w-4 h-4" />
+                {t('labels.privateCode')}
+              </span>
+            )}
+          </div>
+
           <div className="grid md:grid-cols-2 gap-8 mb-8">
             {/* Left Column */}
             <div className="space-y-8">

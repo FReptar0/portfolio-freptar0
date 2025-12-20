@@ -12,11 +12,14 @@
     "teamOf": "Equipo de",
     "architecture": "Arquitectura:",
     "ctaQuestion": "¿Quieres resultados similares para tu proyecto?",
-    "ctaButton": "Hablemos"
+    "ctaButton": "Hablemos",
+    "viewCode": "Ver Código",
+    "privateCode": "Privado"
   },
   "items": {
     "sageconnect": {
       "title": "SageConnect - Plataforma de Integración ERP",
+      "githubUrl": "https://github.com/FReptar0/sageconnect",
       "businessProblem": "El procesamiento manual de datos entre Sage 300 ERP y portales de proveedores causaba errores frecuentes, retrasos y flujos de trabajo ineficientes en múltiples departamentos afectando a más de 200 empleados.",
       "myContribution": {
         "role": "Desarrollador Líder",
@@ -62,6 +65,7 @@
     },
     "sagesync": {
       "title": "SageSync - Servicio de Sincronización de Inventario",
+      "githubUrl": "https://github.com/FReptar0/sagesync",
       "businessProblem": "Los sistemas de inventario desconectados entre Sage 300 ERP y Fracttal CMMS llevaban a discrepancias de stock, reconciliación manual y falta de visibilidad en tiempo real.",
       "myContribution": {
         "role": "Desarrollador Full-Stack",
@@ -109,6 +113,7 @@
     },
     "cardeal": {
       "title": "Qardeal - Plataforma de Renta de Autos",
+      "githubUrl": "",
       "businessProblem": "El negocio de renta de autos necesitaba una plataforma de reservas moderna con procesamiento de pagos, generación de facturas y controles administrativos para competir en el mercado digital.",
       "myContribution": {
         "role": "Desarrollador Full-Stack",
@@ -156,6 +161,7 @@
     },
     "odoo": {
       "title": "Inova - Módulos Personalizados Odoo",
+      "githubUrl": "",
       "businessProblem": "Los procesos manuales de facturación, errores de validación RFC y restricciones de pago causaban inexactitudes de facturación y requerían intervención manual extensiva.",
       "myContribution": {
         "role": "Desarrollador Python",
@@ -202,6 +208,7 @@
     },
     "gymmanager": {
       "title": "Gym Manager - Plataforma de Operaciones",
+      "githubUrl": "",
       "businessProblem": "Los gimnasios locales necesitaban un sistema asequible de gestión de membresías con dashboards de KPI y capacidades de reportes para operaciones eficientes y seguimiento de crecimiento.",
       "myContribution": {
         "role": "Desarrollador Full-Stack",
