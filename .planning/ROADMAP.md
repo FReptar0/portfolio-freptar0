@@ -28,7 +28,12 @@ Decimal phases appear between their surrounding integers in numeric order.
   3. The SageConnect architecture diagram shows the Sage 300 Web API node replacing the legacy exe node — the planned migration is represented accurately
   4. Section transitions use spacing, subtle backgrounds, or separators so the narrative does not feel like one continuous block of text
   5. Metric callouts have visual distinction (size, color, or card treatment) that draws the eye immediately
-**Plans**: TBD
+**Plans:** 3 plans
+
+Plans:
+- [ ] 01-01-PLAN.md — Visual polish: hero gradient background, text hierarchy, section separators
+- [ ] 01-02-PLAN.md — Diagram fix: replace CFDI Importer with Sage 300 Web API, add mobile scroll wrapper
+- [ ] 01-03-PLAN.md — Visual verification checkpoint: human review of all requirements on desktop and mobile
 
 ### Phase 2: New Case Studies
 **Goal**: SageSync, Qardeal, and Gym Manager each have a live case study page and tech deep-dive reachable at their respective slugs, with content in both EN and ES and proper SEO metadata
@@ -60,6 +65,6 @@ Phases execute in numeric order: 1 → 2 → 3
 
 | Phase | Plans Complete | Status | Completed |
 |-------|----------------|--------|-----------|
-| 1. Visual Foundation | 0/TBD | Not started | - |
+| 1. Visual Foundation | 0/3 | Planning complete | - |
 | 2. New Case Studies | 0/TBD | Not started | - |
 | 3. Evolution and Discovery | 0/TBD | Not started | - |
