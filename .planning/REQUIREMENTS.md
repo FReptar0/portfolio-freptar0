@@ -66,29 +66,29 @@
 
 | Requirement | Phase | Status |
 |-------------|-------|--------|
-| CS-01 | — | Pending |
-| CS-02 | — | Pending |
-| CS-03 | — | Pending |
-| CS-04 | — | Pending |
-| CS-05 | — | Pending |
-| EVO-01 | — | Pending |
-| EVO-02 | — | Pending |
-| EVO-03 | — | Pending |
-| EVO-04 | — | Pending |
-| VIS-01 | — | Pending |
-| VIS-02 | — | Pending |
-| VIS-03 | — | Pending |
-| VIS-04 | — | Pending |
-| VIS-05 | — | Pending |
-| DISC-01 | — | Pending |
-| DISC-02 | — | Pending |
-| ARCH-01 | — | Pending |
+| VIS-01 | Phase 1 | Pending |
+| VIS-02 | Phase 1 | Pending |
+| VIS-03 | Phase 1 | Pending |
+| VIS-04 | Phase 1 | Pending |
+| VIS-05 | Phase 1 | Pending |
+| ARCH-01 | Phase 1 | Pending |
+| CS-01 | Phase 2 | Pending |
+| CS-02 | Phase 2 | Pending |
+| CS-03 | Phase 2 | Pending |
+| CS-04 | Phase 2 | Pending |
+| CS-05 | Phase 2 | Pending |
+| EVO-01 | Phase 3 | Pending |
+| EVO-02 | Phase 3 | Pending |
+| EVO-03 | Phase 3 | Pending |
+| EVO-04 | Phase 3 | Pending |
+| DISC-01 | Phase 3 | Pending |
+| DISC-02 | Phase 3 | Pending |
 
 **Coverage:**
 - v1 requirements: 17 total
-- Mapped to phases: 0
-- Unmapped: 17 ⚠️
+- Mapped to phases: 17
+- Unmapped: 0 (complete)
 
 ---
 *Requirements defined: 2026-03-14*
-*Last updated: 2026-03-14 after initial definition*
+*Last updated: 2026-03-14 — traceability mapped after roadmap creation*
