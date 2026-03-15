@@ -1,7 +1,8 @@
 "use client";
 
 import { useState, useEffect, useCallback } from "react";
-import { useTranslations } from 'next-intl';
+import { useTranslations, useLocale } from 'next-intl';
+import { usePathname } from 'next/navigation';
 import ThemeToggle from "./ThemeToggle";
 import LanguageToggle from "./LanguageToggle";
 import SearchBar from "./SearchBar";
@@ -10,6 +11,9 @@ export default function Navigation() {
   const [isScrolled, setIsScrolled] = useState(false);
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
   const t = useTranslations('navigation');
+  const locale = useLocale();
+  const pathname = usePathname();
+  const isHomePage = pathname === `/${locale}` || pathname === `/${locale}/`;
 
   useEffect(() => {
     const handleScroll = () => {
@@ -20,12 +24,13 @@ export default function Navigation() {
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
+  const prefix = isHomePage ? '' : `/${locale}/`;
   const navLinks = [
-    { label: t('about'), href: "#timeline" },
-    { label: t('projects'), href: "#projects" },
-    { label: t('skills'), href: "#skills" },
-    { label: t('process'), href: "#process" },
-    { label: t('contact'), href: "#contact" },
+    { label: t('about'), href: `${prefix}#timeline` },
+    { label: t('projects'), href: `${prefix}#projects` },
+    { label: t('skills'), href: `${prefix}#skills` },
+    { label: t('process'), href: `${prefix}#process` },
+    { label: t('contact'), href: `${prefix}#contact` },
   ];
 
   const handleKeyDown = useCallback((e: KeyboardEvent) => {
@@ -86,7 +91,7 @@ export default function Navigation() {
         <div className="flex items-center justify-between">
           {/* Logo */}
           <a
-            href="#"
+            href={isHomePage ? "#" : `/${locale}`}
             className="text-xl font-bold hover:scale-105 transition-transform"
             style={{ background: 'var(--gradient-hero)', WebkitBackgroundClip: 'text', backgroundClip: 'text', WebkitTextFillColor: 'transparent', color: 'transparent' }}
           >

@@ -20,7 +20,7 @@
   "items": {
     "sageconnect": {
       "title": "SageConnect - ERP Integration Platform",
-      "githubUrl": "https://github.com/FReptar0/sageconnect",
+      "githubUrl": null,
       "businessProblem": "Manual data processing between Sage 300 ERP and supplier portals was causing frequent errors, delays, and inefficient workflows across multiple departments affecting 200+ staff members.",
       "myContribution": {
         "role": "Lead Developer",
