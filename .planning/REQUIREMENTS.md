@@ -15,10 +15,10 @@
 
 ### Evolution Sections
 
-- [ ] **EVO-01**: SageConnect case study shows "What's Next" section describing exe → Web API migration (main page)
-- [ ] **EVO-02**: SageSync case study shows "What's Next" evolution section
-- [ ] **EVO-03**: "What's Next" section and evolution CTA appear on tech deep-dive pages, not just main case study pages
-- [ ] **EVO-04**: "whatNext" pattern is extensible — adding evolution content to any project requires only JSON content, no code changes
+- [x] **EVO-01**: SageConnect case study shows "What's Next" section describing exe → Web API migration (main page)
+- [x] **EVO-02**: SageSync case study shows "What's Next" evolution section
+- [x] **EVO-03**: "What's Next" section and evolution CTA appear on tech deep-dive pages, not just main case study pages
+- [x] **EVO-04**: "whatNext" pattern is extensible — adding evolution content to any project requires only JSON content, no code changes
 
 ### Visual Design
 
@@ -77,10 +77,10 @@
 | CS-03 | Phase 2 | Complete |
 | CS-04 | Phase 2 | Complete |
 | CS-05 | Phase 2 | Complete |
-| EVO-01 | Phase 3 | Pending |
-| EVO-02 | Phase 3 | Pending |
-| EVO-03 | Phase 3 | Pending |
-| EVO-04 | Phase 3 | Pending |
+| EVO-01 | Phase 3 | Complete |
+| EVO-02 | Phase 3 | Complete |
+| EVO-03 | Phase 3 | Complete |
+| EVO-04 | Phase 3 | Complete |
 | DISC-01 | Phase 3 | Pending |
 | DISC-02 | Phase 3 | Pending |
 
