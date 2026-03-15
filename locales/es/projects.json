@@ -20,7 +20,7 @@
   "items": {
     "sageconnect": {
       "title": "SageConnect - Plataforma de Integración ERP",
-      "githubUrl": null,
+      "githubUrl": "",
       "businessProblem": "El procesamiento manual de datos entre Sage 300 ERP y portales de proveedores causaba errores frecuentes, retrasos y flujos de trabajo ineficientes en múltiples departamentos afectando a más de 200 empleados.",
       "myContribution": {
         "role": "Desarrollador Líder",
