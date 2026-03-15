@@ -13,7 +13,7 @@ This milestone expands the existing SageConnect case study system into a full po
 Decimal phases appear between their surrounding integers in numeric order.
 
 - [x] **Phase 1: Visual Foundation** - Fix the SageConnect baseline — visual hierarchy, diagram accuracy, and mobile responsiveness across all existing case study UI (completed 2026-03-15)
-- [ ] **Phase 2: New Case Studies** - Add SageSync, Qardeal, and Gym Manager as full case study pages with tech deep-dives and SEO
+- [x] **Phase 2: New Case Studies** - Add SageSync, Qardeal, and Gym Manager as full case study pages with tech deep-dives and SEO (completed 2026-03-15)
 - [ ] **Phase 3: Evolution and Discovery** - Add "What's Next" evolution sections to case studies, surface all case studies via homepage links and a dedicated projects index page
 
 ## Phase Details
@@ -44,7 +44,7 @@ Plans:
   2. Each of the three new projects has a working `/tech` deep-dive page with architecture diagram, data flow description, code patterns, and system metrics
   3. The Spanish equivalent of each route (`/es/projects/[slug]` and `/es/projects/[slug]/tech`) renders fully translated content — no English strings appearing in ES locale
   4. Each new case study page has a unique `<title>` and meta description visible in page source for both EN and ES
-**Plans:** 1 plan
+**Plans:** 1/1 plans complete
 
 Plans:
 - [ ] 02-01-PLAN.md — Register new slugs in routing, fix Qardeal metric, enable homepage discovery links
@@ -69,5 +69,5 @@ Phases execute in numeric order: 1 → 2 → 3
 | Phase | Plans Complete | Status | Completed |
 |-------|----------------|--------|-----------|
 | 1. Visual Foundation | 3/3 | Complete    | 2026-03-15 |
-| 2. New Case Studies | 0/1 | In progress | - |
+| 2. New Case Studies | 1/1 | Complete   | 2026-03-15 |
 | 3. Evolution and Discovery | 0/TBD | Not started | - |

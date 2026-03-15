@@ -7,11 +7,11 @@
 
 ### Case Studies
 
-- [ ] **CS-01**: SageSync has a full case study page at `/[locale]/projects/sagesync` with Problem/Solution/Impact narrative
-- [ ] **CS-02**: Qardeal has a full case study page at `/[locale]/projects/cardeal` with Problem/Solution/Impact narrative
-- [ ] **CS-03**: Gym Manager has a full case study page at `/[locale]/projects/gymmanager` with Problem/Solution/Impact narrative
-- [ ] **CS-04**: Each new case study has a tech deep-dive page at `/[locale]/projects/[slug]/tech` with architecture diagram, data flow, code patterns, and system metrics
-- [ ] **CS-05**: All new case study pages have proper SEO metadata (title, description) in both locales
+- [x] **CS-01**: SageSync has a full case study page at `/[locale]/projects/sagesync` with Problem/Solution/Impact narrative
+- [x] **CS-02**: Qardeal has a full case study page at `/[locale]/projects/cardeal` with Problem/Solution/Impact narrative
+- [x] **CS-03**: Gym Manager has a full case study page at `/[locale]/projects/gymmanager` with Problem/Solution/Impact narrative
+- [x] **CS-04**: Each new case study has a tech deep-dive page at `/[locale]/projects/[slug]/tech` with architecture diagram, data flow, code patterns, and system metrics
+- [x] **CS-05**: All new case study pages have proper SEO metadata (title, description) in both locales
 
 ### Evolution Sections
 
@@ -72,11 +72,11 @@
 | VIS-04 | Phase 1 | Complete |
 | VIS-05 | Phase 1 | Complete |
 | ARCH-01 | Phase 1 | Complete |
-| CS-01 | Phase 2 | Pending |
-| CS-02 | Phase 2 | Pending |
-| CS-03 | Phase 2 | Pending |
-| CS-04 | Phase 2 | Pending |
-| CS-05 | Phase 2 | Pending |
+| CS-01 | Phase 2 | Complete |
+| CS-02 | Phase 2 | Complete |
+| CS-03 | Phase 2 | Complete |
+| CS-04 | Phase 2 | Complete |
+| CS-05 | Phase 2 | Complete |
 | EVO-01 | Phase 3 | Pending |
 | EVO-02 | Phase 3 | Pending |
 | EVO-03 | Phase 3 | Pending |
