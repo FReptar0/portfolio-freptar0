@@ -31,9 +31,9 @@ Decimal phases appear between their surrounding integers in numeric order.
 **Plans:** 3/3 plans complete
 
 Plans:
-- [ ] 01-01-PLAN.md — Visual polish: hero gradient background, text hierarchy, section separators
-- [ ] 01-02-PLAN.md — Diagram fix: replace CFDI Importer with Sage 300 Web API, add mobile scroll wrapper
-- [ ] 01-03-PLAN.md — Visual verification checkpoint: human review of all requirements on desktop and mobile
+- [x] 01-01-PLAN.md — Visual polish: hero gradient background, text hierarchy, section separators
+- [x] 01-02-PLAN.md — Diagram fix: replace CFDI Importer with Sage 300 Web API, add mobile scroll wrapper
+- [x] 01-03-PLAN.md — Visual verification checkpoint: human review of all requirements on desktop and mobile
 
 ### Phase 2: New Case Studies
 **Goal**: SageSync, Qardeal, and Gym Manager each have a live case study page and tech deep-dive reachable at their respective slugs, with content in both EN and ES and proper SEO metadata
@@ -44,7 +44,10 @@ Plans:
   2. Each of the three new projects has a working `/tech` deep-dive page with architecture diagram, data flow description, code patterns, and system metrics
   3. The Spanish equivalent of each route (`/es/projects/[slug]` and `/es/projects/[slug]/tech`) renders fully translated content — no English strings appearing in ES locale
   4. Each new case study page has a unique `<title>` and meta description visible in page source for both EN and ES
-**Plans**: TBD
+**Plans:** 1 plan
+
+Plans:
+- [ ] 02-01-PLAN.md — Register new slugs in routing, fix Qardeal metric, enable homepage discovery links
 
 ### Phase 3: Evolution and Discovery
 **Goal**: Recruiters can browse all case studies from one index page, see "What's Next" evolution narratives on relevant projects, and the pattern is extensible without code changes
@@ -66,5 +69,5 @@ Phases execute in numeric order: 1 → 2 → 3
 | Phase | Plans Complete | Status | Completed |
 |-------|----------------|--------|-----------|
 | 1. Visual Foundation | 3/3 | Complete    | 2026-03-15 |
-| 2. New Case Studies | 0/TBD | Not started | - |
+| 2. New Case Studies | 0/1 | In progress | - |
 | 3. Evolution and Discovery | 0/TBD | Not started | - |
