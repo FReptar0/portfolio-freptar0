@@ -1,0 +1,384 @@
+{
+  "nav": {
+    "backToProjects": "Back to Projects",
+    "viewTech": "Explore Technical Architecture",
+    "backToCaseStudy": "Back to Case Study"
+  },
+  "sections": {
+    "overview": "Overview",
+    "problem": "The Problem",
+    "solution": "The Solution",
+    "impact": "The Impact",
+    "techStack": "Tech Stack",
+    "dataFlow": "Data Flow",
+    "codePatterns": "Code Patterns",
+    "systemMetrics": "System Metrics",
+    "architecture": "Architecture",
+    "whatNext": "What's Next"
+  },
+  "cta": {
+    "contact": "Let's Talk",
+    "contactQuestion": "Want similar results for your project?",
+    "viewTech": "Explore Technical Architecture",
+    "evolution": "Active Development — Follow the Journey"
+  },
+  "meta": {
+    "titleSuffix": "| Fernando Rodriguez",
+    "techTitleSuffix": "- Tech Deep Dive | Fernando Rodriguez"
+  },
+  "projects": {
+    "sageconnect": {
+      "headline": "SageConnect",
+      "tagline": "Automating ERP Integration for 200+ Enterprise Staff",
+      "overview": "SageConnect bridges the gap between Sage 300 ERP and supplier portals, replacing error-prone manual workflows with a fully automated integration platform. Built for an enterprise with 200+ staff members across multiple departments, the system processes CFDIs, purchase orders, payments, and supplier data in real-time.",
+      "role": "Lead Developer",
+      "teamSize": 4,
+      "tags": ["Enterprise", "Integration", "Automation"],
+      "problem": {
+        "title": "The Problem",
+        "paragraphs": [
+          "The company relied on manual data entry between Sage 300 ERP and their supplier portal. Staff members had to copy invoice data, purchase orders, and payment information by hand — a process that was slow, error-prone, and unsustainable as the business grew.",
+          "With 200+ employees affected across procurement, accounting, and operations, even small errors cascaded into delayed payments, supplier disputes, and reconciliation nightmares. The accounting team spent hours each week fixing mismatched records.",
+          "The existing workflow couldn't scale. Every new supplier meant more manual touchpoints, more chances for human error, and more time spent on data entry instead of strategic work."
+        ]
+      },
+      "solution": {
+        "title": "The Solution",
+        "paragraphs": [
+          "I designed and built SageConnect as a dual-runtime system: a web dashboard for real-time monitoring and manual overrides, paired with a background processor that handles automated data synchronization around the clock.",
+          "The platform connects directly to Sage 300's database and the supplier portal's APIs, mapping data fields bidirectionally and validating every transaction before it's committed. Custom transformation rules handle edge cases in CFDI formatting, currency conversions, and tax calculations.",
+          "The system includes a monitoring dashboard that gives operations teams visibility into sync status, error rates, and processing queues — enabling them to catch and resolve issues before they impact business operations."
+        ]
+      },
+      "impact": {
+        "title": "The Impact",
+        "paragraphs": [
+          "Within the first month of deployment, manual data entry errors dropped by 95%. The accounting team reclaimed over 20 hours per week previously spent on reconciliation and error correction.",
+          "The platform now processes all supplier transactions automatically, achieving 100% synchronization coverage. Workflows that previously took days now complete in minutes, and the system scales effortlessly as new suppliers are onboarded."
+        ]
+      },
+      "metrics": [
+        { "value": "95%", "label": "Error Reduction" },
+        { "value": "200+", "label": "Staff Streamlined" },
+        { "value": "80%", "label": "Faster Workflows" },
+        { "value": "100%", "label": "Supplier Sync" }
+      ],
+      "tech": {
+        "stack": ["Node.js", "Express", "SQL Server", "PM2"],
+        "architecture": "Hybrid Monolith",
+        "dataFlow": [
+          "Background processor runs on schedule (Task Scheduler or PM2 interval)",
+          "For each tenant: queries Sage 300 MSSQL tables for new POs, payments, and vendor data",
+          "Builds and validates payloads using Joi schemas and custom transformers",
+          "Pushes purchase orders, payments, and supplier data to Portal de Proveedores REST API",
+          "Downloads CFDIs and provider data from Portal API back to local storage",
+          "Spawns external CFDI importer process to load invoices into Sage 300"
+        ],
+        "codePatterns": [
+          {
+            "title": "Multi-Tenant Sequential Processing",
+            "description": "Processes multiple companies sequentially in a single Node.js process. Each tenant has its own Sage 300 database, Portal API credentials, and RFC — configured via comma-separated environment variables."
+          },
+          {
+            "title": "Dual-Mode Runtime",
+            "description": "A single application runs in three modes: web-only (Express dashboard on port 3030), background-only (8 sync controllers), or combined. PM2 or Windows Task Scheduler orchestrates execution cycles."
+          },
+          {
+            "title": "Controller Pipeline Architecture",
+            "description": "Eight specialized controllers execute sequentially per tenant: Provider Sync, CFDI Download, Payment Check, Payment Upload, PO Creation, PO Updates, PO Closure, and PO Cancellation — each handling one sync responsibility."
+          }
+        ],
+        "systemMetrics": [
+          { "label": "Controllers", "value": "9" },
+          { "label": "Background Jobs", "value": "8" },
+          { "label": "Dashboard Endpoints", "value": "6" },
+          { "label": "Services", "value": "6" }
+        ]
+      },
+      "whatNext": {
+        "title": "What's Next",
+        "paragraphs": [
+          "The current system relies on an external Windows executable (ImportaFacturasFocaltec.exe) to import CFDIs into Sage 300 — a black box with no structured error feedback, no per-invoice tracking, and no correlation between processed XMLs and created batches.",
+          "The next evolution replaces this executable entirely by integrating directly with Sage 300's REST Web API. This eliminates the dependency on Windows, enables granular error handling per invoice, and makes the entire data flow observable and testable from Node.js.",
+          "This migration also addresses critical reliability gaps: payments that upload to the portal before confirming CFDI import, silent failures in control table inserts, and XML corruption from race conditions in the addenda injection pipeline."
+        ]
+      }
+    },
+    "sagesync": {
+      "headline": "SageSync",
+      "tagline": "Real-Time Inventory Synchronization Between ERP and CMMS",
+      "overview": "SageSync keeps inventory data perfectly aligned between Sage 300 ERP and Fracttal CMMS, replacing manual reconciliation with automated, event-driven synchronization that achieves 99.9% data consistency.",
+      "role": "Full-Stack Developer",
+      "teamSize": 3,
+      "tags": ["Integration", "Real-Time", "Monitoring"],
+      "problem": {
+        "title": "The Problem",
+        "paragraphs": [
+          "Inventory data lived in two disconnected systems: Sage 300 for financial tracking and Fracttal CMMS for maintenance operations. When stock was consumed for maintenance, the ERP didn't know. When purchases were recorded, the CMMS was out of sync.",
+          "The maintenance team made decisions based on stale data — ordering parts already in stock or discovering critical shortages too late. Manual reconciliation happened weekly, but errors accumulated faster than they could be fixed.",
+          "Without real-time visibility, the company couldn't accurately forecast inventory needs, leading to overstocking some items and stockouts of others."
+        ]
+      },
+      "solution": {
+        "title": "The Solution",
+        "paragraphs": [
+          "I built SageSync as an event-driven middleware service that listens for changes in both systems and propagates updates within seconds. OAuth2 token management handles secure API authentication with automatic refresh cycles.",
+          "The service includes intelligent conflict resolution — when both systems modify the same record within the sync window, business rules determine which change takes precedence. A comprehensive monitoring dashboard tracks sync latency, error rates, and system health.",
+          "Built-in retry logic and dead-letter queues ensure no data is lost even during temporary system outages, maintaining 99.5% uptime availability."
+        ]
+      },
+      "impact": {
+        "title": "The Impact",
+        "paragraphs": [
+          "Sync latency dropped from days to under 30 seconds. The maintenance team now works with real-time data, eliminating surprise stockouts and reducing emergency purchases.",
+          "Manual reconciliation effort decreased by 90%, freeing the operations team to focus on strategic inventory optimization instead of data entry."
+        ]
+      },
+      "metrics": [
+        { "value": "99.9%", "label": "Data Consistency" },
+        { "value": "<30s", "label": "Sync Latency" },
+        { "value": "90%", "label": "Less Manual Work" },
+        { "value": "99.5%", "label": "System Uptime" }
+      ],
+      "tech": {
+        "stack": ["Node.js", "Express", "SQL Server", "OAuth2", "Docker"],
+        "architecture": "Event-Driven",
+        "dataFlow": [
+          "Sage 300 inventory changes trigger sync events",
+          "SageSync authenticates via OAuth2 with Fracttal API",
+          "Data transformer normalizes field formats between systems",
+          "Conflict resolver applies business rules for simultaneous edits",
+          "Updates are pushed to the target system with retry logic",
+          "Monitoring dashboard tracks sync health and latency metrics"
+        ],
+        "codePatterns": [
+          {
+            "title": "OAuth2 Token Lifecycle",
+            "description": "Automated token refresh with proactive renewal before expiration. Tokens are cached and shared across concurrent requests to minimize authentication overhead."
+          },
+          {
+            "title": "Event-Driven Sync Engine",
+            "description": "Changes in either system emit events that are processed through a unified pipeline, ensuring bidirectional sync without polling overhead."
+          },
+          {
+            "title": "Dead Letter Queue",
+            "description": "Failed sync operations are captured with full context for retry. After configurable retry attempts, items are escalated to the monitoring dashboard for manual review."
+          }
+        ],
+        "systemMetrics": [
+          { "label": "API Integrations", "value": "2" },
+          { "label": "Sync Endpoints", "value": "12" },
+          { "label": "Monitoring Alerts", "value": "15+" },
+          { "label": "Retry Strategies", "value": "3" }
+        ]
+      }
+    },
+    "cardeal": {
+      "headline": "Qardeal",
+      "tagline": "Modern Car Rental Platform with Integrated Payments",
+      "overview": "Qardeal is a full-featured car rental platform built with Next.js, featuring online booking, payment processing, XML invoice generation, and comprehensive admin dashboards — delivered in just 4 months.",
+      "role": "Full-Stack Developer",
+      "teamSize": 4,
+      "tags": ["E-Commerce", "Payments", "Full-Stack"],
+      "problem": {
+        "title": "The Problem",
+        "paragraphs": [
+          "A car rental business was losing market share to digital-first competitors. Their booking process was phone-based, payments required in-person processing, and invoice generation was entirely manual.",
+          "Customers expected online booking with instant confirmation, digital payments, and automated invoicing. Without these capabilities, the business couldn't compete in the modern marketplace.",
+          "The admin team spent excessive time on manual operations — from tracking vehicle availability to generating compliance-required XML invoices — limiting their ability to scale the fleet or expand to new locations."
+        ]
+      },
+      "solution": {
+        "title": "The Solution",
+        "paragraphs": [
+          "I built Qardeal as a serverless Next.js application with a focus on conversion-optimized booking flows. The platform guides users from vehicle selection through payment in a streamlined, mobile-first experience.",
+          "Payment gateway integration handles multiple payment methods with automatic retry and fraud detection. The XML invoicing module generates tax-compliant documents automatically upon booking confirmation.",
+          "An admin dashboard provides real-time fleet management, booking analytics, and revenue reporting, giving the team full operational visibility from any device."
+        ]
+      },
+      "impact": {
+        "title": "The Impact",
+        "paragraphs": [
+          "The platform launched in 4 months, immediately capturing online bookings. Conversion rates improved by 45% compared to the phone-based process, with 99.2% payment success rate.",
+          "Admin operations became 70% faster with automated workflows, and the team gained data-driven insights to optimize pricing and fleet allocation."
+        ]
+      },
+      "metrics": [
+        { "value": "4 mo", "label": "Time to Market" },
+        { "value": "45%", "label": "More Bookings" },
+        { "value": "70%", "label": "Faster Operations" },
+        { "value": "99.2%", "label": "Payment Success" }
+      ],
+      "tech": {
+        "stack": ["Next.js", "React", "Node.js", "MongoDB", "Vercel"],
+        "architecture": "Serverless",
+        "dataFlow": [
+          "User browses available vehicles via SSR-rendered catalog",
+          "Booking form captures dates, insurance options, and user data",
+          "Payment gateway processes transaction with fraud checks",
+          "Booking confirmation triggers XML invoice generation",
+          "Admin dashboard updates fleet availability in real-time",
+          "Analytics pipeline aggregates revenue and conversion data"
+        ],
+        "codePatterns": [
+          {
+            "title": "SSR-Optimized Catalog",
+            "description": "Vehicle listings are server-side rendered for SEO, with client-side filtering for instant search. Incremental Static Regeneration keeps availability data fresh without sacrificing performance."
+          },
+          {
+            "title": "Payment Pipeline",
+            "description": "Multi-step payment flow with automatic retry, webhook confirmation, and rollback on failure. Supports multiple payment methods with a unified processing interface."
+          },
+          {
+            "title": "XML Invoice Engine",
+            "description": "Automated generation of tax-compliant XML invoices following Mexican CFDI standards, triggered on booking confirmation with digital signature integration."
+          }
+        ],
+        "systemMetrics": [
+          { "label": "Pages", "value": "20+" },
+          { "label": "API Routes", "value": "15" },
+          { "label": "Components", "value": "40+" },
+          { "label": "Payment Methods", "value": "3" }
+        ]
+      }
+    },
+    "odoo": {
+      "headline": "Inova ERP",
+      "tagline": "Custom Odoo Modules for Automated Billing and Compliance",
+      "overview": "Custom Odoo modules that automate billing processes, RFC validation, and payment controls for Inova — replacing manual processes that caused billing inaccuracies and extensive manual intervention.",
+      "role": "Python Developer",
+      "teamSize": 2,
+      "tags": ["ERP", "Automation", "Business Process"],
+      "problem": {
+        "title": "The Problem",
+        "paragraphs": [
+          "Inova's billing process was riddled with manual steps. RFC validation was done by hand, payment restrictions required manual tracking, and billing accuracy suffered from human error at every stage.",
+          "The accounting team spent hours daily verifying tax identification numbers, applying payment controls, and correcting billing errors that slipped through the manual process.",
+          "As the company grew, these manual bottlenecks became unsustainable — each new client multiplied the workload without adding proportional value."
+        ]
+      },
+      "solution": {
+        "title": "The Solution",
+        "paragraphs": [
+          "I developed three custom Odoo modules that integrate seamlessly with the existing ERP: automated billing with configurable rules, RFC validation against the Mexican tax authority's database, and intelligent payment restriction controls.",
+          "The billing module applies complex pricing rules automatically, generates invoices on schedule, and validates all tax fields before submission. The RFC validator cross-references customer data in real-time.",
+          "Payment controls automatically flag and restrict transactions based on configurable business rules, preventing unauthorized payments while maintaining smooth operations for valid transactions."
+        ]
+      },
+      "impact": {
+        "title": "The Impact",
+        "paragraphs": [
+          "Billing errors dropped by 98%, and RFC validation is now 100% automated — eliminating hours of daily manual verification work.",
+          "The billing process runs 60% faster, with 85% of previously manual tasks now fully automated. The accounting team focuses on exceptions and strategy rather than routine data entry."
+        ]
+      },
+      "metrics": [
+        { "value": "98%", "label": "Fewer Errors" },
+        { "value": "85%", "label": "Automation Rate" },
+        { "value": "60%", "label": "Faster Billing" },
+        { "value": "100%", "label": "RFC Automated" }
+      ],
+      "tech": {
+        "stack": ["Python", "Odoo", "PostgreSQL", "Apache POI"],
+        "architecture": "Modular",
+        "dataFlow": [
+          "Odoo core triggers billing event on schedule or manual action",
+          "Billing module applies pricing rules and tax calculations",
+          "RFC validator checks tax ID against authority database",
+          "Payment control module evaluates restriction rules",
+          "Approved transactions generate compliant invoices",
+          "Apache POI exports financial reports to Excel format"
+        ],
+        "codePatterns": [
+          {
+            "title": "Odoo Module Architecture",
+            "description": "Each module follows Odoo's MVC pattern with models, views, and controllers. Business logic is encapsulated in model methods, keeping views purely presentational."
+          },
+          {
+            "title": "RFC Validation Pipeline",
+            "description": "Real-time validation against the SAT database with caching for recently verified RFCs. Bulk validation mode for initial data imports processes thousands of records efficiently."
+          },
+          {
+            "title": "Rule-Based Payment Controls",
+            "description": "Configurable business rules engine that evaluates payment restrictions based on client status, amount thresholds, and approval workflows."
+          }
+        ],
+        "systemMetrics": [
+          { "label": "Custom Modules", "value": "3" },
+          { "label": "Model Classes", "value": "12" },
+          { "label": "Validation Rules", "value": "20+" },
+          { "label": "Report Templates", "value": "5" }
+        ]
+      }
+    },
+    "gymmanager": {
+      "headline": "Gym Manager",
+      "tagline": "Affordable Operations Platform for Local Gyms",
+      "overview": "A cost-effective gym management platform built as a solo project, featuring membership management, KPI dashboards, and analytics reporting — deployable in just 2 hours with 90% cost savings versus commercial alternatives.",
+      "role": "Full-Stack Developer",
+      "teamSize": 1,
+      "tags": ["SaaS", "Analytics", "Small Business"],
+      "problem": {
+        "title": "The Problem",
+        "paragraphs": [
+          "Local gyms struggled with expensive management software that was designed for large chains. Monthly subscription costs for commercial solutions ate into already tight margins.",
+          "Gym owners tracked memberships in spreadsheets, had no visibility into KPIs like retention and churn, and couldn't generate the reports they needed for business decisions.",
+          "The available affordable tools were either too basic (just a member list) or too complex (enterprise features they'd never use), leaving a gap for a right-sized solution."
+        ]
+      },
+      "solution": {
+        "title": "The Solution",
+        "paragraphs": [
+          "I designed Gym Manager as a lean, deployable platform that gives small gyms enterprise-level features at a fraction of the cost. The Next.js frontend provides a responsive admin interface that works on any device.",
+          "The KPI dashboard calculates and visualizes key metrics: member retention, churn rate, revenue trends, and attendance patterns. Automated alerts notify owners when metrics cross configurable thresholds.",
+          "Built on PostgreSQL for reliable data storage and deployed on Vercel for minimal hosting costs, the entire platform can be set up for a new gym in under 2 hours."
+        ]
+      },
+      "impact": {
+        "title": "The Impact",
+        "paragraphs": [
+          "Gym owners save 90% compared to commercial alternatives while gaining better insights into their business. The platform deployed in 2 hours versus weeks for traditional solutions.",
+          "Admin efficiency improved by 75%, and gyms using the KPI dashboard saw 20% improvement in member retention through data-driven engagement strategies."
+        ]
+      },
+      "metrics": [
+        { "value": "2 hrs", "label": "Setup Time" },
+        { "value": "75%", "label": "Time Savings" },
+        { "value": "20%", "label": "Better Retention" },
+        { "value": "90%", "label": "Cost Savings" }
+      ],
+      "tech": {
+        "stack": ["Next.js", "React", "PostgreSQL", "Vercel"],
+        "architecture": "Serverless",
+        "dataFlow": [
+          "Admin registers members through responsive web interface",
+          "PostgreSQL stores membership, payment, and attendance data",
+          "KPI engine calculates retention, churn, and revenue metrics",
+          "Dashboard renders real-time visualizations of business health",
+          "Alert system monitors thresholds and notifies via dashboard",
+          "Report generator exports data for accounting and tax purposes"
+        ],
+        "codePatterns": [
+          {
+            "title": "KPI Calculation Engine",
+            "description": "Server-side calculation of business metrics using PostgreSQL aggregation queries. Metrics are cached and refreshed incrementally to keep dashboards responsive."
+          },
+          {
+            "title": "Rapid Deployment Pipeline",
+            "description": "Environment-specific configuration with sensible defaults allows a new gym to be set up by changing a single config file and deploying to Vercel."
+          },
+          {
+            "title": "Responsive Admin Interface",
+            "description": "Mobile-first design ensures gym owners can manage operations from their phone on the gym floor, with touch-optimized controls and progressive data loading."
+          }
+        ],
+        "systemMetrics": [
+          { "label": "Pages", "value": "10+" },
+          { "label": "API Routes", "value": "8" },
+          { "label": "KPI Metrics", "value": "12" },
+          { "label": "Report Types", "value": "4" }
+        ]
+      }
+    }
+  }
+}

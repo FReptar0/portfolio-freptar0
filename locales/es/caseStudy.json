@@ -1,0 +1,384 @@
+{
+  "nav": {
+    "backToProjects": "Volver a Proyectos",
+    "viewTech": "Explorar Arquitectura Técnica",
+    "backToCaseStudy": "Volver al Caso de Estudio"
+  },
+  "sections": {
+    "overview": "Resumen",
+    "problem": "El Problema",
+    "solution": "La Solución",
+    "impact": "El Impacto",
+    "techStack": "Stack Tecnológico",
+    "dataFlow": "Flujo de Datos",
+    "codePatterns": "Patrones de Código",
+    "systemMetrics": "Métricas del Sistema",
+    "architecture": "Arquitectura",
+    "whatNext": "Próxima Evolución"
+  },
+  "cta": {
+    "contact": "Hablemos",
+    "contactQuestion": "¿Quieres resultados similares para tu proyecto?",
+    "viewTech": "Explorar Arquitectura Técnica",
+    "evolution": "Desarrollo Activo — Sigue el Proceso"
+  },
+  "meta": {
+    "titleSuffix": "| Fernando Rodriguez",
+    "techTitleSuffix": "- Detalles Técnicos | Fernando Rodriguez"
+  },
+  "projects": {
+    "sageconnect": {
+      "headline": "SageConnect",
+      "tagline": "Automatizando la Integración ERP para 200+ Empleados",
+      "overview": "SageConnect conecta Sage 300 ERP con portales de proveedores, reemplazando flujos de trabajo manuales propensos a errores con una plataforma de integración completamente automatizada. Construido para una empresa con más de 200 empleados en múltiples departamentos, el sistema procesa CFDIs, órdenes de compra, pagos y datos de proveedores en tiempo real.",
+      "role": "Desarrollador Líder",
+      "teamSize": 4,
+      "tags": ["Empresarial", "Integración", "Automatización"],
+      "problem": {
+        "title": "El Problema",
+        "paragraphs": [
+          "La empresa dependía de la captura manual de datos entre Sage 300 ERP y su portal de proveedores. Los empleados tenían que copiar datos de facturas, órdenes de compra e información de pagos a mano — un proceso lento, propenso a errores e insostenible a medida que el negocio crecía.",
+          "Con más de 200 empleados afectados en compras, contabilidad y operaciones, incluso pequeños errores se propagaban en pagos retrasados, disputas con proveedores y pesadillas de conciliación. El equipo contable pasaba horas cada semana corrigiendo registros inconsistentes.",
+          "El flujo de trabajo existente no podía escalar. Cada nuevo proveedor significaba más puntos de contacto manuales, más oportunidades de error humano y más tiempo dedicado a la captura de datos en lugar de trabajo estratégico."
+        ]
+      },
+      "solution": {
+        "title": "La Solución",
+        "paragraphs": [
+          "Diseñé y construí SageConnect como un sistema de doble runtime: un dashboard web para monitoreo en tiempo real y ajustes manuales, combinado con un procesador en segundo plano que maneja la sincronización automatizada de datos las 24 horas.",
+          "La plataforma se conecta directamente a la base de datos de Sage 300 y las APIs del portal de proveedores, mapeando campos de datos bidireccionalmente y validando cada transacción antes de confirmarla. Reglas de transformación personalizadas manejan casos especiales en formato CFDI, conversiones de moneda y cálculos fiscales.",
+          "El sistema incluye un dashboard de monitoreo que brinda a los equipos de operaciones visibilidad del estado de sincronización, tasas de error y colas de procesamiento — permitiéndoles detectar y resolver problemas antes de que impacten las operaciones del negocio."
+        ]
+      },
+      "impact": {
+        "title": "El Impacto",
+        "paragraphs": [
+          "En el primer mes de implementación, los errores de captura manual se redujeron en un 95%. El equipo contable recuperó más de 20 horas semanales que antes dedicaban a conciliación y corrección de errores.",
+          "La plataforma ahora procesa todas las transacciones con proveedores automáticamente, logrando una cobertura de sincronización del 100%. Los flujos de trabajo que antes tomaban días ahora se completan en minutos, y el sistema escala sin esfuerzo a medida que se incorporan nuevos proveedores."
+        ]
+      },
+      "metrics": [
+        { "value": "95%", "label": "Reducción de Errores" },
+        { "value": "200+", "label": "Empleados Optimizados" },
+        { "value": "80%", "label": "Flujos Más Rápidos" },
+        { "value": "100%", "label": "Sincronización Total" }
+      ],
+      "tech": {
+        "stack": ["Node.js", "Express", "SQL Server", "PM2"],
+        "architecture": "Monolito Híbrido",
+        "dataFlow": [
+          "El procesador en segundo plano se ejecuta por calendario (Task Scheduler o intervalo PM2)",
+          "Para cada tenant: consulta tablas MSSQL de Sage 300 para nuevas OCs, pagos y datos de proveedores",
+          "Construye y valida payloads usando esquemas Joi y transformadores personalizados",
+          "Envía órdenes de compra, pagos y datos de proveedores a la API REST del Portal de Proveedores",
+          "Descarga CFDIs y datos de proveedores desde la API del Portal al almacenamiento local",
+          "Ejecuta proceso externo de importación de CFDI para cargar facturas en Sage 300"
+        ],
+        "codePatterns": [
+          {
+            "title": "Procesamiento Secuencial Multi-Tenant",
+            "description": "Procesa múltiples empresas secuencialmente en un solo proceso Node.js. Cada tenant tiene su propia base de datos Sage 300, credenciales de API del Portal y RFC — configurados mediante variables de entorno separadas por comas."
+          },
+          {
+            "title": "Runtime de Doble Modo",
+            "description": "Una sola aplicación se ejecuta en tres modos: solo-web (dashboard Express en puerto 3030), solo-background (8 controladores de sincronización), o combinado. PM2 o Windows Task Scheduler orquesta los ciclos de ejecución."
+          },
+          {
+            "title": "Arquitectura de Pipeline de Controladores",
+            "description": "Ocho controladores especializados se ejecutan secuencialmente por tenant: Sync de Proveedores, Descarga de CFDI, Verificación de Pagos, Carga de Pagos, Creación de OC, Actualizaciones de OC, Cierre de OC y Cancelación de OC — cada uno manejando una responsabilidad de sincronización."
+          }
+        ],
+        "systemMetrics": [
+          { "label": "Controladores", "value": "9" },
+          { "label": "Jobs en Segundo Plano", "value": "8" },
+          { "label": "Endpoints del Dashboard", "value": "6" },
+          { "label": "Servicios", "value": "6" }
+        ]
+      },
+      "whatNext": {
+        "title": "Próxima Evolución",
+        "paragraphs": [
+          "El sistema actual depende de un ejecutable externo de Windows (ImportaFacturasFocaltec.exe) para importar CFDIs a Sage 300 — una caja negra sin retroalimentación estructurada de errores, sin seguimiento por factura, y sin correlación entre XMLs procesados y batches creados.",
+          "La siguiente evolución reemplaza este ejecutable completamente integrando directamente con la Web API REST de Sage 300. Esto elimina la dependencia de Windows, habilita manejo granular de errores por factura, y hace todo el flujo de datos observable y testeable desde Node.js.",
+          "Esta migración también aborda gaps críticos de confiabilidad: pagos que se suben al portal antes de confirmar la importación de CFDI, fallas silenciosas en inserts de tablas de control, y corrupción de XML por condiciones de carrera en el pipeline de inyección de addenda."
+        ]
+      }
+    },
+    "sagesync": {
+      "headline": "SageSync",
+      "tagline": "Sincronización de Inventario en Tiempo Real entre ERP y CMMS",
+      "overview": "SageSync mantiene los datos de inventario perfectamente alineados entre Sage 300 ERP y Fracttal CMMS, reemplazando la conciliación manual con sincronización automatizada basada en eventos que logra 99.9% de consistencia de datos.",
+      "role": "Desarrollador Full-Stack",
+      "teamSize": 3,
+      "tags": ["Integración", "Tiempo Real", "Monitoreo"],
+      "problem": {
+        "title": "El Problema",
+        "paragraphs": [
+          "Los datos de inventario vivían en dos sistemas desconectados: Sage 300 para seguimiento financiero y Fracttal CMMS para operaciones de mantenimiento. Cuando el stock se consumía para mantenimiento, el ERP no lo sabía. Cuando se registraban compras, el CMMS estaba desactualizado.",
+          "El equipo de mantenimiento tomaba decisiones basadas en datos obsoletos — ordenando partes que ya estaban en stock o descubriendo escasez crítica demasiado tarde. La conciliación manual ocurría semanalmente, pero los errores se acumulaban más rápido de lo que podían corregirse.",
+          "Sin visibilidad en tiempo real, la empresa no podía pronosticar con precisión las necesidades de inventario, llevando a sobrestock de algunos artículos y desabastecimiento de otros."
+        ]
+      },
+      "solution": {
+        "title": "La Solución",
+        "paragraphs": [
+          "Construí SageSync como un servicio middleware basado en eventos que escucha cambios en ambos sistemas y propaga actualizaciones en segundos. La gestión de tokens OAuth2 maneja la autenticación segura de API con ciclos de renovación automática.",
+          "El servicio incluye resolución inteligente de conflictos — cuando ambos sistemas modifican el mismo registro dentro de la ventana de sincronización, las reglas de negocio determinan qué cambio tiene prioridad. Un dashboard de monitoreo integral rastrea la latencia de sync, tasas de error y salud del sistema.",
+          "La lógica de reintentos integrada y las colas de mensajes muertos aseguran que ningún dato se pierda incluso durante interrupciones temporales del sistema, manteniendo 99.5% de disponibilidad."
+        ]
+      },
+      "impact": {
+        "title": "El Impacto",
+        "paragraphs": [
+          "La latencia de sincronización se redujo de días a menos de 30 segundos. El equipo de mantenimiento ahora trabaja con datos en tiempo real, eliminando desabastecimientos sorpresa y reduciendo compras de emergencia.",
+          "El esfuerzo de conciliación manual disminuyó un 90%, liberando al equipo de operaciones para enfocarse en optimización estratégica de inventario en lugar de captura de datos."
+        ]
+      },
+      "metrics": [
+        { "value": "99.9%", "label": "Consistencia de Datos" },
+        { "value": "<30s", "label": "Latencia de Sync" },
+        { "value": "90%", "label": "Menos Trabajo Manual" },
+        { "value": "99.5%", "label": "Disponibilidad" }
+      ],
+      "tech": {
+        "stack": ["Node.js", "Express", "SQL Server", "OAuth2", "Docker"],
+        "architecture": "Basado en Eventos",
+        "dataFlow": [
+          "Los cambios de inventario en Sage 300 activan eventos de sincronización",
+          "SageSync se autentica via OAuth2 con la API de Fracttal",
+          "El transformador de datos normaliza formatos de campos entre sistemas",
+          "El resolutor de conflictos aplica reglas de negocio para ediciones simultáneas",
+          "Las actualizaciones se envían al sistema destino con lógica de reintento",
+          "El dashboard de monitoreo rastrea la salud y métricas de latencia del sync"
+        ],
+        "codePatterns": [
+          {
+            "title": "Ciclo de Vida de Token OAuth2",
+            "description": "Renovación automática de tokens con actualización proactiva antes de la expiración. Los tokens se cachean y comparten entre solicitudes concurrentes para minimizar la sobrecarga de autenticación."
+          },
+          {
+            "title": "Motor de Sync Basado en Eventos",
+            "description": "Los cambios en cualquier sistema emiten eventos que se procesan a través de un pipeline unificado, asegurando sincronización bidireccional sin sobrecarga de polling."
+          },
+          {
+            "title": "Cola de Mensajes Muertos",
+            "description": "Las operaciones de sincronización fallidas se capturan con contexto completo para reintento. Después de intentos configurables de reintento, los elementos se escalan al dashboard de monitoreo para revisión manual."
+          }
+        ],
+        "systemMetrics": [
+          { "label": "Integraciones API", "value": "2" },
+          { "label": "Endpoints de Sync", "value": "12" },
+          { "label": "Alertas de Monitoreo", "value": "15+" },
+          { "label": "Estrategias de Reintento", "value": "3" }
+        ]
+      }
+    },
+    "cardeal": {
+      "headline": "Qardeal",
+      "tagline": "Plataforma Moderna de Renta de Autos con Pagos Integrados",
+      "overview": "Qardeal es una plataforma completa de renta de autos construida con Next.js, con reservas en línea, procesamiento de pagos, generación de facturas XML y dashboards administrativos integrales — entregada en solo 4 meses.",
+      "role": "Desarrollador Full-Stack",
+      "teamSize": 4,
+      "tags": ["E-Commerce", "Pagos", "Full-Stack"],
+      "problem": {
+        "title": "El Problema",
+        "paragraphs": [
+          "Un negocio de renta de autos estaba perdiendo participación de mercado ante competidores digitales. Su proceso de reserva era telefónico, los pagos requerían procesamiento presencial y la generación de facturas era completamente manual.",
+          "Los clientes esperaban reservas en línea con confirmación instantánea, pagos digitales y facturación automatizada. Sin estas capacidades, el negocio no podía competir en el mercado moderno.",
+          "El equipo administrativo dedicaba tiempo excesivo a operaciones manuales — desde rastrear la disponibilidad de vehículos hasta generar facturas XML requeridas por cumplimiento — limitando su capacidad de escalar la flotilla o expandirse a nuevas ubicaciones."
+        ]
+      },
+      "solution": {
+        "title": "La Solución",
+        "paragraphs": [
+          "Construí Qardeal como una aplicación serverless Next.js con enfoque en flujos de reserva optimizados para conversión. La plataforma guía a los usuarios desde la selección de vehículo hasta el pago en una experiencia simplificada, diseñada primero para móvil.",
+          "La integración de pasarela de pagos maneja múltiples métodos de pago con reintento automático y detección de fraude. El módulo de facturación XML genera documentos fiscalmente válidos automáticamente al confirmar la reserva.",
+          "Un dashboard administrativo proporciona gestión de flotilla en tiempo real, analíticas de reservas y reportes de ingresos, dando al equipo visibilidad operacional completa desde cualquier dispositivo."
+        ]
+      },
+      "impact": {
+        "title": "El Impacto",
+        "paragraphs": [
+          "La plataforma se lanzó en 4 meses, capturando reservas en línea inmediatamente. Las tasas de conversión mejoraron un 45% comparado con el proceso telefónico, con 99.2% de éxito en transacciones de pago.",
+          "Las operaciones administrativas se volvieron 70% más rápidas con flujos automatizados, y el equipo ganó insights basados en datos para optimizar precios y asignación de flotilla."
+        ]
+      },
+      "metrics": [
+        { "value": "4 meses", "label": "Tiempo al Mercado" },
+        { "value": "45%", "label": "Más Reservas" },
+        { "value": "70%", "label": "Operaciones Más Rápidas" },
+        { "value": "99.2%", "label": "Éxito en Pagos" }
+      ],
+      "tech": {
+        "stack": ["Next.js", "React", "Node.js", "MongoDB", "Vercel"],
+        "architecture": "Serverless",
+        "dataFlow": [
+          "El usuario navega vehículos disponibles via catálogo renderizado en servidor",
+          "El formulario de reserva captura fechas, opciones de seguro y datos del usuario",
+          "La pasarela de pago procesa la transacción con verificaciones antifraude",
+          "La confirmación de reserva activa la generación de factura XML",
+          "El dashboard admin actualiza la disponibilidad de flotilla en tiempo real",
+          "El pipeline de analíticas agrega datos de ingresos y conversión"
+        ],
+        "codePatterns": [
+          {
+            "title": "Catálogo Optimizado con SSR",
+            "description": "Los listados de vehículos se renderizan en el servidor para SEO, con filtrado del lado del cliente para búsqueda instantánea. La Regeneración Estática Incremental mantiene los datos de disponibilidad actualizados sin sacrificar rendimiento."
+          },
+          {
+            "title": "Pipeline de Pagos",
+            "description": "Flujo de pago multi-paso con reintento automático, confirmación por webhook y rollback en caso de fallo. Soporta múltiples métodos de pago con una interfaz de procesamiento unificada."
+          },
+          {
+            "title": "Motor de Facturación XML",
+            "description": "Generación automatizada de facturas XML fiscalmente válidas siguiendo el estándar CFDI mexicano, activada al confirmar la reserva con integración de firma digital."
+          }
+        ],
+        "systemMetrics": [
+          { "label": "Páginas", "value": "20+" },
+          { "label": "Rutas API", "value": "15" },
+          { "label": "Componentes", "value": "40+" },
+          { "label": "Métodos de Pago", "value": "3" }
+        ]
+      }
+    },
+    "odoo": {
+      "headline": "Inova ERP",
+      "tagline": "Módulos Odoo Personalizados para Facturación y Cumplimiento Automatizados",
+      "overview": "Módulos personalizados de Odoo que automatizan procesos de facturación, validación de RFC y controles de pago para Inova — reemplazando procesos manuales que causaban inexactitudes de facturación e intervención manual extensiva.",
+      "role": "Desarrollador Python",
+      "teamSize": 2,
+      "tags": ["ERP", "Automatización", "Proceso de Negocio"],
+      "problem": {
+        "title": "El Problema",
+        "paragraphs": [
+          "El proceso de facturación de Inova estaba plagado de pasos manuales. La validación de RFC se hacía a mano, las restricciones de pago requerían seguimiento manual y la precisión de facturación sufría por error humano en cada etapa.",
+          "El equipo contable pasaba horas diarias verificando números de identificación fiscal, aplicando controles de pago y corrigiendo errores de facturación que se filtraban por el proceso manual.",
+          "A medida que la empresa crecía, estos cuellos de botella manuales se volvían insostenibles — cada nuevo cliente multiplicaba la carga de trabajo sin agregar valor proporcional."
+        ]
+      },
+      "solution": {
+        "title": "La Solución",
+        "paragraphs": [
+          "Desarrollé tres módulos personalizados de Odoo que se integran perfectamente con el ERP existente: facturación automatizada con reglas configurables, validación de RFC contra la base de datos del SAT y controles inteligentes de restricción de pagos.",
+          "El módulo de facturación aplica reglas de precios complejas automáticamente, genera facturas en calendario y valida todos los campos fiscales antes del envío. El validador de RFC cruza datos de clientes en tiempo real.",
+          "Los controles de pago automáticamente marcan y restringen transacciones basándose en reglas de negocio configurables, previniendo pagos no autorizados mientras mantienen operaciones fluidas para transacciones válidas."
+        ]
+      },
+      "impact": {
+        "title": "El Impacto",
+        "paragraphs": [
+          "Los errores de facturación se redujeron en un 98%, y la validación de RFC ahora está 100% automatizada — eliminando horas de verificación manual diaria.",
+          "El proceso de facturación funciona un 60% más rápido, con el 85% de las tareas previamente manuales ahora completamente automatizadas. El equipo contable se enfoca en excepciones y estrategia en lugar de captura rutinaria de datos."
+        ]
+      },
+      "metrics": [
+        { "value": "98%", "label": "Menos Errores" },
+        { "value": "85%", "label": "Tasa de Automatización" },
+        { "value": "60%", "label": "Facturación Más Rápida" },
+        { "value": "100%", "label": "RFC Automatizado" }
+      ],
+      "tech": {
+        "stack": ["Python", "Odoo", "PostgreSQL", "Apache POI"],
+        "architecture": "Modular",
+        "dataFlow": [
+          "El core de Odoo activa evento de facturación por calendario o acción manual",
+          "El módulo de facturación aplica reglas de precios y cálculos fiscales",
+          "El validador de RFC verifica el ID fiscal contra la base de datos del SAT",
+          "El módulo de control de pagos evalúa reglas de restricción",
+          "Las transacciones aprobadas generan facturas válidas",
+          "Apache POI exporta reportes financieros a formato Excel"
+        ],
+        "codePatterns": [
+          {
+            "title": "Arquitectura de Módulos Odoo",
+            "description": "Cada módulo sigue el patrón MVC de Odoo con modelos, vistas y controladores. La lógica de negocio está encapsulada en métodos del modelo, manteniendo las vistas puramente presentacionales."
+          },
+          {
+            "title": "Pipeline de Validación RFC",
+            "description": "Validación en tiempo real contra la base de datos del SAT con caché para RFCs recientemente verificados. El modo de validación masiva para importaciones iniciales procesa miles de registros eficientemente."
+          },
+          {
+            "title": "Controles de Pago Basados en Reglas",
+            "description": "Motor de reglas de negocio configurable que evalúa restricciones de pago basadas en estado del cliente, umbrales de monto y flujos de aprobación."
+          }
+        ],
+        "systemMetrics": [
+          { "label": "Módulos Personalizados", "value": "3" },
+          { "label": "Clases de Modelo", "value": "12" },
+          { "label": "Reglas de Validación", "value": "20+" },
+          { "label": "Plantillas de Reporte", "value": "5" }
+        ]
+      }
+    },
+    "gymmanager": {
+      "headline": "Gym Manager",
+      "tagline": "Plataforma de Operaciones Accesible para Gimnasios Locales",
+      "overview": "Una plataforma de gestión de gimnasios costo-efectiva construida como proyecto individual, con gestión de membresías, dashboards de KPI y reportes analíticos — desplegable en solo 2 horas con 90% de ahorro vs alternativas comerciales.",
+      "role": "Desarrollador Full-Stack",
+      "teamSize": 1,
+      "tags": ["SaaS", "Analíticas", "Pequeño Negocio"],
+      "problem": {
+        "title": "El Problema",
+        "paragraphs": [
+          "Los gimnasios locales luchaban con software de gestión costoso diseñado para cadenas grandes. Los costos mensuales de suscripción de soluciones comerciales se comían márgenes ya ajustados.",
+          "Los dueños de gimnasios rastreaban membresías en hojas de cálculo, no tenían visibilidad de KPIs como retención y deserción, y no podían generar los reportes necesarios para decisiones de negocio.",
+          "Las herramientas accesibles disponibles eran demasiado básicas (solo una lista de miembros) o demasiado complejas (funciones empresariales que nunca usarían), dejando un vacío para una solución del tamaño correcto."
+        ]
+      },
+      "solution": {
+        "title": "La Solución",
+        "paragraphs": [
+          "Diseñé Gym Manager como una plataforma ligera y desplegable que brinda a gimnasios pequeños funciones de nivel empresarial a una fracción del costo. El frontend Next.js proporciona una interfaz admin responsiva que funciona en cualquier dispositivo.",
+          "El dashboard de KPI calcula y visualiza métricas clave: retención de miembros, tasa de deserción, tendencias de ingresos y patrones de asistencia. Las alertas automatizadas notifican a los dueños cuando las métricas cruzan umbrales configurables.",
+          "Construido sobre PostgreSQL para almacenamiento confiable y desplegado en Vercel para costos mínimos de hosting, toda la plataforma puede configurarse para un nuevo gimnasio en menos de 2 horas."
+        ]
+      },
+      "impact": {
+        "title": "El Impacto",
+        "paragraphs": [
+          "Los dueños de gimnasios ahorran 90% comparado con alternativas comerciales mientras obtienen mejores insights de su negocio. La plataforma se despliega en 2 horas versus semanas para soluciones tradicionales.",
+          "La eficiencia administrativa mejoró un 75%, y los gimnasios que usan el dashboard de KPI vieron una mejora del 20% en retención de miembros a través de estrategias de engagement basadas en datos."
+        ]
+      },
+      "metrics": [
+        { "value": "2 hrs", "label": "Tiempo de Configuración" },
+        { "value": "75%", "label": "Ahorro de Tiempo" },
+        { "value": "20%", "label": "Mejor Retención" },
+        { "value": "90%", "label": "Ahorro de Costos" }
+      ],
+      "tech": {
+        "stack": ["Next.js", "React", "PostgreSQL", "Vercel"],
+        "architecture": "Serverless",
+        "dataFlow": [
+          "El admin registra miembros a través de la interfaz web responsiva",
+          "PostgreSQL almacena datos de membresías, pagos y asistencia",
+          "El motor de KPI calcula métricas de retención, deserción e ingresos",
+          "El dashboard renderiza visualizaciones en tiempo real de la salud del negocio",
+          "El sistema de alertas monitorea umbrales y notifica via dashboard",
+          "El generador de reportes exporta datos para contabilidad e impuestos"
+        ],
+        "codePatterns": [
+          {
+            "title": "Motor de Cálculo de KPI",
+            "description": "Cálculo de métricas de negocio del lado del servidor usando consultas de agregación PostgreSQL. Las métricas se cachean y actualizan incrementalmente para mantener los dashboards responsivos."
+          },
+          {
+            "title": "Pipeline de Despliegue Rápido",
+            "description": "Configuración específica por ambiente con valores predeterminados sensatos permite configurar un nuevo gimnasio cambiando un solo archivo de configuración y desplegando en Vercel."
+          },
+          {
+            "title": "Interfaz Admin Responsiva",
+            "description": "Diseño mobile-first asegura que los dueños de gimnasios puedan gestionar operaciones desde su teléfono en el piso del gimnasio, con controles optimizados para toque y carga progresiva de datos."
+          }
+        ],
+        "systemMetrics": [
+          { "label": "Páginas", "value": "10+" },
+          { "label": "Rutas API", "value": "8" },
+          { "label": "Métricas KPI", "value": "12" },
+          { "label": "Tipos de Reporte", "value": "4" }
+        ]
+      }
+    }
+  }
+}
