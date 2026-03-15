@@ -3,7 +3,7 @@
 export default function SageConnectDiagram({ className }: { className?: string }) {
   return (
     <svg
-      viewBox="0 0 900 480"
+      viewBox="0 0 900 500"
       className={`w-full h-auto ${className ?? ""}`}
       xmlns="http://www.w3.org/2000/svg"
       role="img"
@@ -183,7 +183,7 @@ export default function SageConnectDiagram({ className }: { className?: string }
       </text>
 
       {/* ========== Legend ========== */}
-      <text x="450" y="474" textAnchor="middle" fill="var(--text-secondary)" fontSize="10.5" fontFamily="system-ui, -apple-system, sans-serif" opacity="0.8">
+      <text x="450" y="490" textAnchor="middle" fill="var(--text-secondary)" fontSize="10.5" fontFamily="system-ui, -apple-system, sans-serif" opacity="0.8">
         Single-process architecture: sequential multi-tenant sync between Sage 300, Portal, and Web API (planned)
       </text>
     </svg>

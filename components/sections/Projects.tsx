@@ -1,8 +1,9 @@
 "use client";
 
 import { useState } from "react";
-import { useTranslations } from 'next-intl';
-import { Target, User, Settings, TrendingUp, CheckCircle, ArrowRight, Github, Lock } from 'lucide-react';
+import { useTranslations, useLocale } from 'next-intl';
+import Link from 'next/link';
+import { Target, User, Settings, TrendingUp, CheckCircle, ArrowRight, Github, Lock, FileText } from 'lucide-react';
 
 interface Project {
   id: string;
@@ -28,6 +29,9 @@ interface Project {
 
 export default function Projects() {
   const t = useTranslations('projects');
+  const locale = useLocale();
+
+  const projectsWithCaseStudy = new Set(['sageconnect']);
 
   const projects = [
     {
@@ -230,8 +234,18 @@ export default function Projects() {
 
         {/* Project Details */}
         <div className="apple-glass rounded-3xl p-6 sm:p-8 md:p-12">
-          {/* GitHub Link - Prominent placement at top */}
-          <div className="mb-8 flex justify-end">
+          {/* Links - Prominent placement at top */}
+          <div className="mb-8 flex flex-wrap justify-end gap-3">
+            {projectsWithCaseStudy.has(project.id) && (
+              <Link
+                href={`/${locale}/projects/${project.id}`}
+                className="group inline-flex items-center gap-3 px-6 py-3 apple-glass rounded-xl font-semibold transition-all duration-300 hover:scale-105"
+              >
+                <FileText className="w-5 h-5 text-primary-blue" />
+                <span>{t('labels.viewCaseStudy')}</span>
+                <ArrowRight className="w-4 h-4 transition-transform duration-300 group-hover:translate-x-1" />
+              </Link>
+            )}
             {project.githubUrl ? (
               <a
                 href={project.githubUrl}
