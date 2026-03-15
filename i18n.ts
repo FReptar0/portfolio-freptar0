@@ -29,7 +29,8 @@ export default getRequestConfig(async ({ requestLocale }) => {
     contact,
     footer,
     search,
-    loading
+    loading,
+    caseStudy
   ] = await Promise.all([
     import(`./locales/${locale}/navigation.json`),
     import(`./locales/${locale}/hero.json`),
@@ -42,7 +43,8 @@ export default getRequestConfig(async ({ requestLocale }) => {
     import(`./locales/${locale}/contact.json`),
     import(`./locales/${locale}/footer.json`),
     import(`./locales/${locale}/search.json`),
-    import(`./locales/${locale}/loading.json`)
+    import(`./locales/${locale}/loading.json`),
+    import(`./locales/${locale}/caseStudy.json`)
   ]);
 
   return {
@@ -59,7 +61,8 @@ export default getRequestConfig(async ({ requestLocale }) => {
       contact: contact.default,
       footer: footer.default,
       search: search.default,
-      loading: loading.default
+      loading: loading.default,
+      caseStudy: caseStudy.default
     }
   };
 });
