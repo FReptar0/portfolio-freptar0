@@ -9,7 +9,7 @@ import { getTranslations } from 'next-intl/server';
 import Link from 'next/link';
 import { ArrowLeft, ArrowRight } from 'lucide-react';
 
-const VALID_SLUGS = ['sageconnect'] as const;
+const VALID_SLUGS = ['sageconnect', 'sagesync', 'cardeal', 'gymmanager'] as const;
 
 export function generateStaticParams() {
   return locales.flatMap((locale) =>

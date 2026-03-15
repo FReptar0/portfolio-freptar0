@@ -31,7 +31,7 @@ export default function Projects() {
   const t = useTranslations('projects');
   const locale = useLocale();
 
-  const projectsWithCaseStudy = new Set(['sageconnect']);
+  const projectsWithCaseStudy = new Set(['sageconnect', 'sagesync', 'cardeal', 'gymmanager']);
 
   const projects = [
     {
