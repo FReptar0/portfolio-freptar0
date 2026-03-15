@@ -1,4 +1,8 @@
 {
+  "index": {
+    "title": "Casos de Estudio",
+    "subtitle": "Proyectos reales con impacto de negocio medible y profundidad tecnica"
+  },
   "nav": {
     "backToProjects": "Volver a Proyectos",
     "viewTech": "Explorar Arquitectura Técnica",
@@ -170,6 +174,14 @@
           { "label": "Endpoints de Sync", "value": "12" },
           { "label": "Alertas de Monitoreo", "value": "15+" },
           { "label": "Estrategias de Reintento", "value": "3" }
+        ]
+      },
+      "whatNext": {
+        "title": "Proxima Evolucion",
+        "paragraphs": [
+          "La proxima evolucion de SageSync apunta a una arquitectura basada en webhooks — reemplazando la sincronizacion actual por sondeo con notificaciones de eventos en tiempo real desde Sage 300 y la plataforma de comercio electronico. Este cambio elimina el retraso del intervalo de sondeo y habilita una latencia de sincronizacion inferior al segundo para datos criticos de inventario y pedidos.",
+          "La hoja de ruta de observabilidad incluye containerizar el servicio con Docker Compose para despliegues consistentes, y agregar un canal dedicado de notificacion de alertas mediante integracion con correo electronico y Slack. Cuando los elementos de la cola de mensajes fallidos superen los umbrales de reintento, los equipos de operaciones recibiran alertas inmediatas en lugar de descubrir fallos de sincronizacion obsoletos durante revisiones manuales.",
+          "Estas mejoras transforman SageSync de un puente confiable orientado a lotes en una columna vertebral de integracion en tiempo real — posicionandolo para manejar mayores volumenes de transacciones a medida que el negocio escala sus operaciones de comercio electronico."
         ]
       }
     },

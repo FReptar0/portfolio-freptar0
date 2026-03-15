@@ -1,4 +1,8 @@
 {
+  "index": {
+    "title": "Case Studies",
+    "subtitle": "Real projects with measurable business impact and technical depth"
+  },
   "nav": {
     "backToProjects": "Back to Projects",
     "viewTech": "Explore Technical Architecture",
@@ -170,6 +174,14 @@
           { "label": "Sync Endpoints", "value": "12" },
           { "label": "Monitoring Alerts", "value": "15+" },
           { "label": "Retry Strategies", "value": "3" }
+        ]
+      },
+      "whatNext": {
+        "title": "What's Next",
+        "paragraphs": [
+          "SageSync's next evolution targets a webhook-driven architecture — replacing the current polling-based synchronization with real-time event notifications from both Sage 300 and the e-commerce platform. This shift eliminates the polling interval delay and enables true sub-second sync latency for critical inventory and order data.",
+          "The observability roadmap includes containerizing the service with Docker Compose for consistent deployment, and adding a dedicated alert notification channel through email and Slack integration. When dead-letter queue items escalate beyond retry thresholds, operations teams will receive immediate alerts rather than discovering stale sync failures during manual reviews.",
+          "These improvements transform SageSync from a reliable batch-oriented bridge into a real-time integration backbone — positioning it to handle higher transaction volumes as the business scales its e-commerce operations."
         ]
       }
     },
