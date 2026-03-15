@@ -3,14 +3,14 @@ gsd_state_version: 1.0
 milestone: v1.0
 milestone_name: milestone
 status: planning
-stopped_at: Completed 03-evolution-and-discovery/03-01-PLAN.md
-last_updated: "2026-03-15T14:53:49.830Z"
+stopped_at: Completed 03-evolution-and-discovery/03-02-PLAN.md
+last_updated: "2026-03-15T18:16:16.893Z"
 last_activity: 2026-03-14 — Roadmap created, ready to plan Phase 1
 progress:
   total_phases: 3
   completed_phases: 2
   total_plans: 7
-  completed_plans: 5
+  completed_plans: 6
   percent: 33
 ---
 
@@ -55,6 +55,7 @@ Progress: [███░░░░░░░] 33%
 | Phase 01-visual-foundation P03 | 45 | 2 tasks | 6 files |
 | Phase 02-new-case-studies P01 | 3 | 2 tasks | 7 files |
 | Phase 03-evolution-and-discovery P01 | 265 | 2 tasks | 3 files |
+| Phase 03-evolution-and-discovery P02 | 61 | 2 tasks | 7 files |
 
 ## Accumulated Context
 
@@ -77,6 +78,8 @@ Recent decisions affecting current work:
 - [Phase 02-new-case-studies]: Pre-existing lint warnings in unmodified files deferred as out-of-scope
 - [Phase 03-evolution-and-discovery]: Inline try/catch IIFE on tech/page.tsx mirrors CaseStudyNarrative.tsx — zero component extraction, JSON-only extensibility for whatNext sections
 - [Phase 03-evolution-and-discovery]: MISSING_MESSAGE console errors during SSG are expected and non-fatal for projects without whatNext keys — catch block returns null
+- [Phase 03-evolution-and-discovery]: index keys already present in caseStudy.json from prior session — no file modification needed
+- [Phase 03-evolution-and-discovery]: Case Studies nav link uses absolute /${locale}/projects (not prefix-based) — prefix is for hash anchors only, absolute ensures locale always present
 
 ### Pending Todos
 
@@ -89,6 +92,6 @@ None yet.
 
 ## Session Continuity
 
-Last session: 2026-03-15T14:53:49.826Z
-Stopped at: Completed 03-evolution-and-discovery/03-01-PLAN.md
+Last session: 2026-03-15T18:16:16.881Z
+Stopped at: Completed 03-evolution-and-discovery/03-02-PLAN.md
 Resume file: None

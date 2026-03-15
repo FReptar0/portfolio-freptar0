@@ -30,8 +30,8 @@
 
 ### Discovery
 
-- [ ] **DISC-01**: Homepage Projects section shows "View Case Study" link for all projects that have case study pages (SageConnect, SageSync, Qardeal, Gym Manager)
-- [ ] **DISC-02**: Dedicated `/[locale]/projects` index page lists all available case studies with project cards, tags, and links
+- [x] **DISC-01**: Homepage Projects section shows "View Case Study" link for all projects that have case study pages (SageConnect, SageSync, Qardeal, Gym Manager)
+- [x] **DISC-02**: Dedicated `/[locale]/projects` index page lists all available case studies with project cards, tags, and links
 
 ### Architecture Accuracy
 
@@ -81,8 +81,8 @@
 | EVO-02 | Phase 3 | Complete |
 | EVO-03 | Phase 3 | Complete |
 | EVO-04 | Phase 3 | Complete |
-| DISC-01 | Phase 3 | Pending |
-| DISC-02 | Phase 3 | Pending |
+| DISC-01 | Phase 3 | Complete |
+| DISC-02 | Phase 3 | Complete |
 
 **Coverage:**
 - v1 requirements: 17 total
