@@ -26,7 +26,7 @@
 - [ ] **VIS-02**: Section separators, subtle backgrounds, and spacing create visual breathing room between narrative sections
 - [ ] **VIS-03**: Hero sections have visual weight with gradient backgrounds or subtle imagery
 - [ ] **VIS-04**: Metric callouts are prominently displayed with clear visual distinction
-- [ ] **VIS-05**: All case study pages and diagrams are mobile responsive — diagrams scale, layouts stack vertically
+- [x] **VIS-05**: All case study pages and diagrams are mobile responsive — diagrams scale, layouts stack vertically
 
 ### Discovery
 
@@ -35,7 +35,7 @@
 
 ### Architecture Accuracy
 
-- [ ] **ARCH-01**: SageConnect diagram updated to show Sage 300 Web API replacing the CFDI Importer exe — reflects the planned architecture migration
+- [x] **ARCH-01**: SageConnect diagram updated to show Sage 300 Web API replacing the CFDI Importer exe — reflects the planned architecture migration
 
 ## v2 Requirements
 
@@ -70,8 +70,8 @@
 | VIS-02 | Phase 1 | Pending |
 | VIS-03 | Phase 1 | Pending |
 | VIS-04 | Phase 1 | Pending |
-| VIS-05 | Phase 1 | Pending |
-| ARCH-01 | Phase 1 | Pending |
+| VIS-05 | Phase 1 | Complete |
+| ARCH-01 | Phase 1 | Complete |
 | CS-01 | Phase 2 | Pending |
 | CS-02 | Phase 2 | Pending |
 | CS-03 | Phase 2 | Pending |
