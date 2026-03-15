@@ -28,6 +28,7 @@ export default function Navigation() {
   const navLinks = [
     { label: t('about'), href: `${prefix}#timeline` },
     { label: t('projects'), href: `${prefix}#projects` },
+    { label: t('caseStudies'), href: `/${locale}/projects` },
     { label: t('skills'), href: `${prefix}#skills` },
     { label: t('process'), href: `${prefix}#process` },
     { label: t('contact'), href: `${prefix}#contact` },

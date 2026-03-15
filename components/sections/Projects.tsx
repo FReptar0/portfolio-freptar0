@@ -214,6 +214,15 @@ export default function Projects() {
           <p className="text-xl text-foreground/70 max-w-2xl mx-auto">
             {t('subtitle')}
           </p>
+          <div className="flex justify-center mt-4">
+            <Link
+              href={`/${locale}/projects`}
+              className="group inline-flex items-center gap-2 px-6 py-2.5 apple-glass rounded-full font-medium text-sm transition-all duration-300 hover:scale-105"
+            >
+              {t('labels.viewAllCaseStudies')}
+              <ArrowRight className="w-4 h-4 transition-transform group-hover:translate-x-1" />
+            </Link>
+          </div>
         </div>
 
         {/* Project Selector */}
