@@ -22,10 +22,10 @@
 
 ### Visual Design
 
-- [ ] **VIS-01**: Case study pages have clear visual hierarchy — not a wall of text. Key content (metrics, role, tags) has visual emphasis
-- [ ] **VIS-02**: Section separators, subtle backgrounds, and spacing create visual breathing room between narrative sections
-- [ ] **VIS-03**: Hero sections have visual weight with gradient backgrounds or subtle imagery
-- [ ] **VIS-04**: Metric callouts are prominently displayed with clear visual distinction
+- [x] **VIS-01**: Case study pages have clear visual hierarchy — not a wall of text. Key content (metrics, role, tags) has visual emphasis
+- [x] **VIS-02**: Section separators, subtle backgrounds, and spacing create visual breathing room between narrative sections
+- [x] **VIS-03**: Hero sections have visual weight with gradient backgrounds or subtle imagery
+- [x] **VIS-04**: Metric callouts are prominently displayed with clear visual distinction
 - [x] **VIS-05**: All case study pages and diagrams are mobile responsive — diagrams scale, layouts stack vertically
 
 ### Discovery
@@ -66,10 +66,10 @@
 
 | Requirement | Phase | Status |
 |-------------|-------|--------|
-| VIS-01 | Phase 1 | Pending |
-| VIS-02 | Phase 1 | Pending |
-| VIS-03 | Phase 1 | Pending |
-| VIS-04 | Phase 1 | Pending |
+| VIS-01 | Phase 1 | Complete |
+| VIS-02 | Phase 1 | Complete |
+| VIS-03 | Phase 1 | Complete |
+| VIS-04 | Phase 1 | Complete |
 | VIS-05 | Phase 1 | Complete |
 | ARCH-01 | Phase 1 | Complete |
 | CS-01 | Phase 2 | Pending |

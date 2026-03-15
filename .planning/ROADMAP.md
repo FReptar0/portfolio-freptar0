@@ -28,7 +28,7 @@ Decimal phases appear between their surrounding integers in numeric order.
   3. The SageConnect architecture diagram shows the Sage 300 Web API node replacing the legacy exe node — the planned migration is represented accurately
   4. Section transitions use spacing, subtle backgrounds, or separators so the narrative does not feel like one continuous block of text
   5. Metric callouts have visual distinction (size, color, or card treatment) that draws the eye immediately
-**Plans:** 1/3 plans executed
+**Plans:** 2/3 plans executed
 
 Plans:
 - [ ] 01-01-PLAN.md — Visual polish: hero gradient background, text hierarchy, section separators
@@ -65,6 +65,6 @@ Phases execute in numeric order: 1 → 2 → 3
 
 | Phase | Plans Complete | Status | Completed |
 |-------|----------------|--------|-----------|
-| 1. Visual Foundation | 1/3 | In Progress|  |
+| 1. Visual Foundation | 2/3 | In Progress|  |
 | 2. New Case Studies | 0/TBD | Not started | - |
 | 3. Evolution and Discovery | 0/TBD | Not started | - |

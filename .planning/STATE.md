@@ -3,14 +3,14 @@ gsd_state_version: 1.0
 milestone: v1.0
 milestone_name: milestone
 status: planning
-stopped_at: Completed 01-visual-foundation-02-PLAN.md
-last_updated: "2026-03-15T00:10:14.073Z"
+stopped_at: Completed 01-visual-foundation/01-01-PLAN.md
+last_updated: "2026-03-15T00:11:20.230Z"
 last_activity: 2026-03-14 — Roadmap created, ready to plan Phase 1
 progress:
   total_phases: 3
   completed_phases: 0
   total_plans: 3
-  completed_plans: 1
+  completed_plans: 2
   percent: 33
 ---
 
@@ -51,6 +51,7 @@ Progress: [███░░░░░░░] 33%
 
 *Updated after each plan completion*
 | Phase 01-visual-foundation P02 | 6 | 2 tasks | 2 files |
+| Phase 01-visual-foundation P01 | 6 | 2 tasks | 3 files |
 
 ## Accumulated Context
 
@@ -63,6 +64,8 @@ Recent decisions affecting current work:
 - Dedicated /projects index page confirmed in scope (DISC-02) — enables recruiter browsing without scrolling homepage
 - [Phase 01-visual-foundation]: strokeDasharray='4 2' on planned SVG nodes signals future integrations visually
 - [Phase 01-visual-foundation]: Mobile diagram scroll: overflow-x-auto glass card + min-w-[640px] inner div (no JS resize observer)
+- [Phase 01-01]: MetricsGrid left unchanged — gradient card backgrounds and gradient text already satisfy VIS-04
+- [Phase 01-01]: Fixed pre-existing i18n bug: caseStudy namespace missing from i18n.ts loader — was blocking all case study page builds
 
 ### Pending Todos
 
@@ -75,6 +78,6 @@ None yet.
 
 ## Session Continuity
 
-Last session: 2026-03-15T00:10:14.067Z
-Stopped at: Completed 01-visual-foundation-02-PLAN.md
+Last session: 2026-03-15T00:11:20.226Z
+Stopped at: Completed 01-visual-foundation/01-01-PLAN.md
 Resume file: None
