@@ -12,7 +12,7 @@ This milestone expands the existing SageConnect case study system into a full po
 
 Decimal phases appear between their surrounding integers in numeric order.
 
-- [ ] **Phase 1: Visual Foundation** - Fix the SageConnect baseline — visual hierarchy, diagram accuracy, and mobile responsiveness across all existing case study UI
+- [x] **Phase 1: Visual Foundation** - Fix the SageConnect baseline — visual hierarchy, diagram accuracy, and mobile responsiveness across all existing case study UI (completed 2026-03-15)
 - [ ] **Phase 2: New Case Studies** - Add SageSync, Qardeal, and Gym Manager as full case study pages with tech deep-dives and SEO
 - [ ] **Phase 3: Evolution and Discovery** - Add "What's Next" evolution sections to case studies, surface all case studies via homepage links and a dedicated projects index page
 
@@ -28,7 +28,7 @@ Decimal phases appear between their surrounding integers in numeric order.
   3. The SageConnect architecture diagram shows the Sage 300 Web API node replacing the legacy exe node — the planned migration is represented accurately
   4. Section transitions use spacing, subtle backgrounds, or separators so the narrative does not feel like one continuous block of text
   5. Metric callouts have visual distinction (size, color, or card treatment) that draws the eye immediately
-**Plans:** 2/3 plans executed
+**Plans:** 3/3 plans complete
 
 Plans:
 - [ ] 01-01-PLAN.md — Visual polish: hero gradient background, text hierarchy, section separators
@@ -65,6 +65,6 @@ Phases execute in numeric order: 1 → 2 → 3
 
 | Phase | Plans Complete | Status | Completed |
 |-------|----------------|--------|-----------|
-| 1. Visual Foundation | 2/3 | In Progress|  |
+| 1. Visual Foundation | 3/3 | Complete   | 2026-03-15 |
 | 2. New Case Studies | 0/TBD | Not started | - |
 | 3. Evolution and Discovery | 0/TBD | Not started | - |
