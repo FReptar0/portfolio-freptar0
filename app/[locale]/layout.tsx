@@ -65,7 +65,7 @@ export async function generateMetadata({
       type: "website",
       images: [
         {
-          url: `${BASE_URL}/opengraph-image`,
+          url: `${BASE_URL}/${locale}/opengraph-image`,
           width: 1200,
           height: 630,
           alt: "Fernando Rodriguez Memije — Senior Software Engineer",
@@ -76,7 +76,7 @@ export async function generateMetadata({
       card: "summary_large_image",
       title: l.title,
       description: l.ogDescription,
-      images: [`${BASE_URL}/opengraph-image`],
+      images: [`${BASE_URL}/${locale}/opengraph-image`],
     },
     robots: {
       index: true,
