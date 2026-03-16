@@ -65,8 +65,8 @@ Plans:
 **Plans:** 2/2 plans complete
 
 Plans:
-- [ ] 04-01-PLAN.md — Replace fonts (Geist to Space Grotesk/DM Sans/JetBrains Mono) and rebuild all CSS custom properties with Swiss design tokens
-- [ ] 04-02-PLAN.md — Update Tailwind @theme inline block and verify production build
+- [x] 04-01-PLAN.md — Replace fonts (Geist to Space Grotesk/DM Sans/JetBrains Mono) and rebuild all CSS custom properties with Swiss design tokens
+- [x] 04-02-PLAN.md — Update Tailwind @theme inline block and verify production build
 
 ### Phase 5: Component Overhaul
 **Goal**: Every section of the site uses the new Swiss design language — clean surfaces, asymmetric layouts, distinctive component patterns, premium spacing, and monospace accents — with zero glass morphism remaining
@@ -78,12 +78,12 @@ Plans:
   3. The Navigation shows a clean brand mark and does not use glass-on-scroll transparency effects
   4. At least 3 homepage sections break the center-aligned identical-grid pattern with asymmetric or varied layouts, and the Projects section uses a presentation pattern distinct from tab-buttons-to-detail-card
   5. Sections are separated by visible rhythm breaks (background color shifts, horizontal rules, or spacing changes), all spacing follows an 8px grid, and JetBrains Mono is used for tech labels, metrics, and stack badges throughout
-**Plans**: TBD
+**Plans:** 3 plans
 
 Plans:
-- [ ] 05-01: TBD
-- [ ] 05-02: TBD
-- [ ] 05-03: TBD
+- [ ] 05-01-PLAN.md — Hero redesign + Navigation rebuild + section divider CSS utilities
+- [ ] 05-02-PLAN.md — Global glass morphism removal + 8px spacing grid + JetBrains Mono accents across all components
+- [ ] 05-03-PLAN.md — Projects section rethink + asymmetric layouts for Skills/Timeline + alternating section backgrounds
 
 ### Phase 6: Motion & Accessibility
 **Goal**: The site feels alive with purposeful scroll-triggered animations and varied interactions, while respecting users who prefer reduced motion — and all existing functionality remains intact as a final verification
@@ -111,6 +111,6 @@ Phases execute in numeric order: 4 → 5 → 6
 | 1. Visual Foundation | v1.0 | 3/3 | Complete | 2026-03-15 |
 | 2. New Case Studies | v1.0 | 1/1 | Complete | 2026-03-15 |
 | 3. Evolution and Discovery | v1.0 | 3/3 | Complete | 2026-03-16 |
-| 4. Design Tokens & Typography | v2.0 | Complete    | 2026-03-16 | - |
-| 5. Component Overhaul | v2.0 | 0/? | Not started | - |
+| 4. Design Tokens & Typography | v2.0 | 2/2 | Complete | 2026-03-16 |
+| 5. Component Overhaul | v2.0 | 0/3 | Not started | - |
 | 6. Motion & Accessibility | v2.0 | 0/? | Not started | - |
