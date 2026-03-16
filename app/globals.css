@@ -469,6 +469,27 @@ p, span, div, h1, h2, h3, h4, h5, h6 {
   border-top: 1px solid var(--color-border-strong);
 }
 
+/* === Scroll Reveal Animations === */
+.scroll-reveal {
+  opacity: 0;
+  transform: translateY(20px);
+  transition: opacity 500ms ease-out, transform 500ms ease-out;
+}
+
+.scroll-reveal.is-visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.scroll-reveal-fade {
+  opacity: 0;
+  transition: opacity 500ms ease-out;
+}
+
+.scroll-reveal-fade.is-visible {
+  opacity: 1;
+}
+
 /* LogoLoop Component Styles */
 .logoloop {
   position: relative;
@@ -665,6 +686,18 @@ p, span, div, h1, h2, h3, h4, h5, h6 {
   .logoloop__item img,
   .logoloop__node {
     transition: none !important;
+  }
+}
+
+/* === Reduced Motion === */
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
   }
 }
 
