@@ -2,16 +2,16 @@
 gsd_state_version: 1.0
 milestone: v2.0
 milestone_name: Swiss Precision Redesign
-status: completed
-stopped_at: Completed 04-02-PLAN.md
-last_updated: "2026-03-16T21:01:54.241Z"
-last_activity: 2026-03-16 — Completed Plan 04-02 (Tailwind Theme Inline)
+status: executing
+stopped_at: Completed 05-01-PLAN.md
+last_updated: "2026-03-16T21:17:51.969Z"
+last_activity: 2026-03-16 — Completed Plan 05-01 (Hero & Navigation Swiss Rebuild)
 progress:
   total_phases: 6
   completed_phases: 4
-  total_plans: 9
-  completed_plans: 9
-  percent: 100
+  total_plans: 12
+  completed_plans: 10
+  percent: 83
 ---
 
 # Project State
@@ -21,28 +21,29 @@ progress:
 See: .planning/PROJECT.md (updated 2026-03-16)
 
 **Core value:** The portfolio must visually differentiate Fernando from every other AI-generated developer portfolio — distinctive Swiss Precision brand.
-**Current focus:** Phase 4 — Design Tokens & Typography (Complete)
+**Current focus:** Phase 5 — Component Overhaul (In Progress)
 
 ## Current Position
 
-Phase: 4 of 6 (Design Tokens & Typography)
-Plan: 2 of 2 complete
-Status: Phase Complete
-Last activity: 2026-03-16 — Completed Plan 04-02 (Tailwind Theme Inline)
+Phase: 5 of 6 (Component Overhaul)
+Plan: 1 of 3 complete
+Status: In Progress
+Last activity: 2026-03-16 — Completed Plan 05-01 (Hero & Navigation Swiss Rebuild)
 
-Progress: [██████████] 100%
+Progress: [████████░░] 83%
 
 ## Performance Metrics
 
 **Velocity:**
-- Total plans completed: 2
-- Average duration: 2.5min
-- Total execution time: 5min
+- Total plans completed: 3
+- Average duration: 2.3min
+- Total execution time: 7min
 
 | Phase | Plan | Duration | Tasks | Files |
 |-------|------|----------|-------|-------|
 | 04    | 01   | 3min     | 2     | 2     |
 | 04    | 02   | 2min     | 2     | 1     |
+| 05    | 01   | 2min     | 2     | 3     |
 
 ## Accumulated Context
 
@@ -58,6 +59,9 @@ Progress: [██████████] 100%
 - [Phase 04]: Used achromatic oklch tokens for shadcn/ui neutrals with green hue (142) for ring/focus
 - [Phase 04]: Used direct font-family values in @theme inline to avoid circular var() references with next/font
 - [Phase 04]: Exposed Swiss accent as accent-green in Tailwind to avoid collision with shadcn accent token
+- [Phase 05]: Used inline onMouseEnter/Leave for CTA hover states due to CSS var limitations with Tailwind hover pseudo
+- [Phase 05]: Kept mobile overlay backdrop-blur-sm as functional scrim (not decorative glass)
+- [Phase 05]: Asymmetric 12-col grid (7/5 split) established as the typographic poster layout pattern
 
 ### Pending Todos
 
@@ -69,6 +73,6 @@ None.
 
 ## Session Continuity
 
-Last session: 2026-03-16T20:48:31Z
-Stopped at: Completed 04-02-PLAN.md
+Last session: 2026-03-16T21:17:51.967Z
+Stopped at: Completed 05-01-PLAN.md
 Resume file: None
