@@ -29,7 +29,7 @@ export default function Process() {
         t('steps.discovery.activity3')
       ],
       icon: "search",
-      color: "from-blue-500 to-cyan-500",
+      color: "from-green-500 to-emerald-500",
     },
     {
       number: "2",
