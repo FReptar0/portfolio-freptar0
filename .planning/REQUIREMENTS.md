@@ -1,94 +1,128 @@
-# Requirements: Portfolio Case Study System
+# Requirements: Fernando Rodriguez Portfolio
 
-**Defined:** 2026-03-14
-**Core Value:** Each case study tells a clear business story backed by strong technical depth — giving recruiters confidence in both business thinking and engineering craft.
+**Defined:** 2026-03-14 (v1.0), updated 2026-03-16 (v2.0)
+**Core Value:** The portfolio must visually differentiate Fernando from every other AI-generated developer portfolio — distinctive Swiss Precision brand.
 
-## v1 Requirements
+## v1.0 Requirements (Complete)
 
 ### Case Studies
 
-- [x] **CS-01**: SageSync has a full case study page at `/[locale]/projects/sagesync` with Problem/Solution/Impact narrative
-- [x] **CS-02**: Qardeal has a full case study page at `/[locale]/projects/cardeal` with Problem/Solution/Impact narrative
-- [x] **CS-03**: Gym Manager has a full case study page at `/[locale]/projects/gymmanager` with Problem/Solution/Impact narrative
-- [x] **CS-04**: Each new case study has a tech deep-dive page at `/[locale]/projects/[slug]/tech` with architecture diagram, data flow, code patterns, and system metrics
-- [x] **CS-05**: All new case study pages have proper SEO metadata (title, description) in both locales
+- [x] **CS-01**: SageSync has a full case study page — v1.0
+- [x] **CS-02**: Qardeal has a full case study page — v1.0
+- [x] **CS-03**: Gym Manager has a full case study page — v1.0
+- [x] **CS-04**: Each new case study has a tech deep-dive page — v1.0
+- [x] **CS-05**: All case study pages have proper SEO metadata — v1.0
 
 ### Evolution Sections
 
-- [x] **EVO-01**: SageConnect case study shows "What's Next" section describing exe → Web API migration (main page)
-- [x] **EVO-02**: SageSync case study shows "What's Next" evolution section
-- [x] **EVO-03**: "What's Next" section and evolution CTA appear on tech deep-dive pages, not just main case study pages
-- [x] **EVO-04**: "whatNext" pattern is extensible — adding evolution content to any project requires only JSON content, no code changes
+- [x] **EVO-01**: SageConnect "What's Next" section — v1.0
+- [x] **EVO-02**: SageSync "What's Next" section — v1.0
+- [x] **EVO-03**: "What's Next" on tech deep-dive pages — v1.0
+- [x] **EVO-04**: Extensible whatNext pattern (JSON-only) — v1.0
 
-### Visual Design
+### Visual Design (v1.0)
 
-- [x] **VIS-01**: Case study pages have clear visual hierarchy — not a wall of text. Key content (metrics, role, tags) has visual emphasis
-- [x] **VIS-02**: Section separators, subtle backgrounds, and spacing create visual breathing room between narrative sections
-- [x] **VIS-03**: Hero sections have visual weight with gradient backgrounds or subtle imagery
-- [x] **VIS-04**: Metric callouts are prominently displayed with clear visual distinction
-- [x] **VIS-05**: All case study pages and diagrams are mobile responsive — diagrams scale, layouts stack vertically
+- [x] **VIS-01**: Case study visual hierarchy — v1.0
+- [x] **VIS-02**: Section separators and spacing — v1.0
+- [x] **VIS-03**: Hero gradient backgrounds — v1.0
+- [x] **VIS-04**: Metric callout visual distinction — v1.0
+- [x] **VIS-05**: Mobile responsive case studies — v1.0
 
 ### Discovery
 
-- [x] **DISC-01**: Homepage Projects section shows "View Case Study" link for all projects that have case study pages (SageConnect, SageSync, Qardeal, Gym Manager)
-- [x] **DISC-02**: Dedicated `/[locale]/projects` index page lists all available case studies with project cards, tags, and links
+- [x] **DISC-01**: Homepage "View Case Study" links — v1.0
+- [x] **DISC-02**: Projects index page — v1.0
 
-### Architecture Accuracy
+### Architecture
 
-- [x] **ARCH-01**: SageConnect diagram updated to show Sage 300 Web API replacing the CFDI Importer exe — reflects the planned architecture migration
+- [x] **ARCH-01**: SageConnect diagram Web API update — v1.0
 
-## v2 Requirements
+## v2.0 Requirements
 
-### Future Case Studies
+### Design Foundation
 
-- **CS-V2-01**: Odoo/Inova case study page (content already exists in JSON, needs slug registration and potential evolution section)
+- [ ] **FOUND-01**: Site uses Space Grotesk for headings, DM Sans for body, JetBrains Mono for code/labels — Geist font completely removed
+- [ ] **FOUND-02**: Color system uses black/white base with single electric green (#22C55E) accent — no blue-cyan gradients anywhere
+- [ ] **FOUND-03**: All CSS custom properties (globals.css) rebuilt with Swiss clean tokens — glass-morphism variables removed
+- [ ] **FOUND-04**: Dark mode uses desaturated tonal variants designed independently (not inverted light mode), light mode uses white/off-white surfaces
+- [ ] **FOUND-05**: Tailwind `@theme inline` block updated with new color/font tokens, all components reference new tokens
+
+### Layout & Components
+
+- [ ] **COMP-01**: Hero section is asymmetric and typographic — large type as the statement, no centered gradient blob, no bounce scroll indicator
+- [ ] **COMP-02**: Navigation uses clean brand mark, no glass-on-scroll effect, visually distinct from generic AI nav patterns
+- [ ] **COMP-03**: All glass-card and apple-glass usage replaced with clean surfaces (subtle borders, clean backgrounds, no backdrop-blur)
+- [ ] **COMP-04**: At least 3 sections use asymmetric or varied layouts — not all content center-aligned in identical grids
+- [ ] **COMP-05**: Projects section uses a distinctive presentation pattern (not tab buttons → detail card)
+
+### Motion & Interaction
+
+- [ ] **MOTN-01**: All major sections use scroll-triggered entrance animations via Intersection Observer with staggered reveals
+- [ ] **MOTN-02**: Hover/interaction patterns vary per component type (not uniform translateY(-2px) + border-color on everything)
+- [ ] **MOTN-03**: Bounce scroll indicator removed, pulsing status badge made subtle, hero entrance animation reduced to 300-400ms
+- [ ] **MOTN-04**: `prefers-reduced-motion` media query disables/reduces all animations site-wide
+
+### Polish & Spacing
+
+- [ ] **PLSH-01**: Consistent 8px spacing grid applied — mathematical spacing between all elements, generous section padding
+- [ ] **PLSH-02**: JetBrains Mono used for tech labels, metrics values, stack badges, and code references throughout
+- [ ] **PLSH-03**: Bold visual dividers between sections — background color shifts, horizontal rules, or spacing changes that break the uniform rhythm
+- [ ] **PLSH-04**: All existing functionality preserved: i18n (EN/ES), case studies, contact form, SEO metadata, navigation
+
+## Future Requirements
 
 ### Enhanced Discovery
 
 - **DISC-V2-01**: Filter/search on projects index page by tags or tech stack
 - **DISC-V2-02**: Related projects suggestions at bottom of each case study
 
-### Analytics
+### Future Case Studies
 
-- **AN-V2-01**: Track case study page views and engagement per project
+- **CS-V2-01**: Odoo/Inova case study page
+
+### Page Transitions
+
+- **TRANS-01**: Smooth page transitions between routes (complex, deferred)
 
 ## Out of Scope
 
 | Feature | Reason |
 |---------|--------|
-| Blog / articles system | Different feature, not part of case study milestone |
-| CMS integration | Content stays in JSON locale files — simple, version-controlled |
+| Blog / articles system | Different feature entirely |
+| CMS integration | Content stays in JSON locale files |
 | User auth / accounts | Static portfolio site |
-| Animated diagram interactions | Modern minimal style — keep diagrams clean, not flashy |
-| Video / media embeds in case studies | Text + diagrams sufficient for recruiter audience |
+| 3D effects / WebGL | Over-engineered for a portfolio |
+| Page transitions | Complex, deferred to v2.1 |
+| Heavy animation libraries (Framer Motion, GSAP) | CSS + Intersection Observer sufficient, no bundle bloat |
 
 ## Traceability
 
 | Requirement | Phase | Status |
 |-------------|-------|--------|
-| VIS-01 | Phase 1 | Complete |
-| VIS-02 | Phase 1 | Complete |
-| VIS-03 | Phase 1 | Complete |
-| VIS-04 | Phase 1 | Complete |
-| VIS-05 | Phase 1 | Complete |
-| ARCH-01 | Phase 1 | Complete |
-| CS-01 | Phase 2 | Complete |
-| CS-02 | Phase 2 | Complete |
-| CS-03 | Phase 2 | Complete |
-| CS-04 | Phase 2 | Complete |
-| CS-05 | Phase 2 | Complete |
-| EVO-01 | Phase 3 | Complete |
-| EVO-02 | Phase 3 | Complete |
-| EVO-03 | Phase 3 | Complete |
-| EVO-04 | Phase 3 | Complete |
-| DISC-01 | Phase 3 | Complete |
-| DISC-02 | Phase 3 | Complete |
+| FOUND-01 | TBD | Pending |
+| FOUND-02 | TBD | Pending |
+| FOUND-03 | TBD | Pending |
+| FOUND-04 | TBD | Pending |
+| FOUND-05 | TBD | Pending |
+| COMP-01 | TBD | Pending |
+| COMP-02 | TBD | Pending |
+| COMP-03 | TBD | Pending |
+| COMP-04 | TBD | Pending |
+| COMP-05 | TBD | Pending |
+| MOTN-01 | TBD | Pending |
+| MOTN-02 | TBD | Pending |
+| MOTN-03 | TBD | Pending |
+| MOTN-04 | TBD | Pending |
+| PLSH-01 | TBD | Pending |
+| PLSH-02 | TBD | Pending |
+| PLSH-03 | TBD | Pending |
+| PLSH-04 | TBD | Pending |
 
 **Coverage:**
-- v1 requirements: 17 total
-- Mapped to phases: 17
-- Unmapped: 0 (complete)
+- v2.0 requirements: 18 total
+- Mapped to phases: 0
+- Unmapped: 18 (awaiting roadmap)
 
 ---
-*Requirements defined: 2026-03-14*
-*Last updated: 2026-03-14 — traceability mapped after roadmap creation*
+*Requirements defined: 2026-03-14 (v1.0)*
+*Last updated: 2026-03-16 after v2.0 milestone requirements definition*
