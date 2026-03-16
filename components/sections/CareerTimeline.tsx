@@ -108,9 +108,9 @@ function TimelineEntry({
 }) {
   return (
     <div
-      className={`flex items-start gap-8 transition-all duration-500 ${
+      className={`flex items-start gap-8 transition-all duration-500 border-l-2 border-transparent hover:border-[var(--color-accent)] pl-4 ${
         isParentVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-5'
-      } ${isLast ? '' : 'border-b border-[var(--color-border)] pb-8 mb-8'}`}
+      } ${isLast ? '' : 'border-b border-b-[var(--color-border)] pb-8 mb-8'}`}
       style={{ transitionDelay: `${index * 80}ms` }}
     >
       {/* Year circle - positioned over the vertical line */}

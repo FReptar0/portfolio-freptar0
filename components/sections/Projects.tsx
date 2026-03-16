@@ -309,7 +309,7 @@ export default function Projects() {
                 {/* Collapsed row - always visible */}
                 <button
                   onClick={() => toggleProject(project.id)}
-                  className="w-full py-6 flex items-center justify-between gap-4 text-left cursor-pointer"
+                  className="w-full py-6 flex items-center justify-between gap-4 text-left cursor-pointer hover:bg-[var(--color-surface-elevated)] transition-colors duration-200 rounded-lg px-4 -mx-4"
                 >
                   <h3 className="text-xl md:text-2xl font-heading font-bold text-foreground">
                     {project.title}
@@ -339,9 +339,10 @@ export default function Projects() {
                   </div>
                 </button>
 
-                {/* Expanded detail */}
-                {isExpanded && (
-                  <div className="pt-6 pb-8">
+                {/* Expanded detail - smooth height transition */}
+                <div className={`grid transition-[grid-template-rows] duration-300 ease-out ${isExpanded ? 'grid-rows-[1fr]' : 'grid-rows-[0fr]'}`}>
+                  <div className="overflow-hidden">
+                    <div className="pt-6 pb-8">
                     <div className="grid grid-cols-1 lg:grid-cols-5 gap-8">
                       {/* Left column - 3/5 */}
                       <div className="lg:col-span-3 space-y-8">
@@ -476,7 +477,8 @@ export default function Projects() {
                       </div>
                     </div>
                   </div>
-                )}
+                  </div>
+                </div>
               </div>
             );
           })}

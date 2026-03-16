@@ -119,7 +119,7 @@ export default function Process() {
           </p>
           <a
             href="#contact"
-            className="inline-block px-8 py-4 bg-[var(--color-accent)] hover:bg-[var(--color-accent-hover)] text-white font-semibold rounded-2xl transition-all duration-300"
+            className="inline-block px-8 py-4 bg-[var(--color-accent)] hover:bg-[var(--color-accent-hover)] text-white font-semibold rounded-2xl transition-all duration-200 hover:scale-[1.02] active:scale-[0.98]"
           >
             {t('cta.button')}
           </a>

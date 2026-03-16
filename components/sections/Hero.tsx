@@ -69,7 +69,7 @@ export default function Hero() {
               >
                 <a
                   href="#projects"
-                  className="px-8 py-4 text-white font-semibold rounded-lg transition-colors duration-300 text-center"
+                  className="px-8 py-4 text-white font-semibold rounded-lg transition-all duration-200 text-center hover:scale-[1.02] active:scale-[0.98]"
                   style={{ background: 'var(--color-accent)' }}
                   onMouseEnter={(e) => e.currentTarget.style.background = 'var(--color-accent-hover)'}
                   onMouseLeave={(e) => e.currentTarget.style.background = 'var(--color-accent)'}
@@ -78,7 +78,7 @@ export default function Hero() {
                 </a>
                 <a
                   href="#contact"
-                  className="group px-8 py-4 font-semibold rounded-lg transition-colors duration-300 text-center border"
+                  className="group px-8 py-4 font-semibold rounded-lg transition-all duration-200 text-center border hover:scale-[1.02] active:scale-[0.98]"
                   style={{ borderColor: 'var(--color-border-strong)' }}
                 >
                   {t('cta.secondary')}
@@ -97,8 +97,8 @@ export default function Hero() {
 
 function MetricItem({ value, label }: { value: string; label: string }) {
   return (
-    <div>
-      <div className="font-mono text-4xl font-bold" style={{ color: 'var(--color-accent)' }}>
+    <div className="group cursor-default">
+      <div className="font-mono text-4xl font-bold transition-colors duration-200 text-[var(--color-accent)] group-hover:text-[var(--color-accent-hover)]">
         {value}
       </div>
       <div className="text-sm mt-1" style={{ color: 'var(--text-secondary)' }}>{label}</div>
