@@ -529,8 +529,8 @@
         { "label": "Registrarse", "url": "https://app.cleany.pro/signup", "icon": "user-plus" }
       ],
       "overview": "Cleany es una plataforma SaaS integral que ayuda a dueños de negocios de limpieza a gestionar clientes, trabajadores, trabajos, programación, facturación y nómina en un solo sistema. Construido como monorepo con tres apps independientes — una API REST Fastify, un SPA React con PWA offline-first para trabajadores, y un sitio de marketing Next.js — la plataforma está dirigida al mercado latinoamericano con soporte bilingüe completo.",
-      "role": "Desarrollador Full-Stack",
-      "teamSize": 1,
+      "role": "Ingeniero Líder & Product Owner",
+      "teamSize": 2,
       "tags": ["SaaS", "Multi-Tenant", "Offline-First"],
       "problem": {
         "title": "El Problema",

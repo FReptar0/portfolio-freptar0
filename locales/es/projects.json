@@ -309,11 +309,11 @@
       "githubUrl": "",
       "businessProblem": "Los negocios de limpieza gestionaban operaciones con hojas de cálculo y WhatsApp, sin automatización de programación, sin seguimiento de trabajadores y sin facturación integrada — perdiendo ingresos y creando caos en la programación.",
       "myContribution": {
-        "role": "Desarrollador Full-Stack",
-        "teamSize": 1,
-        "responsibility0": "Arquitecté plataforma SaaS multi-tenant",
-        "responsibility1": "Construí PWA offline-first con registro QR",
-        "responsibility2": "Integré facturación Stripe, Resend y Twilio"
+        "role": "Ingeniero Líder & Product Owner",
+        "teamSize": 2,
+        "responsibility0": "Arquitecté la plataforma SaaS multi-tenant de punta a punta",
+        "responsibility1": "Lideré decisiones técnicas, requerimientos del cliente y dirección del producto",
+        "responsibility2": "Construí sistemas core: PWA offline, facturación Stripe, gestión de riesgo"
       },
       "technicalSolution": {
         "stack": [

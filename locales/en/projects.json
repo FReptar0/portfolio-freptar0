@@ -309,11 +309,11 @@
       "githubUrl": "",
       "businessProblem": "House cleaning businesses managed operations through spreadsheets and WhatsApp, with no scheduling automation, no worker tracking, and no integrated billing — losing revenue and creating scheduling chaos.",
       "myContribution": {
-        "role": "Full-Stack Developer",
-        "teamSize": 1,
-        "responsibility0": "Architected multi-tenant SaaS platform",
-        "responsibility1": "Built offline-first worker PWA with QR onboarding",
-        "responsibility2": "Integrated Stripe billing, Resend, and Twilio"
+        "role": "Lead Engineer & Product Owner",
+        "teamSize": 2,
+        "responsibility0": "Architected multi-tenant SaaS platform end-to-end",
+        "responsibility1": "Led technical decisions, client requirements, and product direction",
+        "responsibility2": "Built core systems: offline PWA, Stripe billing, risk management"
       },
       "technicalSolution": {
         "stack": [
