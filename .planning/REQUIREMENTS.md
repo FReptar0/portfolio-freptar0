@@ -52,8 +52,8 @@
 - [x] **COMP-01**: Hero section is asymmetric and typographic — large type as the statement, no centered gradient blob, no bounce scroll indicator
 - [x] **COMP-02**: Navigation uses clean brand mark, no glass-on-scroll effect, visually distinct from generic AI nav patterns
 - [x] **COMP-03**: All glass-card and apple-glass usage replaced with clean surfaces (subtle borders, clean backgrounds, no backdrop-blur)
-- [ ] **COMP-04**: At least 3 sections use asymmetric or varied layouts — not all content center-aligned in identical grids
-- [ ] **COMP-05**: Projects section uses a distinctive presentation pattern (not tab buttons → detail card)
+- [x] **COMP-04**: At least 3 sections use asymmetric or varied layouts — not all content center-aligned in identical grids
+- [x] **COMP-05**: Projects section uses a distinctive presentation pattern (not tab buttons → detail card)
 
 ### Motion & Interaction
 
@@ -107,8 +107,8 @@
 | COMP-01 | Phase 5 | Complete |
 | COMP-02 | Phase 5 | Complete |
 | COMP-03 | Phase 5 | Complete |
-| COMP-04 | Phase 5 | Pending |
-| COMP-05 | Phase 5 | Pending |
+| COMP-04 | Phase 5 | Complete |
+| COMP-05 | Phase 5 | Complete |
 | MOTN-01 | Phase 6 | Pending |
 | MOTN-02 | Phase 6 | Pending |
 | MOTN-03 | Phase 6 | Pending |
