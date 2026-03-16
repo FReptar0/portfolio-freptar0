@@ -25,9 +25,22 @@ export async function generateMetadata({
   const { locale, slug } = await params;
   const t = await getTranslations({ locale, namespace: 'caseStudy' });
 
+  const title = `${t(`projects.${slug}.headline`)} ${t('meta.techTitleSuffix')}`;
   return {
-    title: `${t(`projects.${slug}.headline`)} ${t('meta.techTitleSuffix')}`,
+    title,
     description: t(`projects.${slug}.tagline`),
+    alternates: {
+      canonical: `https://fernandomemije.dev/${locale}/projects/${slug}/tech`,
+      languages: {
+        es: `https://fernandomemije.dev/es/projects/${slug}/tech`,
+        en: `https://fernandomemije.dev/en/projects/${slug}/tech`,
+      },
+    },
+    openGraph: {
+      title,
+      description: t(`projects.${slug}.tagline`),
+      url: `https://fernandomemije.dev/${locale}/projects/${slug}/tech`,
+    },
   };
 }
 

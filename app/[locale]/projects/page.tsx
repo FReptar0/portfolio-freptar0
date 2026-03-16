@@ -19,9 +19,22 @@ export async function generateMetadata({
   const { locale } = await params;
   const t = await getTranslations({ locale, namespace: 'caseStudy' });
 
+  const title = `${t('index.title')} | Fernando Rodriguez`;
   return {
-    title: `${t('index.title')} | Fernando Rodriguez`,
+    title,
     description: t('index.subtitle'),
+    alternates: {
+      canonical: `https://fernandomemije.dev/${locale}/projects`,
+      languages: {
+        es: 'https://fernandomemije.dev/es/projects',
+        en: 'https://fernandomemije.dev/en/projects',
+      },
+    },
+    openGraph: {
+      title,
+      description: t('index.subtitle'),
+      url: `https://fernandomemije.dev/${locale}/projects`,
+    },
   };
 }
 

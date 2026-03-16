@@ -1,11 +1,11 @@
 User-agent: *
 Allow: /
-
-# Sitemap TODO: Add sitemap URL here
-
 Disallow: /_next/
 Disallow: /api/
 
+Sitemap: https://fernandomemije.dev/sitemap.xml
+
+# Search engine bots
 User-agent: Googlebot
 Allow: /
 
@@ -13,4 +13,26 @@ User-agent: Bingbot
 Allow: /
 
 User-agent: Slurp
+Allow: /
+
+# AI search engine bots
+User-agent: GPTBot
+Allow: /
+
+User-agent: ChatGPT-User
+Allow: /
+
+User-agent: PerplexityBot
+Allow: /
+
+User-agent: ClaudeBot
+Allow: /
+
+User-agent: anthropic-ai
+Allow: /
+
+User-agent: Google-Extended
+Allow: /
+
+User-agent: Applebot-Extended
 Allow: /

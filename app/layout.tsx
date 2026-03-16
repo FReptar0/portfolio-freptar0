@@ -24,7 +24,7 @@ export default function RootLayout({
     children: React.ReactNode;
 }) {
     return (
-        <html lang="en" className="scroll-smooth" suppressHydrationWarning>
+        <html lang="es" className="scroll-smooth" suppressHydrationWarning>
             <body className={`${geistSans.variable} ${geistMono.variable} antialiased`}>
                 {/* Inline script to set theme class before React hydrates */}
                 <script

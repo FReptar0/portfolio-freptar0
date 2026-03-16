@@ -11,6 +11,7 @@ import CaseStudyCTA from '@/components/case-study/CaseStudyCTA';
 import LiveResultsGallery from '@/components/case-study/LiveResultsGallery';
 import { getTranslations } from 'next-intl/server';
 
+const BASE_URL = 'https://fernandomemije.dev';
 const VALID_SLUGS = ['sageconnect', 'sagesync', 'cardeal', 'gymmanager', 'cleany', 'carrytrade'] as const;
 
 export function generateStaticParams() {
@@ -27,9 +28,26 @@ export async function generateMetadata({
   const { locale, slug } = await params;
   const t = await getTranslations({ locale, namespace: 'caseStudy' });
 
+  const headline = t(`projects.${slug}.headline`);
+  const tagline = t(`projects.${slug}.tagline`);
+  const title = `${headline} ${t('meta.titleSuffix')}`;
+
   return {
-    title: `${t(`projects.${slug}.headline`)} ${t('meta.titleSuffix')}`,
-    description: t(`projects.${slug}.tagline`),
+    title,
+    description: tagline,
+    alternates: {
+      canonical: `${BASE_URL}/${locale}/projects/${slug}`,
+      languages: {
+        es: `${BASE_URL}/es/projects/${slug}`,
+        en: `${BASE_URL}/en/projects/${slug}`,
+      },
+    },
+    openGraph: {
+      title,
+      description: tagline,
+      url: `${BASE_URL}/${locale}/projects/${slug}`,
+      type: 'article',
+    },
   };
 }
 
@@ -52,8 +70,71 @@ export default async function CaseStudyPage({
     label: string;
   }>;
 
+  const headline = t(`projects.${slug}.headline`);
+  const tagline = t(`projects.${slug}.tagline`);
+  const overview = t(`projects.${slug}.overview`);
+  const role = t(`projects.${slug}.role`);
+  const techStack = t.raw(`projects.${slug}.tech.stack`) as string[];
+
+  // JSON-LD: CreativeWork + BreadcrumbList
+  const jsonLd = {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": "CreativeWork",
+        name: headline,
+        description: tagline,
+        abstract: overview,
+        url: `${BASE_URL}/${locale}/projects/${slug}`,
+        inLanguage: locale,
+        author: {
+          "@type": "Person",
+          name: "Fernando Rodriguez Memije",
+          url: BASE_URL,
+        },
+        contributor: {
+          "@type": "Person",
+          name: "Fernando Rodriguez Memije",
+          jobTitle: role,
+        },
+        keywords: techStack.join(", "),
+        about: techStack.map((tech) => ({
+          "@type": "Thing",
+          name: tech,
+        })),
+      },
+      {
+        "@type": "BreadcrumbList",
+        itemListElement: [
+          {
+            "@type": "ListItem",
+            position: 1,
+            name: locale === 'es' ? "Inicio" : "Home",
+            item: `${BASE_URL}/${locale}`,
+          },
+          {
+            "@type": "ListItem",
+            position: 2,
+            name: locale === 'es' ? "Proyectos" : "Projects",
+            item: `${BASE_URL}/${locale}/projects`,
+          },
+          {
+            "@type": "ListItem",
+            position: 3,
+            name: headline,
+            item: `${BASE_URL}/${locale}/projects/${slug}`,
+          },
+        ],
+      },
+    ],
+  };
+
   return (
     <>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+      />
       <Navigation />
       <main className="min-h-screen">
         <CaseStudyHero slug={slug} locale={locale} />
