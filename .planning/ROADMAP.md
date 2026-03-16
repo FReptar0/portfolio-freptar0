@@ -49,7 +49,7 @@ Plans:
 
 - [x] **Phase 4: Design Tokens & Typography** - Replace fonts, colors, CSS custom properties, dark mode tokens, and Tailwind theme — the visual DNA everything else builds on (completed 2026-03-16)
 - [x] **Phase 5: Component Overhaul** - Rebuild Hero, Navigation, cards, layouts, and Projects section with Swiss design language; kill all glass morphism; apply premium spacing and visual rhythm (completed 2026-03-16)
-- [ ] **Phase 6: Motion & Accessibility** - Add scroll-triggered animations, varied hover interactions, clean up bouncy defaults, and ensure reduced-motion support site-wide
+- [x] **Phase 6: Motion & Accessibility** - Add scroll-triggered animations, varied hover interactions, clean up bouncy defaults, and ensure reduced-motion support site-wide (completed 2026-03-16)
 
 ## Phase Details
 
@@ -95,7 +95,7 @@ Plans:
   3. The bounce scroll indicator is gone, the status badge pulse is subtle, and the hero entrance animation completes within 300-400ms
   4. Enabling "prefers-reduced-motion" in browser/OS settings disables or significantly reduces all animations site-wide
   5. Full regression check passes: i18n toggles between EN/ES correctly, all case study routes load, contact form works, SEO metadata is present, navigation works from every page
-**Plans:** 2 plans
+**Plans:** 1/2 plans complete
 
 Plans:
 - [ ] 06-01-PLAN.md — Create useScrollReveal hook + reduced-motion CSS + integrate scroll-triggered animations into all 8 homepage sections + fix Hero anti-patterns
@@ -113,4 +113,4 @@ Phases execute in numeric order: 4 → 5 → 6
 | 3. Evolution and Discovery | v1.0 | 3/3 | Complete | 2026-03-16 |
 | 4. Design Tokens & Typography | v2.0 | 2/2 | Complete | 2026-03-16 |
 | 5. Component Overhaul | v2.0 | 3/3 | Complete | 2026-03-16 |
-| 6. Motion & Accessibility | v2.0 | 0/2 | Not started | - |
+| 6. Motion & Accessibility | v2.0 | Complete    | 2026-03-16 | - |
