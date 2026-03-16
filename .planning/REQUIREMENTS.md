@@ -99,30 +99,30 @@
 
 | Requirement | Phase | Status |
 |-------------|-------|--------|
-| FOUND-01 | TBD | Pending |
-| FOUND-02 | TBD | Pending |
-| FOUND-03 | TBD | Pending |
-| FOUND-04 | TBD | Pending |
-| FOUND-05 | TBD | Pending |
-| COMP-01 | TBD | Pending |
-| COMP-02 | TBD | Pending |
-| COMP-03 | TBD | Pending |
-| COMP-04 | TBD | Pending |
-| COMP-05 | TBD | Pending |
-| MOTN-01 | TBD | Pending |
-| MOTN-02 | TBD | Pending |
-| MOTN-03 | TBD | Pending |
-| MOTN-04 | TBD | Pending |
-| PLSH-01 | TBD | Pending |
-| PLSH-02 | TBD | Pending |
-| PLSH-03 | TBD | Pending |
-| PLSH-04 | TBD | Pending |
+| FOUND-01 | Phase 4 | Pending |
+| FOUND-02 | Phase 4 | Pending |
+| FOUND-03 | Phase 4 | Pending |
+| FOUND-04 | Phase 4 | Pending |
+| FOUND-05 | Phase 4 | Pending |
+| COMP-01 | Phase 5 | Pending |
+| COMP-02 | Phase 5 | Pending |
+| COMP-03 | Phase 5 | Pending |
+| COMP-04 | Phase 5 | Pending |
+| COMP-05 | Phase 5 | Pending |
+| MOTN-01 | Phase 6 | Pending |
+| MOTN-02 | Phase 6 | Pending |
+| MOTN-03 | Phase 6 | Pending |
+| MOTN-04 | Phase 6 | Pending |
+| PLSH-01 | Phase 5 | Pending |
+| PLSH-02 | Phase 5 | Pending |
+| PLSH-03 | Phase 5 | Pending |
+| PLSH-04 | Phase 6 | Pending |
 
 **Coverage:**
 - v2.0 requirements: 18 total
-- Mapped to phases: 0
-- Unmapped: 18 (awaiting roadmap)
+- Mapped to phases: 18
+- Unmapped: 0
 
 ---
 *Requirements defined: 2026-03-14 (v1.0)*
-*Last updated: 2026-03-16 after v2.0 milestone requirements definition*
+*Last updated: 2026-03-16 after v2.0 roadmap creation*

@@ -1,78 +1,116 @@
-# Roadmap: Portfolio Case Study System
+# Roadmap: Fernando Rodriguez Portfolio
 
-## Overview
+## Milestones
 
-This milestone expands the existing SageConnect case study system into a full portfolio showcase covering four projects. Work proceeds in three phases: first fixing the visual and accuracy baseline on the existing case study, then building out all new case study pages, then layering evolution narratives and discovery surfaces that tie everything together for a recruiter audience.
+- ✅ **v1.0 Case Study System** - Phases 1-3 (shipped 2026-03-16)
+- 🚧 **v2.0 Swiss Precision Redesign** - Phases 4-6 (in progress)
 
 ## Phases
 
 **Phase Numbering:**
-- Integer phases (1, 2, 3): Planned milestone work
-- Decimal phases (1.1, 1.2): Urgent insertions (marked with INSERTED)
+- Integer phases (1, 2, 3...): Planned milestone work
+- Decimal phases (4.1, 4.2): Urgent insertions (marked with INSERTED)
 
 Decimal phases appear between their surrounding integers in numeric order.
 
-- [x] **Phase 1: Visual Foundation** - Fix the SageConnect baseline — visual hierarchy, diagram accuracy, and mobile responsiveness across all existing case study UI (completed 2026-03-15)
-- [x] **Phase 2: New Case Studies** - Add SageSync, Qardeal, and Gym Manager as full case study pages with tech deep-dives and SEO (completed 2026-03-15)
-- [x] **Phase 3: Evolution and Discovery** - Add "What's Next" evolution sections to case studies, surface all case studies via homepage links and a dedicated projects index page (completed 2026-03-16)
-
-## Phase Details
+<details>
+<summary>✅ v1.0 Case Study System (Phases 1-3) - SHIPPED 2026-03-16</summary>
 
 ### Phase 1: Visual Foundation
-**Goal**: The existing SageConnect case study looks polished enough to represent the portfolio — strong visual hierarchy, accurate architecture diagram, and responsive on mobile
-**Depends on**: Nothing (first phase)
-**Requirements**: VIS-01, VIS-02, VIS-03, VIS-04, VIS-05, ARCH-01
-**Success Criteria** (what must be TRUE):
-  1. A recruiter viewing `/projects/sageconnect` on desktop sees clear visual hierarchy — metrics, tags, and role are visually distinct from body text, not a wall of paragraphs
-  2. A recruiter viewing `/projects/sageconnect` on a phone can read all content and diagrams scale or scroll horizontally without breaking layout
-  3. The SageConnect architecture diagram shows the Sage 300 Web API node replacing the legacy exe node — the planned migration is represented accurately
-  4. Section transitions use spacing, subtle backgrounds, or separators so the narrative does not feel like one continuous block of text
-  5. Metric callouts have visual distinction (size, color, or card treatment) that draws the eye immediately
+**Goal**: The existing SageConnect case study looks polished enough to represent the portfolio
 **Plans:** 3/3 plans complete
 
 Plans:
 - [x] 01-01-PLAN.md — Visual polish: hero gradient background, text hierarchy, section separators
 - [x] 01-02-PLAN.md — Diagram fix: replace CFDI Importer with Sage 300 Web API, add mobile scroll wrapper
-- [x] 01-03-PLAN.md — Visual verification checkpoint: human review of all requirements on desktop and mobile
+- [x] 01-03-PLAN.md — Visual verification checkpoint
 
 ### Phase 2: New Case Studies
-**Goal**: SageSync, Qardeal, and Gym Manager each have a live case study page and tech deep-dive reachable at their respective slugs, with content in both EN and ES and proper SEO metadata
-**Depends on**: Phase 1
-**Requirements**: CS-01, CS-02, CS-03, CS-04, CS-05
-**Success Criteria** (what must be TRUE):
-  1. Navigating to `/en/projects/sagesync`, `/en/projects/cardeal`, and `/en/projects/gymmanager` each renders a Problem/Solution/Impact narrative page — no 404
-  2. Each of the three new projects has a working `/tech` deep-dive page with architecture diagram, data flow description, code patterns, and system metrics
-  3. The Spanish equivalent of each route (`/es/projects/[slug]` and `/es/projects/[slug]/tech`) renders fully translated content — no English strings appearing in ES locale
-  4. Each new case study page has a unique `<title>` and meta description visible in page source for both EN and ES
+**Goal**: SageSync, Qardeal, and Gym Manager each have live case study pages
 **Plans:** 1/1 plans complete
 
 Plans:
-- [ ] 02-01-PLAN.md — Register new slugs in routing, fix Qardeal metric, enable homepage discovery links
+- [x] 02-01-PLAN.md — Register new slugs, fix Qardeal metric, enable homepage links
 
 ### Phase 3: Evolution and Discovery
-**Goal**: Recruiters can browse all case studies from one index page, see "What's Next" evolution narratives on relevant projects, and the pattern is extensible without code changes
-**Depends on**: Phase 2
-**Requirements**: EVO-01, EVO-02, EVO-03, EVO-04, DISC-01, DISC-02
-**Success Criteria** (what must be TRUE):
-  1. The SageConnect main case study page and its `/tech` page both show a "What's Next" section describing the exe-to-Web-API migration
-  2. The SageSync case study shows a "What's Next" section describing its planned evolution
-  3. Navigating to `/en/projects` shows a page listing all four case studies (SageConnect, SageSync, Qardeal, Gym Manager) with cards, tags, and clickable links to each
-  4. The homepage Projects section shows a "View Case Study" link for all four projects with case study pages
-  5. Adding evolution content to any future project requires only adding JSON keys — no React component changes needed
+**Goal**: Recruiters can browse all case studies from one index page with evolution narratives
 **Plans:** 3/3 plans complete
 
 Plans:
-- [ ] 03-01-PLAN.md — Evolution sections: SageSync whatNext content + tech page whatNext block
-- [ ] 03-02-PLAN.md — Discovery: projects index page + navigation link + homepage "View All" link
-- [ ] 03-03-PLAN.md — Visual verification checkpoint: human review of all Phase 3 requirements
+- [x] 03-01-PLAN.md — Evolution sections
+- [x] 03-02-PLAN.md — Discovery: projects index page
+- [x] 03-03-PLAN.md — Visual verification checkpoint
+
+</details>
+
+### 🚧 v2.0 Swiss Precision Redesign (In Progress)
+
+**Milestone Goal:** Replace the generic Claude Code design defaults with a distinctive Swiss Modernist visual identity — new typography, color system, layout patterns, and interaction design that no other AI portfolio has.
+
+- [ ] **Phase 4: Design Tokens & Typography** - Replace fonts, colors, CSS custom properties, dark mode tokens, and Tailwind theme — the visual DNA everything else builds on
+- [ ] **Phase 5: Component Overhaul** - Rebuild Hero, Navigation, cards, layouts, and Projects section with Swiss design language; kill all glass morphism; apply premium spacing and visual rhythm
+- [ ] **Phase 6: Motion & Accessibility** - Add scroll-triggered animations, varied hover interactions, clean up bouncy defaults, and ensure reduced-motion support site-wide
+
+## Phase Details
+
+### Phase 4: Design Tokens & Typography
+**Goal**: The site renders with its new visual identity — Swiss typography, black/white/green color system, clean dark mode — while all existing content and functionality continues working unchanged
+**Depends on**: Phase 3 (v1.0 complete)
+**Requirements**: FOUND-01, FOUND-02, FOUND-03, FOUND-04, FOUND-05
+**Success Criteria** (what must be TRUE):
+  1. Every page displays headings in Space Grotesk, body text in DM Sans, and code/labels in JetBrains Mono — no Geist font renders anywhere
+  2. No blue or cyan gradient appears anywhere on the site — the only accent color visible is electric green (#22C55E or its tonal variants)
+  3. Switching to dark mode shows a deliberately designed dark palette (not simply inverted light mode) — surfaces, text, and accents all feel intentional
+  4. All existing pages load without errors, all links work, both EN and ES locales render correct content, and the build completes with no failures
+**Plans**: TBD
+
+Plans:
+- [ ] 04-01: TBD
+- [ ] 04-02: TBD
+
+### Phase 5: Component Overhaul
+**Goal**: Every section of the site uses the new Swiss design language — clean surfaces, asymmetric layouts, distinctive component patterns, premium spacing, and monospace accents — with zero glass morphism remaining
+**Depends on**: Phase 4
+**Requirements**: COMP-01, COMP-02, COMP-03, COMP-04, COMP-05, PLSH-01, PLSH-02, PLSH-03
+**Success Criteria** (what must be TRUE):
+  1. The Hero section uses large typographic statement with asymmetric layout — no centered gradient blob, no bounce scroll indicator
+  2. Searching the codebase for "apple-glass", "glass-card", and "backdrop-blur" returns zero results — all cards use clean surfaces with subtle borders
+  3. The Navigation shows a clean brand mark and does not use glass-on-scroll transparency effects
+  4. At least 3 homepage sections break the center-aligned identical-grid pattern with asymmetric or varied layouts, and the Projects section uses a presentation pattern distinct from tab-buttons-to-detail-card
+  5. Sections are separated by visible rhythm breaks (background color shifts, horizontal rules, or spacing changes), all spacing follows an 8px grid, and JetBrains Mono is used for tech labels, metrics, and stack badges throughout
+**Plans**: TBD
+
+Plans:
+- [ ] 05-01: TBD
+- [ ] 05-02: TBD
+- [ ] 05-03: TBD
+
+### Phase 6: Motion & Accessibility
+**Goal**: The site feels alive with purposeful scroll-triggered animations and varied interactions, while respecting users who prefer reduced motion — and all existing functionality remains intact as a final verification
+**Depends on**: Phase 5
+**Requirements**: MOTN-01, MOTN-02, MOTN-03, MOTN-04, PLSH-04
+**Success Criteria** (what must be TRUE):
+  1. Scrolling down the homepage triggers staggered entrance animations on each major section via Intersection Observer — elements animate in as they enter the viewport
+  2. Different component types have distinct hover/interaction patterns (not uniform translateY(-2px) + border-color everywhere)
+  3. The bounce scroll indicator is gone, the status badge pulse is subtle, and the hero entrance animation completes within 300-400ms
+  4. Enabling "prefers-reduced-motion" in browser/OS settings disables or significantly reduces all animations site-wide
+  5. Full regression check passes: i18n toggles between EN/ES correctly, all case study routes load, contact form works, SEO metadata is present, navigation works from every page
+**Plans**: TBD
+
+Plans:
+- [ ] 06-01: TBD
+- [ ] 06-02: TBD
 
 ## Progress
 
 **Execution Order:**
-Phases execute in numeric order: 1 → 2 → 3
+Phases execute in numeric order: 4 → 5 → 6
 
-| Phase | Plans Complete | Status | Completed |
-|-------|----------------|--------|-----------|
-| 1. Visual Foundation | 3/3 | Complete    | 2026-03-15 |
-| 2. New Case Studies | 1/1 | Complete   | 2026-03-15 |
-| 3. Evolution and Discovery | 3/3 | Complete   | 2026-03-16 |
+| Phase | Milestone | Plans Complete | Status | Completed |
+|-------|-----------|----------------|--------|-----------|
+| 1. Visual Foundation | v1.0 | 3/3 | Complete | 2026-03-15 |
+| 2. New Case Studies | v1.0 | 1/1 | Complete | 2026-03-15 |
+| 3. Evolution and Discovery | v1.0 | 3/3 | Complete | 2026-03-16 |
+| 4. Design Tokens & Typography | v2.0 | 0/? | Not started | - |
+| 5. Component Overhaul | v2.0 | 0/? | Not started | - |
+| 6. Motion & Accessibility | v2.0 | 0/? | Not started | - |
