@@ -1,36 +1,36 @@
 ---
 gsd_state_version: 1.0
-milestone: v1.0
-milestone_name: milestone
+milestone: v2.0
+milestone_name: Swiss Precision Redesign
 status: planning
-stopped_at: Completed 03-evolution-and-discovery/03-03-PLAN.md
-last_updated: "2026-03-16T17:55:39.176Z"
-last_activity: 2026-03-14 — Roadmap created, ready to plan Phase 1
+stopped_at: null
+last_updated: "2026-03-16T20:00:00.000Z"
+last_activity: 2026-03-16 — Milestone v2.0 started
 progress:
-  total_phases: 3
-  completed_phases: 3
-  total_plans: 7
-  completed_plans: 7
-  percent: 33
+  total_phases: 0
+  completed_phases: 0
+  total_plans: 0
+  completed_plans: 0
+  percent: 0
 ---
 
 # Project State
 
 ## Project Reference
 
-See: .planning/PROJECT.md (updated 2026-03-14)
+See: .planning/PROJECT.md (updated 2026-03-16)
 
-**Core value:** Each case study tells a clear business story backed by strong technical depth — giving recruiters confidence in both business thinking and engineering craft.
-**Current focus:** Phase 1 — Visual Foundation
+**Core value:** The portfolio must visually differentiate Fernando from every other AI-generated developer portfolio — distinctive Swiss Precision brand.
+**Current focus:** Defining requirements
 
 ## Current Position
 
-Phase: 1 of 3 (Visual Foundation)
-Plan: 0 of TBD in current phase
-Status: Ready to plan
-Last activity: 2026-03-14 — Roadmap created, ready to plan Phase 1
+Phase: Not started (defining requirements)
+Plan: —
+Status: Defining requirements
+Last activity: 2026-03-16 — Milestone v2.0 started
 
-Progress: [███░░░░░░░] 33%
+Progress: [░░░░░░░░░░] 0%
 
 ## Performance Metrics
 
@@ -39,49 +39,18 @@ Progress: [███░░░░░░░] 33%
 - Average duration: —
 - Total execution time: —
 
-**By Phase:**
-
-| Phase | Plans | Total | Avg/Plan |
-|-------|-------|-------|----------|
-| - | - | - | - |
-
-**Recent Trend:**
-- Last 5 plans: —
-- Trend: —
-
 *Updated after each plan completion*
-| Phase 01-visual-foundation P02 | 6 | 2 tasks | 2 files |
-| Phase 01-visual-foundation P01 | 6 | 2 tasks | 3 files |
-| Phase 01-visual-foundation P03 | 45 | 2 tasks | 6 files |
-| Phase 02-new-case-studies P01 | 3 | 2 tasks | 7 files |
-| Phase 03-evolution-and-discovery P01 | 265 | 2 tasks | 3 files |
-| Phase 03-evolution-and-discovery P02 | 61 | 2 tasks | 7 files |
-| Phase 03-evolution-and-discovery P03 | 5 | 2 tasks | 0 files |
 
 ## Accumulated Context
 
 ### Decisions
 
-Decisions are logged in PROJECT.md Key Decisions table.
-Recent decisions affecting current work:
-
-- "whatNext" section will be optional via try/catch in component — graceful fallback for projects without evolution content
-- Dedicated /projects index page confirmed in scope (DISC-02) — enables recruiter browsing without scrolling homepage
-- [Phase 01-visual-foundation]: strokeDasharray='4 2' on planned SVG nodes signals future integrations visually
-- [Phase 01-visual-foundation]: Mobile diagram scroll: overflow-x-auto glass card + min-w-[640px] inner div (no JS resize observer)
-- [Phase 01-01]: MetricsGrid left unchanged — gradient card backgrounds and gradient text already satisfy VIS-04
-- [Phase 01-01]: Fixed pre-existing i18n bug: caseStudy namespace missing from i18n.ts loader — was blocking all case study page builds
-- [Phase 01-visual-foundation]: SVG viewBox expanded from 480 to 500px wide to give diagram legend breathing room without layout shift
-- [Phase 01-visual-foundation]: Navigation logo and links route to /${locale}/ on subpages so back-to-home works from case study pages
-- [Phase 01-visual-foundation]: SageConnect githubUrl set to empty string — component guards on truthiness, cleanly hides GitHub button for private repos
-- [Phase 01-visual-foundation]: CTA section added to tech deep dive page so recruiters have a clear next action after reviewing architecture diagram
-- [Phase 02-new-case-studies]: Qardeal booking conversion metric corrected from 35% to 45% per user decision — applied to metric cards, impact prose, and homepage cards in both locales
-- [Phase 02-new-case-studies]: Pre-existing lint warnings in unmodified files deferred as out-of-scope
-- [Phase 03-evolution-and-discovery]: Inline try/catch IIFE on tech/page.tsx mirrors CaseStudyNarrative.tsx — zero component extraction, JSON-only extensibility for whatNext sections
-- [Phase 03-evolution-and-discovery]: MISSING_MESSAGE console errors during SSG are expected and non-fatal for projects without whatNext keys — catch block returns null
-- [Phase 03-evolution-and-discovery]: index keys already present in caseStudy.json from prior session — no file modification needed
-- [Phase 03-evolution-and-discovery]: Case Studies nav link uses absolute /${locale}/projects (not prefix-based) — prefix is for hash anchors only, absolute ensures locale always present
-- [Phase 03-evolution-and-discovery]: All 6 Phase 3 requirements confirmed via user visual sign-off — EVO-01 through EVO-04, DISC-01, DISC-02 all verified correct
+- Swiss Precision design direction chosen over Editorial Bold and Dark Premium
+- User wants "Swiss Precision with a bit of high-value delivery" — systems-thinking precision with premium feel
+- Kill list: blue-cyan gradients, glass morphism, Geist font, centered-everything layout, gradient text, bounce animations
+- Color system: black/white base + single electric green accent (#22C55E)
+- Typography: Space Grotesk (headings) + DM Sans (body) + JetBrains Mono (code/labels)
+- Existing v1.0 case study content and functionality must be preserved
 
 ### Pending Todos
 
@@ -89,11 +58,10 @@ None yet.
 
 ### Blockers/Concerns
 
-- SageSync evolution content details not yet gathered — EVO-02 needs content before Phase 3 can complete
-- Granularity is coarse; plan-phase will split work within each phase as needed
+None.
 
 ## Session Continuity
 
-Last session: 2026-03-16T17:50:53.460Z
-Stopped at: Completed 03-evolution-and-discovery/03-03-PLAN.md
+Last session: 2026-03-16
+Stopped at: null
 Resume file: None

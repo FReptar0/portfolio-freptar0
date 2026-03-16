@@ -1,73 +1,91 @@
-# Portfolio Case Study System
+# Fernando Rodriguez Portfolio
 
 ## What This Is
 
-Fernando Rodriguez Memije's personal portfolio site, built with Next.js 16 and next-intl. The current milestone focuses on creating compelling, recruiter-focused case study pages for each project, with business narratives and technical deep-dives. The system is designed to be easily extensible — adding a new case study requires only JSON content, a slug entry, and a diagram component.
+Fernando Rodriguez Memije's personal portfolio site, built with Next.js 16 and next-intl. A bilingual (ES/EN) portfolio showcasing senior engineering work through case studies with business narratives and technical deep-dives. The v2.0 milestone is a complete visual identity overhaul — replacing the generic AI-generated design (glass morphism, blue-cyan gradients, Geist font) with a distinctive "Swiss Precision" aesthetic that communicates systems-thinking and premium engineering craft.
 
 ## Core Value
 
-Each case study must tell a clear business story (Problem → Solution → Impact) backed by strong technical depth — giving recruiters confidence in both business thinking and engineering craft.
+The portfolio must visually differentiate Fernando from every other AI-generated developer portfolio — establishing a distinctive, memorable brand through intentional design choices that communicate precision, systems-thinking, and high-value delivery.
+
+## Current Milestone: v2.0 Swiss Precision Redesign
+
+**Goal:** Replace the generic Claude Code design defaults with a distinctive Swiss Modernist visual identity — new typography, color system, layout patterns, and interaction design that no other AI portfolio has.
+
+**Target features:**
+- New color system (black/white base + electric green accent, kill blue-cyan gradients)
+- New typography (Space Grotesk + DM Sans, kill Geist default)
+- Asymmetric layouts breaking the centered-everything pattern
+- New card/component design replacing glass morphism everywhere
+- Scroll-triggered animations (Intersection Observer) with staggered reveals
+- Redesigned Hero section — typographic, asymmetric, bold
+- Redesigned Navigation with brand personality
+- Varied section backgrounds and visual rhythm
+- Premium spacing and breathing room
+- Dark/light mode with new tokens
+- All existing functionality preserved (i18n, case studies, SEO)
 
 ## Requirements
 
 ### Validated
 
-- ✓ Case study route system (`/[locale]/projects/[slug]` + `/tech`) — existing
-- ✓ SageConnect case study with accurate architecture data — existing
-- ✓ i18n support for case study content (EN/ES) — existing
-- ✓ Homepage "View Case Study" integration — existing
-- ✓ Navigation works from sub-pages (`/${locale}/#section` pattern) — existing
-- ✓ Architecture diagrams for all 5 projects — existing
-- ✓ CLAUDE.md project documentation — existing
-- ✓ Codebase mapped (.planning/codebase/) — existing
+- ✓ Case study route system (`/[locale]/projects/[slug]` + `/tech`) — v1.0
+- ✓ SageConnect case study with accurate architecture data — v1.0
+- ✓ i18n support for case study content (EN/ES) — v1.0
+- ✓ Homepage "View Case Study" integration — v1.0
+- ✓ Navigation works from sub-pages (`/${locale}/#section` pattern) — v1.0
+- ✓ Architecture diagrams for all 5 projects — v1.0
+- ✓ SageSync, Qardeal, Gym Manager case study pages — v1.0
+- ✓ Projects index page — v1.0
+- ✓ "What's Next" evolution sections — v1.0
+- ✓ SEO metadata on all case study pages — v1.0
+- ✓ Mobile responsiveness for case study pages — v1.0
 
 ### Active
 
-- [ ] Add SageSync, Qardeal, Gym Manager as full case study pages
-- [ ] Create dedicated `/projects` index page listing all case studies
-- [ ] Improve case study page visual weight — current `/sageconnect` is too text-heavy, needs better visual hierarchy, spacing, and emphasis on key content
-- [ ] Fix "What's Next" / evolution CTA to also appear on tech deep-dive page, not just main case study
-- [ ] Update SageConnect diagram to show Sage 300 Web API replacing the exe (CFDI Importer node → Web API integration)
-- [ ] Add SageSync "What's Next" evolution section
-- [ ] Make "whatNext" pattern easily extensible for future projects
-- [ ] Modern minimal diagram styling across all 5 diagrams (Vercel/Linear docs aesthetic)
-- [ ] Ensure all case study pages have proper SEO metadata
-- [ ] Mobile responsiveness for case study pages and diagrams
+See REQUIREMENTS.md for v2.0 scoped requirements.
 
 ### Out of Scope
 
-- Odoo/Inova case study page — not included in this milestone, content already in JSON for future
+- Odoo/Inova case study page — deferred to future milestone
 - Blog or articles system — different feature entirely
 - Authentication or user accounts — static portfolio site
 - CMS integration — content stays in JSON translation files
+- Page transitions between routes — complex, defer to v2.1 if desired
+- 3D effects or WebGL — over-engineered for a portfolio
 
 ## Context
 
-- **Target audience:** Recruiters evaluating for senior engineering roles — need to see both business impact and technical depth equally weighted
-- **Existing system:** SageConnect case study is live but text-heavy. 5 architecture diagrams exist but were recently redesigned for modern minimal style.
-- **SageConnect evolution:** Migrating from black-box Windows exe (ImportaFacturasFocaltec.exe) to Sage 300 REST Web API. This eliminates Windows dependency and enables granular error handling. The diagram should reflect this future state.
-- **SageSync evolution:** Has upcoming work (details to be gathered)
-- **Locale pattern:** All content in `locales/{locale}/caseStudy.json` under `projects.{slug}`. Adding a project = add JSON content + slug to VALID_SLUGS array + diagram component + register in TechDeepDive.tsx
-- **Tech stack:** Next.js 16, TypeScript, Tailwind CSS v4, next-intl, Lucide React, Vercel deployment
+- **Target audience:** Recruiters evaluating for senior engineering roles
+- **The problem:** A partner built their portfolio with Claude Code and it looks identical — same blue-cyan gradients, glass morphism, Geist font, centered layouts, gradient text. The current design is the "Claude Code Default Stack" and is not unique.
+- **Design direction:** "Swiss Precision" — strict grid system, Space Grotesk/DM Sans typography, black/white/green color system, clean surfaces instead of glass, mathematical spacing, monospace accents for tech credibility, asymmetric layouts, premium feel.
+- **Design references:** Swiss Modernism 2.0, Exaggerated Minimalism style, with touches of Dark Premium (premium spacing, warm subtle accents)
+- **Locale pattern:** All content in JSON translation files, loaded via i18n.ts
+- **Tech stack:** Next.js 16, TypeScript, Tailwind CSS v4 (inline theme), next-intl, Lucide React, Vercel deployment
 
 ## Constraints
 
-- **Tech stack**: Must stay within Next.js/React/Tailwind — no new frameworks
-- **i18n**: All user-facing text must be in both EN and ES locale files
-- **SSG**: All case study pages must be statically generated (generateStaticParams)
-- **Performance**: Diagrams are inline SVG — no external charting libraries
-- **Design consistency**: Must match existing glass-morphism/gradient design system
+- **Tech stack**: Must stay within Next.js/React/Tailwind — no new frameworks or heavy animation libraries
+- **i18n**: All user-facing text must remain in both EN and ES locale files
+- **SSG**: All pages must remain statically generated
+- **Functionality**: All existing features (case studies, navigation, contact form, SEO) must continue working
+- **Performance**: No heavy JS animation libraries — use CSS transitions + Intersection Observer
+- **Fonts**: Google Fonts only (Space Grotesk, DM Sans, JetBrains Mono) — self-hosted via next/font
+- **Design system**: Tailwind CSS v4 with `@theme inline` — no tailwind.config file
 
 ## Key Decisions
 
 | Decision | Rationale | Outcome |
 |----------|-----------|---------|
-| Single caseStudy.json per locale (not per-project) | Simpler i18n.ts config, manageable size for 5 projects | — Pending |
-| Dynamic [slug] route instead of hardcoded routes | Adding case studies only requires content + slug registration | ✓ Good |
-| Pure inline SVG for diagrams | No library dependency, full theme integration, dark mode via CSS vars | ✓ Good |
-| Server components for content, client only for interactive | Minimal JS shipped, better SEO | ✓ Good |
-| "whatNext" section as optional (try/catch in component) | Not all projects have evolution stories — graceful fallback | — Pending |
-| Dedicated /projects index page | Recruiters can browse all case studies without scrolling homepage | — Pending |
+| Single caseStudy.json per locale | Simpler i18n.ts config, manageable size | ✓ Good |
+| Dynamic [slug] route | Adding case studies only requires content + slug | ✓ Good |
+| Pure inline SVG for diagrams | No library dependency, full theme integration | ✓ Good |
+| Server components for content | Minimal JS shipped, better SEO | ✓ Good |
+| Swiss Precision design direction | Distinctive, systems-thinker brand; avoids AI-generic patterns | — Pending |
+| Space Grotesk + DM Sans + JetBrains Mono | Techy personality + readability + code credibility | — Pending |
+| Black/white + electric green accent | High contrast, single accent = Swiss modernist; green = "run/go" developer energy | — Pending |
+| Kill glass morphism entirely | #1 AI-generated pattern; clean surfaces with borders instead | — Pending |
+| Intersection Observer for scroll animations | No library dependency, native API, progressive enhancement | — Pending |
 
 ---
-*Last updated: 2026-03-14 after initialization*
+*Last updated: 2026-03-16 after v2.0 milestone start*
