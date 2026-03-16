@@ -51,7 +51,7 @@
 
 - [x] **COMP-01**: Hero section is asymmetric and typographic — large type as the statement, no centered gradient blob, no bounce scroll indicator
 - [x] **COMP-02**: Navigation uses clean brand mark, no glass-on-scroll effect, visually distinct from generic AI nav patterns
-- [ ] **COMP-03**: All glass-card and apple-glass usage replaced with clean surfaces (subtle borders, clean backgrounds, no backdrop-blur)
+- [x] **COMP-03**: All glass-card and apple-glass usage replaced with clean surfaces (subtle borders, clean backgrounds, no backdrop-blur)
 - [ ] **COMP-04**: At least 3 sections use asymmetric or varied layouts — not all content center-aligned in identical grids
 - [ ] **COMP-05**: Projects section uses a distinctive presentation pattern (not tab buttons → detail card)
 
@@ -64,8 +64,8 @@
 
 ### Polish & Spacing
 
-- [ ] **PLSH-01**: Consistent 8px spacing grid applied — mathematical spacing between all elements, generous section padding
-- [ ] **PLSH-02**: JetBrains Mono used for tech labels, metrics values, stack badges, and code references throughout
+- [x] **PLSH-01**: Consistent 8px spacing grid applied — mathematical spacing between all elements, generous section padding
+- [x] **PLSH-02**: JetBrains Mono used for tech labels, metrics values, stack badges, and code references throughout
 - [x] **PLSH-03**: Bold visual dividers between sections — background color shifts, horizontal rules, or spacing changes that break the uniform rhythm
 - [ ] **PLSH-04**: All existing functionality preserved: i18n (EN/ES), case studies, contact form, SEO metadata, navigation
 
@@ -106,15 +106,15 @@
 | FOUND-05 | Phase 4 | Complete |
 | COMP-01 | Phase 5 | Complete |
 | COMP-02 | Phase 5 | Complete |
-| COMP-03 | Phase 5 | Pending |
+| COMP-03 | Phase 5 | Complete |
 | COMP-04 | Phase 5 | Pending |
 | COMP-05 | Phase 5 | Pending |
 | MOTN-01 | Phase 6 | Pending |
 | MOTN-02 | Phase 6 | Pending |
 | MOTN-03 | Phase 6 | Pending |
 | MOTN-04 | Phase 6 | Pending |
-| PLSH-01 | Phase 5 | Pending |
-| PLSH-02 | Phase 5 | Pending |
+| PLSH-01 | Phase 5 | Complete |
+| PLSH-02 | Phase 5 | Complete |
 | PLSH-03 | Phase 5 | Complete |
 | PLSH-04 | Phase 6 | Pending |
 

@@ -3,15 +3,15 @@ gsd_state_version: 1.0
 milestone: v2.0
 milestone_name: Swiss Precision Redesign
 status: executing
-stopped_at: Completed 05-01-PLAN.md
-last_updated: "2026-03-16T21:17:51.969Z"
-last_activity: 2026-03-16 — Completed Plan 05-01 (Hero & Navigation Swiss Rebuild)
+stopped_at: Completed 05-02-PLAN.md
+last_updated: "2026-03-16T21:24:37.211Z"
+last_activity: 2026-03-16 — Completed Plan 05-02 (Glass Removal & Swiss Surface Language)
 progress:
   total_phases: 6
   completed_phases: 4
   total_plans: 12
-  completed_plans: 10
-  percent: 83
+  completed_plans: 11
+  percent: 92
 ---
 
 # Project State
@@ -26,24 +26,25 @@ See: .planning/PROJECT.md (updated 2026-03-16)
 ## Current Position
 
 Phase: 5 of 6 (Component Overhaul)
-Plan: 1 of 3 complete
+Plan: 2 of 3 complete
 Status: In Progress
-Last activity: 2026-03-16 — Completed Plan 05-01 (Hero & Navigation Swiss Rebuild)
+Last activity: 2026-03-16 — Completed Plan 05-02 (Glass Removal & Swiss Surface Language)
 
-Progress: [████████░░] 83%
+Progress: [█████████░] 92%
 
 ## Performance Metrics
 
 **Velocity:**
-- Total plans completed: 3
-- Average duration: 2.3min
-- Total execution time: 7min
+- Total plans completed: 4
+- Average duration: 4min
+- Total execution time: 16min
 
 | Phase | Plan | Duration | Tasks | Files |
 |-------|------|----------|-------|-------|
 | 04    | 01   | 3min     | 2     | 2     |
 | 04    | 02   | 2min     | 2     | 1     |
 | 05    | 01   | 2min     | 2     | 3     |
+| 05    | 02   | 9min     | 2     | 15    |
 
 ## Accumulated Context
 
@@ -62,6 +63,8 @@ Progress: [████████░░] 83%
 - [Phase 05]: Used inline onMouseEnter/Leave for CTA hover states due to CSS var limitations with Tailwind hover pseudo
 - [Phase 05]: Kept mobile overlay backdrop-blur-sm as functional scrim (not decorative glass)
 - [Phase 05]: Asymmetric 12-col grid (7/5 split) established as the typographic poster layout pattern
+- [Phase 05]: Kept backdrop-blur-sm only on 3 functional modal scrims (SearchBar, Navigation, LiveResultsGallery)
+- [Phase 05]: Replaced hover:scale effects with hover:border-accent for Swiss restrained interaction pattern
 
 ### Pending Todos
 
@@ -73,6 +76,6 @@ None.
 
 ## Session Continuity
 
-Last session: 2026-03-16T21:17:51.967Z
-Stopped at: Completed 05-01-PLAN.md
+Last session: 2026-03-16T21:22:28Z
+Stopped at: Completed 05-02-PLAN.md
 Resume file: None
