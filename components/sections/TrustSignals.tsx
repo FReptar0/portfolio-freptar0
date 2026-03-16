@@ -4,6 +4,7 @@ import { useTranslations } from 'next-intl';
 import { CheckCircle } from 'lucide-react';
 import { useEffect, useState } from 'react';
 import Autoplay from "embla-carousel-autoplay";
+import { useScrollReveal, useStaggerChildren } from '@/hooks/useScrollReveal';
 import {
   Carousel,
   CarouselContent,
@@ -19,6 +20,8 @@ export default function TrustSignals() {
   const [current, setCurrent] = useState(0);
   const [, setCount] = useState(0);
   const [isDesktop, setIsDesktop] = useState(false);
+  const { ref: sectionRef, isVisible } = useScrollReveal({ threshold: 0.15 });
+  const certStagger = useStaggerChildren(40);
 
   // Define all available testimonials explicitly
   const testimonials = [
@@ -81,10 +84,10 @@ export default function TrustSignals() {
   const currentDotIndex = isDesktop ? Math.floor(current / 2) : current;
 
   return (
-    <section className="py-24 relative">
+    <section ref={sectionRef} className="py-24 relative">
       <div className="container mx-auto px-6 lg:px-8 max-w-6xl">
         {/* Main Section Header */}
-        <div className="text-center mb-16">
+        <div className={`text-center mb-16 transition-all duration-500 ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-5'}`}>
           <h2 className="text-4xl md:text-5xl font-bold mb-4">
             {t('mainTitle')} <span className="text-[var(--color-accent)]">& Expertise</span>
           </h2>
@@ -94,7 +97,7 @@ export default function TrustSignals() {
         </div>
 
         {/* Testimonials Carousel */}
-        <div className="mb-24">
+        <div className={`mb-24 transition-all duration-500 ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-5'}`} style={{ transitionDelay: '100ms' }}>
           <div className="relative max-w-7xl mx-auto px-4">
             <Carousel
               setApi={setApi}
@@ -153,13 +156,19 @@ export default function TrustSignals() {
         </div>
 
         {/* Certifications & Skills Badges */}
-        <div className="text-center">
+        <div className={`text-center transition-all duration-500 ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-5'}`} style={{ transitionDelay: '200ms' }}>
           <h3 className="text-lg font-semibold mb-6" style={{ color: 'var(--text-secondary)' }}>
             {t('certificationsTitle')}
           </h3>
           <div className="flex flex-wrap justify-center gap-4">
             {t.raw('certifications').map((cert: string, index: number) => (
-              <CertBadge key={index} text={cert} />
+              <div
+                key={index}
+                className={`transition-all duration-500 ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-5'}`}
+                style={certStagger.getDelay(index)}
+              >
+                <CertBadge text={cert} />
+              </div>
             ))}
           </div>
         </div>

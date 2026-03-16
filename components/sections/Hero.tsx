@@ -1,29 +1,24 @@
 "use client";
 
-import { useState, useEffect } from "react";
 import { useTranslations } from 'next-intl';
+import { useScrollReveal, useStaggerChildren } from '@/hooks/useScrollReveal';
 
 export default function Hero() {
-  const [isVisible, setIsVisible] = useState(false);
   const t = useTranslations('hero');
-
-  useEffect(() => {
-    const timer = setTimeout(() => {
-      setIsVisible(true);
-    }, 0);
-    return () => clearTimeout(timer);
-  }, []);
+  const { ref, isVisible } = useScrollReveal({ threshold: 0.1 });
+  const stagger = useStaggerChildren(100);
 
   return (
     <section className="relative min-h-[90vh] flex items-end overflow-hidden pb-24 pt-32">
       <div className="px-6 lg:px-8 max-w-7xl mx-auto w-full">
         <div
-          className={`transition-all duration-500 ${
+          ref={ref}
+          className={`transition-all duration-300 ${
             isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-4"
           }`}
         >
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-16 items-end">
-            {/* Left column — typographic poster */}
+            {/* Left column -- typographic poster */}
             <div className="lg:col-span-7">
               <h1 className="text-6xl md:text-7xl lg:text-[6rem] xl:text-[7.5rem] font-bold tracking-tight leading-[0.9] font-heading text-foreground">
                 {t('title')}
@@ -36,12 +31,16 @@ export default function Hero() {
               </p>
             </div>
 
-            {/* Right column — metrics, status, CTAs */}
+            {/* Right column -- metrics, status, CTAs */}
             <div className="lg:col-span-5 space-y-8">
               {/* Status badge */}
-              <div className="inline-flex items-center gap-2 px-4 py-2 rounded-lg" style={{ background: 'var(--color-accent-muted)' }}>
+              <div
+                className={`inline-flex items-center gap-2 px-4 py-2 rounded-lg transition-all duration-300 ${
+                  isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-4'
+                }`}
+                style={{ background: 'var(--color-accent-muted)', ...stagger.getDelay(0) }}
+              >
                 <span className="relative flex h-3 w-3">
-                  <span className="animate-ping absolute inline-flex h-full w-full rounded-full opacity-50" style={{ background: 'var(--color-accent)' }}></span>
                   <span className="relative inline-flex rounded-full h-3 w-3" style={{ background: 'var(--color-accent)' }}></span>
                 </span>
                 <span className="text-sm font-medium" style={{ color: 'var(--color-accent)' }}>
@@ -49,15 +48,25 @@ export default function Hero() {
                 </span>
               </div>
 
-              {/* Metrics — vertical stack */}
-              <div className="space-y-6">
+              {/* Metrics -- vertical stack */}
+              <div
+                className={`space-y-6 transition-all duration-300 ${
+                  isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-4'
+                }`}
+                style={stagger.getDelay(1)}
+              >
                 <MetricItem value="5+" label={t('metrics.experience')} />
                 <MetricItem value="20+" label={t('metrics.projects')} />
                 <MetricItem value="$2M+" label={t('metrics.value')} />
               </div>
 
               {/* CTAs */}
-              <div className="flex flex-col sm:flex-row gap-4">
+              <div
+                className={`flex flex-col sm:flex-row gap-4 transition-all duration-300 ${
+                  isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-4'
+                }`}
+                style={stagger.getDelay(2)}
+              >
                 <a
                   href="#projects"
                   className="px-8 py-4 text-white font-semibold rounded-lg transition-colors duration-300 text-center"

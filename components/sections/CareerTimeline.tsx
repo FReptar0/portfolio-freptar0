@@ -1,9 +1,11 @@
 "use client";
 
 import { useTranslations } from 'next-intl';
+import { useScrollReveal } from '@/hooks/useScrollReveal';
 
 export default function CareerTimeline() {
   const t = useTranslations('timeline');
+  const { ref: sectionRef, isVisible } = useScrollReveal({ threshold: 0.1 });
 
   const timelineData = [
     {
@@ -53,10 +55,10 @@ export default function CareerTimeline() {
   ];
 
   return (
-    <section id="timeline" className="py-24 relative">
+    <section id="timeline" ref={sectionRef} className="py-24 relative">
       <div className="container mx-auto px-6 lg:px-8 max-w-7xl">
         {/* Left-aligned header */}
-        <div className="mb-16">
+        <div className={`mb-16 transition-all duration-500 ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-5'}`}>
           <h2 className="text-4xl md:text-5xl font-heading font-bold text-foreground mb-4">
             {t('title')} <span className="text-[var(--color-accent)]">{t('titleAccent')}</span>
           </h2>
@@ -75,6 +77,8 @@ export default function CareerTimeline() {
               key={item.year}
               {...item}
               isLast={index === timelineData.length - 1}
+              index={index}
+              isParentVisible={isVisible}
             />
           ))}
         </div>
@@ -90,6 +94,8 @@ function TimelineEntry({
   description,
   color,
   isLast,
+  index,
+  isParentVisible,
 }: {
   year: string;
   role: string;
@@ -97,9 +103,16 @@ function TimelineEntry({
   description: string[];
   color: string;
   isLast: boolean;
+  index: number;
+  isParentVisible: boolean;
 }) {
   return (
-    <div className={`flex items-start gap-8 ${isLast ? '' : 'border-b border-[var(--color-border)] pb-8 mb-8'}`}>
+    <div
+      className={`flex items-start gap-8 transition-all duration-500 ${
+        isParentVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-5'
+      } ${isLast ? '' : 'border-b border-[var(--color-border)] pb-8 mb-8'}`}
+      style={{ transitionDelay: `${index * 80}ms` }}
+    >
       {/* Year circle - positioned over the vertical line */}
       <div
         className={`w-16 h-16 rounded-full bg-gradient-to-br ${color} flex items-center justify-center text-white font-bold font-mono text-lg flex-shrink-0 -ml-16 md:-ml-20 shadow-lg`}

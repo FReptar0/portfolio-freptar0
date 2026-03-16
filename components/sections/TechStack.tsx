@@ -2,9 +2,11 @@
 
 import { useTranslations } from 'next-intl';
 import TechCarousel from '@/components/ui/tech-carousel';
+import { useScrollReveal } from '@/hooks/useScrollReveal';
 
 export default function TechStack() {
   const t = useTranslations('techStack');
+  const { ref: sectionRef, isVisible } = useScrollReveal({ threshold: 0.1 });
 
   // Technology logos with CDN URLs for better performance
   const techLogos = [
@@ -16,14 +18,14 @@ export default function TechStack() {
     },
     {
       src: "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/nextjs/nextjs-original.svg",
-      alt: "Next.js", 
+      alt: "Next.js",
       title: "Next.js",
       href: "https://nextjs.org"
     },
     {
       src: "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/typescript/typescript-original.svg",
       alt: "TypeScript",
-      title: "TypeScript", 
+      title: "TypeScript",
       href: "https://www.typescriptlang.org"
     },
     {
@@ -65,7 +67,7 @@ export default function TechStack() {
     {
       src: "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/googlecloud/googlecloud-original.svg",
       alt: "Google Cloud",
-      title: "Google Cloud Platform", 
+      title: "Google Cloud Platform",
       href: "https://cloud.google.com"
     },
     {
@@ -76,7 +78,7 @@ export default function TechStack() {
     },
     {
       src: "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/redis/redis-original.svg",
-      alt: "Redis", 
+      alt: "Redis",
       title: "Redis",
       href: "https://redis.io"
     },
@@ -95,12 +97,12 @@ export default function TechStack() {
   ];
 
   return (
-    <section className="py-16 relative overflow-hidden">
-      {/* Background removed — clean surface */}
-      
+    <section ref={sectionRef} className="py-16 relative overflow-hidden">
+      {/* Background removed -- clean surface */}
+
       <div className="container mx-auto px-6 lg:px-8 max-w-6xl relative z-10">
         {/* Section Header */}
-        <div className="text-center mb-12">
+        <div className={`text-center mb-12 transition-all duration-500 ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-5'}`}>
           <h2 className="text-4xl md:text-5xl lg:text-6xl font-bold mb-6">
             {t('title')} <span className="text-[var(--color-accent)]">{t('titleAccent')}</span>
           </h2>
@@ -110,7 +112,7 @@ export default function TechStack() {
         </div>
 
         {/* Tech Carousel */}
-        <div className="relative">
+        <div className={`relative transition-all duration-500 ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-5'}`} style={{ transitionDelay: '100ms' }}>
           <TechCarousel
             logos={techLogos}
             speed={40}
@@ -119,7 +121,7 @@ export default function TechStack() {
         </div>
 
         {/* Additional info */}
-        <div className="text-center mt-16">
+        <div className={`text-center mt-16 transition-all duration-500 ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-5'}`} style={{ transitionDelay: '150ms' }}>
           <p className="text-base md:text-lg text-foreground/60 max-w-2xl mx-auto leading-relaxed">
             {t('description')}
           </p>
