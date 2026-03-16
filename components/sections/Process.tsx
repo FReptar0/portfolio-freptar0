@@ -73,13 +73,12 @@ export default function Process() {
   ];
   return (
     <section id="process" className="py-24 relative overflow-hidden">
-      {/* Background decoration */}
-      <div className="absolute inset-0 apple-gradient-mesh opacity-30" />
+      {/* Background removed — clean surface */}
 
       <div className="relative container mx-auto px-6 lg:px-8 max-w-7xl">
         <div className="text-center mb-16">
           <h2 className="text-4xl md:text-5xl font-bold mb-4">
-            {t('title')} <span className="bg-gradient-to-r from-primary-blue to-accent-purple bg-clip-text text-transparent">{t('titleAccent')}</span>
+            {t('title')} <span className="text-[var(--color-accent)]">{t('titleAccent')}</span>
           </h2>
           <p className="text-xl text-foreground/70 max-w-2xl mx-auto">
             {t('subtitle')}
@@ -90,7 +89,7 @@ export default function Process() {
         <div className="hidden lg:block mb-24">
           <div className="grid grid-cols-4 gap-8 relative">
             {/* Connection Line - connecting circles only */}
-            <div className="absolute top-8 left-[12.5%] right-[12.5%] h-0.5 bg-gradient-to-r from-primary-blue via-accent-purple to-success-green opacity-40 -z-10" />
+            <div className="absolute top-8 left-[12.5%] right-[12.5%] h-0.5 bg-[var(--color-border-strong)] opacity-40 -z-10" />
 
             {processSteps.map((step, index) => (
               <ProcessCard key={index} {...step} />
@@ -106,7 +105,7 @@ export default function Process() {
         </div>
 
         {/* Bottom CTA */}
-        <div className="text-center apple-glass rounded-3xl p-8">
+        <div className="text-center bg-[var(--color-surface-elevated)] border border-[var(--color-border)] rounded-2xl p-8">
           <h3 className="text-2xl font-bold mb-4">
             {t('cta.title')}
           </h3>
@@ -115,7 +114,7 @@ export default function Process() {
           </p>
           <a
             href="#contact"
-            className="inline-block px-8 py-4 bg-primary-blue hover:bg-primary-blue/90 text-white font-semibold rounded-2xl transition-all duration-300 hover:scale-105 hover:shadow-xl"
+            className="inline-block px-8 py-4 bg-[var(--color-accent)] hover:bg-[var(--color-accent-hover)] text-white font-semibold rounded-2xl transition-all duration-300"
           >
             {t('cta.button')}
           </a>
@@ -145,14 +144,14 @@ function ProcessCard({
       {/* Number Badge */}
       <div className="flex justify-center mb-6">
         <div
-          className={`w-16 h-16 rounded-full bg-gradient-to-br ${color} flex items-center justify-center text-white font-bold text-2xl shadow-lg group-hover:scale-110 transition-transform duration-300`}
+          className={`w-16 h-16 rounded-full bg-gradient-to-br ${color} flex items-center justify-center text-white font-bold font-mono text-2xl shadow-lg group-hover:scale-110 transition-transform duration-300`}
         >
           {number}
         </div>
       </div>
 
       {/* Card */}
-      <div className="apple-glass rounded-2xl p-6 h-full hover:scale-105 transition-all duration-300">
+      <div className="bg-[var(--color-surface-elevated)] border border-[var(--color-border)] rounded-2xl p-6 h-full hover:border-[var(--color-accent)] transition-colors duration-300">
         <div className="mb-4">{getIcon(icon, "w-12 h-12 text-white")}</div>
         <h3 className="text-xl font-bold mb-3">{title}</h3>
         <p className="text-sm text-foreground/70 leading-relaxed mb-4">
@@ -167,7 +166,7 @@ function ProcessCard({
           <ul className="space-y-1">
             {activities.map((activity, i) => (
               <li key={i} className="flex items-start gap-2 text-sm">
-                <span className="text-primary-blue mt-0.5">•</span>
+                <span className="text-[var(--color-accent)] mt-0.5">•</span>
                 <span className="text-foreground/70">{activity}</span>
               </li>
             ))}
@@ -202,17 +201,17 @@ function ProcessCardMobile({
       {/* Left side - Number */}
       <div className="flex flex-col items-center">
         <div
-          className={`w-14 h-14 rounded-full bg-gradient-to-br ${color} flex items-center justify-center text-white font-bold text-xl shadow-lg flex-shrink-0`}
+          className={`w-14 h-14 rounded-full bg-gradient-to-br ${color} flex items-center justify-center text-white font-bold font-mono text-xl shadow-lg flex-shrink-0`}
         >
           {number}
         </div>
         {index < total - 1 && (
-          <div className="w-1 flex-1 bg-gradient-to-b from-primary-blue to-transparent mt-2" />
+          <div className="w-1 flex-1 bg-[var(--color-border)] mt-2" />
         )}
       </div>
 
       {/* Right side - Content */}
-      <div className="apple-glass rounded-2xl p-6 flex-1">
+      <div className="bg-[var(--color-surface-elevated)] border border-[var(--color-border)] rounded-2xl p-6 flex-1">
         <div className="mb-3">{getIcon(icon, "w-8 h-8 text-white")}</div>
         <h3 className="text-xl font-bold mb-2">{title}</h3>
         <p className="text-sm text-foreground/70 leading-relaxed mb-4">
@@ -227,7 +226,7 @@ function ProcessCardMobile({
           <ul className="space-y-1">
             {activities.map((activity, i) => (
               <li key={i} className="flex items-start gap-2 text-sm">
-                <span className="text-primary-blue mt-0.5">•</span>
+                <span className="text-[var(--color-accent)] mt-0.5">•</span>
                 <span className="text-foreground/70">{activity}</span>
               </li>
             ))}

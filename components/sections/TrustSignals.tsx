@@ -86,7 +86,7 @@ export default function TrustSignals() {
         {/* Main Section Header */}
         <div className="text-center mb-16">
           <h2 className="text-4xl md:text-5xl font-bold mb-4">
-            {t('mainTitle')} <span className="bg-gradient-to-r from-primary-blue to-accent-purple bg-clip-text text-transparent">& Expertise</span>
+            {t('mainTitle')} <span className="text-[var(--color-accent)]">& Expertise</span>
           </h2>
           <p className="text-xl text-foreground/70 max-w-3xl mx-auto">
             {t('mainSubtitle')}
@@ -126,8 +126,8 @@ export default function TrustSignals() {
               </CarouselContent>
 
               {/* Navigation buttons with proper positioning */}
-              <CarouselPrevious className="absolute -left-4 md:-left-6 top-1/2 -translate-y-1/2 h-10 w-10 border-0 bg-white/10 backdrop-blur-sm hover:bg-white/20 transition-all duration-300 hover:scale-110 shadow-lg" />
-              <CarouselNext className="absolute -right-4 md:-right-6 top-1/2 -translate-y-1/2 h-10 w-10 border-0 bg-white/10 backdrop-blur-sm hover:bg-white/20 transition-all duration-300 hover:scale-110 shadow-lg" />
+              <CarouselPrevious className="absolute -left-4 md:-left-6 top-1/2 -translate-y-1/2 h-10 w-10 bg-[var(--color-surface-elevated)] border border-[var(--color-border)] hover:border-[var(--color-accent)] transition-all duration-300 shadow-lg" />
+              <CarouselNext className="absolute -right-4 md:-right-6 top-1/2 -translate-y-1/2 h-10 w-10 bg-[var(--color-surface-elevated)] border border-[var(--color-border)] hover:border-[var(--color-accent)] transition-all duration-300 shadow-lg" />
             </Carousel>
 
             {/* Dots Indicator */}
@@ -141,7 +141,7 @@ export default function TrustSignals() {
                     key={index}
                     onClick={() => api?.scrollTo(targetSlide)}
                     className={`h-2 rounded-full transition-all duration-300 ${isActive
-                      ? 'w-8 bg-gradient-to-r from-primary-blue to-accent-purple'
+                      ? 'w-8 bg-[var(--color-accent)]'
                       : 'w-2 bg-foreground/20 hover:bg-foreground/40'
                       }`}
                     aria-label={`Go to slide ${index + 1}`}
@@ -180,13 +180,11 @@ function TestimonialCard({
   company: string;
 }) {
   return (
-    <div className="glass-card rounded-2xl p-6 md:p-8 h-full min-h-[280px] flex flex-col relative overflow-hidden group hover:shadow-xl transition-all duration-500">
-      {/* Background decoration */}
-      <div className="absolute top-0 right-0 w-20 h-20 bg-gradient-to-br from-primary-blue/10 to-accent-purple/10 rounded-full -translate-y-8 translate-x-8 group-hover:scale-150 transition-transform duration-700"></div>
+    <div className="bg-[var(--color-surface-elevated)] border border-[var(--color-border)] rounded-2xl p-6 md:p-8 h-full min-h-[280px] flex flex-col relative overflow-hidden group hover:shadow-xl transition-all duration-500">
 
       {/* Quote icon */}
       <div className="relative z-10">
-        <svg className="w-8 h-8 text-primary-blue/60 mb-4" fill="currentColor" viewBox="0 0 24 24">
+        <svg className="w-8 h-8 text-[var(--color-accent)]/60 mb-4" fill="currentColor" viewBox="0 0 24 24">
           <path d="M14.017 21v-7.391c0-5.704 3.731-9.57 8.983-10.609l.995 2.151c-2.432.917-3.995 3.638-3.995 5.849h4v10h-10zm-14.017 0v-7.391c0-5.704 3.748-9.57 9-10.609l.996 2.151c-2.433.917-3.996 3.638-3.996 5.849h4v10h-10z" />
         </svg>
       </div>
@@ -200,13 +198,13 @@ function TestimonialCard({
 
       {/* Author info */}
       <div className="flex items-center gap-4 relative z-10 mt-auto">
-        <div className="w-12 h-12 md:w-14 md:h-14 rounded-full bg-gradient-to-br from-primary-blue to-accent-purple flex items-center justify-center text-white font-bold text-sm md:text-base shadow-lg">
+        <div className="w-12 h-12 md:w-14 md:h-14 rounded-full bg-[var(--color-accent)] flex items-center justify-center text-white font-bold text-sm md:text-base shadow-lg">
           {author.split(" ").map((n) => n[0]).join("")}
         </div>
         <div className="flex-1">
           <div className="font-semibold text-foreground text-sm md:text-base">{author}</div>
           <div className="text-xs md:text-sm text-foreground/60">{role}</div>
-          <div className="text-xs md:text-sm font-medium text-primary-blue">{company}</div>
+          <div className="text-xs md:text-sm font-medium text-[var(--color-accent)]">{company}</div>
         </div>
       </div>
     </div>
@@ -215,7 +213,7 @@ function TestimonialCard({
 
 function CertBadge({ text }: { text: string }) {
   return (
-    <div className="px-6 py-3 glass rounded-full text-sm font-medium border hover:scale-105 transition-all duration-300 cursor-default" style={{ borderColor: 'var(--accent-500)' }}>
+    <div className="px-6 py-3 bg-[var(--color-surface-elevated)] border border-[var(--color-border)] rounded-full text-sm font-medium font-mono hover:border-[var(--color-accent)] transition-colors duration-300 cursor-default">
       <CheckCircle className="w-4 h-4 mr-2 inline" style={{ color: 'var(--success-500)' }} />
       {text}
     </div>

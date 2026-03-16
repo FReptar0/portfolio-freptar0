@@ -23,7 +23,7 @@ export default function Skills() {
       <div className="container mx-auto px-6 lg:px-8 max-w-7xl">
         <div className="text-center mb-16">
           <h2 className="text-4xl md:text-5xl font-bold mb-4">
-            {t('title')} <span className="bg-gradient-to-r from-primary-blue to-accent-purple bg-clip-text text-transparent">{t('titleAccent')}</span>
+            {t('title')} <span className="text-[var(--color-accent)]">{t('titleAccent')}</span>
           </h2>
           <p className="text-xl text-foreground/70 max-w-2xl mx-auto">
             {t('subtitle')}
@@ -55,9 +55,9 @@ function SkillCategory({
   }>;
 }) {
   return (
-    <div className="apple-glass rounded-3xl p-6 sm:p-8 hover:scale-[1.02] transition-transform duration-300">
+    <div className="bg-[var(--color-surface-elevated)] border border-[var(--color-border)] rounded-2xl p-6 sm:p-8 hover:border-[var(--color-accent)] transition-colors duration-300">
       <div className="flex items-center gap-3 mb-6">
-        <div className="text-primary-blue">{getIcon(icon, "w-10 h-10")}</div>
+        <div className="text-[var(--color-accent)]">{getIcon(icon, "w-10 h-10")}</div>
         <h3 className="text-2xl font-bold">{title}</h3>
       </div>
 
@@ -96,7 +96,7 @@ function SkillItem({
       <div className="flex justify-between items-center">
         <div>
           <h4 className="font-semibold text-lg">{name}</h4>
-          <p className="text-sm text-foreground/60">{experience}</p>
+          <p className="text-sm text-foreground/60 font-mono">{experience}</p>
         </div>
 
         {/* Dots + label instead of percent */}
@@ -107,19 +107,19 @@ function SkillItem({
                 key={i}
                 className={`w-3 h-3 rounded-full transition-colors transform ${
                   i < filledDots
-                    ? "bg-primary-blue shadow-md scale-100"
+                    ? "bg-[var(--color-accent)] shadow-md scale-100"
                     : "bg-foreground/20 ring-1 ring-foreground/6"
                 }`}
               />
             ))}
           </div>
-          <span className="text-sm font-semibold text-foreground/70">{proficiencyLabel}</span>
+          <span className="text-sm font-semibold text-foreground/70 font-mono">{proficiencyLabel}</span>
         </div>
       </div>
 
       {/* Project Context */}
       <p className="text-sm text-foreground/70 italic flex items-start gap-2">
-        <Briefcase className="w-4 h-4 text-primary-blue mt-0.5 flex-shrink-0" />
+        <Briefcase className="w-4 h-4 text-[var(--color-accent)] mt-0.5 flex-shrink-0" />
         {project}
       </p>
     </div>

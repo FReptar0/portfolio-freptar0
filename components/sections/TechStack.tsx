@@ -96,14 +96,13 @@ export default function TechStack() {
 
   return (
     <section className="py-16 relative overflow-hidden">
-      {/* Background decoration */}
-      <div className="absolute inset-0 bg-gradient-mesh opacity-30"></div>
+      {/* Background removed — clean surface */}
       
       <div className="container mx-auto px-6 lg:px-8 max-w-6xl relative z-10">
         {/* Section Header */}
         <div className="text-center mb-12">
           <h2 className="text-4xl md:text-5xl lg:text-6xl font-bold mb-6">
-            {t('title')} <span className="bg-gradient-to-r from-primary-blue to-accent-purple bg-clip-text text-transparent">{t('titleAccent')}</span>
+            {t('title')} <span className="text-[var(--color-accent)]">{t('titleAccent')}</span>
           </h2>
           <p className="text-xl md:text-2xl text-foreground/70 max-w-3xl mx-auto leading-relaxed">
             {t('subtitle')}

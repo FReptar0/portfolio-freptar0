@@ -273,7 +273,7 @@ export default function Contact() {
       <div className="container mx-auto px-6 lg:px-8 max-w-5xl">
         <div className="text-center mb-16">
           <h2 className="text-4xl md:text-5xl font-bold mb-4">
-            <span style={{ background: 'var(--gradient-hero)', WebkitBackgroundClip: 'text', backgroundClip: 'text', WebkitTextFillColor: 'transparent', color: 'transparent' }}>{t('title')}</span>
+            <span style={{ color: 'var(--color-accent)' }}>{t('title')}</span>
           </h2>
           <p className="text-xl text-foreground/70 max-w-2xl mx-auto">
             {t('subtitle')}
@@ -283,16 +283,16 @@ export default function Contact() {
         <div className="grid md:grid-cols-2 gap-6 lg:gap-8">
           {/* Left Column - Quick Actions */}
           <div className="space-y-6">
-            <div className="apple-glass rounded-3xl p-6 sm:p-8">
+            <div className="bg-[var(--color-surface-elevated)] border border-[var(--color-border)] rounded-2xl p-6 sm:p-8">
               <h3 className="text-2xl font-bold mb-6">{t('quickContact')}</h3>
 
               <div className="space-y-4">
                 {/* Email */}
                 <button
                   onClick={copyEmail}
-                  className="w-full glass-card rounded-2xl p-3 sm:p-4 flex items-center gap-3 sm:gap-4 group"
+                  className="w-full bg-[var(--color-surface-elevated)] border border-[var(--color-border)] rounded-2xl p-4 flex items-center gap-4 group hover:border-[var(--color-accent)] transition-colors"
                 >
-                  <div className="w-12 h-12 rounded-full bg-gradient-hero flex items-center justify-center text-white">
+                  <div className="w-12 h-12 rounded-full bg-[var(--color-accent)] flex items-center justify-center text-white">
                     <Mail className="w-6 h-6" />
                   </div>
                   <div className="flex-1 text-left">
@@ -311,9 +311,9 @@ export default function Contact() {
                   href="https://linkedin.com/in/fernando-rm"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="w-full apple-glass hover:bg-white/20 dark:hover:bg-black/40 rounded-2xl p-3 sm:p-4 flex items-center gap-3 sm:gap-4 transition-all duration-300 hover:scale-[1.02] group"
+                  className="w-full bg-[var(--color-surface-elevated)] border border-[var(--color-border)] rounded-2xl p-4 flex items-center gap-4 transition-colors duration-300 hover:border-[var(--color-accent)] group"
                 >
-                  <div className="w-12 h-12 rounded-full bg-gradient-to-br from-primary-blue to-accent-purple flex items-center justify-center text-white">
+                  <div className="w-12 h-12 rounded-full bg-[var(--color-accent)] flex items-center justify-center text-white">
                     <Briefcase className="w-6 h-6" />
                   </div>
                   <div className="flex-1 text-left">
@@ -330,9 +330,9 @@ export default function Contact() {
                   href="https://github.com/freptar0"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="w-full apple-glass hover:bg-white/20 dark:hover:bg-black/40 rounded-2xl p-3 sm:p-4 flex items-center gap-3 sm:gap-4 transition-all duration-300 hover:scale-[1.02] group"
+                  className="w-full bg-[var(--color-surface-elevated)] border border-[var(--color-border)] rounded-2xl p-4 flex items-center gap-4 transition-colors duration-300 hover:border-[var(--color-accent)] group"
                 >
-                  <div className="w-12 h-12 rounded-full bg-gradient-to-br from-primary-blue to-accent-purple flex items-center justify-center text-white">
+                  <div className="w-12 h-12 rounded-full bg-[var(--color-accent)] flex items-center justify-center text-white">
                     <Github className="w-6 h-6" />
                   </div>
                   <div className="flex-1 text-left">
@@ -347,9 +347,9 @@ export default function Contact() {
                 {/* Calendar - placeholder for now */}
                 <a
                   href="#contact"
-                  className="w-full apple-glass hover:bg-white/20 dark:hover:bg-black/40 rounded-2xl p-3 sm:p-4 flex items-center gap-3 sm:gap-4 transition-all duration-300 hover:scale-[1.02] group"
+                  className="w-full bg-[var(--color-surface-elevated)] border border-[var(--color-border)] rounded-2xl p-4 flex items-center gap-4 transition-colors duration-300 hover:border-[var(--color-accent)] group"
                 >
-                  <div className="w-12 h-12 rounded-full bg-gradient-to-br from-primary-blue to-accent-purple flex items-center justify-center text-white">
+                  <div className="w-12 h-12 rounded-full bg-[var(--color-accent)] flex items-center justify-center text-white">
                     <Calendar className="w-6 h-6" />
                   </div>
                   <div className="flex-1 text-left">
@@ -364,7 +364,7 @@ export default function Contact() {
             </div>
 
             {/* Response Time */}
-            <div className="apple-glass rounded-2xl p-6 text-center">
+            <div className="bg-[var(--color-surface-elevated)] border border-[var(--color-border)] rounded-2xl p-6 text-center">
               <div className="mb-2 text-yellow-500">
                 <Zap className="w-8 h-8 mx-auto" />
               </div>
@@ -376,7 +376,7 @@ export default function Contact() {
           </div>
 
           {/* Right Column - Contact Form */}
-          <div className="apple-glass rounded-3xl p-6 sm:p-8">
+          <div className="bg-[var(--color-surface-elevated)] border border-[var(--color-border)] rounded-2xl p-6 sm:p-8">
             <h3 className="text-2xl font-bold mb-6">{t('form.title')}</h3>
 
             <form onSubmit={handleSubmit} className="space-y-6">
@@ -399,7 +399,7 @@ export default function Contact() {
                       ? 'border-green-500 focus:border-green-500 focus:ring-2 focus:ring-green-500/20'
                       : fieldStates.name === 'invalid'
                         ? 'border-red-500 focus:border-red-500 focus:ring-2 focus:ring-red-500/20'
-                        : 'border-foreground/10 focus:border-primary-blue focus:ring-2 focus:ring-primary-blue/20'
+                        : 'border-foreground/10 focus:border-[var(--color-accent)] focus:ring-2 focus:ring-[var(--color-accent)]/20'
                       }`}
                     placeholder={t('form.namePlaceholder')}
                     onFocus={() => handleFieldFocus('name')}
@@ -444,7 +444,7 @@ export default function Contact() {
                       ? 'border-green-500 focus:border-green-500 focus:ring-2 focus:ring-green-500/20'
                       : fieldStates.email === 'invalid'
                         ? 'border-red-500 focus:border-red-500 focus:ring-2 focus:ring-red-500/20'
-                        : 'border-foreground/10 focus:border-primary-blue focus:ring-2 focus:ring-primary-blue/20'
+                        : 'border-foreground/10 focus:border-[var(--color-accent)] focus:ring-2 focus:ring-[var(--color-accent)]/20'
                       }`}
                     placeholder={t('form.emailPlaceholder')}
                     onFocus={() => handleFieldFocus('email')}
@@ -483,7 +483,7 @@ export default function Contact() {
                       ? 'border-green-500 focus:border-green-500 focus:ring-2 focus:ring-green-500/20'
                       : fieldStates.project === 'invalid'
                         ? 'border-red-500 focus:border-red-500 focus:ring-2 focus:ring-red-500/20'
-                        : 'border-foreground/10 focus:border-primary-blue focus:ring-2 focus:ring-primary-blue/20'
+                        : 'border-foreground/10 focus:border-[var(--color-accent)] focus:ring-2 focus:ring-[var(--color-accent)]/20'
                       }`}
                     onFocus={() => handleFieldFocus('project')}
                     onBlur={(e) => handleFieldBlur('project', e.target.value)}
@@ -530,7 +530,7 @@ export default function Contact() {
                       ? 'border-green-500 focus:border-green-500 focus:ring-2 focus:ring-green-500/20'
                       : fieldStates.message === 'invalid'
                         ? 'border-red-500 focus:border-red-500 focus:ring-2 focus:ring-red-500/20'
-                        : 'border-foreground/10 focus:border-primary-blue focus:ring-2 focus:ring-primary-blue/20'
+                        : 'border-foreground/10 focus:border-[var(--color-accent)] focus:ring-2 focus:ring-[var(--color-accent)]/20'
                       }`}
                     placeholder={t('form.messagePlaceholder')}
                     onFocus={() => handleFieldFocus('message')}
@@ -591,11 +591,11 @@ export default function Contact() {
               <button
                 type="submit"
                 disabled={formStatus === "sending" || !isFormValid || (!turnstileToken && !bypassTurnstile)}
-                className="w-full py-4 text-white font-semibold rounded-xl transition-all duration-300 hover:scale-[1.02] active:scale-[0.98] disabled:scale-100 disabled:opacity-50 disabled:cursor-not-allowed flex items-center justify-center gap-2"
+                className="w-full py-4 text-white font-semibold rounded-xl transition-all duration-300 active:scale-[0.98] disabled:scale-100 disabled:opacity-50 disabled:cursor-not-allowed flex items-center justify-center gap-2"
                 style={{
                   background: formStatus === "sending" || !isFormValid || (!turnstileToken && !bypassTurnstile)
-                    ? 'var(--primary-400)'
-                    : 'var(--primary-600)'
+                    ? 'var(--color-accent-muted)'
+                    : 'var(--color-accent)'
                 }}
               >
                 {formStatus === "sending" && (
@@ -629,7 +629,7 @@ export default function Contact() {
 
         {/* Footer */}
         <div className="mt-16 text-center">
-          <div className="inline-flex items-center gap-2 px-6 py-3 glass rounded-full">
+          <div className="inline-flex items-center gap-2 px-6 py-3 bg-[var(--color-surface-elevated)] border border-[var(--color-border)] rounded-full">
             <span className="relative flex h-2 w-2">
               <span className="animate-ping absolute inline-flex h-full w-full rounded-full opacity-75" style={{ background: 'var(--success-500)' }}></span>
               <span className="relative inline-flex rounded-full h-2 w-2" style={{ background: 'var(--success-500)' }}></span>
@@ -643,7 +643,7 @@ export default function Contact() {
       {showToast && (
         <div className="fixed bottom-6 right-6 z-50 animate-in slide-in-from-bottom-5 fade-in duration-300">
           <div
-            className={`apple-glass rounded-2xl px-6 py-4 shadow-lg flex items-center gap-3 min-w-[300px] ${toastType === "success" ? "border-l-4 border-green-500" : "border-l-4 border-red-500"
+            className={`bg-[var(--color-surface-elevated)] border border-[var(--color-border)] rounded-2xl px-6 py-4 shadow-lg flex items-center gap-3 min-w-[300px] ${toastType === "success" ? "border-l-4 border-green-500" : "border-l-4 border-red-500"
               }`}
           >
             {toastType === "success" ? (

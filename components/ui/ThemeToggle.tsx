@@ -13,7 +13,7 @@ export default function ThemeToggle() {
 
   if (!mounted) {
     return (
-      <div className="w-10 h-10 rounded-full glass flex items-center justify-center">
+      <div className="w-10 h-10 rounded-full bg-[var(--color-surface-elevated)] border border-[var(--color-border)] flex items-center justify-center">
         <div className="w-5 h-5 rounded-full bg-foreground/20" />
       </div>
     );
@@ -22,7 +22,7 @@ export default function ThemeToggle() {
   return (
     <button
       onClick={() => setTheme(theme === "dark" ? "light" : "dark")}
-      className="w-10 h-10 rounded-full glass hover:scale-110 transition-all duration-300 flex items-center justify-center group"
+      className="w-10 h-10 rounded-full bg-[var(--color-surface-elevated)] border border-[var(--color-border)] hover:scale-110 transition-all duration-300 flex items-center justify-center group"
       aria-label="Toggle theme"
     >
       {theme === "dark" ? (
@@ -32,7 +32,7 @@ export default function ThemeToggle() {
           fill="none"
           stroke="currentColor"
           viewBox="0 0 24 24"
-          style={{ color: 'var(--secondary-500)' }}
+          style={{ color: 'var(--text-secondary)' }}
         >
           <path
             strokeLinecap="round"
@@ -48,7 +48,7 @@ export default function ThemeToggle() {
           fill="none"
           stroke="currentColor"
           viewBox="0 0 24 24"
-          style={{ color: 'var(--primary-600)' }}
+          style={{ color: 'var(--color-accent)' }}
         >
           <path
             strokeLinecap="round"

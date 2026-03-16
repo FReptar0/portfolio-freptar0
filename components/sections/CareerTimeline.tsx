@@ -59,7 +59,7 @@ export default function CareerTimeline() {
       <div className="container mx-auto px-6 lg:px-8 max-w-6xl">
         <div className="text-center mb-16">
           <h2 className="text-4xl md:text-5xl font-bold mb-4">
-            {t('title')} <span className="bg-gradient-to-r from-primary-blue to-accent-purple bg-clip-text text-transparent">{t('titleAccent')}</span>
+            {t('title')} <span className="text-[var(--color-accent)]">{t('titleAccent')}</span>
           </h2>
           <p className="text-xl text-foreground/70 max-w-2xl mx-auto">
             {t('subtitle')}
@@ -70,7 +70,7 @@ export default function CareerTimeline() {
         <div className="hidden lg:block relative">
           <div className="flex justify-between items-start relative gap-4 max-w-6xl mx-auto">
             {/* Timeline Line - connecting circles only; use percentage insets like Process to match length */}
-            <div className="absolute top-10 left-[12.5%] right-[12.5%] h-0.5 bg-gradient-to-r from-primary-blue via-accent-purple to-primary-blue opacity-40 -z-10" />
+            <div className="absolute top-10 left-[12.5%] right-[12.5%] h-0.5 bg-[var(--color-border-strong)] opacity-40 -z-10" />
 
             {timelineData.map((item, index) => (
               <TimelineNode
@@ -122,7 +122,7 @@ function TimelineNode({
     <div className="flex flex-col items-center flex-1 group cursor-pointer" onClick={onClick}>
       {/* Year Badge */}
       <div
-        className={`w-20 h-20 rounded-full bg-gradient-to-br ${color} flex items-center justify-center text-white font-bold text-xl mb-4 transition-all duration-300 shadow-lg group-hover:scale-110 ${
+        className={`w-20 h-20 rounded-full bg-gradient-to-br ${color} flex items-center justify-center text-white font-bold font-mono text-xl mb-4 transition-all duration-300 shadow-lg ${
           isActive ? "scale-110 shadow-2xl ring-4 ring-white/20" : ""
         }`}
       >
@@ -131,8 +131,8 @@ function TimelineNode({
 
       {/* Content Card */}
       <div
-        className={`apple-glass rounded-2xl p-6 w-full max-w-xs transition-all duration-300 group-hover:scale-105 ${
-          isActive ? "ring-2 ring-primary-blue/50 shadow-xl" : ""
+        className={`bg-[var(--color-surface-elevated)] border border-[var(--color-border)] rounded-2xl p-6 w-full max-w-xs transition-all duration-300 ${
+          isActive ? "ring-2 ring-[var(--color-accent)]/50 shadow-xl" : ""
         }`}
       >
         <div className="text-center mb-3">
@@ -144,7 +144,7 @@ function TimelineNode({
         <ul className="space-y-2 text-sm text-foreground/70">
           {descriptionArray.map((item: string, i: number) => (
             <li key={i} className="flex items-start gap-2">
-              <span className="text-primary-blue mt-1">•</span>
+              <span className="text-[var(--color-accent)] mt-1">•</span>
               <span>{item}</span>
             </li>
           ))}
@@ -178,19 +178,19 @@ function MobileTimelineNode({
       {/* Timeline indicator */}
       <div className="flex flex-col items-center">
         <div
-          className={`w-16 h-16 rounded-full bg-gradient-to-br ${color} flex items-center justify-center text-white font-bold transition-all duration-300 shadow-lg ${
+          className={`w-16 h-16 rounded-full bg-gradient-to-br ${color} flex items-center justify-center text-white font-bold font-mono transition-all duration-300 shadow-lg ${
             isActive ? "scale-110 shadow-2xl ring-4 ring-white/20" : ""
           }`}
         >
           {year}
         </div>
-        <div className="w-1 flex-1 bg-gradient-to-b from-primary-blue to-transparent mt-2" />
+        <div className="w-1 flex-1 bg-[var(--color-border)] mt-2" />
       </div>
 
       {/* Content */}
       <div
-        className={`apple-glass rounded-2xl p-6 flex-1 transition-all duration-300 ${
-          isActive ? "ring-2 ring-primary-blue/50 shadow-xl" : ""
+        className={`bg-[var(--color-surface-elevated)] border border-[var(--color-border)] rounded-2xl p-6 flex-1 transition-all duration-300 ${
+          isActive ? "ring-2 ring-[var(--color-accent)]/50 shadow-xl" : ""
         }`}
       >
         <div className={`inline-block px-3 py-1 rounded-full text-xs font-semibold bg-gradient-to-r ${color} text-white mb-2`}>
@@ -200,7 +200,7 @@ function MobileTimelineNode({
         <ul className="space-y-2 text-sm text-foreground/70">
           {descriptionArray.map((item: string, i: number) => (
             <li key={i} className="flex items-start gap-2">
-              <span className="text-primary-blue mt-1">•</span>
+              <span className="text-[var(--color-accent)] mt-1">•</span>
               <span>{item}</span>
             </li>
           ))}
