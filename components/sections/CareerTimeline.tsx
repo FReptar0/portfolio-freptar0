@@ -1,10 +1,8 @@
 "use client";
 
-import { useState } from "react";
 import { useTranslations } from 'next-intl';
 
 export default function CareerTimeline() {
-  const [activeIndex, setActiveIndex] = useState(3);
   const t = useTranslations('timeline');
 
   const timelineData = [
@@ -56,41 +54,27 @@ export default function CareerTimeline() {
 
   return (
     <section id="timeline" className="py-24 relative">
-      <div className="container mx-auto px-6 lg:px-8 max-w-6xl">
-        <div className="text-center mb-16">
-          <h2 className="text-4xl md:text-5xl font-bold mb-4">
+      <div className="container mx-auto px-6 lg:px-8 max-w-7xl">
+        {/* Left-aligned header */}
+        <div className="mb-16">
+          <h2 className="text-4xl md:text-5xl font-heading font-bold text-foreground mb-4">
             {t('title')} <span className="text-[var(--color-accent)]">{t('titleAccent')}</span>
           </h2>
-          <p className="text-xl text-foreground/70 max-w-2xl mx-auto">
+          <p className="text-lg" style={{ color: 'var(--text-secondary)' }}>
             {t('subtitle')}
           </p>
         </div>
 
-        {/* Desktop Timeline */}
-        <div className="hidden lg:block relative">
-          <div className="flex justify-between items-start relative gap-4 max-w-6xl mx-auto">
-            {/* Timeline Line - connecting circles only; use percentage insets like Process to match length */}
-            <div className="absolute top-10 left-[12.5%] right-[12.5%] h-0.5 bg-[var(--color-border-strong)] opacity-40 -z-10" />
+        {/* Left-aligned vertical timeline */}
+        <div className="relative pl-16 md:pl-20">
+          {/* Vertical line */}
+          <div className="absolute left-8 md:left-10 top-0 bottom-0 w-px bg-[var(--color-border)]" />
 
-            {timelineData.map((item, index) => (
-              <TimelineNode
-                key={item.year}
-                {...item}
-                isActive={activeIndex === index}
-                onClick={() => setActiveIndex(index)}
-              />
-            ))}
-          </div>
-        </div>
-
-        {/* Mobile Timeline */}
-        <div className="lg:hidden space-y-8">
           {timelineData.map((item, index) => (
-            <MobileTimelineNode
+            <TimelineEntry
               key={item.year}
               {...item}
-              isActive={activeIndex === index}
-              onClick={() => setActiveIndex(index)}
+              isLast={index === timelineData.length - 1}
             />
           ))}
         </div>
@@ -99,108 +83,40 @@ export default function CareerTimeline() {
   );
 }
 
-function TimelineNode({
+function TimelineEntry({
   year,
   role,
   highlight,
   description,
   color,
-  isActive,
-  onClick,
+  isLast,
 }: {
   year: string;
   role: string;
   highlight: string;
   description: string[];
   color: string;
-  isActive: boolean;
-  onClick: () => void;
+  isLast: boolean;
 }) {
-  // Handle both array and translated array format
-  const descriptionArray = Array.isArray(description) ? description : description;
   return (
-    <div className="flex flex-col items-center flex-1 group cursor-pointer" onClick={onClick}>
-      {/* Year Badge */}
+    <div className={`flex items-start gap-8 ${isLast ? '' : 'border-b border-[var(--color-border)] pb-8 mb-8'}`}>
+      {/* Year circle - positioned over the vertical line */}
       <div
-        className={`w-20 h-20 rounded-full bg-gradient-to-br ${color} flex items-center justify-center text-white font-bold font-mono text-xl mb-4 transition-all duration-300 shadow-lg ${
-          isActive ? "scale-110 shadow-2xl ring-4 ring-white/20" : ""
-        }`}
+        className={`w-16 h-16 rounded-full bg-gradient-to-br ${color} flex items-center justify-center text-white font-bold font-mono text-lg flex-shrink-0 -ml-16 md:-ml-20 shadow-lg`}
       >
         {year}
       </div>
 
-      {/* Content Card */}
-      <div
-        className={`bg-[var(--color-surface-elevated)] border border-[var(--color-border)] rounded-2xl p-6 w-full max-w-xs transition-all duration-300 ${
-          isActive ? "ring-2 ring-[var(--color-accent)]/50 shadow-xl" : ""
-        }`}
-      >
-        <div className="text-center mb-3">
-          <div className={`inline-block px-3 py-1 rounded-full text-xs font-semibold bg-gradient-to-r ${color} text-white mb-2`}>
-            {highlight}
-          </div>
-          <h3 className="text-xl font-bold">{role}</h3>
-        </div>
-        <ul className="space-y-2 text-sm text-foreground/70">
-          {descriptionArray.map((item: string, i: number) => (
-            <li key={i} className="flex items-start gap-2">
-              <span className="text-[var(--color-accent)] mt-1">•</span>
-              <span>{item}</span>
-            </li>
-          ))}
-        </ul>
-      </div>
-    </div>
-  );
-}
-
-function MobileTimelineNode({
-  year,
-  role,
-  highlight,
-  description,
-  color,
-  isActive,
-  onClick,
-}: {
-  year: string;
-  role: string;
-  highlight: string;
-  description: string[];
-  color: string;
-  isActive: boolean;
-  onClick: () => void;
-}) {
-  // Handle both array and translated array format
-  const descriptionArray = Array.isArray(description) ? description : description;
-  return (
-    <div className="flex gap-4 cursor-pointer" onClick={onClick}>
-      {/* Timeline indicator */}
-      <div className="flex flex-col items-center">
-        <div
-          className={`w-16 h-16 rounded-full bg-gradient-to-br ${color} flex items-center justify-center text-white font-bold font-mono transition-all duration-300 shadow-lg ${
-            isActive ? "scale-110 shadow-2xl ring-4 ring-white/20" : ""
-          }`}
-        >
-          {year}
-        </div>
-        <div className="w-1 flex-1 bg-[var(--color-border)] mt-2" />
-      </div>
-
       {/* Content */}
-      <div
-        className={`bg-[var(--color-surface-elevated)] border border-[var(--color-border)] rounded-2xl p-6 flex-1 transition-all duration-300 ${
-          isActive ? "ring-2 ring-[var(--color-accent)]/50 shadow-xl" : ""
-        }`}
-      >
+      <div className="flex-1 pt-1">
         <div className={`inline-block px-3 py-1 rounded-full text-xs font-semibold bg-gradient-to-r ${color} text-white mb-2`}>
           {highlight}
         </div>
-        <h3 className="text-xl font-bold mb-3">{role}</h3>
-        <ul className="space-y-2 text-sm text-foreground/70">
-          {descriptionArray.map((item: string, i: number) => (
+        <h3 className="text-xl font-heading font-bold text-foreground mb-3">{role}</h3>
+        <ul className="space-y-2 text-sm" style={{ color: 'var(--text-secondary)' }}>
+          {description.map((item: string, i: number) => (
             <li key={i} className="flex items-start gap-2">
-              <span className="text-[var(--color-accent)] mt-1">•</span>
+              <span className="text-[var(--color-accent)] mt-1 flex-shrink-0">--</span>
               <span>{item}</span>
             </li>
           ))}

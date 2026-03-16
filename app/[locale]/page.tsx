@@ -18,13 +18,13 @@ export default function Home() {
 
       <main className="min-h-screen">
         <Hero />
-        <TrustSignals />
+        <div className="section-alt section-divider"><TrustSignals /></div>
         <TechStack />
-        <CareerTimeline />
+        <div className="section-alt section-divider"><CareerTimeline /></div>
         <Projects />
-        <Skills />
+        <div className="section-alt section-divider"><Skills /></div>
         <Process />
-        <Contact />
+        <div className="section-alt section-divider"><Contact /></div>
       </main>
 
       <Footer />

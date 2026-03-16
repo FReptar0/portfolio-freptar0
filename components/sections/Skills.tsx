@@ -21,18 +21,20 @@ export default function Skills() {
   return (
     <section id="skills" className="py-24 relative">
       <div className="container mx-auto px-6 lg:px-8 max-w-7xl">
-        <div className="text-center mb-16">
-          <h2 className="text-4xl md:text-5xl font-bold mb-4">
+        {/* Left-aligned header */}
+        <div className="mb-16">
+          <h2 className="text-4xl md:text-5xl font-heading font-bold text-foreground mb-4">
             {t('title')} <span className="text-[var(--color-accent)]">{t('titleAccent')}</span>
           </h2>
-          <p className="text-xl text-foreground/70 max-w-2xl mx-auto">
+          <p className="text-lg" style={{ color: 'var(--text-secondary)' }}>
             {t('subtitle')}
           </p>
         </div>
 
-        <div className="grid md:grid-cols-2 gap-8">
+        {/* Full-width category list */}
+        <div>
           {skillCategories.map((category: { title: string; icon: string; skills: Array<{ name: string; experience: string; level: number; project: string; }> }, index: number) => (
-            <SkillCategory key={index} {...category} />
+            <SkillCategory key={index} {...category} isFirst={index === 0} />
           ))}
         </div>
       </div>
@@ -44,6 +46,7 @@ function SkillCategory({
   title,
   icon,
   skills,
+  isFirst,
 }: {
   title: string;
   icon: string;
@@ -53,15 +56,18 @@ function SkillCategory({
     level: number;
     project: string;
   }>;
+  isFirst: boolean;
 }) {
   return (
-    <div className="bg-[var(--color-surface-elevated)] border border-[var(--color-border)] rounded-2xl p-6 sm:p-8 hover:border-[var(--color-accent)] transition-colors duration-300">
+    <div className={`${isFirst ? '' : 'border-t border-[var(--color-border)] pt-8 mt-8'}`}>
+      {/* Category title row */}
       <div className="flex items-center gap-3 mb-6">
-        <div className="text-[var(--color-accent)]">{getIcon(icon, "w-10 h-10")}</div>
-        <h3 className="text-2xl font-bold">{title}</h3>
+        <div className="text-[var(--color-accent)]">{getIcon(icon, "w-8 h-8")}</div>
+        <h3 className="text-2xl font-heading font-semibold text-foreground">{title}</h3>
       </div>
 
-      <div className="space-y-6">
+      {/* Skills grid - asymmetric 3-col on desktop */}
+      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
         {skills.map((skill, index) => (
           <SkillItem key={index} {...skill} />
         ))}
@@ -82,43 +88,40 @@ function SkillItem({
   project: string;
 }) {
   const t = useTranslations('skills');
-  
-  // Map numeric level to a human-friendly label and a 0-5 dot indicator
-  const filledDots = Math.round(level / 20); // 0-5
+
+  const filledDots = Math.round(level / 20);
   const proficiencyLabel =
-    level >= 90 ? t('proficiencyLabels.expert') : 
-    level >= 75 ? t('proficiencyLabels.advanced') : 
-    level >= 50 ? t('proficiencyLabels.intermediate') : 
+    level >= 90 ? t('proficiencyLabels.expert') :
+    level >= 75 ? t('proficiencyLabels.advanced') :
+    level >= 50 ? t('proficiencyLabels.intermediate') :
     t('proficiencyLabels.familiar');
 
   return (
-  <div className="space-y-3">
-      <div className="flex justify-between items-center">
-        <div>
-          <h4 className="font-semibold text-lg">{name}</h4>
-          <p className="text-sm text-foreground/60 font-mono">{experience}</p>
-        </div>
+    <div className="space-y-2">
+      <div>
+        <h4 className="font-semibold text-lg text-foreground">{name}</h4>
+        <p className="font-mono text-sm" style={{ color: 'var(--text-secondary)' }}>{experience}</p>
+      </div>
 
-        {/* Dots + label instead of percent */}
-        <div className="flex items-center gap-3" aria-label={`${proficiencyLabel} proficiency`}>
-          <div className="flex items-center gap-2" aria-hidden="true">
-            {[0, 1, 2, 3, 4].map((i) => (
-              <span
-                key={i}
-                className={`w-3 h-3 rounded-full transition-colors transform ${
-                  i < filledDots
-                    ? "bg-[var(--color-accent)] shadow-md scale-100"
-                    : "bg-foreground/20 ring-1 ring-foreground/6"
-                }`}
-              />
-            ))}
-          </div>
-          <span className="text-sm font-semibold text-foreground/70 font-mono">{proficiencyLabel}</span>
+      {/* Proficiency dots + label */}
+      <div className="flex items-center gap-3" aria-label={`${proficiencyLabel} proficiency`}>
+        <div className="flex items-center gap-2" aria-hidden="true">
+          {[0, 1, 2, 3, 4].map((i) => (
+            <span
+              key={i}
+              className={`w-3 h-3 rounded-full transition-colors ${
+                i < filledDots
+                  ? "bg-[var(--color-accent)]"
+                  : "bg-foreground/20 ring-1 ring-foreground/6"
+              }`}
+            />
+          ))}
         </div>
+        <span className="text-sm font-semibold font-mono" style={{ color: 'var(--text-secondary)' }}>{proficiencyLabel}</span>
       </div>
 
       {/* Project Context */}
-      <p className="text-sm text-foreground/70 italic flex items-start gap-2">
+      <p className="text-sm italic flex items-start gap-2" style={{ color: 'var(--text-secondary)' }}>
         <Briefcase className="w-4 h-4 text-[var(--color-accent)] mt-0.5 flex-shrink-0" />
         {project}
       </p>
