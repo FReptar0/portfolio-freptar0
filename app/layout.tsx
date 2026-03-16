@@ -1,22 +1,30 @@
 import * as React from "react";
 import SpeedInsightsClient from "@/components/SpeedInsightsClient";
 import AnalyticsClient from "@/components/AnalyticsClient";
-import { Geist, Geist_Mono } from "next/font/google";
+import { Space_Grotesk, DM_Sans, JetBrains_Mono } from "next/font/google";
 import "./globals.css";
 import { ThemeProvider } from "@/components/theme-provider";
 import { getLocale } from "next-intl/server";
 
-
-const geistSans = Geist({
-    variable: "--font-geist-sans",
+const spaceGrotesk = Space_Grotesk({
+    variable: "--font-heading",
     subsets: ["latin"],
     display: "swap",
+    weight: ["400", "500", "600", "700"],
 });
 
-const geistMono = Geist_Mono({
-    variable: "--font-geist-mono",
+const dmSans = DM_Sans({
+    variable: "--font-body",
     subsets: ["latin"],
     display: "swap",
+    weight: ["400", "500", "700"],
+});
+
+const jetbrainsMono = JetBrains_Mono({
+    variable: "--font-mono",
+    subsets: ["latin"],
+    display: "swap",
+    weight: ["400", "500", "700"],
 });
 
 export default async function RootLayout({
@@ -27,7 +35,7 @@ export default async function RootLayout({
     const locale = await getLocale();
     return (
         <html lang={locale} className="scroll-smooth" suppressHydrationWarning>
-            <body className={`${geistSans.variable} ${geistMono.variable} antialiased`}>
+            <body className={`${spaceGrotesk.variable} ${dmSans.variable} ${jetbrainsMono.variable} antialiased`}>
                 {/* Inline script to set theme class before React hydrates */}
                 <script
                     dangerouslySetInnerHTML={{
