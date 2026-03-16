@@ -3,7 +3,7 @@
 import { useState } from "react";
 import { useTranslations, useLocale } from 'next-intl';
 import Link from 'next/link';
-import { Target, User, Settings, TrendingUp, CheckCircle, ArrowRight, Github, Lock, FileText } from 'lucide-react';
+import { Target, User, Settings, TrendingUp, ArrowRight, Github, Lock, ChevronDown } from 'lucide-react';
 
 interface Project {
   id: string;
@@ -33,7 +33,7 @@ export default function Projects() {
 
   const projectsWithCaseStudy = new Set(['sageconnect', 'sagesync', 'cardeal', 'gymmanager', 'cleany', 'carrytrade']);
 
-  const projects = [
+  const projects: Project[] = [
     {
       id: "sageconnect",
       title: t('items.sageconnect.title'),
@@ -267,201 +267,213 @@ export default function Projects() {
     },
   ];
 
-  const [selectedProject, setSelectedProject] = useState<string>(projects[0].id);
-  const project = projects.find((p) => p.id === selectedProject) || projects[0];
+  const [expandedId, setExpandedId] = useState<string | null>(projects[0].id);
+
+  const toggleProject = (id: string) => {
+    setExpandedId(prev => prev === id ? null : id);
+  };
 
   return (
     <section id="projects" className="py-24 relative">
       <div className="container mx-auto px-6 lg:px-8 max-w-7xl">
-        <div className="text-center mb-16">
-          <h2 className="text-4xl md:text-5xl font-bold mb-4">
-            {t('title')} <span className="bg-gradient-to-r from-primary-blue to-accent-purple bg-clip-text text-transparent">{t('titleAccent')}</span>
+        {/* Left-aligned header */}
+        <div className="mb-16">
+          <h2 className="text-4xl md:text-5xl font-heading font-bold text-foreground mb-4">
+            {t('title')}{' '}
+            <span className="text-[var(--color-accent)]">{t('titleAccent')}</span>
           </h2>
-          <p className="text-xl text-foreground/70 max-w-2xl mx-auto">
+          <p className="text-lg" style={{ color: 'var(--text-secondary)' }}>
             {t('subtitle')}
           </p>
-          <div className="flex justify-center mt-4">
-            <Link
-              href={`/${locale}/projects`}
-              className="group inline-flex items-center gap-2 px-6 py-2.5 apple-glass rounded-full font-medium text-sm transition-all duration-300 hover:scale-105"
-            >
-              {t('labels.viewAllCaseStudies')}
-              <ArrowRight className="w-4 h-4 transition-transform group-hover:translate-x-1" />
-            </Link>
-          </div>
+          <Link
+            href={`/${locale}/projects`}
+            className="inline-flex items-center gap-2 font-mono text-sm mt-4 text-[var(--color-accent)] hover:underline"
+          >
+            {t('labels.viewAllCaseStudies')}
+            <ArrowRight className="w-4 h-4" />
+          </Link>
         </div>
 
-        {/* Project Selector */}
-        <div className="flex flex-wrap justify-center gap-4 mb-12">
-          {projects.map((proj) => (
-            <button
-              key={proj.id}
-              onClick={() => setSelectedProject(proj.id)}
-              className={`px-6 py-3 rounded-xl font-medium transition-all duration-300 ${selectedProject === proj.id
-                ? "bg-primary-blue text-white shadow-lg shadow-primary-blue/30"
-                : "apple-glass hover:scale-105"
-                }`}
-            >
-              {proj.title}
-            </button>
-          ))}
-        </div>
+        {/* Stacked project list */}
+        <div>
+          {projects.map((project) => {
+            const isExpanded = expandedId === project.id;
+            return (
+              <div key={project.id} className="border-b border-[var(--color-border)]">
+                {/* Collapsed row - always visible */}
+                <button
+                  onClick={() => toggleProject(project.id)}
+                  className="w-full py-6 flex items-center justify-between gap-4 text-left cursor-pointer"
+                >
+                  <h3 className="text-xl md:text-2xl font-heading font-bold text-foreground">
+                    {project.title}
+                  </h3>
 
-        {/* Project Details */}
-        <div className="apple-glass rounded-3xl p-6 sm:p-8 md:p-12">
-          {/* Links - Prominent placement at top */}
-          <div className="mb-8 flex flex-wrap justify-end gap-3">
-            {projectsWithCaseStudy.has(project.id) && (
-              <Link
-                href={`/${locale}/projects/${project.id}`}
-                className="group inline-flex items-center gap-3 px-6 py-3 apple-glass rounded-xl font-semibold transition-all duration-300 hover:scale-105"
-              >
-                <FileText className="w-5 h-5 text-primary-blue" />
-                <span>{t('labels.viewCaseStudy')}</span>
-                <ArrowRight className="w-4 h-4 transition-transform duration-300 group-hover:translate-x-1" />
-              </Link>
-            )}
-            {project.githubUrl ? (
-              <a
-                href={project.githubUrl}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="group inline-flex items-center gap-3 px-6 py-3 bg-gradient-to-r from-primary-blue to-accent-purple text-white rounded-xl font-semibold transition-all duration-300 hover:scale-105 hover:shadow-xl hover:shadow-primary-blue/25"
-              >
-                <Github className="w-5 h-5" />
-                <span>{t('labels.viewCode')}</span>
-                <ArrowRight className="w-4 h-4 transition-transform duration-300 group-hover:translate-x-1" />
-              </a>
-            ) : (
-              <span className="inline-flex items-center gap-2 px-5 py-2.5 apple-glass rounded-xl text-foreground/40 text-sm font-medium">
-                <Lock className="w-4 h-4" />
-                {t('labels.privateCode')}
-              </span>
-            )}
-          </div>
+                  <div className="hidden md:flex items-center gap-2 flex-shrink-0">
+                    {project.technicalSolution.stack.slice(0, 3).map((tech) => (
+                      <span
+                        key={tech}
+                        className="font-mono text-sm px-3 py-1 bg-[var(--color-surface-sunken)] rounded-md"
+                        style={{ color: 'var(--text-secondary)' }}
+                      >
+                        {tech}
+                      </span>
+                    ))}
+                  </div>
 
-          <div className="grid md:grid-cols-2 gap-8 mb-8">
-            {/* Left Column */}
-            <div className="space-y-8">
-              {/* Problem */}
-              <div>
-                <h3 className="text-2xl font-bold mb-4 flex items-center gap-2">
-                  <Target className="w-8 h-8 text-red-500" />
-                  {t('sections.challenge')}
-                </h3>
-                <p className="text-foreground/80 leading-relaxed">
-                  {project.businessProblem}
-                </p>
-              </div>
-
-              {/* My Role */}
-              <div>
-                <h3 className="text-2xl font-bold mb-4 flex items-center gap-2">
-                  <User className="w-8 h-8 text-blue-500" />
-                  {t('sections.role')}
-                </h3>
-                <div className="space-y-3">
-                  <div className="flex items-center gap-4">
-                    <span className="px-3 py-1 bg-primary-blue/20 rounded-full text-sm font-medium">
+                  <div className="flex items-center gap-4 flex-shrink-0">
+                    <span className="hidden sm:inline font-mono text-sm" style={{ color: 'var(--text-secondary)' }}>
                       {project.myContribution.role}
                     </span>
-                    <span className="text-sm text-foreground/60">
-                      {t('labels.teamOf')} {project.myContribution.teamSize}
-                    </span>
+                    <ChevronDown
+                      className={`w-5 h-5 text-foreground/60 transition-transform duration-300 ${
+                        isExpanded ? 'rotate-180' : ''
+                      }`}
+                    />
                   </div>
-                  <ul className="space-y-2">
-                    {project.myContribution.responsibilities.map((resp, i) => (
-                      <li key={i} className="flex items-start gap-2">
-                        <CheckCircle className="w-4 h-4 text-green-500 mt-1 flex-shrink-0" />
-                        <span className="text-foreground/80">{resp}</span>
-                      </li>
-                    ))}
-                  </ul>
-                </div>
-              </div>
+                </button>
 
-              {/* Technical Solution */}
-              <div>
-                <h3 className="text-2xl font-bold mb-4 flex items-center gap-2">
-                  <Settings className="w-8 h-8 text-gray-600" />
-                  {t('sections.solution')}
-                </h3>
-                <div className="space-y-4">
-                  <div>
-                    <p className="text-sm font-semibold text-foreground/60 mb-2">
-                      {t('labels.architecture')} {project.technicalSolution.architecture}
-                    </p>
-                    <div className="flex flex-wrap gap-2">
-                      {project.technicalSolution.stack.map((tech) => (
-                        <span
-                          key={tech}
-                          className="px-3 py-1 bg-foreground/5 rounded-lg text-sm font-mono"
-                        >
-                          {tech}
-                        </span>
-                      ))}
+                {/* Expanded detail */}
+                {isExpanded && (
+                  <div className="pt-6 pb-8">
+                    <div className="grid grid-cols-1 lg:grid-cols-5 gap-8">
+                      {/* Left column - 3/5 */}
+                      <div className="lg:col-span-3 space-y-8">
+                        {/* Business Problem */}
+                        <div>
+                          <h3 className="text-lg font-heading font-semibold text-foreground flex items-center gap-2 mb-3">
+                            <Target className="w-5 h-5 text-[var(--color-accent)]" />
+                            {t('sections.challenge')}
+                          </h3>
+                          <p className="text-foreground/80 leading-relaxed">
+                            {project.businessProblem}
+                          </p>
+                        </div>
+
+                        {/* Role */}
+                        <div>
+                          <h3 className="text-lg font-heading font-semibold text-foreground flex items-center gap-2 mb-3">
+                            <User className="w-5 h-5 text-[var(--color-accent)]" />
+                            {t('sections.role')}
+                          </h3>
+                          <div className="flex items-center gap-4 mb-3">
+                            <span className="font-mono text-sm bg-[var(--color-accent-muted)] px-3 py-1 rounded-md">
+                              {project.myContribution.role}
+                            </span>
+                            <span className="font-mono text-sm" style={{ color: 'var(--text-secondary)' }}>
+                              {t('labels.teamOf')} {project.myContribution.teamSize}
+                            </span>
+                          </div>
+                          <ul className="space-y-2">
+                            {project.myContribution.responsibilities.map((resp, i) => (
+                              <li key={i} className="flex items-start gap-2">
+                                <span className="text-[var(--color-accent)] mt-1 flex-shrink-0">--</span>
+                                <span className="text-foreground/80">{resp}</span>
+                              </li>
+                            ))}
+                          </ul>
+                        </div>
+
+                        {/* Technical Solution */}
+                        <div>
+                          <h3 className="text-lg font-heading font-semibold text-foreground flex items-center gap-2 mb-3">
+                            <Settings className="w-5 h-5 text-[var(--color-accent)]" />
+                            {t('sections.solution')}
+                          </h3>
+                          <p className="font-mono text-sm mb-3" style={{ color: 'var(--text-secondary)' }}>
+                            {t('labels.architecture')} {project.technicalSolution.architecture}
+                          </p>
+                          <div className="flex flex-wrap gap-2 mb-4">
+                            {project.technicalSolution.stack.map((tech) => (
+                              <span
+                                key={tech}
+                                className="font-mono px-3 py-1 bg-[var(--color-surface-sunken)] rounded-md text-sm"
+                              >
+                                {tech}
+                              </span>
+                            ))}
+                          </div>
+                          <ul className="space-y-2">
+                            {project.technicalSolution.keyDecisions.map((decision, i) => (
+                              <li key={i} className="flex items-start gap-2 text-sm">
+                                <span className="text-[var(--color-accent)] mt-1 flex-shrink-0">--</span>
+                                <span className="text-foreground/70">{decision}</span>
+                              </li>
+                            ))}
+                          </ul>
+                        </div>
+                      </div>
+
+                      {/* Right column - 2/5 */}
+                      <div className="lg:col-span-2 space-y-8">
+                        {/* Impact Metrics */}
+                        <div>
+                          <h3 className="text-lg font-heading font-semibold text-foreground flex items-center gap-2 mb-4">
+                            <TrendingUp className="w-5 h-5 text-[var(--color-accent)]" />
+                            {t('sections.impact')}
+                          </h3>
+                          <div className="grid grid-cols-2 gap-4">
+                            {project.businessImpact.metrics.map((metric, i) => (
+                              <div key={i} className="text-left">
+                                <div className="font-mono text-3xl font-bold text-[var(--color-accent)]">
+                                  {metric.value}
+                                </div>
+                                <div className="text-sm" style={{ color: 'var(--text-secondary)' }}>
+                                  {metric.label}
+                                </div>
+                              </div>
+                            ))}
+                          </div>
+                        </div>
+
+                        {/* Tags */}
+                        <div className="flex flex-wrap gap-2">
+                          {project.tags.map((tag) => (
+                            <span
+                              key={tag}
+                              className="font-mono text-sm px-3 py-1 border border-[var(--color-border)] rounded-md"
+                            >
+                              {tag}
+                            </span>
+                          ))}
+                        </div>
+
+                        {/* Links */}
+                        <div className="flex flex-col gap-3">
+                          {projectsWithCaseStudy.has(project.id) && (
+                            <Link
+                              href={`/${locale}/projects/${project.id}`}
+                              className="inline-flex items-center gap-2 font-mono text-sm text-[var(--color-accent)] hover:underline"
+                            >
+                              {t('labels.viewCaseStudy')}
+                              <ArrowRight className="w-4 h-4" />
+                            </Link>
+                          )}
+                          {project.githubUrl ? (
+                            <a
+                              href={project.githubUrl}
+                              target="_blank"
+                              rel="noopener noreferrer"
+                              className="inline-flex items-center gap-2 font-mono text-sm text-foreground/70 hover:text-foreground hover:underline"
+                            >
+                              <Github className="w-4 h-4" />
+                              {t('labels.viewCode')}
+                              <ArrowRight className="w-4 h-4" />
+                            </a>
+                          ) : (
+                            <span className="inline-flex items-center gap-2 font-mono text-sm text-foreground/40">
+                              <Lock className="w-4 h-4" />
+                              {t('labels.privateCode')}
+                            </span>
+                          )}
+                        </div>
+                      </div>
                     </div>
                   </div>
-                  <ul className="space-y-2">
-                    {project.technicalSolution.keyDecisions.map((decision, i) => (
-                      <li key={i} className="flex items-start gap-2 text-sm">
-                        <ArrowRight className="w-4 h-4 text-purple-500 mt-1 flex-shrink-0" />
-                        <span className="text-foreground/70">{decision}</span>
-                      </li>
-                    ))}
-                  </ul>
-                </div>
+                )}
               </div>
-            </div>
-
-            {/* Right Column - Impact */}
-            <div>
-              <h3 className="text-2xl font-bold mb-6 flex items-center gap-2">
-                <TrendingUp className="w-8 h-8 text-green-500" />
-                {t('sections.impact')}
-              </h3>
-              <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
-                {project.businessImpact.metrics.map((metric, i) => (
-                  <div
-                    key={i}
-                    className="bg-gradient-to-br from-primary-blue/10 to-accent-purple/10 rounded-2xl p-6 text-center hover:scale-105 transition-transform duration-300"
-                  >
-                    <div className="text-3xl font-bold bg-gradient-to-r from-primary-blue to-accent-purple bg-clip-text text-transparent mb-2">
-                      {metric.value}
-                    </div>
-                    <div className="text-sm text-foreground/60">{metric.label}</div>
-                  </div>
-                ))}
-              </div>
-
-              {/* Tags */}
-              <div className="mt-8">
-                <div className="flex flex-wrap gap-2">
-                  {project.tags.map((tag) => (
-                    <span
-                      key={tag}
-                      className="px-4 py-2 apple-glass rounded-full text-sm font-medium"
-                    >
-                      {tag}
-                    </span>
-                  ))}
-                </div>
-              </div>
-
-              {/* CTA */}
-              <div className="mt-8 p-6 bg-gradient-to-r from-primary-blue/20 to-accent-purple/20 rounded-2xl">
-                <p className="text-lg font-semibold mb-4">
-                  {t('labels.ctaQuestion')}
-                </p>
-                <a
-                  href="#contact"
-                  className="inline-block px-6 py-3 bg-primary-blue hover:bg-primary-blue/90 text-white font-semibold rounded-xl transition-all duration-300 hover:scale-105"
-                >
-                  {t('labels.ctaButton')}
-                </a>
-              </div>
-            </div>
-          </div>
+            );
+          })}
         </div>
       </div>
     </section>
