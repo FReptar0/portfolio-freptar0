@@ -81,9 +81,9 @@ Plans:
 **Plans:** 3/3 plans complete
 
 Plans:
-- [ ] 05-01-PLAN.md — Hero redesign + Navigation rebuild + section divider CSS utilities
-- [ ] 05-02-PLAN.md — Global glass morphism removal + 8px spacing grid + JetBrains Mono accents across all components
-- [ ] 05-03-PLAN.md — Projects section rethink + asymmetric layouts for Skills/Timeline + alternating section backgrounds
+- [x] 05-01-PLAN.md — Hero redesign + Navigation rebuild + section divider CSS utilities
+- [x] 05-02-PLAN.md — Global glass morphism removal + 8px spacing grid + JetBrains Mono accents across all components
+- [x] 05-03-PLAN.md — Projects section rethink + asymmetric layouts for Skills/Timeline + alternating section backgrounds
 
 ### Phase 6: Motion & Accessibility
 **Goal**: The site feels alive with purposeful scroll-triggered animations and varied interactions, while respecting users who prefer reduced motion — and all existing functionality remains intact as a final verification
@@ -95,11 +95,11 @@ Plans:
   3. The bounce scroll indicator is gone, the status badge pulse is subtle, and the hero entrance animation completes within 300-400ms
   4. Enabling "prefers-reduced-motion" in browser/OS settings disables or significantly reduces all animations site-wide
   5. Full regression check passes: i18n toggles between EN/ES correctly, all case study routes load, contact form works, SEO metadata is present, navigation works from every page
-**Plans**: TBD
+**Plans:** 2 plans
 
 Plans:
-- [ ] 06-01: TBD
-- [ ] 06-02: TBD
+- [ ] 06-01-PLAN.md — Create useScrollReveal hook + reduced-motion CSS + integrate scroll-triggered animations into all 8 homepage sections + fix Hero anti-patterns
+- [ ] 06-02-PLAN.md — Varied hover/interaction patterns per component type + full regression verification checkpoint
 
 ## Progress
 
@@ -112,5 +112,5 @@ Phases execute in numeric order: 4 → 5 → 6
 | 2. New Case Studies | v1.0 | 1/1 | Complete | 2026-03-15 |
 | 3. Evolution and Discovery | v1.0 | 3/3 | Complete | 2026-03-16 |
 | 4. Design Tokens & Typography | v2.0 | 2/2 | Complete | 2026-03-16 |
-| 5. Component Overhaul | v2.0 | Complete    | 2026-03-16 | - |
-| 6. Motion & Accessibility | v2.0 | 0/? | Not started | - |
+| 5. Component Overhaul | v2.0 | 3/3 | Complete | 2026-03-16 |
+| 6. Motion & Accessibility | v2.0 | 0/2 | Not started | - |
