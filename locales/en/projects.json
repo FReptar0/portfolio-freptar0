@@ -254,6 +254,104 @@
         "Analytics",
         "Small Business"
       ]
+    },
+    "carrytrade": {
+      "title": "Carry Trade Algo - Forex Strategy",
+      "githubUrl": "",
+      "businessProblem": "Carry trades are theoretically profitable (4-5% annual spread from JPY interest rate differentials) but manual execution is emotional, inconsistent, and vulnerable to catastrophic drawdowns during risk-off events.",
+      "myContribution": {
+        "role": "Quantitative Developer",
+        "teamSize": 1,
+        "responsibility0": "Designed V3 trend-following carry strategy",
+        "responsibility1": "Built 5-layer adaptive risk management pipeline",
+        "responsibility2": "Deployed 24/5 automated execution on AWS"
+      },
+      "technicalSolution": {
+        "stack": [
+          "Python",
+          "OANDA API",
+          "pandas",
+          "SQLite",
+          "Docker",
+          "AWS"
+        ],
+        "architecture": "Event-Driven Pipeline",
+        "keyDecision0": "Hourly ticks for faster feedback vs daily timeframes",
+        "keyDecision1": "5-layer risk sizing: Kelly + ATR + regime + correlation + DD",
+        "keyDecision2": "SQLite WAL persistence for container crash recovery"
+      },
+      "businessImpact": {
+        "metric0": {
+          "label": "Protocol Progress",
+          "value": "Day 41 of 94"
+        },
+        "metric1": {
+          "label": "Win Rate",
+          "value": "70% (30 trades)"
+        },
+        "metric2": {
+          "label": "Ruin Probability",
+          "value": "0% (Monte Carlo)"
+        },
+        "metric3": {
+          "label": "Median Return",
+          "value": "5.9% annualized"
+        }
+      },
+      "tags": [
+        "Algorithmic Trading",
+        "Quantitative Finance",
+        "Live Experiment"
+      ]
+    },
+    "cleany": {
+      "title": "Cleany - House Cleaning SaaS",
+      "githubUrl": "",
+      "businessProblem": "House cleaning businesses managed operations through spreadsheets and WhatsApp, with no scheduling automation, no worker tracking, and no integrated billing — losing revenue and creating scheduling chaos.",
+      "myContribution": {
+        "role": "Full-Stack Developer",
+        "teamSize": 1,
+        "responsibility0": "Architected multi-tenant SaaS platform",
+        "responsibility1": "Built offline-first worker PWA with QR onboarding",
+        "responsibility2": "Integrated Stripe billing, Resend, and Twilio"
+      },
+      "technicalSolution": {
+        "stack": [
+          "React",
+          "Fastify",
+          "PostgreSQL",
+          "Prisma",
+          "Stripe",
+          "Vite"
+        ],
+        "architecture": "Monorepo (3 Apps)",
+        "keyDecision0": "Fastify for high-performance REST API with JWT auth",
+        "keyDecision1": "Prisma with tenant isolation for multi-tenant safety",
+        "keyDecision2": "IndexedDB + Service Workers for offline-first mobile"
+      },
+      "businessImpact": {
+        "metric0": {
+          "label": "Tools Replaced",
+          "value": "5-in-1 platform"
+        },
+        "metric1": {
+          "label": "Worker Onboarding",
+          "value": "60s via QR scan"
+        },
+        "metric2": {
+          "label": "Field Reliability",
+          "value": "100% offline capture"
+        },
+        "metric3": {
+          "label": "Manual Billing",
+          "value": "Fully automated"
+        }
+      },
+      "tags": [
+        "SaaS",
+        "Multi-Tenant",
+        "Offline-First"
+      ]
     }
   }
 }

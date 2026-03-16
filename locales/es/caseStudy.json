@@ -391,6 +391,254 @@
           { "label": "Tipos de Reporte", "value": "4" }
         ]
       }
+    },
+    "carrytrade": {
+      "headline": "Carry Trade Algo",
+      "tagline": "Estrategia Forex Algorítmica — Validación en Vivo de 94 Días con $100K",
+      "overview": "Un sistema de trading algorítmico sistemático que explota los diferenciales de tasas de interés en 6 pares de divisas JPY. Construido desde cero en Python con 473 tests, el sistema opera 24/5 en AWS con ciclos de decisión cada hora, gestión adaptativa de riesgo, filtrado ML de señales, y monitoreo en tiempo real por Telegram. Actualmente en el día 41 de un protocolo de validación de 94 días en paper trading de OANDA — sin dinero real en riesgo.",
+      "role": "Desarrollador Cuantitativo",
+      "teamSize": 1,
+      "tags": ["Trading Algorítmico", "Finanzas Cuantitativas", "Experimento en Vivo"],
+      "problem": {
+        "title": "La Hipótesis",
+        "paragraphs": [
+          "Los carry trades explotan las diferencias de tasas de interés entre divisas — se pide prestado en JPY de baja tasa (~0%) y se mantienen divisas de mayor rendimiento (USD, AUD, GBP al 4-5%). El spread genera ingresos diarios por swap incluso si el precio no se mueve. Históricamente, es una de las ventajas más persistentes en forex.",
+          "Pero el carry trading manual es emocional e inconsistente. Los traders humanos mantienen demasiado tiempo en tendencias bajistas, salen demasiado pronto en tendencias alcistas, y no pueden monitorear 6 pares las 24 horas. El desenrollado del carry en JPY de 2024 eliminó meses de ganancias para traders discrecionales en una sola semana.",
+          "La hipótesis: un enfoque sistemático de seguimiento de tendencia con gestión de riesgo multi-capa estricta puede capturar ingresos por carry mientras evita los drawdowns catastróficos que históricamente devastan a los carry traders — preservando capital al solo entrar cuando tendencia, momentum y régimen están todos alineados."
+        ]
+      },
+      "solution": {
+        "title": "El Sistema",
+        "paragraphs": [
+          "La estrategia V3 solo entra cuando el precio opera por encima de la MA de 50 días que a su vez está por encima de la MA de 200 días (cruce dorado confirma tendencia alcista), el par paga swap positivo, el RSI está por debajo de sobrecompra, y el régimen de mercado es favorable. Este enfoque multi-filtro significa que el sistema permanece flat durante tendencias bajistas — exactamente cuando los carry traders son destruidos.",
+          "La gestión de riesgo opera a través de 5 capas independientes: el dimensionamiento por ATR ajusta por volatilidad, el criterio de Kelly optimiza el tamaño de apuesta, la detección de régimen escala la exposición, el monitoreo de correlación previene sobre-concentración en pares JPY correlacionados, y el decaimiento cuadrático por drawdown reduce progresivamente el riesgo. Tres circuit breakers (diario -3%, semanal -7%, DD máx -20%) proporcionan paradas duras.",
+          "El stack operacional ejecuta cada hora via APScheduler en Docker/AWS: cada tick obtiene 300 velas de OANDA, ejecuta el pipeline de estrategia a través de un gate ML bandit (Thompson Sampling), ejecuta via órdenes límite, persiste todo el estado en SQLite (sobrevive reinicios de contenedor), y reporta a Telegram para monitoreo en tiempo real."
+        ]
+      },
+      "impact": {
+        "title": "Resultados en Vivo",
+        "paragraphs": [
+          "Día 41 de 94 en paper trading de OANDA: $100,086.29 de equity desde $100,000 iniciales. El equity máximo alcanzó $100,124.56. El sistema logró un 70% de win rate en 30 trades limpios con un Sharpe ratio de 3.21 en días activos de trading.",
+          "El sistema identificó correctamente y evitó el fortalecimiento del JPY en febrero, manteniendo cero posiciones durante la tendencia bajista — exactamente el comportamiento de preservación de capital que distingue al trading sistemático del discrecional. La simulación Monte Carlo en 5,000 ejecuciones muestra 0% de probabilidad de ruina y un retorno mediano anualizado del 5.9%."
+        ]
+      },
+      "metrics": [
+        { "value": "41/94", "label": "Día del Protocolo" },
+        { "value": "70%", "label": "Win Rate" },
+        { "value": "0%", "label": "Probabilidad de Ruina" },
+        { "value": "5.9%", "label": "Retorno Mediano (MC)" }
+      ],
+      "tech": {
+        "stack": ["Python", "OANDA API", "pandas", "SQLite", "Docker", "AWS"],
+        "architecture": "Pipeline Basado en Eventos",
+        "dataFlow": [
+          "APScheduler activa tick horario durante horas de mercado forex (Dom 22:00 - Vie 22:00 UTC)",
+          "El reconciliador sincroniza estado interno con posiciones del broker OANDA (broker = fuente de verdad)",
+          "El fetcher de datos obtiene 300 velas H1 por par desde la API REST OANDA v20",
+          "La Estrategia V3 evalúa cruce dorado, tasas de swap, RSI y régimen para señales de entrada/salida",
+          "El gate ML Bandit (Thompson Sampling) decide TOMAR o SALTAR basándose en 14 features contextuales",
+          "El dimensionador dinámico calcula unidades: Kelly × ATR × régimen × correlación × decaimiento por drawdown",
+          "El gestor de salidas verifica 7 condiciones por tick: stop-loss, trailing, tiempo, profit escalado, cambio de régimen, reversión de tendencia",
+          "Las órdenes se colocan como límites al precio bid (ahorra 1-2 pips vs órdenes de mercado)",
+          "Los circuit breakers evalúan umbrales diarios/semanales/DD máx — detienen trading si se violan",
+          "La persistencia SQLite modo WAL guarda todo el estado (sobrevive reinicios de contenedor)",
+          "El bot de Telegram despacha alertas y responde a comandos /status, /trends, /positions, /health"
+        ],
+        "codePatterns": [
+          {
+            "title": "Pipeline de Riesgo Multi-Capa",
+            "description": "El dimensionamiento de posición fluye a través de 5 factores de riesgo independientes multiplicados: criterio de Kelly (tamaño óptimo por win rate), escalado de volatilidad ATR (menos tamaño cuando es volátil), multiplicador de régimen (0-100% basado en estado de tendencia + volatilidad), factor de correlación (reduce tamaño cuando pares JPY correlacionan >0.7), y decaimiento cuadrático por drawdown (15% DD = 50% tamaño). Tres circuit breakers proveen paradas duras."
+          },
+          {
+            "title": "Estrategia Adaptativa por Régimen",
+            "description": "Un detector de régimen compuesto clasifica mercados en 4 estados usando ADX (fuerza de tendencia) y ATR (volatilidad): TENDENCIA_BAJA_VOL (tamaño completo), TENDENCIA_ALTA_VOL (75%), RANGO_BAJA_VOL (25%), RANGO_ALTA_VOL (0%). La optimización Bayesiana semanal via Optuna reentrena parámetros por régimen con datos recientes."
+          },
+          {
+            "title": "Resiliencia Operacional",
+            "description": "El estado SQLite modo WAL sobrevive reinicios de contenedor Docker. La reconciliación horaria con OANDA detecta discrepancias de posiciones. La integración de calendario económico bloquea entradas ±1h alrededor de eventos de alto impacto (FOMC, BOJ). El watchdog monitorea heartbeats y escala via Telegram en ticks perdidos."
+          }
+        ],
+        "systemMetrics": [
+          { "label": "Suite de Tests", "value": "473 tests" },
+          { "label": "Versiones de Estrategia", "value": "4 (V3 activa)" },
+          { "label": "Capas de Riesgo", "value": "5 + 3 breakers" },
+          { "label": "Módulos Fuente", "value": "23" }
+        ]
+      },
+      "gallery": {
+        "title": "Dashboard de Rendimiento",
+        "subtitle": "Gráficos en vivo del protocolo de validación de 94 días y backtesting histórico",
+        "charts": [
+          {
+            "src": "/images/carry-trade/equity-curve.png",
+            "label": "Curva de Equity — Forward Test",
+            "description": "Equity en vivo con overlay de drawdown. La zona roja marca un período de bug (excluido de resultados)."
+          },
+          {
+            "src": "/images/carry-trade/backtest-equity.png",
+            "label": "Backtest V3 — 2023-2024",
+            "description": "Equity del portafolio en 6 pares JPY con datos históricos. +5.18% de retorno en 2 años."
+          },
+          {
+            "src": "/images/carry-trade/pnl-by-pair.png",
+            "label": "P&L por Par de Divisas",
+            "description": "AUD/JPY lidera el rendimiento. GBP/JPY es el único par negativo — perfil de mayor volatilidad."
+          },
+          {
+            "src": "/images/carry-trade/monte-carlo.png",
+            "label": "Simulación Monte Carlo (n=5000)",
+            "description": "Distribución de retornos en 5,000 simulaciones aleatorias. Mediana 5.9%, 0% probabilidad de ruina."
+          },
+          {
+            "src": "/images/carry-trade/pair-correlation.png",
+            "label": "Matriz de Correlación de Pares",
+            "description": "Las correlaciones de pares JPY van de 0.40 a 0.93. El sistema reduce tamaño cuando la correlación excede 0.7."
+          },
+          {
+            "src": "/images/carry-trade/stress-test.png",
+            "label": "Escenarios de Stress Test",
+            "description": "Comportamiento del portafolio bajo 5 escenarios históricos de crisis incluyendo flash crashes y reversiones de tasas."
+          },
+          {
+            "src": "/images/carry-trade/cumulative-pnl.png",
+            "label": "P&L Acumulado (Secuencia de Trades)",
+            "description": "Ganancia total acumulada a través de trades secuenciales durante el período de validación en vivo."
+          },
+          {
+            "src": "/images/carry-trade/exit-reasons.png",
+            "label": "Análisis de Razones de Salida",
+            "description": "Distribución de triggers de salida: trailing stops, reversiones de tendencia y salidas por tiempo."
+          }
+        ]
+      },
+      "whatNext": {
+        "title": "Próxima Evolución",
+        "paragraphs": [
+          "Quedan 53 días en el protocolo de validación de 94 días. El sistema necesita 50+ trades completados para significancia estadística y debe mantener <15% de drawdown para aprobar. Trayectoria actual: 30 trades limpios con 70% de win rate y 0.53% de drawdown máximo.",
+          "Después de completar el protocolo, la checklist de Preparación para Dinero Real requiere: detección de régimen como gate duro de entrada (no solo dimensionamiento), activación del ML bandit (actualmente en modo shadow aprendiendo de resultados), bloqueo duro de VIX > 25, blackout de 48 horas para reuniones del BOJ, y protección de gaps de fin de semana.",
+          "El despliegue de capital sigue un enfoque por fases: $5-10K de asignación inicial con límites estrictos de posición, escalando a $20-25K después de 3 meses de rendimiento en vivo, con despliegue completo solo después de 6+ meses de resultados consistentes y auditables."
+        ]
+      }
+    },
+    "cleany": {
+      "headline": "Cleany",
+      "tagline": "Plataforma SaaS Multi-Tenant para Negocios de Limpieza",
+      "links": [
+        { "label": "Ver Landing", "url": "https://cleany.pro/", "icon": "globe" },
+        { "label": "Probar Demo", "url": "https://app.cleany.pro/demo", "icon": "play" },
+        { "label": "Registrarse", "url": "https://app.cleany.pro/signup", "icon": "user-plus" }
+      ],
+      "overview": "Cleany es una plataforma SaaS integral que ayuda a dueños de negocios de limpieza a gestionar clientes, trabajadores, trabajos, programación, facturación y nómina en un solo sistema. Construido como monorepo con tres apps independientes — una API REST Fastify, un SPA React con PWA offline-first para trabajadores, y un sitio de marketing Next.js — la plataforma está dirigida al mercado latinoamericano con soporte bilingüe completo.",
+      "role": "Desarrollador Full-Stack",
+      "teamSize": 1,
+      "tags": ["SaaS", "Multi-Tenant", "Offline-First"],
+      "problem": {
+        "title": "El Problema",
+        "paragraphs": [
+          "Los negocios de limpieza en Latinoamérica gestionaban operaciones con hojas de cálculo, grupos de WhatsApp y horarios en papel. Los trabajadores no sabían sus trabajos hasta una llamada telefónica, los clientes no tenían visibilidad de las próximas visitas, y los dueños no podían rastrear ingresos ni rendimiento de trabajadores.",
+          "Las soluciones existentes eran demasiado caras para operadores pequeños, solo en inglés, o diseñadas para gestión de instalaciones empresariales — no el flujo de trabajo ágil y mobile-first que los negocios de limpieza realmente necesitan.",
+          "Los trabajadores en campo frecuentemente tenían conectividad poco confiable en ubicaciones de clientes, haciendo que las soluciones solo-en-la-nube fueran imprácticas. Cualquier actualización de trabajo perdida significaba ingresos perdidos y caos en la programación."
+        ]
+      },
+      "solution": {
+        "title": "La Solución",
+        "paragraphs": [
+          "Diseñé Cleany como una plataforma multi-tenant donde cada negocio de limpieza obtiene su propio espacio de trabajo aislado. El dashboard admin maneja el ciclo completo: gestión de clientes, programación de trabajadores en una cuadrícula semanal, generación de trabajos recurrentes, facturación con enlaces de pago Stripe, y cálculo de nómina.",
+          "Los trabajadores se registran en 60 segundos via escaneo de código QR y PIN — sin necesidad de tienda de apps. La aplicación web progresiva offline-first usa Service Workers e IndexedDB para cachear datos de trabajos, con una cola de sincronización que reintenta escrituras automáticamente cuando regresa la conectividad.",
+          "La página de marketing en cleany.pro está impulsada por Next.js y Sanity CMS para contenido dinámico de blog, con integración de checkout Stripe para gestión de suscripciones SaaS."
+        ]
+      },
+      "impact": {
+        "title": "El Impacto",
+        "paragraphs": [
+          "La plataforma consolida lo que antes requería 4-5 herramientas desconectadas en un solo sistema. El registro de trabajadores bajó de horas de capacitación a 60 segundos con escaneo QR, y el enfoque offline-first asegura cero actualizaciones de trabajo perdidas en campo.",
+          "La nómina integrada elimina cálculos manuales, la integración con Stripe automatiza la cobranza, y el motor de programación recurrente genera trabajos automáticamente — permitiendo que los dueños se enfoquen en crecer su negocio en lugar de gestionar hojas de cálculo."
+        ]
+      },
+      "metrics": [
+        { "value": "5-en-1", "label": "Herramientas Reemplazadas" },
+        { "value": "60s", "label": "Registro de Trabajador" },
+        { "value": "100%", "label": "Confiabilidad Offline" },
+        { "value": "Zero", "label": "Facturación Manual" }
+      ],
+      "tech": {
+        "stack": ["React", "Fastify", "PostgreSQL", "Prisma", "Stripe", "Vite"],
+        "architecture": "Monorepo (3 Apps)",
+        "dataFlow": [
+          "El admin gestiona clientes, trabajadores y servicios a través del dashboard React SPA",
+          "El SPA React se comunica con la API REST Fastify via Axios con autenticación JWT",
+          "Las rutas Fastify validan peticiones con schemas JSON y delegan a la capa de servicios",
+          "Prisma ORM consulta PostgreSQL con aislamiento de tenant en cada operación",
+          "El motor de programación recurrente auto-genera órdenes de trabajo basadas en patrones configurables",
+          "Los trabajadores reciben trabajos via PWA offline-first con caché IndexedDB y cola de sincronización",
+          "Los webhooks de Stripe procesan suscripciones SaaS y confirmaciones de pago de clientes",
+          "Resend y Twilio envían notificaciones fire-and-forget para facturas y alertas de trabajos"
+        ],
+        "codePatterns": [
+          {
+            "title": "Aislamiento Multi-Tenant",
+            "description": "Cada consulta API filtra por tenant_id extraído del JWT. El middleware de Prisma aplica aislamiento a nivel de fila, y los serializadores de respuesta eliminan campos sensibles — asegurando cero fuga de datos entre cuentas de negocio."
+          },
+          {
+            "title": "Motor de Sincronización Offline-First",
+            "description": "Los Service Workers cachean datos de trabajos con TTL de 24 horas y límite de 50 elementos. Una cola de escritura IndexedDB captura mutaciones offline, reintentando con backoff exponencial (3 intentos) cuando regresa la conectividad via el evento online."
+          },
+          {
+            "title": "Autenticación QR + PIN para Trabajadores",
+            "description": "Los trabajadores escanean un token QR único que los identifica, luego establecen un PIN en el primer inicio de sesión. La rotación de refresh tokens con detección de reuso previene secuestro de sesión, y el bloqueo de cuenta se activa después de 5 intentos fallidos."
+          }
+        ],
+        "systemMetrics": [
+          { "label": "Modelos Prisma", "value": "22" },
+          { "label": "Rutas API", "value": "16" },
+          { "label": "Páginas Frontend", "value": "41" },
+          { "label": "Archivos de Servicio", "value": "17" }
+        ]
+      },
+      "gallery": {
+        "title": "Vista Previa en Vivo",
+        "subtitle": "Capturas de la landing page, dashboard admin y entorno de demostración",
+        "charts": [
+          {
+            "src": "/images/cleany/landing-preview.png",
+            "label": "Landing Page — cleany.pro",
+            "description": "Sitio de marketing construido con Next.js y Sanity CMS. Incluye precios, blog y checkout con Stripe."
+          },
+          {
+            "src": "/images/cleany/demo-dashboard.png",
+            "label": "Dashboard Admin",
+            "description": "Vista general del dueño del negocio con métricas clave, actividad reciente y acciones rápidas."
+          },
+          {
+            "src": "/images/cleany/demo-schedule.png",
+            "label": "Programación Semanal",
+            "description": "Cuadrícula visual de programación de trabajos con asignación de trabajadores por grupo y generación de trabajos recurrentes."
+          },
+          {
+            "src": "/images/cleany/demo-jobs.png",
+            "label": "Gestión de Trabajos",
+            "description": "Seguimiento de órdenes de trabajo con pipeline de estado: Pendiente, En Progreso, Completado. Precios snapshot basados en ATR."
+          },
+          {
+            "src": "/images/cleany/demo-customers.png",
+            "label": "Gestión de Clientes",
+            "description": "Perfiles completos de clientes con direcciones, frecuencia de servicio, preferencias de facturación y configuración de notificaciones."
+          },
+          {
+            "src": "/images/cleany/signup-preview.png",
+            "label": "Flujo de Registro",
+            "description": "Experiencia de onboarding para nuevos dueños de negocios de limpieza. Creación de espacio de trabajo multi-tenant."
+          }
+        ]
+      },
+      "whatNext": {
+        "title": "Próxima Evolución",
+        "paragraphs": [
+          "El siguiente hito se enfoca en funciones de comprobación de trabajo: captura de evidencia fotográfica (fotos antes/después por trabajo), verificación de ubicación GPS para confirmar que los trabajadores están en sitio, y notificaciones push para que los trabajadores reciban alertas de trabajos en tiempo real sin sondear la app.",
+          "Un portal para clientes permitirá a los clientes finales ver su horario de limpieza, aceptar cotizaciones, solicitar reprogramaciones y pagar facturas — cerrando el ciclo entre negocios de limpieza y sus clientes.",
+          "La plataforma también añadirá un embudo de captura de leads en la página de aterrizaje con seguimiento analítico, convirtiendo el sitio de marketing de informativo a generador de ingresos."
+        ]
+      }
     }
   }
 }

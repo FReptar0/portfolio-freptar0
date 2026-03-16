@@ -5,7 +5,7 @@ import { ArrowRight } from 'lucide-react';
 import Navigation from '@/components/ui/Navigation';
 import Footer from '@/components/ui/Footer';
 
-const CASE_STUDY_SLUGS = ['sageconnect', 'sagesync', 'cardeal', 'gymmanager'] as const;
+const CASE_STUDY_SLUGS = ['sageconnect', 'sagesync', 'cardeal', 'gymmanager', 'cleany', 'carrytrade'] as const;
 
 export function generateStaticParams() {
   return locales.map((locale) => ({ locale }));

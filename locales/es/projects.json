@@ -254,6 +254,104 @@
         "Analíticas",
         "Pequeño Negocio"
       ]
+    },
+    "carrytrade": {
+      "title": "Carry Trade Algo - Estrategia Forex",
+      "githubUrl": "",
+      "businessProblem": "Los carry trades son teóricamente rentables (4-5% de spread anual por diferenciales de tasa de interés JPY) pero la ejecución manual es emocional, inconsistente y vulnerable a drawdowns catastróficos durante eventos risk-off.",
+      "myContribution": {
+        "role": "Desarrollador Cuantitativo",
+        "teamSize": 1,
+        "responsibility0": "Diseñé estrategia V3 de seguimiento de tendencia carry",
+        "responsibility1": "Construí pipeline de riesgo adaptativo de 5 capas",
+        "responsibility2": "Desplegué ejecución automatizada 24/5 en AWS"
+      },
+      "technicalSolution": {
+        "stack": [
+          "Python",
+          "OANDA API",
+          "pandas",
+          "SQLite",
+          "Docker",
+          "AWS"
+        ],
+        "architecture": "Pipeline Basado en Eventos",
+        "keyDecision0": "Ticks horarios para retroalimentación más rápida vs timeframes diarios",
+        "keyDecision1": "Riesgo de 5 capas: Kelly + ATR + régimen + correlación + DD",
+        "keyDecision2": "Persistencia SQLite WAL para recuperación de crashes de contenedor"
+      },
+      "businessImpact": {
+        "metric0": {
+          "label": "Progreso del Protocolo",
+          "value": "Día 41 de 94"
+        },
+        "metric1": {
+          "label": "Win Rate",
+          "value": "70% (30 trades)"
+        },
+        "metric2": {
+          "label": "Probabilidad de Ruina",
+          "value": "0% (Monte Carlo)"
+        },
+        "metric3": {
+          "label": "Retorno Mediano",
+          "value": "5.9% anualizado"
+        }
+      },
+      "tags": [
+        "Trading Algorítmico",
+        "Finanzas Cuantitativas",
+        "Experimento en Vivo"
+      ]
+    },
+    "cleany": {
+      "title": "Cleany - SaaS de Limpieza",
+      "githubUrl": "",
+      "businessProblem": "Los negocios de limpieza gestionaban operaciones con hojas de cálculo y WhatsApp, sin automatización de programación, sin seguimiento de trabajadores y sin facturación integrada — perdiendo ingresos y creando caos en la programación.",
+      "myContribution": {
+        "role": "Desarrollador Full-Stack",
+        "teamSize": 1,
+        "responsibility0": "Arquitecté plataforma SaaS multi-tenant",
+        "responsibility1": "Construí PWA offline-first con registro QR",
+        "responsibility2": "Integré facturación Stripe, Resend y Twilio"
+      },
+      "technicalSolution": {
+        "stack": [
+          "React",
+          "Fastify",
+          "PostgreSQL",
+          "Prisma",
+          "Stripe",
+          "Vite"
+        ],
+        "architecture": "Monorepo (3 Apps)",
+        "keyDecision0": "Fastify para API REST de alto rendimiento con auth JWT",
+        "keyDecision1": "Prisma con aislamiento de tenant para seguridad multi-tenant",
+        "keyDecision2": "IndexedDB + Service Workers para móvil offline-first"
+      },
+      "businessImpact": {
+        "metric0": {
+          "label": "Herramientas Reemplazadas",
+          "value": "5-en-1 plataforma"
+        },
+        "metric1": {
+          "label": "Registro de Trabajador",
+          "value": "60s via escaneo QR"
+        },
+        "metric2": {
+          "label": "Confiabilidad en Campo",
+          "value": "100% captura offline"
+        },
+        "metric3": {
+          "label": "Facturación Manual",
+          "value": "Totalmente automatizada"
+        }
+      },
+      "tags": [
+        "SaaS",
+        "Multi-Tenant",
+        "Offline-First"
+      ]
     }
   }
 }

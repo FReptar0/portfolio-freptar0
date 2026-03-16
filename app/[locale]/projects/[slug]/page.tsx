@@ -8,9 +8,10 @@ import CaseStudyNarrative from '@/components/case-study/CaseStudyNarrative';
 import MetricsGrid from '@/components/case-study/MetricsGrid';
 import TechStackBar from '@/components/case-study/TechStackBar';
 import CaseStudyCTA from '@/components/case-study/CaseStudyCTA';
+import LiveResultsGallery from '@/components/case-study/LiveResultsGallery';
 import { getTranslations } from 'next-intl/server';
 
-const VALID_SLUGS = ['sageconnect', 'sagesync', 'cardeal', 'gymmanager'] as const;
+const VALID_SLUGS = ['sageconnect', 'sagesync', 'cardeal', 'gymmanager', 'cleany', 'carrytrade'] as const;
 
 export function generateStaticParams() {
   return locales.flatMap((locale) =>
@@ -59,6 +60,7 @@ export default async function CaseStudyPage({
         <TechStackBar slug={slug} />
         <MetricsGrid metrics={metrics} />
         <CaseStudyNarrative slug={slug} />
+        <LiveResultsGallery slug={slug} />
         <CaseStudyCTA slug={slug} locale={locale} />
       </main>
       <Footer />

@@ -31,7 +31,7 @@ export default function Projects() {
   const t = useTranslations('projects');
   const locale = useLocale();
 
-  const projectsWithCaseStudy = new Set(['sageconnect', 'sagesync', 'cardeal', 'gymmanager']);
+  const projectsWithCaseStudy = new Set(['sageconnect', 'sagesync', 'cardeal', 'gymmanager', 'cleany', 'carrytrade']);
 
   const projects = [
     {
@@ -198,6 +198,72 @@ export default function Projects() {
         ],
       },
       tags: t.raw('items.gymmanager.tags') as string[],
+    },
+    {
+      id: "cleany",
+      title: t('items.cleany.title'),
+      githubUrl: t.raw('items.cleany.githubUrl') as string | null,
+      businessProblem: t('items.cleany.businessProblem'),
+      myContribution: {
+        role: t('items.cleany.myContribution.role'),
+        teamSize: t.raw('items.cleany.myContribution.teamSize') as number,
+        responsibilities: [
+          t('items.cleany.myContribution.responsibility0'),
+          t('items.cleany.myContribution.responsibility1'),
+          t('items.cleany.myContribution.responsibility2')
+        ],
+      },
+      technicalSolution: {
+        stack: t.raw('items.cleany.technicalSolution.stack') as string[],
+        architecture: t('items.cleany.technicalSolution.architecture'),
+        keyDecisions: [
+          t('items.cleany.technicalSolution.keyDecision0'),
+          t('items.cleany.technicalSolution.keyDecision1'),
+          t('items.cleany.technicalSolution.keyDecision2')
+        ],
+      },
+      businessImpact: {
+        metrics: [
+          { label: t('items.cleany.businessImpact.metric0.label'), value: t('items.cleany.businessImpact.metric0.value') },
+          { label: t('items.cleany.businessImpact.metric1.label'), value: t('items.cleany.businessImpact.metric1.value') },
+          { label: t('items.cleany.businessImpact.metric2.label'), value: t('items.cleany.businessImpact.metric2.value') },
+          { label: t('items.cleany.businessImpact.metric3.label'), value: t('items.cleany.businessImpact.metric3.value') }
+        ],
+      },
+      tags: t.raw('items.cleany.tags') as string[],
+    },
+    {
+      id: "carrytrade",
+      title: t('items.carrytrade.title'),
+      githubUrl: t.raw('items.carrytrade.githubUrl') as string | null,
+      businessProblem: t('items.carrytrade.businessProblem'),
+      myContribution: {
+        role: t('items.carrytrade.myContribution.role'),
+        teamSize: t.raw('items.carrytrade.myContribution.teamSize') as number,
+        responsibilities: [
+          t('items.carrytrade.myContribution.responsibility0'),
+          t('items.carrytrade.myContribution.responsibility1'),
+          t('items.carrytrade.myContribution.responsibility2')
+        ],
+      },
+      technicalSolution: {
+        stack: t.raw('items.carrytrade.technicalSolution.stack') as string[],
+        architecture: t('items.carrytrade.technicalSolution.architecture'),
+        keyDecisions: [
+          t('items.carrytrade.technicalSolution.keyDecision0'),
+          t('items.carrytrade.technicalSolution.keyDecision1'),
+          t('items.carrytrade.technicalSolution.keyDecision2')
+        ],
+      },
+      businessImpact: {
+        metrics: [
+          { label: t('items.carrytrade.businessImpact.metric0.label'), value: t('items.carrytrade.businessImpact.metric0.value') },
+          { label: t('items.carrytrade.businessImpact.metric1.label'), value: t('items.carrytrade.businessImpact.metric1.value') },
+          { label: t('items.carrytrade.businessImpact.metric2.label'), value: t('items.carrytrade.businessImpact.metric2.value') },
+          { label: t('items.carrytrade.businessImpact.metric3.label'), value: t('items.carrytrade.businessImpact.metric3.value') }
+        ],
+      },
+      tags: t.raw('items.carrytrade.tags') as string[],
     },
   ];
 

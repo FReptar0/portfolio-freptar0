@@ -9,6 +9,8 @@ const diagrams: Record<string, React.ComponentType> = {
   cardeal: dynamic(() => import('@/components/diagrams/QardealDiagram')),
   odoo: dynamic(() => import('@/components/diagrams/OdooDiagram')),
   gymmanager: dynamic(() => import('@/components/diagrams/GymManagerDiagram')),
+  cleany: dynamic(() => import('@/components/diagrams/CleanyDiagram')),
+  carrytrade: dynamic(() => import('@/components/diagrams/CarryTradeDiagram')),
 };
 
 interface TechDeepDiveProps {
