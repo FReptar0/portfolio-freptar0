@@ -47,7 +47,7 @@ Plans:
 
 **Milestone Goal:** Replace the generic Claude Code design defaults with a distinctive Swiss Modernist visual identity — new typography, color system, layout patterns, and interaction design that no other AI portfolio has.
 
-- [ ] **Phase 4: Design Tokens & Typography** - Replace fonts, colors, CSS custom properties, dark mode tokens, and Tailwind theme — the visual DNA everything else builds on
+- [x] **Phase 4: Design Tokens & Typography** - Replace fonts, colors, CSS custom properties, dark mode tokens, and Tailwind theme — the visual DNA everything else builds on (completed 2026-03-16)
 - [ ] **Phase 5: Component Overhaul** - Rebuild Hero, Navigation, cards, layouts, and Projects section with Swiss design language; kill all glass morphism; apply premium spacing and visual rhythm
 - [ ] **Phase 6: Motion & Accessibility** - Add scroll-triggered animations, varied hover interactions, clean up bouncy defaults, and ensure reduced-motion support site-wide
 
@@ -62,7 +62,7 @@ Plans:
   2. No blue or cyan gradient appears anywhere on the site — the only accent color visible is electric green (#22C55E or its tonal variants)
   3. Switching to dark mode shows a deliberately designed dark palette (not simply inverted light mode) — surfaces, text, and accents all feel intentional
   4. All existing pages load without errors, all links work, both EN and ES locales render correct content, and the build completes with no failures
-**Plans:** 2 plans
+**Plans:** 2/2 plans complete
 
 Plans:
 - [ ] 04-01-PLAN.md — Replace fonts (Geist to Space Grotesk/DM Sans/JetBrains Mono) and rebuild all CSS custom properties with Swiss design tokens
@@ -111,6 +111,6 @@ Phases execute in numeric order: 4 → 5 → 6
 | 1. Visual Foundation | v1.0 | 3/3 | Complete | 2026-03-15 |
 | 2. New Case Studies | v1.0 | 1/1 | Complete | 2026-03-15 |
 | 3. Evolution and Discovery | v1.0 | 3/3 | Complete | 2026-03-16 |
-| 4. Design Tokens & Typography | v2.0 | 0/2 | Planned | - |
+| 4. Design Tokens & Typography | v2.0 | Complete    | 2026-03-16 | - |
 | 5. Component Overhaul | v2.0 | 0/? | Not started | - |
 | 6. Motion & Accessibility | v2.0 | 0/? | Not started | - |
