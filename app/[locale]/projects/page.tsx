@@ -28,12 +28,29 @@ export async function generateMetadata({
       languages: {
         es: 'https://fernandomemije.dev/es/projects',
         en: 'https://fernandomemije.dev/en/projects',
+        'x-default': 'https://fernandomemije.dev/es/projects',
       },
     },
     openGraph: {
       title,
       description: t('index.subtitle'),
       url: `https://fernandomemije.dev/${locale}/projects`,
+      siteName: 'Fernando Rodriguez Memije Portfolio',
+      locale: locale === 'es' ? 'es_MX' : 'en_US',
+      images: [
+        {
+          url: `https://fernandomemije.dev/${locale}/opengraph-image`,
+          width: 1200,
+          height: 630,
+          alt: 'Fernando Rodriguez Memije — Projects',
+        },
+      ],
+    },
+    twitter: {
+      card: 'summary_large_image',
+      title,
+      description: t('index.subtitle'),
+      images: [`https://fernandomemije.dev/${locale}/opengraph-image`],
     },
   };
 }
