@@ -62,11 +62,11 @@ Plans:
   2. No blue or cyan gradient appears anywhere on the site — the only accent color visible is electric green (#22C55E or its tonal variants)
   3. Switching to dark mode shows a deliberately designed dark palette (not simply inverted light mode) — surfaces, text, and accents all feel intentional
   4. All existing pages load without errors, all links work, both EN and ES locales render correct content, and the build completes with no failures
-**Plans**: TBD
+**Plans:** 2 plans
 
 Plans:
-- [ ] 04-01: TBD
-- [ ] 04-02: TBD
+- [ ] 04-01-PLAN.md — Replace fonts (Geist to Space Grotesk/DM Sans/JetBrains Mono) and rebuild all CSS custom properties with Swiss design tokens
+- [ ] 04-02-PLAN.md — Update Tailwind @theme inline block and verify production build
 
 ### Phase 5: Component Overhaul
 **Goal**: Every section of the site uses the new Swiss design language — clean surfaces, asymmetric layouts, distinctive component patterns, premium spacing, and monospace accents — with zero glass morphism remaining
@@ -111,6 +111,6 @@ Phases execute in numeric order: 4 → 5 → 6
 | 1. Visual Foundation | v1.0 | 3/3 | Complete | 2026-03-15 |
 | 2. New Case Studies | v1.0 | 1/1 | Complete | 2026-03-15 |
 | 3. Evolution and Discovery | v1.0 | 3/3 | Complete | 2026-03-16 |
-| 4. Design Tokens & Typography | v2.0 | 0/? | Not started | - |
+| 4. Design Tokens & Typography | v2.0 | 0/2 | Planned | - |
 | 5. Component Overhaul | v2.0 | 0/? | Not started | - |
 | 6. Motion & Accessibility | v2.0 | 0/? | Not started | - |
