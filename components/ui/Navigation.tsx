@@ -84,8 +84,8 @@ export default function Navigation() {
       <nav
         className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
           isScrolled
-            ? "glass shadow-lg py-4"
-            : "bg-transparent py-6"
+            ? "bg-[var(--color-bg)] border-b border-[var(--color-border)] py-3"
+            : "bg-transparent py-4"
         }`}
       >
       <div className="container mx-auto px-4 sm:px-6 lg:px-8 max-w-7xl">
@@ -93,14 +93,13 @@ export default function Navigation() {
           {/* Logo */}
           <a
             href={isHomePage ? "#" : `/${locale}`}
-            className="text-xl font-bold hover:scale-105 transition-transform"
-            style={{ background: 'var(--gradient-hero)', WebkitBackgroundClip: 'text', backgroundClip: 'text', WebkitTextFillColor: 'transparent', color: 'transparent' }}
+            className="text-xl font-heading font-bold text-foreground hover:text-[var(--color-accent)] transition-colors"
           >
             Fernando Rodriguez
           </a>
 
           {/* Desktop Navigation */}
-          <div className="hidden md:flex items-center gap-4">
+          <div className="hidden md:flex items-center gap-6">
             {navLinks.map((link) => (
               <a
                 key={link.href}
@@ -117,8 +116,10 @@ export default function Navigation() {
             <ThemeToggle />
             <a
               href="#contact"
-              className="px-6 py-2 text-white font-semibold rounded-full transition-all duration-300 hover:scale-105"
-              style={{ background: 'var(--primary-600)' }}
+              className="px-6 py-2 text-white font-semibold rounded-lg transition-colors duration-300"
+              style={{ background: 'var(--color-accent)' }}
+              onMouseEnter={(e) => e.currentTarget.style.background = 'var(--color-accent-hover)'}
+              onMouseLeave={(e) => e.currentTarget.style.background = 'var(--color-accent)'}
             >
               {t('hireMe')}
             </a>
@@ -150,7 +151,7 @@ export default function Navigation() {
 
         {/* Mobile Menu */}
         {isMobileMenuOpen && (
-          <div className="md:hidden mt-4 glass rounded-2xl p-4 sm:p-6 space-y-4">
+          <div className="md:hidden mt-4 bg-[var(--color-surface-elevated)] border border-[var(--color-border)] rounded-xl p-4 sm:p-6 space-y-4">
             {navLinks.map((link) => (
               <a
                 key={link.href}
@@ -177,8 +178,8 @@ export default function Navigation() {
             <a
               href="#contact"
               onClick={() => setIsMobileMenuOpen(false)}
-              className="block text-center px-6 py-3 text-white font-semibold rounded-full transition-colors"
-              style={{ background: 'var(--primary-600)' }}
+              className="block text-center px-6 py-3 text-white font-semibold rounded-lg transition-colors"
+              style={{ background: 'var(--color-accent)' }}
             >
               {t('hireMe')}
             </a>
