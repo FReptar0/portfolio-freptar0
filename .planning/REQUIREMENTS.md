@@ -41,10 +41,10 @@
 
 ### Design Foundation
 
-- [ ] **FOUND-01**: Site uses Space Grotesk for headings, DM Sans for body, JetBrains Mono for code/labels — Geist font completely removed
-- [ ] **FOUND-02**: Color system uses black/white base with single electric green (#22C55E) accent — no blue-cyan gradients anywhere
-- [ ] **FOUND-03**: All CSS custom properties (globals.css) rebuilt with Swiss clean tokens — glass-morphism variables removed
-- [ ] **FOUND-04**: Dark mode uses desaturated tonal variants designed independently (not inverted light mode), light mode uses white/off-white surfaces
+- [x] **FOUND-01**: Site uses Space Grotesk for headings, DM Sans for body, JetBrains Mono for code/labels — Geist font completely removed
+- [x] **FOUND-02**: Color system uses black/white base with single electric green (#22C55E) accent — no blue-cyan gradients anywhere
+- [x] **FOUND-03**: All CSS custom properties (globals.css) rebuilt with Swiss clean tokens — glass-morphism variables removed
+- [x] **FOUND-04**: Dark mode uses desaturated tonal variants designed independently (not inverted light mode), light mode uses white/off-white surfaces
 - [ ] **FOUND-05**: Tailwind `@theme inline` block updated with new color/font tokens, all components reference new tokens
 
 ### Layout & Components
@@ -99,10 +99,10 @@
 
 | Requirement | Phase | Status |
 |-------------|-------|--------|
-| FOUND-01 | Phase 4 | Pending |
-| FOUND-02 | Phase 4 | Pending |
-| FOUND-03 | Phase 4 | Pending |
-| FOUND-04 | Phase 4 | Pending |
+| FOUND-01 | Phase 4 | Complete |
+| FOUND-02 | Phase 4 | Complete |
+| FOUND-03 | Phase 4 | Complete |
+| FOUND-04 | Phase 4 | Complete |
 | FOUND-05 | Phase 4 | Pending |
 | COMP-01 | Phase 5 | Pending |
 | COMP-02 | Phase 5 | Pending |
