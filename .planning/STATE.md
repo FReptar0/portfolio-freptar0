@@ -2,16 +2,16 @@
 gsd_state_version: 1.0
 milestone: v2.0
 milestone_name: Swiss Precision Redesign
-status: completed
-stopped_at: Completed 05-03-PLAN.md
-last_updated: "2026-03-16T21:37:55.208Z"
-last_activity: 2026-03-16 — Completed Plan 05-03 (Section Layout Variety & Projects Rebuild)
+status: in-progress
+stopped_at: Completed 06-01-PLAN.md
+last_updated: "2026-03-16T21:57:26Z"
+last_activity: 2026-03-16 — Completed Plan 06-01 (Scroll Animations & Reduced Motion)
 progress:
   total_phases: 6
   completed_phases: 5
-  total_plans: 12
-  completed_plans: 12
-  percent: 100
+  total_plans: 14
+  completed_plans: 13
+  percent: 93
 ---
 
 # Project State
@@ -21,23 +21,23 @@ progress:
 See: .planning/PROJECT.md (updated 2026-03-16)
 
 **Core value:** The portfolio must visually differentiate Fernando from every other AI-generated developer portfolio — distinctive Swiss Precision brand.
-**Current focus:** Phase 5 — Component Overhaul (Complete)
+**Current focus:** Phase 6 — Motion & Accessibility
 
 ## Current Position
 
-Phase: 5 of 6 (Component Overhaul)
-Plan: 3 of 3 complete
-Status: Phase Complete
-Last activity: 2026-03-16 — Completed Plan 05-03 (Section Layout Variety & Projects Rebuild)
+Phase: 6 of 6 (Motion & Accessibility)
+Plan: 1 of 2 complete
+Status: In Progress
+Last activity: 2026-03-16 — Completed Plan 06-01 (Scroll Animations & Reduced Motion)
 
-Progress: [██████████] 100%
+Progress: [█████████░] 93%
 
 ## Performance Metrics
 
 **Velocity:**
-- Total plans completed: 5
-- Average duration: 4min
-- Total execution time: 20min
+- Total plans completed: 6
+- Average duration: 5min
+- Total execution time: 27min
 
 | Phase | Plan | Duration | Tasks | Files |
 |-------|------|----------|-------|-------|
@@ -46,6 +46,7 @@ Progress: [██████████] 100%
 | 05    | 01   | 2min     | 2     | 3     |
 | 05    | 02   | 9min     | 2     | 15    |
 | 05    | 03   | 4min     | 2     | 4     |
+| 06    | 01   | 7min     | 3     | 10    |
 
 ## Accumulated Context
 
@@ -67,6 +68,9 @@ Progress: [██████████] 100%
 - [Phase 05]: Kept backdrop-blur-sm only on 3 functional modal scrims (SearchBar, Navigation, LiveResultsGallery)
 - [Phase 05]: Replaced hover:scale effects with hover:border-accent for Swiss restrained interaction pattern
 - [Phase 05]: Accordion expand/collapse for Projects instead of tabs -- each project is a full-width row
+- [Phase 06]: Removed animate-ping entirely from status badges (Hero + Contact) for Swiss restrained aesthetic
+- [Phase 06]: Hero entrance uses 300ms duration (down from 500ms) per MOTN-03
+- [Phase 06]: useScrollReveal uses callback ref pattern for clean observer lifecycle management
 
 ### Pending Todos
 
@@ -78,6 +82,6 @@ None.
 
 ## Session Continuity
 
-Last session: 2026-03-16T21:31:58.127Z
-Stopped at: Completed 05-03-PLAN.md
+Last session: 2026-03-16T21:57:26Z
+Stopped at: Completed 06-01-PLAN.md
 Resume file: None

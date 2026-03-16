@@ -57,10 +57,10 @@
 
 ### Motion & Interaction
 
-- [ ] **MOTN-01**: All major sections use scroll-triggered entrance animations via Intersection Observer with staggered reveals
+- [x] **MOTN-01**: All major sections use scroll-triggered entrance animations via Intersection Observer with staggered reveals
 - [ ] **MOTN-02**: Hover/interaction patterns vary per component type (not uniform translateY(-2px) + border-color on everything)
-- [ ] **MOTN-03**: Bounce scroll indicator removed, pulsing status badge made subtle, hero entrance animation reduced to 300-400ms
-- [ ] **MOTN-04**: `prefers-reduced-motion` media query disables/reduces all animations site-wide
+- [x] **MOTN-03**: Bounce scroll indicator removed, pulsing status badge made subtle, hero entrance animation reduced to 300-400ms
+- [x] **MOTN-04**: `prefers-reduced-motion` media query disables/reduces all animations site-wide
 
 ### Polish & Spacing
 
@@ -109,10 +109,10 @@
 | COMP-03 | Phase 5 | Complete |
 | COMP-04 | Phase 5 | Complete |
 | COMP-05 | Phase 5 | Complete |
-| MOTN-01 | Phase 6 | Pending |
+| MOTN-01 | Phase 6 | Complete |
 | MOTN-02 | Phase 6 | Pending |
-| MOTN-03 | Phase 6 | Pending |
-| MOTN-04 | Phase 6 | Pending |
+| MOTN-03 | Phase 6 | Complete |
+| MOTN-04 | Phase 6 | Complete |
 | PLSH-01 | Phase 5 | Complete |
 | PLSH-02 | Phase 5 | Complete |
 | PLSH-03 | Phase 5 | Complete |
