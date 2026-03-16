@@ -40,6 +40,7 @@ export async function generateMetadata({
       languages: {
         es: `${BASE_URL}/es/projects/${slug}`,
         en: `${BASE_URL}/en/projects/${slug}`,
+        'x-default': `${BASE_URL}/es/projects/${slug}`,
       },
     },
     openGraph: {
@@ -47,6 +48,22 @@ export async function generateMetadata({
       description: tagline,
       url: `${BASE_URL}/${locale}/projects/${slug}`,
       type: 'article',
+      siteName: 'Fernando Rodriguez Memije Portfolio',
+      locale: locale === 'es' ? 'es_MX' : 'en_US',
+      images: [
+        {
+          url: `${BASE_URL}/${locale}/opengraph-image`,
+          width: 1200,
+          height: 630,
+          alt: `${headline} — Fernando Rodriguez Memije`,
+        },
+      ],
+    },
+    twitter: {
+      card: 'summary_large_image',
+      title,
+      description: tagline,
+      images: [`${BASE_URL}/${locale}/opengraph-image`],
     },
   };
 }

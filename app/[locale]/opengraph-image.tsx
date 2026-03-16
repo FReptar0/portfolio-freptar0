@@ -5,7 +5,11 @@ export const alt = 'Fernando Rodriguez Memije — Senior Software Engineer';
 export const size = { width: 1200, height: 630 };
 export const contentType = 'image/png';
 
-export default function Image() {
+export default async function Image({ params }: { params: Promise<{ locale: string }> }) {
+  const { locale } = await params;
+
+  const subtitle = locale === 'es' ? 'Ingeniero de Software Senior' : 'Senior Software Engineer';
+
   return new ImageResponse(
     (
       <div
@@ -46,7 +50,7 @@ export default function Image() {
               fontWeight: 500,
             }}
           >
-            Senior Software Engineer
+            {subtitle}
           </div>
           <div
             style={{

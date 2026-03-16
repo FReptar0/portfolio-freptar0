@@ -4,6 +4,7 @@ import AnalyticsClient from "@/components/AnalyticsClient";
 import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
 import { ThemeProvider } from "@/components/theme-provider";
+import { getLocale } from "next-intl/server";
 
 
 const geistSans = Geist({
@@ -18,13 +19,14 @@ const geistMono = Geist_Mono({
     display: "swap",
 });
 
-export default function RootLayout({
+export default async function RootLayout({
     children,
 }: {
     children: React.ReactNode;
 }) {
+    const locale = await getLocale();
     return (
-        <html lang="es" className="scroll-smooth" suppressHydrationWarning>
+        <html lang={locale} className="scroll-smooth" suppressHydrationWarning>
             <body className={`${geistSans.variable} ${geistMono.variable} antialiased`}>
                 {/* Inline script to set theme class before React hydrates */}
                 <script

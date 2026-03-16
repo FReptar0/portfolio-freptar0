@@ -21,6 +21,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
         languages: {
           es: `${BASE_URL}/es`,
           en: `${BASE_URL}/en`,
+          'x-default': `${BASE_URL}/es`,
         },
       },
     });
@@ -37,6 +38,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
         languages: {
           es: `${BASE_URL}/es/projects`,
           en: `${BASE_URL}/en/projects`,
+          'x-default': `${BASE_URL}/es/projects`,
         },
       },
     });
@@ -54,6 +56,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
           languages: {
             es: `${BASE_URL}/es/projects/${slug}`,
             en: `${BASE_URL}/en/projects/${slug}`,
+            'x-default': `${BASE_URL}/es/projects/${slug}`,
           },
         },
       });
@@ -67,6 +70,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
           languages: {
             es: `${BASE_URL}/es/projects/${slug}/tech`,
             en: `${BASE_URL}/en/projects/${slug}/tech`,
+            'x-default': `${BASE_URL}/es/projects/${slug}/tech`,
           },
         },
       });
