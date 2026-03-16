@@ -144,7 +144,7 @@ function ProcessCard({
       {/* Number Badge */}
       <div className="flex justify-center mb-6">
         <div
-          className={`w-16 h-16 rounded-full bg-gradient-to-br ${color} flex items-center justify-center text-white font-bold font-mono text-2xl shadow-lg group-hover:scale-110 transition-transform duration-300`}
+          className={`w-16 h-16 rounded-full bg-gradient-to-br ${color} flex items-center justify-center text-white font-bold font-mono text-2xl shadow-lg`}
         >
           {number}
         </div>

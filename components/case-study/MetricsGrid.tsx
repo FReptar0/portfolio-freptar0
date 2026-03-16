@@ -12,9 +12,9 @@ export default function MetricsGrid({ metrics }: MetricsGridProps) {
           {metrics.map((metric, i) => (
             <div
               key={i}
-              className="bg-gradient-to-br from-primary-blue/10 to-accent-purple/10 rounded-2xl p-6 md:p-8 text-center hover:scale-105 transition-transform duration-300"
+              className="bg-[var(--color-surface-elevated)] border border-[var(--color-border)] rounded-2xl p-6 md:p-8 text-center hover:border-[var(--color-accent)] transition-colors duration-300"
             >
-              <div className="text-3xl md:text-4xl font-bold bg-gradient-to-r from-primary-blue to-accent-purple bg-clip-text text-transparent mb-2">
+              <div className="text-3xl md:text-4xl font-bold font-mono text-[var(--color-accent)] mb-2">
                 {metric.value}
               </div>
               <div className="text-sm text-foreground/60">{metric.label}</div>
