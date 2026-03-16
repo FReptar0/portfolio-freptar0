@@ -14,8 +14,8 @@
 
   /* Surfaces */
   --color-surface: #FFFFFF;
-  --color-surface-elevated: #FAFAFA;
-  --color-surface-sunken: #F5F5F5;
+  --color-surface-elevated: #F5F5F5;
+  --color-surface-sunken: #EBEBEB;
 
   /* Text */
   --text-primary: #000000;
@@ -24,8 +24,8 @@
   --text-inverse: #FFFFFF;
 
   /* Borders */
-  --color-border: rgba(0, 0, 0, 0.08);
-  --color-border-strong: rgba(0, 0, 0, 0.16);
+  --color-border: rgba(0, 0, 0, 0.12);
+  --color-border-strong: rgba(0, 0, 0, 0.24);
 
   /* Backgrounds (legacy names mapped to new values) */
   --bg-primary: #FFFFFF;
@@ -278,8 +278,8 @@
   --text-tertiary: #525252;
   --text-inverse: #000000;
 
-  --color-border: rgba(255, 255, 255, 0.08);
-  --color-border-strong: rgba(255, 255, 255, 0.16);
+  --color-border: rgba(255, 255, 255, 0.12);
+  --color-border-strong: rgba(255, 255, 255, 0.24);
 
   --bg-primary: #0A0A0A;
   --bg-secondary: #111111;

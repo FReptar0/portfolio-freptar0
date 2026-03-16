@@ -31,7 +31,7 @@ export default function Process() {
         t('steps.discovery.activity3')
       ],
       icon: "search",
-      color: "from-green-500 to-emerald-500",
+      color: "accent",
     },
     {
       number: "2",
@@ -44,7 +44,7 @@ export default function Process() {
         t('steps.architecture.activity3')
       ],
       icon: "compass",
-      color: "from-purple-500 to-pink-500",
+      color: "accent",
     },
     {
       number: "3",
@@ -57,7 +57,7 @@ export default function Process() {
         t('steps.implementation.activity3')
       ],
       icon: "zap",
-      color: "from-orange-500 to-red-500",
+      color: "accent",
     },
     {
       number: "4",
@@ -70,7 +70,7 @@ export default function Process() {
         t('steps.delivery.activity3')
       ],
       icon: "rocket",
-      color: "from-green-500 to-emerald-500",
+      color: "accent",
     },
   ];
   return (
@@ -156,7 +156,7 @@ function ProcessCard({
       {/* Number Badge */}
       <div className="flex justify-center mb-6">
         <div
-          className={`w-16 h-16 rounded-full bg-gradient-to-br ${color} flex items-center justify-center text-white font-bold font-mono text-2xl shadow-lg`}
+          className="w-16 h-16 rounded-full bg-[var(--color-accent)] flex items-center justify-center text-white font-bold font-mono text-2xl"
         >
           {number}
         </div>
@@ -164,7 +164,7 @@ function ProcessCard({
 
       {/* Card */}
       <div className="bg-[var(--color-surface-elevated)] border border-[var(--color-border)] rounded-2xl p-6 h-full hover:border-[var(--color-accent)] transition-colors duration-300">
-        <div className="mb-4">{getIcon(icon, "w-12 h-12 text-white")}</div>
+        <div className="mb-4">{getIcon(icon, "w-12 h-12 text-[var(--color-accent)]")}</div>
         <h3 className="text-xl font-bold mb-3">{title}</h3>
         <p className="text-sm text-foreground/70 leading-relaxed mb-4">
           {description}
@@ -218,7 +218,7 @@ function ProcessCardMobile({
       {/* Left side - Number */}
       <div className="flex flex-col items-center">
         <div
-          className={`w-14 h-14 rounded-full bg-gradient-to-br ${color} flex items-center justify-center text-white font-bold font-mono text-xl shadow-lg flex-shrink-0`}
+          className="w-14 h-14 rounded-full bg-[var(--color-accent)] flex items-center justify-center text-white font-bold font-mono text-xl flex-shrink-0"
         >
           {number}
         </div>
@@ -229,7 +229,7 @@ function ProcessCardMobile({
 
       {/* Right side - Content */}
       <div className="bg-[var(--color-surface-elevated)] border border-[var(--color-border)] rounded-2xl p-6 flex-1">
-        <div className="mb-3">{getIcon(icon, "w-8 h-8 text-white")}</div>
+        <div className="mb-3">{getIcon(icon, "w-8 h-8 text-[var(--color-accent)]")}</div>
         <h3 className="text-xl font-bold mb-2">{title}</h3>
         <p className="text-sm text-foreground/70 leading-relaxed mb-4">
           {description}

@@ -115,14 +115,14 @@ function TimelineEntry({
     >
       {/* Year circle - positioned over the vertical line */}
       <div
-        className={`w-16 h-16 rounded-full bg-gradient-to-br ${color} flex items-center justify-center text-white font-bold font-mono text-lg flex-shrink-0 -ml-16 md:-ml-20 shadow-lg`}
+        className="w-16 h-16 rounded-full bg-[var(--color-accent)] flex items-center justify-center text-white font-bold font-mono text-lg flex-shrink-0 -ml-16 md:-ml-20"
       >
         {year}
       </div>
 
       {/* Content */}
       <div className="flex-1 pt-1">
-        <div className={`inline-block px-3 py-1 rounded-full text-xs font-semibold bg-gradient-to-r ${color} text-white mb-2`}>
+        <div className="inline-block px-3 py-1 rounded-full text-xs font-semibold font-mono bg-[var(--color-accent)] text-white mb-2">
           {highlight}
         </div>
         <h3 className="text-xl font-heading font-bold text-foreground mb-3">{role}</h3>
