@@ -13,7 +13,7 @@ export default function TechStackBar({ slug }: TechStackBarProps) {
   return (
     <section className="py-8">
       <div className="container mx-auto px-6 lg:px-8 max-w-5xl">
-        <div className="apple-glass rounded-3xl p-6 md:p-8">
+        <div className="bg-[var(--color-surface-elevated)] border border-[var(--color-border)] rounded-2xl p-6 md:p-8">
           <div className="flex flex-wrap items-center gap-4">
             <h3 className="text-lg font-bold mr-4">{t('sections.techStack')}</h3>
             <div className="flex flex-wrap gap-2">

@@ -33,7 +33,7 @@ export default function CaseStudyNarrative({ slug }: CaseStudyNarrativeProps) {
     <section className="py-12">
       <div className="container mx-auto px-6 lg:px-8 max-w-5xl">
         {/* Overview */}
-        <div className="apple-glass rounded-3xl p-8 md:p-12 mb-0">
+        <div className="bg-[var(--color-surface-elevated)] border border-[var(--color-border)] rounded-2xl p-8 md:p-12 mb-0">
           <h2 className="text-2xl font-bold mb-4">{t('sections.overview')}</h2>
           <p className="text-lg text-foreground/80 leading-relaxed">
             {t(`projects.${slug}.overview`)}
@@ -52,7 +52,7 @@ export default function CaseStudyNarrative({ slug }: CaseStudyNarrativeProps) {
             return (
               <div
                 key={key}
-                className={`apple-glass rounded-3xl p-8 md:p-12 border-l-4 ${borderColor}`}
+                className={`bg-[var(--color-surface-elevated)] border border-[var(--color-border)] rounded-2xl p-8 md:p-12 border-l-4 ${borderColor}`}
               >
                 <h2 className="text-2xl font-bold mb-6 flex items-center gap-3">
                   <Icon className={`w-8 h-8 ${iconColor}`} />
@@ -75,7 +75,7 @@ export default function CaseStudyNarrative({ slug }: CaseStudyNarrativeProps) {
               const whatNextTitle = t(`projects.${slug}.whatNext.title`);
               const whatNextParagraphs = t.raw(`projects.${slug}.whatNext.paragraphs`) as string[];
               return (
-                <div className="apple-glass rounded-3xl p-8 md:p-12 border-l-4 border-purple-500/20">
+                <div className="bg-[var(--color-surface-elevated)] border border-[var(--color-border)] rounded-2xl p-8 md:p-12 border-l-4 border-purple-500/20">
                   <h2 className="text-2xl font-bold mb-6 flex items-center gap-3">
                     <Rocket className="w-8 h-8 text-purple-500" />
                     {whatNextTitle}

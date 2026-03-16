@@ -60,7 +60,7 @@ export default function LiveResultsGallery({ slug }: LiveResultsGalleryProps) {
               <button
                 key={i}
                 onClick={() => openLightbox(i)}
-                className="group apple-glass rounded-2xl overflow-hidden text-left transition-all duration-300 hover:scale-[1.02] focus:outline-none focus-visible:ring-2 focus-visible:ring-primary-blue"
+                className="group bg-[var(--color-surface-elevated)] border border-[var(--color-border)] rounded-2xl overflow-hidden text-left transition-colors duration-300 hover:border-[var(--color-accent)] focus:outline-none focus-visible:ring-2 focus-visible:ring-[var(--color-accent)]"
               >
                 <div className="relative w-full aspect-[16/10] bg-foreground/[0.03]">
                   <Image

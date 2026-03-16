@@ -38,7 +38,7 @@ export default function TechDeepDive({ slug }: TechDeepDiveProps) {
         <section>
           <div className="container mx-auto px-6 lg:px-8 max-w-5xl">
             <h2 className="text-2xl font-bold mb-6">{t('sections.architecture')}</h2>
-            <div className="apple-glass rounded-3xl p-6 md:p-10 overflow-x-auto">
+            <div className="bg-[var(--color-surface-elevated)] border border-[var(--color-border)] rounded-2xl p-6 md:p-10 overflow-x-auto">
               <div className="min-w-[640px]">
                 <DiagramComponent />
               </div>
@@ -51,11 +51,11 @@ export default function TechDeepDive({ slug }: TechDeepDiveProps) {
       <section>
         <div className="container mx-auto px-6 lg:px-8 max-w-5xl">
           <h2 className="text-2xl font-bold mb-6">{t('sections.dataFlow')}</h2>
-          <div className="apple-glass rounded-3xl p-6 md:p-10">
+          <div className="bg-[var(--color-surface-elevated)] border border-[var(--color-border)] rounded-2xl p-6 md:p-10">
             <ol className="space-y-4">
               {dataFlow.map((step, i) => (
                 <li key={i} className="flex items-start gap-4">
-                  <span className="flex-shrink-0 w-8 h-8 rounded-full bg-gradient-to-br from-primary-blue to-accent-purple text-white flex items-center justify-center text-sm font-bold">
+                  <span className="flex-shrink-0 w-8 h-8 rounded-full bg-[var(--color-accent)] text-white flex items-center justify-center text-sm font-bold font-mono">
                     {i + 1}
                   </span>
                   <p className="text-foreground/80 pt-1">{step}</p>
@@ -72,7 +72,7 @@ export default function TechDeepDive({ slug }: TechDeepDiveProps) {
           <h2 className="text-2xl font-bold mb-6">{t('sections.codePatterns')}</h2>
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
             {codePatterns.map((pattern, i) => (
-              <div key={i} className="apple-glass rounded-3xl p-6">
+              <div key={i} className="bg-[var(--color-surface-elevated)] border border-[var(--color-border)] rounded-2xl p-6">
                 <h3 className="text-lg font-bold mb-3">{pattern.title}</h3>
                 <p className="text-sm text-foreground/70 leading-relaxed">
                   {pattern.description}
@@ -91,9 +91,9 @@ export default function TechDeepDive({ slug }: TechDeepDiveProps) {
             {systemMetrics.map((metric, i) => (
               <div
                 key={i}
-                className="apple-glass rounded-2xl p-5 text-center"
+                className="bg-[var(--color-surface-elevated)] border border-[var(--color-border)] rounded-2xl p-6 text-center"
               >
-                <div className="text-2xl font-bold text-primary-blue mb-1">
+                <div className="text-2xl font-bold font-mono text-[var(--color-accent)] mb-1">
                   {metric.value}
                 </div>
                 <div className="text-sm text-foreground/60">{metric.label}</div>

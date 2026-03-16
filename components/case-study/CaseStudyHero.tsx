@@ -32,7 +32,7 @@ export default function CaseStudyHero({ slug, locale }: CaseStudyHeroProps) {
 
   return (
     <section className="pt-32 pb-16 relative overflow-hidden">
-      <div className="absolute inset-0 apple-gradient-mesh pointer-events-none" aria-hidden="true" />
+      {/* Background removed — clean surface */}
       <div className="relative z-10 container mx-auto px-6 lg:px-8 max-w-5xl">
         <Link
           href={`/${locale}/#projects`}
@@ -43,7 +43,7 @@ export default function CaseStudyHero({ slug, locale }: CaseStudyHeroProps) {
         </Link>
 
         <h1 className="text-5xl md:text-7xl font-bold mb-4">
-          <span className="bg-gradient-to-r from-primary-blue to-accent-purple bg-clip-text text-transparent">
+          <span className="text-[var(--color-accent)]">
             {headline}
           </span>
         </h1>
@@ -53,7 +53,7 @@ export default function CaseStudyHero({ slug, locale }: CaseStudyHeroProps) {
         </p>
 
         <div className="flex flex-wrap items-center gap-4">
-          <span className="px-4 py-2 bg-primary-blue/20 rounded-full text-base font-bold">
+          <span className="px-4 py-2 bg-[var(--color-accent-muted)] rounded-full text-base font-bold">
             {role}
           </span>
           <span className="inline-flex items-center gap-1.5 text-sm text-foreground/60">
@@ -64,7 +64,7 @@ export default function CaseStudyHero({ slug, locale }: CaseStudyHeroProps) {
             {tags.map((tag) => (
               <span
                 key={tag}
-                className="px-4 py-2 apple-glass rounded-full text-sm font-medium"
+                className="px-4 py-2 bg-[var(--color-surface-elevated)] border border-[var(--color-border)] rounded-full text-sm font-medium font-mono"
               >
                 {tag}
               </span>
@@ -82,10 +82,10 @@ export default function CaseStudyHero({ slug, locale }: CaseStudyHeroProps) {
                   href={link.url}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className={`group inline-flex items-center gap-2.5 px-6 py-3 rounded-xl font-semibold transition-all duration-300 hover:scale-105 ${
+                  className={`group inline-flex items-center gap-2.5 px-6 py-3 rounded-xl font-semibold transition-all duration-300 ${
                     i === 0
-                      ? 'bg-gradient-to-r from-primary-blue to-accent-purple text-white hover:shadow-xl hover:shadow-primary-blue/25'
-                      : 'apple-glass'
+                      ? 'bg-[var(--color-accent)] text-white hover:bg-[var(--color-accent-hover)]'
+                      : 'bg-[var(--color-surface-elevated)] border border-[var(--color-border)] hover:border-[var(--color-accent)]'
                   }`}
                 >
                   <Icon className="w-4 h-4" />

@@ -174,7 +174,7 @@ export default function SearchBar() {
 
       {/* Search Modal */}
       <div className="fixed top-20 left-1/2 -translate-x-1/2 w-full max-w-2xl z-[100] px-4">
-        <div className="apple-glass rounded-3xl p-6 shadow-2xl">
+        <div className="bg-[var(--color-surface-elevated)] border border-[var(--color-border)] rounded-2xl p-6 shadow-2xl">
           {/* Search Input */}
           <div className="relative">
             <svg
@@ -196,7 +196,7 @@ export default function SearchBar() {
               value={searchQuery}
               onChange={(e) => { setSearchQuery(e.target.value); setActiveIndex(null); }}
               placeholder={tSearch('placeholder')}
-              className="w-full pl-12 pr-20 py-4 bg-foreground/5 border border-foreground/10 rounded-2xl focus:border-primary-blue focus:outline-none transition-colors text-lg"
+              className="w-full pl-12 pr-20 py-4 bg-foreground/5 border border-foreground/10 rounded-2xl focus:border-[var(--color-accent)] focus:outline-none transition-colors text-lg"
               onKeyDown={(e) => {
                 // allow typing letters; also support pressing shortcut keys to immediately jump
                 const key = e.key.toUpperCase();
@@ -231,13 +231,13 @@ export default function SearchBar() {
                       id={`search-item-${idx}`}
                       ref={(el) => { itemsRef.current[idx] = el; }}
                       onClick={() => handleSectionClick(item.id)}
-                      className={`w-full text-left px-4 py-3 rounded-xl hover:bg-foreground/5 transition-colors flex items-center justify-between gap-3 ${activeIndex === idx ? 'ring-2 ring-primary-blue/30' : ''}`}
+                      className={`w-full text-left px-4 py-3 rounded-xl hover:bg-foreground/5 transition-colors flex items-center justify-between gap-3 ${activeIndex === idx ? 'ring-2 ring-[var(--color-accent)]/30' : ''}`}
                       role="option"
                       aria-selected={activeIndex === idx}
                     >
                       <div className="flex items-center gap-3">
                         <svg
-                          className="w-5 h-5 text-primary-blue"
+                          className="w-5 h-5 text-[var(--color-accent)]"
                           fill="none"
                           stroke="currentColor"
                           viewBox="0 0 24 24"
@@ -262,12 +262,12 @@ export default function SearchBar() {
                       id={`search-item-${idx}`}
                       ref={(el) => { itemsRef.current[idx] = el; }}
                       onClick={() => handleContactClick(item.href)}
-                      className={`w-full text-left px-4 py-3 rounded-xl hover:bg-foreground/5 transition-colors flex items-center justify-between gap-3 ${activeIndex === idx ? 'ring-2 ring-primary-blue/30' : ''}`}
+                      className={`w-full text-left px-4 py-3 rounded-xl hover:bg-foreground/5 transition-colors flex items-center justify-between gap-3 ${activeIndex === idx ? 'ring-2 ring-[var(--color-accent)]/30' : ''}`}
                       role="option"
                       aria-selected={activeIndex === idx}
                     >
                       <div className="flex items-center gap-3">
-                        <svg className="w-5 h-5 text-primary-blue" viewBox="0 0 24 24" fill="none" stroke="currentColor">
+                        <svg className="w-5 h-5 text-[var(--color-accent)]" viewBox="0 0 24 24" fill="none" stroke="currentColor">
                           <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 2v20" />
                         </svg>
                         <span className="font-medium">{item.label}</span>
