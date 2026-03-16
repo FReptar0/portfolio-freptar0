@@ -6,6 +6,7 @@ import { Mail, Briefcase, Github, Calendar, Zap, ArrowRight, AlertCircle, CheckC
 import { Turnstile, TurnstileInstance } from '@marsidev/react-turnstile';
 import { frontendContactFormSchema } from '@/lib/validations/contact';
 import type { FrontendContactFormData } from '@/lib/validations/contact';
+import { useScrollReveal } from '@/hooks/useScrollReveal';
 
 export default function Contact() {
   const [copied, setCopied] = useState(false);
@@ -25,6 +26,7 @@ export default function Contact() {
   const isSubmittingRef = useRef(false);
   const t = useTranslations('contact');
   const locale = useLocale();
+  const { ref: sectionRef, isVisible } = useScrollReveal({ threshold: 0.1 });
   // Allow bypass in development when NEXT_PUBLIC_TURNSTILE_BYPASS_DEV=true
   // Also bypass if site key is not configured
   const bypassTurnstile = process.env.NEXT_PUBLIC_TURNSTILE_BYPASS_DEV === 'true' || !process.env.NEXT_PUBLIC_TURNSTILE_SITE_KEY;
@@ -269,9 +271,9 @@ export default function Contact() {
   };
 
   return (
-    <section id="contact" className="py-24 relative">
+    <section id="contact" ref={sectionRef} className="py-24 relative">
       <div className="container mx-auto px-6 lg:px-8 max-w-5xl">
-        <div className="text-center mb-16">
+        <div className={`text-center mb-16 transition-all duration-500 ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-5'}`}>
           <h2 className="text-4xl md:text-5xl font-bold mb-4">
             <span style={{ color: 'var(--color-accent)' }}>{t('title')}</span>
           </h2>
@@ -282,7 +284,7 @@ export default function Contact() {
 
         <div className="grid md:grid-cols-2 gap-6 lg:gap-8">
           {/* Left Column - Quick Actions */}
-          <div className="space-y-6">
+          <div className={`space-y-6 transition-all duration-500 ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-5'}`}>
             <div className="bg-[var(--color-surface-elevated)] border border-[var(--color-border)] rounded-2xl p-6 sm:p-8">
               <h3 className="text-2xl font-bold mb-6">{t('quickContact')}</h3>
 
@@ -376,7 +378,7 @@ export default function Contact() {
           </div>
 
           {/* Right Column - Contact Form */}
-          <div className="bg-[var(--color-surface-elevated)] border border-[var(--color-border)] rounded-2xl p-6 sm:p-8">
+          <div className={`bg-[var(--color-surface-elevated)] border border-[var(--color-border)] rounded-2xl p-6 sm:p-8 transition-all duration-500 ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-5'}`} style={{ transitionDelay: '100ms' }}>
             <h3 className="text-2xl font-bold mb-6">{t('form.title')}</h3>
 
             <form onSubmit={handleSubmit} className="space-y-6">
@@ -628,10 +630,9 @@ export default function Contact() {
         </div>
 
         {/* Footer */}
-        <div className="mt-16 text-center">
+        <div className={`mt-16 text-center transition-all duration-500 ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-5'}`} style={{ transitionDelay: '200ms' }}>
           <div className="inline-flex items-center gap-2 px-6 py-3 bg-[var(--color-surface-elevated)] border border-[var(--color-border)] rounded-full">
             <span className="relative flex h-2 w-2">
-              <span className="animate-ping absolute inline-flex h-full w-full rounded-full opacity-75" style={{ background: 'var(--success-500)' }}></span>
               <span className="relative inline-flex rounded-full h-2 w-2" style={{ background: 'var(--success-500)' }}></span>
             </span>
             <span className="text-sm">{t('availability')}</span>

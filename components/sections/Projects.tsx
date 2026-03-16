@@ -4,6 +4,7 @@ import { useState } from "react";
 import { useTranslations, useLocale } from 'next-intl';
 import Link from 'next/link';
 import { Target, User, Settings, TrendingUp, ArrowRight, Github, Lock, ChevronDown } from 'lucide-react';
+import { useScrollReveal } from '@/hooks/useScrollReveal';
 
 interface Project {
   id: string;
@@ -268,16 +269,17 @@ export default function Projects() {
   ];
 
   const [expandedId, setExpandedId] = useState<string | null>(projects[0].id);
+  const { ref: sectionRef, isVisible } = useScrollReveal({ threshold: 0.1 });
 
   const toggleProject = (id: string) => {
     setExpandedId(prev => prev === id ? null : id);
   };
 
   return (
-    <section id="projects" className="py-24 relative">
+    <section id="projects" ref={sectionRef} className="py-24 relative">
       <div className="container mx-auto px-6 lg:px-8 max-w-7xl">
         {/* Left-aligned header */}
-        <div className="mb-16">
+        <div className={`mb-16 transition-all duration-500 ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-5'}`}>
           <h2 className="text-4xl md:text-5xl font-heading font-bold text-foreground mb-4">
             {t('title')}{' '}
             <span className="text-[var(--color-accent)]">{t('titleAccent')}</span>
@@ -296,10 +298,14 @@ export default function Projects() {
 
         {/* Stacked project list */}
         <div>
-          {projects.map((project) => {
+          {projects.map((project, index) => {
             const isExpanded = expandedId === project.id;
             return (
-              <div key={project.id} className="border-b border-[var(--color-border)]">
+              <div
+                key={project.id}
+                className={`border-b border-[var(--color-border)] transition-all duration-500 ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-5'}`}
+                style={{ transitionDelay: `${index * 50}ms` }}
+              >
                 {/* Collapsed row - always visible */}
                 <button
                   onClick={() => toggleProject(project.id)}

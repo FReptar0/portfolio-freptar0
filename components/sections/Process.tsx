@@ -2,6 +2,7 @@
 
 import { useTranslations } from 'next-intl';
 import { Search, Compass, Zap, Rocket } from 'lucide-react';
+import { useScrollReveal } from '@/hooks/useScrollReveal';
 
 const getIcon = (iconName: string, className?: string) => {
   const iconProps = { className: className || "w-6 h-6" };
@@ -16,6 +17,7 @@ const getIcon = (iconName: string, className?: string) => {
 
 export default function Process() {
   const t = useTranslations('process');
+  const { ref: sectionRef, isVisible } = useScrollReveal({ threshold: 0.1 });
 
   const processSteps = [
     {
@@ -72,11 +74,11 @@ export default function Process() {
     },
   ];
   return (
-    <section id="process" className="py-24 relative overflow-hidden">
-      {/* Background removed — clean surface */}
+    <section id="process" ref={sectionRef} className="py-24 relative overflow-hidden">
+      {/* Background removed -- clean surface */}
 
       <div className="relative container mx-auto px-6 lg:px-8 max-w-7xl">
-        <div className="text-center mb-16">
+        <div className={`text-center mb-16 transition-all duration-500 ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-5'}`}>
           <h2 className="text-4xl md:text-5xl font-bold mb-4">
             {t('title')} <span className="text-[var(--color-accent)]">{t('titleAccent')}</span>
           </h2>
@@ -92,7 +94,7 @@ export default function Process() {
             <div className="absolute top-8 left-[12.5%] right-[12.5%] h-0.5 bg-[var(--color-border-strong)] opacity-40 -z-10" />
 
             {processSteps.map((step, index) => (
-              <ProcessCard key={index} {...step} />
+              <ProcessCard key={index} {...step} index={index} isParentVisible={isVisible} />
             ))}
           </div>
         </div>
@@ -100,12 +102,15 @@ export default function Process() {
         {/* Mobile View - Vertical */}
         <div className="lg:hidden space-y-8 mb-24">
           {processSteps.map((step, index) => (
-            <ProcessCardMobile key={index} {...step} index={index} total={processSteps.length} />
+            <ProcessCardMobile key={index} {...step} index={index} total={processSteps.length} isParentVisible={isVisible} />
           ))}
         </div>
 
         {/* Bottom CTA */}
-        <div className="text-center bg-[var(--color-surface-elevated)] border border-[var(--color-border)] rounded-2xl p-8">
+        <div
+          className={`text-center bg-[var(--color-surface-elevated)] border border-[var(--color-border)] rounded-2xl p-8 transition-all duration-500 ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-5'}`}
+          style={{ transitionDelay: '250ms' }}
+        >
           <h3 className="text-2xl font-bold mb-4">
             {t('cta.title')}
           </h3>
@@ -131,6 +136,8 @@ function ProcessCard({
   activities,
   icon,
   color,
+  index,
+  isParentVisible,
 }: {
   number: string;
   title: string;
@@ -138,9 +145,14 @@ function ProcessCard({
   activities: string[];
   icon: string;
   color: string;
+  index: number;
+  isParentVisible: boolean;
 }) {
   return (
-    <div className="group">
+    <div
+      className={`group transition-all duration-500 ${isParentVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-5'}`}
+      style={{ transitionDelay: `${index * 50}ms` }}
+    >
       {/* Number Badge */}
       <div className="flex justify-center mb-6">
         <div
@@ -186,6 +198,7 @@ function ProcessCardMobile({
   color,
   index,
   total,
+  isParentVisible,
 }: {
   number: string;
   title: string;
@@ -195,9 +208,13 @@ function ProcessCardMobile({
   color: string;
   index: number;
   total: number;
+  isParentVisible: boolean;
 }) {
   return (
-    <div className="flex gap-4">
+    <div
+      className={`flex gap-4 transition-all duration-500 ${isParentVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-5'}`}
+      style={{ transitionDelay: `${index * 50}ms` }}
+    >
       {/* Left side - Number */}
       <div className="flex flex-col items-center">
         <div
