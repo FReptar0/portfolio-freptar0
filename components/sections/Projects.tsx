@@ -319,7 +319,7 @@ export default function Projects() {
                     {project.technicalSolution.stack.slice(0, 3).map((tech) => (
                       <span
                         key={tech}
-                        className="font-mono text-sm px-3 py-1 bg-[var(--color-surface-sunken)] rounded-md"
+                        className="font-mono text-sm px-3 py-1 bg-[var(--color-surface-elevated)] border border-[var(--color-border)] rounded-md"
                         style={{ color: 'var(--text-secondary)' }}
                       >
                         {tech}
@@ -394,7 +394,7 @@ export default function Projects() {
                             {project.technicalSolution.stack.map((tech) => (
                               <span
                                 key={tech}
-                                className="font-mono px-3 py-1 bg-[var(--color-surface-sunken)] rounded-md text-sm"
+                                className="font-mono px-3 py-1 bg-[var(--color-surface-elevated)] border border-[var(--color-border)] rounded-md text-sm"
                               >
                                 {tech}
                               </span>
