@@ -3,15 +3,15 @@ gsd_state_version: 1.0
 milestone: v2.0
 milestone_name: Swiss Precision Redesign
 status: executing
-stopped_at: Completed 04-01-PLAN.md
-last_updated: "2026-03-16T20:45:02.380Z"
-last_activity: 2026-03-16 — Completed Plan 04-01 (Design Tokens & Font Stack)
+stopped_at: Completed 04-02-PLAN.md
+last_updated: "2026-03-16T20:48:31Z"
+last_activity: 2026-03-16 — Completed Plan 04-02 (Tailwind Theme Inline)
 progress:
   total_phases: 6
-  completed_phases: 3
+  completed_phases: 4
   total_plans: 9
-  completed_plans: 8
-  percent: 89
+  completed_plans: 9
+  percent: 100
 ---
 
 # Project State
@@ -21,27 +21,28 @@ progress:
 See: .planning/PROJECT.md (updated 2026-03-16)
 
 **Core value:** The portfolio must visually differentiate Fernando from every other AI-generated developer portfolio — distinctive Swiss Precision brand.
-**Current focus:** Phase 4 — Design Tokens & Typography
+**Current focus:** Phase 4 — Design Tokens & Typography (Complete)
 
 ## Current Position
 
 Phase: 4 of 6 (Design Tokens & Typography)
-Plan: 1 of 2 complete
-Status: Executing
-Last activity: 2026-03-16 — Completed Plan 04-01 (Design Tokens & Font Stack)
+Plan: 2 of 2 complete
+Status: Phase Complete
+Last activity: 2026-03-16 — Completed Plan 04-02 (Tailwind Theme Inline)
 
-Progress: [█████████░] 89%
+Progress: [██████████] 100%
 
 ## Performance Metrics
 
 **Velocity:**
-- Total plans completed: 1
-- Average duration: 3min
-- Total execution time: 3min
+- Total plans completed: 2
+- Average duration: 2.5min
+- Total execution time: 5min
 
 | Phase | Plan | Duration | Tasks | Files |
 |-------|------|----------|-------|-------|
 | 04    | 01   | 3min     | 2     | 2     |
+| 04    | 02   | 2min     | 2     | 1     |
 
 ## Accumulated Context
 
@@ -55,6 +56,8 @@ Progress: [█████████░] 89%
 - [Phase 04]: Mapped all old blue/cyan CSS vars to green equivalents for backward compatibility
 - [Phase 04]: Set blur values to 0px so glass classes become clean surfaces without errors
 - [Phase 04]: Used achromatic oklch tokens for shadcn/ui neutrals with green hue (142) for ring/focus
+- [Phase 04]: Used direct font-family values in @theme inline to avoid circular var() references with next/font
+- [Phase 04]: Exposed Swiss accent as accent-green in Tailwind to avoid collision with shadcn accent token
 
 ### Pending Todos
 
@@ -66,6 +69,6 @@ None.
 
 ## Session Continuity
 
-Last session: 2026-03-16T20:45:02.377Z
-Stopped at: Completed 04-01-PLAN.md
+Last session: 2026-03-16T20:48:31Z
+Stopped at: Completed 04-02-PLAN.md
 Resume file: None

@@ -45,7 +45,7 @@
 - [x] **FOUND-02**: Color system uses black/white base with single electric green (#22C55E) accent — no blue-cyan gradients anywhere
 - [x] **FOUND-03**: All CSS custom properties (globals.css) rebuilt with Swiss clean tokens — glass-morphism variables removed
 - [x] **FOUND-04**: Dark mode uses desaturated tonal variants designed independently (not inverted light mode), light mode uses white/off-white surfaces
-- [ ] **FOUND-05**: Tailwind `@theme inline` block updated with new color/font tokens, all components reference new tokens
+- [x] **FOUND-05**: Tailwind `@theme inline` block updated with new color/font tokens, all components reference new tokens
 
 ### Layout & Components
 
@@ -103,7 +103,7 @@
 | FOUND-02 | Phase 4 | Complete |
 | FOUND-03 | Phase 4 | Complete |
 | FOUND-04 | Phase 4 | Complete |
-| FOUND-05 | Phase 4 | Pending |
+| FOUND-05 | Phase 4 | Complete |
 | COMP-01 | Phase 5 | Pending |
 | COMP-02 | Phase 5 | Pending |
 | COMP-03 | Phase 5 | Pending |
