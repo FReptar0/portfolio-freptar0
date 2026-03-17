@@ -55,7 +55,7 @@ export default function TechDeepDive({ slug }: TechDeepDiveProps) {
             <ol className="space-y-4">
               {dataFlow.map((step, i) => (
                 <li key={i} className="flex items-start gap-4">
-                  <span className="flex-shrink-0 w-8 h-8 rounded-full bg-[var(--color-accent)] text-white flex items-center justify-center text-sm font-bold font-mono">
+                  <span className="flex-shrink-0 w-8 h-8 rounded-full bg-[var(--color-accent)] text-[var(--color-on-accent)] flex items-center justify-center text-sm font-bold font-mono">
                     {i + 1}
                   </span>
                   <p className="text-foreground/80 pt-1">{step}</p>

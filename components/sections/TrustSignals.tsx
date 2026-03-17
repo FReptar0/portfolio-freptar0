@@ -207,7 +207,7 @@ function TestimonialCard({
 
       {/* Author info */}
       <div className="flex items-center gap-4 relative z-10 mt-auto">
-        <div className="w-12 h-12 md:w-14 md:h-14 rounded-full bg-[var(--color-accent)] flex items-center justify-center text-white font-bold text-sm md:text-base shadow-lg">
+        <div className="w-12 h-12 md:w-14 md:h-14 rounded-full bg-[var(--color-accent)] flex items-center justify-center text-[var(--color-on-accent)] font-bold text-sm md:text-base shadow-lg">
           {author.split(" ").map((n) => n[0]).join("")}
         </div>
         <div className="flex-1">

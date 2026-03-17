@@ -23,7 +23,7 @@ export default function CaseStudyCTA({ slug, locale }: CaseStudyCTAProps) {
             <div className="flex flex-col sm:flex-row gap-4">
               <Link
                 href={`/${locale}/#contact`}
-                className="px-8 py-3 bg-[var(--color-accent)] hover:bg-[var(--color-accent-hover)] text-white font-semibold rounded-xl transition-all duration-300 text-center"
+                className="px-8 py-3 bg-[var(--color-accent)] hover:bg-[var(--color-accent-hover)] text-[var(--color-on-accent)] font-semibold rounded-xl transition-all duration-300 text-center"
               >
                 {t('cta.contact')}
               </Link>

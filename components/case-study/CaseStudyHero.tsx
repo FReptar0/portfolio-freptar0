@@ -84,7 +84,7 @@ export default function CaseStudyHero({ slug, locale }: CaseStudyHeroProps) {
                   rel="noopener noreferrer"
                   className={`group inline-flex items-center gap-2.5 px-6 py-3 rounded-xl font-semibold transition-all duration-300 ${
                     i === 0
-                      ? 'bg-[var(--color-accent)] text-white hover:bg-[var(--color-accent-hover)]'
+                      ? 'bg-[var(--color-accent)] text-[var(--color-on-accent)] hover:bg-[var(--color-accent-hover)]'
                       : 'bg-[var(--color-surface-elevated)] border border-[var(--color-border)] hover:border-[var(--color-accent)]'
                   }`}
                 >

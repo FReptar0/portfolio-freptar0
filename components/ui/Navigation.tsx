@@ -116,7 +116,7 @@ export default function Navigation() {
             <ThemeToggle />
             <a
               href="#contact"
-              className="px-6 py-2 text-white font-semibold rounded-lg transition-all duration-200 hover:scale-[1.02] active:scale-[0.98]"
+              className="px-6 py-2 text-[var(--color-on-accent)] font-semibold rounded-lg transition-all duration-200 hover:scale-[1.02] active:scale-[0.98]"
               style={{ background: 'var(--color-accent)' }}
               onMouseEnter={(e) => e.currentTarget.style.background = 'var(--color-accent-hover)'}
               onMouseLeave={(e) => e.currentTarget.style.background = 'var(--color-accent)'}
@@ -178,7 +178,7 @@ export default function Navigation() {
             <a
               href="#contact"
               onClick={() => setIsMobileMenuOpen(false)}
-              className="block text-center px-6 py-3 text-white font-semibold rounded-lg transition-colors"
+              className="block text-center px-6 py-3 text-[var(--color-on-accent)] font-semibold rounded-lg transition-colors"
               style={{ background: 'var(--color-accent)' }}
             >
               {t('hireMe')}

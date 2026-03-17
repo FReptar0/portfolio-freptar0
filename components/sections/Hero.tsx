@@ -69,7 +69,7 @@ export default function Hero() {
               >
                 <a
                   href="#projects"
-                  className="px-8 py-4 text-white font-semibold rounded-lg transition-all duration-200 text-center hover:scale-[1.02] active:scale-[0.98]"
+                  className="px-8 py-4 text-[var(--color-on-accent)] font-semibold rounded-lg transition-all duration-200 text-center hover:scale-[1.02] active:scale-[0.98]"
                   style={{ background: 'var(--color-accent)' }}
                   onMouseEnter={(e) => e.currentTarget.style.background = 'var(--color-accent-hover)'}
                   onMouseLeave={(e) => e.currentTarget.style.background = 'var(--color-accent)'}

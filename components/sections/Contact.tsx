@@ -294,7 +294,7 @@ export default function Contact() {
                   onClick={copyEmail}
                   className="w-full bg-[var(--color-surface-elevated)] border border-[var(--color-border)] rounded-2xl p-4 flex items-center gap-4 group hover:border-[var(--color-accent)] transition-colors"
                 >
-                  <div className="w-12 h-12 rounded-full bg-[var(--color-accent)] flex items-center justify-center text-white">
+                  <div className="w-12 h-12 rounded-full bg-[var(--color-accent)] flex items-center justify-center text-[var(--color-on-accent)]">
                     <Mail className="w-6 h-6" />
                   </div>
                   <div className="flex-1 text-left">
@@ -315,7 +315,7 @@ export default function Contact() {
                   rel="noopener noreferrer"
                   className="w-full bg-[var(--color-surface-elevated)] border border-[var(--color-border)] rounded-2xl p-4 flex items-center gap-4 transition-colors duration-300 hover:border-[var(--color-accent)] group"
                 >
-                  <div className="w-12 h-12 rounded-full bg-[var(--color-accent)] flex items-center justify-center text-white">
+                  <div className="w-12 h-12 rounded-full bg-[var(--color-accent)] flex items-center justify-center text-[var(--color-on-accent)]">
                     <Briefcase className="w-6 h-6" />
                   </div>
                   <div className="flex-1 text-left">
@@ -334,7 +334,7 @@ export default function Contact() {
                   rel="noopener noreferrer"
                   className="w-full bg-[var(--color-surface-elevated)] border border-[var(--color-border)] rounded-2xl p-4 flex items-center gap-4 transition-colors duration-300 hover:border-[var(--color-accent)] group"
                 >
-                  <div className="w-12 h-12 rounded-full bg-[var(--color-accent)] flex items-center justify-center text-white">
+                  <div className="w-12 h-12 rounded-full bg-[var(--color-accent)] flex items-center justify-center text-[var(--color-on-accent)]">
                     <Github className="w-6 h-6" />
                   </div>
                   <div className="flex-1 text-left">
@@ -351,7 +351,7 @@ export default function Contact() {
                   href="#contact"
                   className="w-full bg-[var(--color-surface-elevated)] border border-[var(--color-border)] rounded-2xl p-4 flex items-center gap-4 transition-colors duration-300 hover:border-[var(--color-accent)] group"
                 >
-                  <div className="w-12 h-12 rounded-full bg-[var(--color-accent)] flex items-center justify-center text-white">
+                  <div className="w-12 h-12 rounded-full bg-[var(--color-accent)] flex items-center justify-center text-[var(--color-on-accent)]">
                     <Calendar className="w-6 h-6" />
                   </div>
                   <div className="flex-1 text-left">
@@ -593,7 +593,7 @@ export default function Contact() {
               <button
                 type="submit"
                 disabled={formStatus === "sending" || !isFormValid || (!turnstileToken && !bypassTurnstile)}
-                className="w-full py-4 text-white font-semibold rounded-xl transition-all duration-200 hover:scale-[1.02] active:scale-[0.98] disabled:scale-100 disabled:opacity-50 disabled:cursor-not-allowed flex items-center justify-center gap-2"
+                className="w-full py-4 text-[var(--color-on-accent)] font-semibold rounded-xl transition-all duration-200 hover:scale-[1.02] active:scale-[0.98] disabled:scale-100 disabled:opacity-50 disabled:cursor-not-allowed flex items-center justify-center gap-2"
                 style={{
                   background: formStatus === "sending" || !isFormValid || (!turnstileToken && !bypassTurnstile)
                     ? 'var(--color-accent-muted)'

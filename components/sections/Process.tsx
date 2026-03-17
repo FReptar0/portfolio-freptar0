@@ -119,7 +119,7 @@ export default function Process() {
           </p>
           <a
             href="#contact"
-            className="inline-block px-8 py-4 bg-[var(--color-accent)] hover:bg-[var(--color-accent-hover)] text-white font-semibold rounded-2xl transition-all duration-200 hover:scale-[1.02] active:scale-[0.98]"
+            className="inline-block px-8 py-4 bg-[var(--color-accent)] hover:bg-[var(--color-accent-hover)] text-[var(--color-on-accent)] font-semibold rounded-2xl transition-all duration-200 hover:scale-[1.02] active:scale-[0.98]"
           >
             {t('cta.button')}
           </a>
@@ -156,7 +156,7 @@ function ProcessCard({
       {/* Number Badge */}
       <div className="flex justify-center mb-6">
         <div
-          className="w-16 h-16 rounded-full bg-[var(--color-accent)] flex items-center justify-center text-white font-bold font-mono text-2xl"
+          className="w-16 h-16 rounded-full bg-[var(--color-accent)] flex items-center justify-center text-[var(--color-on-accent)] font-bold font-mono text-2xl"
         >
           {number}
         </div>
@@ -218,7 +218,7 @@ function ProcessCardMobile({
       {/* Left side - Number */}
       <div className="flex flex-col items-center">
         <div
-          className="w-14 h-14 rounded-full bg-[var(--color-accent)] flex items-center justify-center text-white font-bold font-mono text-xl flex-shrink-0"
+          className="w-14 h-14 rounded-full bg-[var(--color-accent)] flex items-center justify-center text-[var(--color-on-accent)] font-bold font-mono text-xl flex-shrink-0"
         >
           {number}
         </div>
