@@ -105,37 +105,29 @@ export default async function TechDeepDivePage({
         <TechDeepDive slug={slug} />
 
         {/* What's Next - only render if the project has this section */}
-        {(() => {
-          try {
-            const whatNextTitle = t(`projects.${slug}.whatNext.title`);
-            const whatNextParagraphs = t.raw(`projects.${slug}.whatNext.paragraphs`) as string[];
-            return (
-              <section className="py-12">
-                <div className="container mx-auto px-6 lg:px-8 max-w-5xl">
-                  <div className="apple-glass rounded-3xl p-8 md:p-12 border-l-4 border-purple-500/20">
-                    <h2 className="text-2xl font-bold mb-6 flex items-center gap-3">
-                      <Rocket className="w-8 h-8 text-purple-500" />
-                      {whatNextTitle}
-                    </h2>
-                    <div className="space-y-4">
-                      {whatNextParagraphs.map((paragraph: string, i: number) => (
-                        <p key={i} className="text-foreground/80 leading-relaxed">
-                          {paragraph}
-                        </p>
-                      ))}
-                    </div>
-                    <div className="mt-6 inline-flex items-center gap-2 px-4 py-2 bg-purple-500/10 rounded-full text-sm font-medium text-purple-600 dark:text-purple-400">
-                      <span className="w-2 h-2 rounded-full bg-purple-500 animate-pulse" />
-                      {t('cta.evolution')}
-                    </div>
-                  </div>
+        {t.has(`projects.${slug}.whatNext.title`) && (
+          <section className="py-12">
+            <div className="container mx-auto px-6 lg:px-8 max-w-5xl">
+              <div className="apple-glass rounded-3xl p-8 md:p-12 border-l-4 border-purple-500/20">
+                <h2 className="text-2xl font-bold mb-6 flex items-center gap-3">
+                  <Rocket className="w-8 h-8 text-purple-500" />
+                  {t(`projects.${slug}.whatNext.title`)}
+                </h2>
+                <div className="space-y-4">
+                  {(t.raw(`projects.${slug}.whatNext.paragraphs`) as string[]).map((paragraph: string, i: number) => (
+                    <p key={i} className="text-foreground/80 leading-relaxed">
+                      {paragraph}
+                    </p>
+                  ))}
                 </div>
-              </section>
-            );
-          } catch {
-            return null;
-          }
-        })()}
+                <div className="mt-6 inline-flex items-center gap-2 px-4 py-2 bg-purple-500/10 rounded-full text-sm font-medium text-purple-600 dark:text-purple-400">
+                  <span className="w-2 h-2 rounded-full bg-purple-500 animate-pulse" />
+                  {t('cta.evolution')}
+                </div>
+              </div>
+            </div>
+          </section>
+        )}
 
         {/* CTA */}
         <section className="py-12">
