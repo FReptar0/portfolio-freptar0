@@ -470,42 +470,42 @@
         "subtitle": "Live charts from the 94-day validation protocol and historical backtesting",
         "charts": [
           {
-            "src": "/images/carry-trade/equity-curve.png",
+            "src": "/images/carry-trade/equity-curve.webp",
             "label": "Equity Curve — Forward Test",
             "description": "Live equity with drawdown overlay. Red zone marks a bug period (excluded from results)."
           },
           {
-            "src": "/images/carry-trade/backtest-equity.png",
+            "src": "/images/carry-trade/backtest-equity.webp",
             "label": "V3 Backtest — 2023-2024",
             "description": "Portfolio equity across 6 JPY pairs on historical data. +5.18% return over 2 years."
           },
           {
-            "src": "/images/carry-trade/pnl-by-pair.png",
+            "src": "/images/carry-trade/pnl-by-pair.webp",
             "label": "P&L by Currency Pair",
             "description": "AUD/JPY leads performance. GBP/JPY is the only negative pair — higher volatility profile."
           },
           {
-            "src": "/images/carry-trade/monte-carlo.png",
+            "src": "/images/carry-trade/monte-carlo.webp",
             "label": "Monte Carlo Simulation (n=5000)",
             "description": "Return distribution across 5,000 randomized simulations. Median 5.9%, 0% ruin probability."
           },
           {
-            "src": "/images/carry-trade/pair-correlation.png",
+            "src": "/images/carry-trade/pair-correlation.webp",
             "label": "Pair Correlation Matrix",
             "description": "JPY pair correlations range 0.40-0.93. The system reduces position size when correlation exceeds 0.7."
           },
           {
-            "src": "/images/carry-trade/stress-test.png",
+            "src": "/images/carry-trade/stress-test.webp",
             "label": "Stress Test Scenarios",
             "description": "Portfolio behavior under 5 historical crisis scenarios including flash crashes and rate reversals."
           },
           {
-            "src": "/images/carry-trade/cumulative-pnl.png",
+            "src": "/images/carry-trade/cumulative-pnl.webp",
             "label": "Cumulative P&L (Trade Sequence)",
             "description": "Running total profit across sequential trades during the live validation period."
           },
           {
-            "src": "/images/carry-trade/exit-reasons.png",
+            "src": "/images/carry-trade/exit-reasons.webp",
             "label": "Exit Reason Analysis",
             "description": "Distribution of exit triggers: trailing stops, trend reversals, and time-based exits."
           }
@@ -600,32 +600,32 @@
         "subtitle": "Screenshots from the landing page, admin dashboard, and demo environment",
         "charts": [
           {
-            "src": "/images/cleany/landing-preview.png",
+            "src": "/images/cleany/landing-preview.webp",
             "label": "Landing Page — cleany.pro",
             "description": "Marketing site built with Next.js and Sanity CMS. Features pricing, blog, and Stripe checkout."
           },
           {
-            "src": "/images/cleany/demo-dashboard.png",
+            "src": "/images/cleany/demo-dashboard.webp",
             "label": "Admin Dashboard",
             "description": "Business owner's overview with key metrics, recent activity, and quick actions."
           },
           {
-            "src": "/images/cleany/demo-schedule.png",
+            "src": "/images/cleany/demo-schedule.webp",
             "label": "Weekly Schedule",
             "description": "Visual job scheduling grid with group-based worker assignment and recurring job generation."
           },
           {
-            "src": "/images/cleany/demo-jobs.png",
+            "src": "/images/cleany/demo-jobs.webp",
             "label": "Job Management",
             "description": "Work order tracking with status pipeline: Pending, In Progress, Completed. ATR-based pricing snapshots."
           },
           {
-            "src": "/images/cleany/demo-customers.png",
+            "src": "/images/cleany/demo-customers.webp",
             "label": "Customer Management",
             "description": "Full customer profiles with addresses, service frequency, billing preferences, and notification settings."
           },
           {
-            "src": "/images/cleany/signup-preview.png",
+            "src": "/images/cleany/signup-preview.webp",
             "label": "Sign Up Flow",
             "description": "Onboarding experience for new cleaning business owners. Multi-tenant workspace creation."
           }

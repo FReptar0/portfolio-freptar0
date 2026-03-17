@@ -470,42 +470,42 @@
         "subtitle": "Gráficos en vivo del protocolo de validación de 94 días y backtesting histórico",
         "charts": [
           {
-            "src": "/images/carry-trade/equity-curve.png",
+            "src": "/images/carry-trade/equity-curve.webp",
             "label": "Curva de Equity — Forward Test",
             "description": "Equity en vivo con overlay de drawdown. La zona roja marca un período de bug (excluido de resultados)."
           },
           {
-            "src": "/images/carry-trade/backtest-equity.png",
+            "src": "/images/carry-trade/backtest-equity.webp",
             "label": "Backtest V3 — 2023-2024",
             "description": "Equity del portafolio en 6 pares JPY con datos históricos. +5.18% de retorno en 2 años."
           },
           {
-            "src": "/images/carry-trade/pnl-by-pair.png",
+            "src": "/images/carry-trade/pnl-by-pair.webp",
             "label": "P&L por Par de Divisas",
             "description": "AUD/JPY lidera el rendimiento. GBP/JPY es el único par negativo — perfil de mayor volatilidad."
           },
           {
-            "src": "/images/carry-trade/monte-carlo.png",
+            "src": "/images/carry-trade/monte-carlo.webp",
             "label": "Simulación Monte Carlo (n=5000)",
             "description": "Distribución de retornos en 5,000 simulaciones aleatorias. Mediana 5.9%, 0% probabilidad de ruina."
           },
           {
-            "src": "/images/carry-trade/pair-correlation.png",
+            "src": "/images/carry-trade/pair-correlation.webp",
             "label": "Matriz de Correlación de Pares",
             "description": "Las correlaciones de pares JPY van de 0.40 a 0.93. El sistema reduce tamaño cuando la correlación excede 0.7."
           },
           {
-            "src": "/images/carry-trade/stress-test.png",
+            "src": "/images/carry-trade/stress-test.webp",
             "label": "Escenarios de Stress Test",
             "description": "Comportamiento del portafolio bajo 5 escenarios históricos de crisis incluyendo flash crashes y reversiones de tasas."
           },
           {
-            "src": "/images/carry-trade/cumulative-pnl.png",
+            "src": "/images/carry-trade/cumulative-pnl.webp",
             "label": "P&L Acumulado (Secuencia de Trades)",
             "description": "Ganancia total acumulada a través de trades secuenciales durante el período de validación en vivo."
           },
           {
-            "src": "/images/carry-trade/exit-reasons.png",
+            "src": "/images/carry-trade/exit-reasons.webp",
             "label": "Análisis de Razones de Salida",
             "description": "Distribución de triggers de salida: trailing stops, reversiones de tendencia y salidas por tiempo."
           }
@@ -600,32 +600,32 @@
         "subtitle": "Capturas de la landing page, dashboard admin y entorno de demostración",
         "charts": [
           {
-            "src": "/images/cleany/landing-preview.png",
+            "src": "/images/cleany/landing-preview.webp",
             "label": "Landing Page — cleany.pro",
             "description": "Sitio de marketing construido con Next.js y Sanity CMS. Incluye precios, blog y checkout con Stripe."
           },
           {
-            "src": "/images/cleany/demo-dashboard.png",
+            "src": "/images/cleany/demo-dashboard.webp",
             "label": "Dashboard Admin",
             "description": "Vista general del dueño del negocio con métricas clave, actividad reciente y acciones rápidas."
           },
           {
-            "src": "/images/cleany/demo-schedule.png",
+            "src": "/images/cleany/demo-schedule.webp",
             "label": "Programación Semanal",
             "description": "Cuadrícula visual de programación de trabajos con asignación de trabajadores por grupo y generación de trabajos recurrentes."
           },
           {
-            "src": "/images/cleany/demo-jobs.png",
+            "src": "/images/cleany/demo-jobs.webp",
             "label": "Gestión de Trabajos",
             "description": "Seguimiento de órdenes de trabajo con pipeline de estado: Pendiente, En Progreso, Completado. Precios snapshot basados en ATR."
           },
           {
-            "src": "/images/cleany/demo-customers.png",
+            "src": "/images/cleany/demo-customers.webp",
             "label": "Gestión de Clientes",
             "description": "Perfiles completos de clientes con direcciones, frecuencia de servicio, preferencias de facturación y configuración de notificaciones."
           },
           {
-            "src": "/images/cleany/signup-preview.png",
+            "src": "/images/cleany/signup-preview.webp",
             "label": "Flujo de Registro",
             "description": "Experiencia de onboarding para nuevos dueños de negocios de limpieza. Creación de espacio de trabajo multi-tenant."
           }
