@@ -24,7 +24,7 @@ export default function LanguageToggle() {
     <button
       onClick={switchLocale}
       className="relative flex items-center gap-2 px-3 py-2 rounded-xl bg-foreground/5 hover:bg-foreground/10 transition-all duration-300 border border-foreground/10 hover:border-foreground/20"
-      aria-label={`Toggle language: ES / EN (current: ${locale.toUpperCase()})`}
+      title="Toggle language"
     >
       <div className="flex items-center gap-1 text-sm font-medium">
         {locales.map((loc, index) => (
@@ -33,7 +33,7 @@ export default function LanguageToggle() {
               className={`uppercase transition-all duration-300 ${
                 locale === loc
                   ? 'text-foreground font-bold'
-                  : 'text-foreground/40 hover:text-foreground/60'
+                  : 'text-foreground/60 hover:text-foreground/80'
               }`}
             >
               {loc}

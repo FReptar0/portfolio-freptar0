@@ -136,7 +136,7 @@ export default function SearchBar() {
       <button
         onClick={() => setIsOpen(true)}
         className="flex items-center gap-2 px-3 py-2 rounded-xl bg-foreground/5 hover:bg-foreground/10 transition-all duration-300 border border-foreground/10 hover:border-foreground/20"
-        aria-label="Search ⌘K"
+        title="Search"
       >
         <svg
           className="w-4 h-4 text-foreground/60"
