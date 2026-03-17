@@ -558,8 +558,8 @@ export default function Contact() {
                 </div>
               </div>
 
-              {/* Invisible Turnstile CAPTCHA */}
-              {!bypassTurnstile && (
+              {/* Invisible Turnstile CAPTCHA — deferred until section is visible */}
+              {!bypassTurnstile && isVisible && (
                 <div className="hidden">
                   <Turnstile
                     ref={turnstileRef}
@@ -567,9 +567,6 @@ export default function Contact() {
                     onSuccess={(token) => setTurnstileToken(token)}
                     onError={() => {
                       setTurnstileToken(null);
-                      // Don't set formStatus to error here - only show error state
-                      // when user actually tries to submit. Button will be disabled
-                      // due to missing token, which is the correct behavior.
                     }}
                     onExpire={() => setTurnstileToken(null)}
                     options={{

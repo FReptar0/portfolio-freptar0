@@ -41,6 +41,9 @@ export default async function RootLayout({
     const locale = await getLocale();
     return (
         <html lang={locale} className="scroll-smooth" suppressHydrationWarning>
+            <head>
+                <link rel="preconnect" href="https://cdn.jsdelivr.net" />
+            </head>
             <body className={`${spaceGrotesk.variable} ${dmSans.variable} ${jetbrainsMono.variable} antialiased`}>
                 {/* Inline script to set theme class before React hydrates */}
                 <script

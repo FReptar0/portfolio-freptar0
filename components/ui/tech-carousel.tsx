@@ -84,6 +84,8 @@ export default function TechCarousel({ logos, speed = 50, className = "" }: Tech
                   src={logo.src}
                   alt={logo.alt}
                   title={logo.title}
+                  width={64}
+                  height={64}
                   className="max-w-full max-h-full object-contain filter grayscale opacity-70 group-hover:grayscale-0 group-hover:opacity-100 transition-all duration-300 group-hover:scale-110"
                   loading="lazy"
                   draggable={false}
@@ -94,6 +96,8 @@ export default function TechCarousel({ logos, speed = 50, className = "" }: Tech
                 src={logo.src}
                 alt={logo.alt}
                 title={logo.title}
+                width={64}
+                height={64}
                 className="max-w-full max-h-full object-contain filter grayscale opacity-70 hover:grayscale-0 hover:opacity-100 transition-all duration-300 hover:scale-110"
                 loading="lazy"
                 draggable={false}
@@ -121,6 +125,8 @@ export default function TechCarousel({ logos, speed = 50, className = "" }: Tech
                 <img
                   src={logo.src}
                   alt=""
+                  width={64}
+                  height={64}
                   className="max-w-full max-h-full object-contain filter grayscale opacity-70 group-hover:grayscale-0 group-hover:opacity-100 transition-all duration-300 group-hover:scale-110"
                   loading="lazy"
                   draggable={false}
@@ -130,6 +136,8 @@ export default function TechCarousel({ logos, speed = 50, className = "" }: Tech
               <img
                 src={logo.src}
                 alt=""
+                width={64}
+                height={64}
                 className="max-w-full max-h-full object-contain filter grayscale opacity-70 hover:grayscale-0 hover:opacity-100 transition-all duration-300 hover:scale-110"
                 loading="lazy"
                 draggable={false}
