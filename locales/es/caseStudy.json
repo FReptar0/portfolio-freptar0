@@ -37,6 +37,7 @@
       "overview": "SageConnect conecta Sage 300 ERP con portales de proveedores, reemplazando flujos de trabajo manuales propensos a errores con una plataforma de integración completamente automatizada. Construido para una empresa con más de 200 empleados en múltiples departamentos, el sistema procesa CFDIs, órdenes de compra, pagos y datos de proveedores en tiempo real.",
       "role": "Desarrollador Líder",
       "teamSize": 4,
+      "teamRoles": ["Desarrollador Líder", "Desarrollador Backend", "Ingeniero QA", "DevOps"],
       "tags": ["Empresarial", "Integración", "Automatización"],
       "problem": {
         "title": "El Problema",
@@ -114,6 +115,7 @@
       "overview": "SageSync mantiene los datos de inventario perfectamente alineados entre Sage 300 ERP y Fracttal CMMS, reemplazando la conciliación manual con sincronización automatizada basada en eventos que logra 99.9% de consistencia de datos.",
       "role": "Desarrollador Full-Stack",
       "teamSize": 3,
+      "teamRoles": ["Desarrollador Full-Stack", "Desarrollador Backend", "Ingeniero QA"],
       "tags": ["Integración", "Tiempo Real", "Monitoreo"],
       "problem": {
         "title": "El Problema",
@@ -191,6 +193,7 @@
       "overview": "Qardeal es una plataforma completa de renta de autos construida con Next.js, con reservas en línea, procesamiento de pagos, generación de facturas XML y dashboards administrativos integrales — entregada en solo 4 meses.",
       "role": "Desarrollador Full-Stack",
       "teamSize": 4,
+      "teamRoles": ["Desarrollador Full-Stack", "Desarrollador Backend", "Diseñador UI", "Ingeniero QA"],
       "tags": ["E-Commerce", "Pagos", "Full-Stack"],
       "problem": {
         "title": "El Problema",
@@ -260,6 +263,7 @@
       "overview": "Módulos personalizados de Odoo que automatizan procesos de facturación, validación de RFC y controles de pago para Inova — reemplazando procesos manuales que causaban inexactitudes de facturación e intervención manual extensiva.",
       "role": "Desarrollador Python",
       "teamSize": 2,
+      "teamRoles": ["Desarrollador Python", "Analista de Negocios"],
       "tags": ["ERP", "Automatización", "Proceso de Negocio"],
       "problem": {
         "title": "El Problema",
@@ -329,6 +333,7 @@
       "overview": "Una plataforma de gestión de gimnasios costo-efectiva construida como proyecto individual, con gestión de membresías, dashboards de KPI y reportes analíticos — desplegable en solo 2 horas con 90% de ahorro vs alternativas comerciales.",
       "role": "Desarrollador Full-Stack",
       "teamSize": 1,
+      "teamRoles": ["Desarrollador Individual"],
       "tags": ["SaaS", "Analíticas", "Pequeño Negocio"],
       "problem": {
         "title": "El Problema",
@@ -398,6 +403,7 @@
       "overview": "Un sistema de trading algorítmico sistemático que explota los diferenciales de tasas de interés en 6 pares de divisas JPY. Construido desde cero en Python con 473 tests, el sistema opera 24/5 en AWS con ciclos de decisión cada hora, gestión adaptativa de riesgo, filtrado ML de señales, y monitoreo en tiempo real por Telegram. Actualmente en el día 41 de un protocolo de validación de 94 días en paper trading de OANDA — sin dinero real en riesgo.",
       "role": "Desarrollador Cuantitativo",
       "teamSize": 1,
+      "teamRoles": ["Desarrollador Individual"],
       "tags": ["Trading Algorítmico", "Finanzas Cuantitativas", "Paper Trading"],
       "problem": {
         "title": "La Hipótesis",
@@ -531,6 +537,7 @@
       "overview": "Cleany es una plataforma SaaS integral que ayuda a dueños de negocios de limpieza a gestionar clientes, trabajadores, trabajos, programación, facturación y nómina en un solo sistema. Construido como monorepo con tres apps independientes — una API REST Fastify, un SPA React con PWA offline-first para trabajadores, y un sitio de marketing Next.js — la plataforma está dirigida al mercado latinoamericano con soporte bilingüe completo.",
       "role": "Ingeniero Líder & Product Owner",
       "teamSize": 2,
+      "teamRoles": ["Ingeniero Líder", "Desarrollador Frontend"],
       "tags": ["SaaS", "Multi-Tenant", "Offline-First"],
       "problem": {
         "title": "El Problema",

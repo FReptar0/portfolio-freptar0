@@ -26,13 +26,15 @@
       "myContribution": {
         "role": "Lead Developer",
         "teamSize": 4,
+        "teamRoles": ["Lead Developer", "Backend Developer", "QA Engineer", "DevOps"],
         "responsibility0": "Architected automation system design",
         "responsibility1": "Developed backend services in JavaScript",
         "responsibility2": "Built the complete system from scratch"
       },
       "technicalSolution": {
         "stack": [
-          "JavaScript",
+          "Node.js",
+          "Express",
           "SQL Server",
           "Docker"
         ],
@@ -72,6 +74,7 @@
       "myContribution": {
         "role": "Full-Stack Developer",
         "teamSize": 3,
+        "teamRoles": ["Full-Stack Developer", "Backend Developer", "QA Engineer"],
         "responsibility0": "Designed real-time sync architecture",
         "responsibility1": "Built monitoring dashboards",
         "responsibility2": "Implemented OAuth2 token management"
@@ -120,6 +123,7 @@
       "myContribution": {
         "role": "Full-Stack Developer",
         "teamSize": 4,
+        "teamRoles": ["Full-Stack Developer", "Backend Developer", "UI Designer", "QA Engineer"],
         "responsibility0": "Built Next.js frontend and booking flow",
         "responsibility1": "Integrated payment gateways and XML invoicing",
         "responsibility2": "Set up CI/CD pipeline and admin dashboards"
@@ -168,6 +172,7 @@
       "myContribution": {
         "role": "Python Developer",
         "teamSize": 2,
+        "teamRoles": ["Python Developer", "Business Analyst"],
         "responsibility0": "Developed custom Odoo modules",
         "responsibility1": "Automated billing and validation workflows",
         "responsibility2": "Integrated payment restriction controls"
@@ -215,6 +220,7 @@
       "myContribution": {
         "role": "Full-Stack Developer",
         "teamSize": 1,
+        "teamRoles": ["Solo Developer"],
         "responsibility0": "Designed membership management system",
         "responsibility1": "Built KPI dashboards and analytics",
         "responsibility2": "Optimized for rapid deployment"
@@ -262,6 +268,7 @@
       "myContribution": {
         "role": "Quantitative Developer",
         "teamSize": 1,
+        "teamRoles": ["Solo Developer"],
         "responsibility0": "Designed V3 trend-following carry strategy",
         "responsibility1": "Built 5-layer adaptive risk management pipeline",
         "responsibility2": "Deployed 24/5 automated execution on AWS"
@@ -311,6 +318,7 @@
       "myContribution": {
         "role": "Lead Engineer & Product Owner",
         "teamSize": 2,
+        "teamRoles": ["Lead Engineer", "Frontend Developer"],
         "responsibility0": "Architected multi-tenant SaaS platform end-to-end",
         "responsibility1": "Led technical decisions, client requirements, and product direction",
         "responsibility2": "Built core systems: offline PWA, Stripe billing, risk management"

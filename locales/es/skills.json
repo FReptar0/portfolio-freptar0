@@ -83,13 +83,13 @@
           "name": "MySQL",
           "experience": "4 años",
           "level": 90,
-          "project": "SageConnect procesamiento de transacciones y datos ERP"
+          "project": "Gestión de datos empresariales y sistemas de bases de datos relacionales"
         },
         {
           "name": "PostgreSQL",
           "experience": "3 años",
           "level": 85,
-          "project": "SageSync gestión de inventario y analíticas"
+          "project": "Cleany SaaS multi-tenant y plataforma de operaciones Gym Manager"
         },
         {
           "name": "MongoDB",

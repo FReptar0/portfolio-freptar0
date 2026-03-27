@@ -37,6 +37,7 @@
       "overview": "SageConnect bridges the gap between Sage 300 ERP and supplier portals, replacing error-prone manual workflows with a fully automated integration platform. Built for an enterprise with 200+ staff members across multiple departments, the system processes CFDIs, purchase orders, payments, and supplier data in real-time.",
       "role": "Lead Developer",
       "teamSize": 4,
+      "teamRoles": ["Lead Developer", "Backend Developer", "QA Engineer", "DevOps"],
       "tags": ["Enterprise", "Integration", "Automation"],
       "problem": {
         "title": "The Problem",
@@ -114,6 +115,7 @@
       "overview": "SageSync keeps inventory data perfectly aligned between Sage 300 ERP and Fracttal CMMS, replacing manual reconciliation with automated, event-driven synchronization that achieves 99.9% data consistency.",
       "role": "Full-Stack Developer",
       "teamSize": 3,
+      "teamRoles": ["Full-Stack Developer", "Backend Developer", "QA Engineer"],
       "tags": ["Integration", "Real-Time", "Monitoring"],
       "problem": {
         "title": "The Problem",
@@ -191,6 +193,7 @@
       "overview": "Qardeal is a full-featured car rental platform built with Next.js, featuring online booking, payment processing, XML invoice generation, and comprehensive admin dashboards — delivered in just 4 months.",
       "role": "Full-Stack Developer",
       "teamSize": 4,
+      "teamRoles": ["Full-Stack Developer", "Backend Developer", "UI Designer", "QA Engineer"],
       "tags": ["E-Commerce", "Payments", "Full-Stack"],
       "problem": {
         "title": "The Problem",
@@ -260,6 +263,7 @@
       "overview": "Custom Odoo modules that automate billing processes, RFC validation, and payment controls for Inova — replacing manual processes that caused billing inaccuracies and extensive manual intervention.",
       "role": "Python Developer",
       "teamSize": 2,
+      "teamRoles": ["Python Developer", "Business Analyst"],
       "tags": ["ERP", "Automation", "Business Process"],
       "problem": {
         "title": "The Problem",
@@ -329,6 +333,7 @@
       "overview": "A cost-effective gym management platform built as a solo project, featuring membership management, KPI dashboards, and analytics reporting — deployable in just 2 hours with 90% cost savings versus commercial alternatives.",
       "role": "Full-Stack Developer",
       "teamSize": 1,
+      "teamRoles": ["Solo Developer"],
       "tags": ["SaaS", "Analytics", "Small Business"],
       "problem": {
         "title": "The Problem",
@@ -398,6 +403,7 @@
       "overview": "A systematic algorithmic trading system that exploits interest rate differentials across 6 JPY currency pairs. Built from scratch in Python with 473 tests, the system runs 24/5 on AWS with hourly decision cycles, adaptive risk management, ML signal filtering, and real-time Telegram monitoring. Currently in day 41 of a 94-day live validation protocol on OANDA paper trading — no real money at risk.",
       "role": "Quantitative Developer",
       "teamSize": 1,
+      "teamRoles": ["Solo Developer"],
       "tags": ["Algorithmic Trading", "Quantitative Finance", "Paper Trading"],
       "problem": {
         "title": "The Hypothesis",
@@ -531,6 +537,7 @@
       "overview": "Cleany is a comprehensive SaaS platform that helps cleaning service owners manage customers, workers, jobs, scheduling, invoicing, and payroll in one unified system. Built as a monorepo with three independent apps — a Fastify REST API, a React SPA with offline-first worker mobile, and a Next.js marketing site — the platform targets Latin American markets with full bilingual support.",
       "role": "Lead Engineer & Product Owner",
       "teamSize": 2,
+      "teamRoles": ["Lead Engineer", "Frontend Developer"],
       "tags": ["SaaS", "Multi-Tenant", "Offline-First"],
       "problem": {
         "title": "The Problem",

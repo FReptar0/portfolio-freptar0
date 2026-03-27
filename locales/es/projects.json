@@ -26,13 +26,15 @@
       "myContribution": {
         "role": "Desarrollador Líder",
         "teamSize": 4,
+        "teamRoles": ["Desarrollador Líder", "Desarrollador Backend", "Ingeniero QA", "DevOps"],
         "responsibility0": "Diseñé la arquitectura del sistema de automatización",
         "responsibility1": "Desarrollé servicios backend en JavaScript",
         "responsibility2": "Construí el sistema completo desde cero"
       },
       "technicalSolution": {
         "stack": [
-          "JavaScript",
+          "Node.js",
+          "Express",
           "SQL Server",
           "Docker"
         ],
@@ -72,6 +74,7 @@
       "myContribution": {
         "role": "Desarrollador Full-Stack",
         "teamSize": 3,
+        "teamRoles": ["Desarrollador Full-Stack", "Desarrollador Backend", "Ingeniero QA"],
         "responsibility0": "Diseñé arquitectura de sincronización en tiempo real",
         "responsibility1": "Construí dashboards de monitoreo",
         "responsibility2": "Implementé gestión de tokens OAuth2"
@@ -80,14 +83,14 @@
         "stack": [
           "Node.js",
           "Express",
-          "PostgreSQL",
+          "SQL Server",
           "OAuth2",
           "Docker"
         ],
         "architecture": "Basado en Eventos",
         "keyDecision0": "Node.js para procesamiento de eventos en tiempo real",
         "keyDecision1": "OAuth2 para autenticación segura de API",
-        "keyDecision2": "PostgreSQL para persistencia confiable de datos"
+        "keyDecision2": "SQL Server para persistencia confiable de datos"
       },
       "businessImpact": {
         "metric0": {
@@ -120,6 +123,7 @@
       "myContribution": {
         "role": "Desarrollador Full-Stack",
         "teamSize": 4,
+        "teamRoles": ["Desarrollador Full-Stack", "Desarrollador Backend", "Diseñador UI", "Ingeniero QA"],
         "responsibility0": "Construí frontend Next.js y flujo de reservas",
         "responsibility1": "Integré pasarelas de pago y facturación XML",
         "responsibility2": "Configuré pipeline CI/CD y dashboards admin"
@@ -168,6 +172,7 @@
       "myContribution": {
         "role": "Desarrollador Python",
         "teamSize": 2,
+        "teamRoles": ["Desarrollador Python", "Analista de Negocios"],
         "responsibility0": "Desarrollé módulos personalizados Odoo",
         "responsibility1": "Automaticé flujos de facturación y validación",
         "responsibility2": "Integré controles de restricción de pagos"
@@ -215,6 +220,7 @@
       "myContribution": {
         "role": "Desarrollador Full-Stack",
         "teamSize": 1,
+        "teamRoles": ["Desarrollador Individual"],
         "responsibility0": "Diseñé sistema de gestión de membresías",
         "responsibility1": "Construí dashboards de KPI y analíticas",
         "responsibility2": "Optimicé para despliegue rápido"
@@ -262,6 +268,7 @@
       "myContribution": {
         "role": "Desarrollador Cuantitativo",
         "teamSize": 1,
+        "teamRoles": ["Desarrollador Individual"],
         "responsibility0": "Diseñé estrategia V3 de seguimiento de tendencia carry",
         "responsibility1": "Construí pipeline de riesgo adaptativo de 5 capas",
         "responsibility2": "Desplegué ejecución automatizada 24/5 en AWS"
@@ -311,6 +318,7 @@
       "myContribution": {
         "role": "Ingeniero Líder & Product Owner",
         "teamSize": 2,
+        "teamRoles": ["Ingeniero Líder", "Desarrollador Frontend"],
         "responsibility0": "Arquitecté la plataforma SaaS multi-tenant de punta a punta",
         "responsibility1": "Lideré decisiones técnicas, requerimientos del cliente y dirección del producto",
         "responsibility2": "Construí sistemas core: PWA offline, facturación Stripe, gestión de riesgo"
