@@ -74,7 +74,7 @@ Plans:
 
 </details>
 
-### 🚧 v2.1 Content Accuracy & Trust (In Progress)
+### v2.1 Content Accuracy & Trust (In Progress)
 
 **Milestone Goal:** Fix all content accuracy issues, inflated metrics, fabricated certifications, and recruiter-visible trust gaps so every claim on the portfolio is honest and verifiable.
 
@@ -143,8 +143,8 @@ Plans:
 **Plans:** 2/2 plans complete
 
 Plans:
-- [ ] 07-01-PLAN.md — Replace inflated Hero metrics with honest values (6+ Systems, 300+ Users, error reduction %, verified years)
-- [ ] 07-02-PLAN.md — Rename Certifications to Technologies, fix Spring Boot-SageConnect association, audit skill accuracy
+- [x] 07-01-PLAN.md — Replace inflated Hero metrics with honest values (6+ Systems, 300+ Users, error reduction %, verified years)
+- [x] 07-02-PLAN.md — Rename Certifications to Technologies, fix Spring Boot-SageConnect association, audit skill accuracy
 
 ### Phase 8: Case Study Accuracy
 **Goal**: Every case study page presents honest, consistent information — correct tech stacks, accurate project statuses, and team roles instead of headcounts
@@ -155,11 +155,11 @@ Plans:
   2. The CarryTrade case study clearly states it is a paper trading system, not a production deployment — no language implies live trading of real funds
   3. Team credits in all case studies show role labels (e.g. "Backend Dev", "QA") rather than anonymous headcounts (e.g. "team of 3")
   4. The tech stacks shown on the Projects homepage, each case study page, the tech deep-dive, and the Skills section all agree for every project — no technology appears in one place but not another without explanation, in both EN and ES
-**Plans**: TBD
+**Plans:** 2 plans
 
 Plans:
-- [ ] 08-01-PLAN.md — Fix SageConnect Spring Boot refs in case study content + CarryTrade paper trading status (TRST-02, TRST-03)
-- [ ] 08-02-PLAN.md — Replace team size headcounts with role labels across all case studies + cross-content consistency audit (TRST-01, TRST-04)
+- [ ] 08-01-PLAN.md — Clarify CarryTrade as paper trading experiment + verify SageConnect case study has no Spring Boot (TRST-02, TRST-03)
+- [ ] 08-02-PLAN.md — Replace team headcounts with role labels + fix cross-content tech stack inconsistencies (TRST-01, TRST-04)
 
 ## Progress
 
@@ -174,5 +174,5 @@ Phases execute in numeric order: 4 → 5 → 6 → 7 → 8
 | 4. Design Tokens & Typography | v2.0 | 2/2 | Complete | 2026-03-16 |
 | 5. Component Overhaul | v2.0 | 3/3 | Complete | 2026-03-16 |
 | 6. Motion & Accessibility | v2.0 | 1/2 | In progress | - |
-| 7. Homepage Trust Signals | 2/2 | Complete    | 2026-03-27 | - |
+| 7. Homepage Trust Signals | v2.1 | 2/2 | Complete | 2026-03-27 |
 | 8. Case Study Accuracy | v2.1 | 0/2 | Not started | - |
