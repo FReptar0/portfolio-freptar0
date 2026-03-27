@@ -139,12 +139,22 @@
 | PLSH-02 | Phase 5 | Complete |
 | PLSH-03 | Phase 5 | Complete |
 | PLSH-04 | Phase 6 | Pending |
+| HERO-01 | Phase 7 | Pending |
+| HERO-02 | Phase 7 | Pending |
+| HERO-03 | Phase 7 | Pending |
+| HERO-04 | Phase 7 | Pending |
+| CRED-01 | Phase 7 | Pending |
+| CRED-02 | Phase 7 | Pending |
+| CRED-03 | Phase 7 | Pending |
+| TRST-01 | Phase 8 | Pending |
+| TRST-02 | Phase 8 | Pending |
+| TRST-03 | Phase 8 | Pending |
+| TRST-04 | Phase 8 | Pending |
 
 **Coverage:**
-- v2.0 requirements: 18 total
-- Mapped to phases: 18
-- Unmapped: 0
+- v2.0 requirements: 18 total, mapped to phases: 18, unmapped: 0
+- v2.1 requirements: 11 total, mapped to phases: 11, unmapped: 0
 
 ---
 *Requirements defined: 2026-03-14 (v1.0)*
-*Last updated: 2026-03-26 after v2.1 requirements definition*
+*Last updated: 2026-03-26 after v2.1 roadmap creation*
