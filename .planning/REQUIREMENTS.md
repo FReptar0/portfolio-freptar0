@@ -80,9 +80,9 @@
 
 ### Credentials & Skills
 
-- [ ] **CRED-01**: "Certifications" section renamed to "Technologies" — no certification claims
-- [ ] **CRED-02**: All Spring Boot references removed from SageConnect context (timeline, skills linking)
-- [ ] **CRED-03**: All skill proficiency levels and experience years audited and corrected for accuracy
+- [x] **CRED-01**: "Certifications" section renamed to "Technologies" — no certification claims
+- [x] **CRED-02**: All Spring Boot references removed from SageConnect context (timeline, skills linking)
+- [x] **CRED-03**: All skill proficiency levels and experience years audited and corrected for accuracy
 
 ### Trust & Case Studies
 
@@ -143,9 +143,9 @@
 | HERO-02 | Phase 7 | Complete |
 | HERO-03 | Phase 7 | Complete |
 | HERO-04 | Phase 7 | Complete |
-| CRED-01 | Phase 7 | Pending |
-| CRED-02 | Phase 7 | Pending |
-| CRED-03 | Phase 7 | Pending |
+| CRED-01 | Phase 7 | Complete |
+| CRED-02 | Phase 7 | Complete |
+| CRED-03 | Phase 7 | Complete |
 | TRST-01 | Phase 8 | Pending |
 | TRST-02 | Phase 8 | Pending |
 | TRST-03 | Phase 8 | Pending |
