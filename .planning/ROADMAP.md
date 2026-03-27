@@ -4,7 +4,7 @@
 
 - ✅ **v1.0 Case Study System** - Phases 1-3 (shipped 2026-03-16)
 - ✅ **v2.0 Swiss Precision Redesign** - Phases 4-6 (shipped 2026-03-16)
-- 🚧 **v2.1 Content Accuracy & Trust** - Phases 7-8 (in progress)
+- ✅ **v2.1 Content Accuracy & Trust** - Phases 7-8 (shipped 2026-03-27)
 
 ## Phases
 
@@ -74,92 +74,26 @@ Plans:
 
 </details>
 
-### v2.1 Content Accuracy & Trust (In Progress)
-
-**Milestone Goal:** Fix all content accuracy issues, inflated metrics, fabricated certifications, and recruiter-visible trust gaps so every claim on the portfolio is honest and verifiable.
-
-- [x] **Phase 7: Homepage Trust Signals** - Fix all Hero metrics and rename Certifications to Technologies — the first-impression claims a recruiter sees above the fold (completed 2026-03-27)
-- [x] **Phase 8: Case Study Accuracy** - Correct Spring Boot references, clarify CarryTrade status, show team roles, and audit cross-content consistency across all locale files (completed 2026-03-27)
-
-## Phase Details
-
-### Phase 4: Design Tokens & Typography
-**Goal**: The site renders with its new visual identity — Swiss typography, black/white/green color system, clean dark mode — while all existing content and functionality continues working unchanged
-**Depends on**: Phase 3 (v1.0 complete)
-**Requirements**: FOUND-01, FOUND-02, FOUND-03, FOUND-04, FOUND-05
-**Success Criteria** (what must be TRUE):
-  1. Every page displays headings in Space Grotesk, body text in DM Sans, and code/labels in JetBrains Mono — no Geist font renders anywhere
-  2. No blue or cyan gradient appears anywhere on the site — the only accent color visible is electric green (#22C55E or its tonal variants)
-  3. Switching to dark mode shows a deliberately designed dark palette (not simply inverted light mode) — surfaces, text, and accents all feel intentional
-  4. All existing pages load without errors, all links work, both EN and ES locales render correct content, and the build completes with no failures
-**Plans:** 2/2 plans complete
-
-Plans:
-- [x] 04-01-PLAN.md — Replace fonts (Geist to Space Grotesk/DM Sans/JetBrains Mono) and rebuild all CSS custom properties with Swiss design tokens
-- [x] 04-02-PLAN.md — Update Tailwind @theme inline block and verify production build
-
-### Phase 5: Component Overhaul
-**Goal**: Every section of the site uses the new Swiss design language — clean surfaces, asymmetric layouts, distinctive component patterns, premium spacing, and monospace accents — with zero glass morphism remaining
-**Depends on**: Phase 4
-**Requirements**: COMP-01, COMP-02, COMP-03, COMP-04, COMP-05, PLSH-01, PLSH-02, PLSH-03
-**Success Criteria** (what must be TRUE):
-  1. The Hero section uses large typographic statement with asymmetric layout — no centered gradient blob, no bounce scroll indicator
-  2. Searching the codebase for "apple-glass", "glass-card", and "backdrop-blur" returns zero results — all cards use clean surfaces with subtle borders
-  3. The Navigation shows a clean brand mark and does not use glass-on-scroll transparency effects
-  4. At least 3 homepage sections break the center-aligned identical-grid pattern with asymmetric or varied layouts, and the Projects section uses a presentation pattern distinct from tab-buttons-to-detail-card
-  5. Sections are separated by visible rhythm breaks (background color shifts, horizontal rules, or spacing changes), all spacing follows an 8px grid, and JetBrains Mono is used for tech labels, metrics, and stack badges throughout
-**Plans:** 3/3 plans complete
-
-Plans:
-- [x] 05-01-PLAN.md — Hero redesign + Navigation rebuild + section divider CSS utilities
-- [x] 05-02-PLAN.md — Global glass morphism removal + 8px spacing grid + JetBrains Mono accents across all components
-- [x] 05-03-PLAN.md — Projects section rethink + asymmetric layouts for Skills/Timeline + alternating section backgrounds
-
-### Phase 6: Motion & Accessibility
-**Goal**: The site feels alive with purposeful scroll-triggered animations and varied interactions, while respecting users who prefer reduced motion — and all existing functionality remains intact as a final verification
-**Depends on**: Phase 5
-**Requirements**: MOTN-01, MOTN-02, MOTN-03, MOTN-04, PLSH-04
-**Success Criteria** (what must be TRUE):
-  1. Scrolling down the homepage triggers staggered entrance animations on each major section via Intersection Observer — elements animate in as they enter the viewport
-  2. Different component types have distinct hover/interaction patterns (not uniform translateY(-2px) + border-color everywhere)
-  3. The bounce scroll indicator is gone, the status badge pulse is subtle, and the hero entrance animation completes within 300-400ms
-  4. Enabling "prefers-reduced-motion" in browser/OS settings disables or significantly reduces all animations site-wide
-  5. Full regression check passes: i18n toggles between EN/ES correctly, all case study routes load, contact form works, SEO metadata is present, navigation works from every page
-**Plans:** 1/2 plans complete
-
-Plans:
-- [ ] 06-01-PLAN.md — Create useScrollReveal hook + reduced-motion CSS + integrate scroll-triggered animations into all 8 homepage sections + fix Hero anti-patterns
-- [ ] 06-02-PLAN.md — Varied hover/interaction patterns per component type + full regression verification checkpoint
+<details>
+<summary>✅ v2.1 Content Accuracy & Trust (Phases 7-8) - SHIPPED 2026-03-27</summary>
 
 ### Phase 7: Homepage Trust Signals
-**Goal**: Every recruiter-visible claim on the homepage is accurate — Hero metrics reflect real numbers, and the Credentials section makes no false certification claims
-**Depends on**: Phase 6
-**Requirements**: HERO-01, HERO-02, HERO-03, HERO-04, CRED-01, CRED-02, CRED-03
-**Success Criteria** (what must be TRUE):
-  1. The Hero section shows "6+ Systems Shipped", "300+ Users Impacted", a measurable error/time reduction percentage, and an accurate years-of-experience figure — no inflated or fabricated numbers
-  2. The section previously labeled "Certifications" is now labeled "Technologies" — no certification claims exist anywhere on the homepage in either EN or ES
-  3. Spring Boot does not appear in any SageConnect-specific context on the homepage (skills section, timeline entries, or project card) — it may still appear in the general technology list
-  4. All skill proficiency levels and experience year claims on the homepage are accurate and internally consistent across EN and ES locale files
+**Goal**: Every recruiter-visible claim on the homepage is accurate
 **Plans:** 2/2 plans complete
 
 Plans:
-- [x] 07-01-PLAN.md — Replace inflated Hero metrics with honest values (6+ Systems, 300+ Users, error reduction %, verified years)
-- [x] 07-02-PLAN.md — Rename Certifications to Technologies, fix Spring Boot-SageConnect association, audit skill accuracy
+- [x] 07-01-PLAN.md — Replace inflated Hero metrics with honest values
+- [x] 07-02-PLAN.md — Rename Certifications to Technologies, fix Spring Boot-SageConnect, audit skills
 
 ### Phase 8: Case Study Accuracy
-**Goal**: Every case study page presents honest, consistent information — correct tech stacks, accurate project statuses, and team roles instead of headcounts
-**Depends on**: Phase 7
-**Requirements**: TRST-01, TRST-02, TRST-03, TRST-04
-**Success Criteria** (what must be TRUE):
-  1. SageConnect case study (timeline, tech deep-dive, and skills sections) references JavaScript/Node.js exclusively — no Spring Boot appears in any SageConnect-specific page content
-  2. The CarryTrade case study clearly states it is a paper trading system, not a production deployment — no language implies live trading of real funds
-  3. Team credits in all case studies show role labels (e.g. "Backend Dev", "QA") rather than anonymous headcounts (e.g. "team of 3")
-  4. The tech stacks shown on the Projects homepage, each case study page, the tech deep-dive, and the Skills section all agree for every project — no technology appears in one place but not another without explanation, in both EN and ES
+**Goal**: Every case study presents honest, consistent information
 **Plans:** 2/2 plans complete
 
 Plans:
-- [ ] 08-01-PLAN.md — Clarify CarryTrade as paper trading experiment + verify SageConnect case study has no Spring Boot (TRST-02, TRST-03)
-- [ ] 08-02-PLAN.md — Replace team headcounts with role labels + fix cross-content tech stack inconsistencies (TRST-01, TRST-04)
+- [x] 08-01-PLAN.md — Clarify CarryTrade as paper trading + verify SageConnect no Spring Boot
+- [x] 08-02-PLAN.md — Replace team headcounts with role labels + fix cross-content consistency
+
+</details>
 
 ## Progress
 
@@ -175,4 +109,4 @@ Phases execute in numeric order: 4 → 5 → 6 → 7 → 8
 | 5. Component Overhaul | v2.0 | 3/3 | Complete | 2026-03-16 |
 | 6. Motion & Accessibility | v2.0 | 1/2 | In progress | - |
 | 7. Homepage Trust Signals | v2.1 | 2/2 | Complete | 2026-03-27 |
-| 8. Case Study Accuracy | 2/2 | Complete    | 2026-03-27 | - |
+| 8. Case Study Accuracy | v2.1 | 2/2 | Complete | 2026-03-27 |

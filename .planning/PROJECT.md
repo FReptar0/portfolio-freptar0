@@ -2,25 +2,15 @@
 
 ## What This Is
 
-Fernando Rodriguez Memije's personal portfolio site, built with Next.js 16 and next-intl. A bilingual (ES/EN) portfolio showcasing senior engineering work through case studies with business narratives and technical deep-dives. The v2.0 milestone is a complete visual identity overhaul — replacing the generic AI-generated design (glass morphism, blue-cyan gradients, Geist font) with a distinctive "Swiss Precision" aesthetic that communicates systems-thinking and premium engineering craft.
+Fernando Rodriguez Memije's personal portfolio site, built with Next.js 16 and next-intl. A bilingual (ES/EN) portfolio showcasing senior engineering work through case studies with business narratives and technical deep-dives. Features a distinctive "Swiss Precision" design (Space Grotesk/DM Sans typography, black/white/green color system, clean surfaces, asymmetric layouts) and verified-accurate content — honest metrics, correct tech stacks, and team role attributions across all 7 projects.
 
 ## Core Value
 
 The portfolio must visually differentiate Fernando from every other AI-generated developer portfolio — establishing a distinctive, memorable brand through intentional design choices that communicate precision, systems-thinking, and high-value delivery.
 
-## Current Milestone: v2.1 Content Accuracy & Trust
+## Current State
 
-**Goal:** Fix all content accuracy issues, inflated metrics, fabricated certifications, and recruiter-visible trust gaps across the portfolio so every claim is honest and verifiable.
-
-**Target features:**
-- Fix Hero metrics: 300+ users impacted, 6+ systems shipped to prod, error/time reduction %
-- Rename "Certifications" section to "Technologies" (no fake certs)
-- Remove all Spring Boot references from SageConnect (keep in general skills)
-- Show team roles without names instead of anonymous team sizes
-- Replace $2M value claim with measurable operational impact metric
-- Fix SageConnect timeline description (JS/Node.js, not Spring Boot)
-- Clarify CarryTrade status (paper trading, not production)
-- Address any additional recruiter-visible trust gaps
+v2.1 shipped. Portfolio has Swiss Precision design + verified-accurate content. No active milestone.
 
 ## Requirements
 
@@ -37,10 +27,16 @@ The portfolio must visually differentiate Fernando from every other AI-generated
 - ✓ "What's Next" evolution sections — v1.0
 - ✓ SEO metadata on all case study pages — v1.0
 - ✓ Mobile responsiveness for case study pages — v1.0
+- ✓ Honest Hero metrics (6+ Systems, 300+ Users, 99% Error Reduction, 5+ Years) — v2.1
+- ✓ "Technologies" section (no fake certifications) — v2.1
+- ✓ Spring Boot decoupled from SageConnect across all surfaces — v2.1
+- ✓ CarryTrade labeled as paper trading experiment — v2.1
+- ✓ Team roles shown instead of anonymous headcounts — v2.1
+- ✓ Cross-content tech stack consistency (EN/ES) — v2.1
 
 ### Active
 
-See REQUIREMENTS.md for v2.1 scoped requirements.
+(No active milestone — run `/gsd:new-milestone` to start next)
 
 ### Out of Scope
 
@@ -48,17 +44,17 @@ See REQUIREMENTS.md for v2.1 scoped requirements.
 - Blog or articles system — different feature entirely
 - Authentication or user accounts — static portfolio site
 - CMS integration — content stays in JSON translation files
-- Page transitions between routes — complex, defer to v2.1 if desired
+- Page transitions between routes — complex, defer to future milestone
 - 3D effects or WebGL — over-engineered for a portfolio
 
 ## Context
 
 - **Target audience:** Recruiters evaluating for senior engineering roles
-- **The problem:** A partner built their portfolio with Claude Code and it looks identical — same blue-cyan gradients, glass morphism, Geist font, centered layouts, gradient text. The current design is the "Claude Code Default Stack" and is not unique.
-- **Design direction:** "Swiss Precision" — strict grid system, Space Grotesk/DM Sans typography, black/white/green color system, clean surfaces instead of glass, mathematical spacing, monospace accents for tech credibility, asymmetric layouts, premium feel.
-- **Design references:** Swiss Modernism 2.0, Exaggerated Minimalism style, with touches of Dark Premium (premium spacing, warm subtle accents)
+- **Design direction:** "Swiss Precision" — Space Grotesk/DM Sans typography, black/white/green color system, clean surfaces, asymmetric layouts, mathematical spacing
+- **Content accuracy:** All metrics, tech stacks, team attributions, and project statuses verified accurate as of v2.1
 - **Locale pattern:** All content in JSON translation files, loaded via i18n.ts
 - **Tech stack:** Next.js 16, TypeScript, Tailwind CSS v4 (inline theme), next-intl, Lucide React, Vercel deployment
+- **Known v2.0 gap:** Phase 6 has 2 pending requirements (MOTN-02 varied hover patterns, PLSH-04 full functionality preservation check)
 
 ## Constraints
 
@@ -78,11 +74,14 @@ See REQUIREMENTS.md for v2.1 scoped requirements.
 | Dynamic [slug] route | Adding case studies only requires content + slug | ✓ Good |
 | Pure inline SVG for diagrams | No library dependency, full theme integration | ✓ Good |
 | Server components for content | Minimal JS shipped, better SEO | ✓ Good |
-| Swiss Precision design direction | Distinctive, systems-thinker brand; avoids AI-generic patterns | — Pending |
-| Space Grotesk + DM Sans + JetBrains Mono | Techy personality + readability + code credibility | — Pending |
-| Black/white + electric green accent | High contrast, single accent = Swiss modernist; green = "run/go" developer energy | — Pending |
-| Kill glass morphism entirely | #1 AI-generated pattern; clean surfaces with borders instead | — Pending |
-| Intersection Observer for scroll animations | No library dependency, native API, progressive enhancement | — Pending |
+| Swiss Precision design direction | Distinctive, systems-thinker brand; avoids AI-generic patterns | ✓ Good |
+| Space Grotesk + DM Sans + JetBrains Mono | Techy personality + readability + code credibility | ✓ Good |
+| Black/white + electric green accent | High contrast, single accent = Swiss modernist; green = "run/go" developer energy | ✓ Good |
+| Kill glass morphism entirely | #1 AI-generated pattern; clean surfaces with borders instead | ✓ Good |
+| Intersection Observer for scroll animations | No library dependency, native API, progressive enhancement | ✓ Good |
+| Honest metrics over impressive numbers | Recruiter trust > flashy claims; verifiable beats vague | ✓ Good |
+| Team roles without personal names | Shows collaboration honestly without requiring teammate consent | ✓ Good |
+| Keep Spring Boot in general skills | User has Spring Boot experience from other work, just not SageConnect | ✓ Good |
 
 ---
-*Last updated: 2026-03-26 after v2.1 milestone start*
+*Last updated: 2026-03-27 after v2.1 milestone*
