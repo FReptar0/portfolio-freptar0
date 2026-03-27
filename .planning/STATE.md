@@ -3,14 +3,14 @@ gsd_state_version: 1.0
 milestone: v2.1
 milestone_name: Content Accuracy & Trust
 status: executing
-stopped_at: Completed 07-02-PLAN.md
-last_updated: "2026-03-27T03:50:53.838Z"
+stopped_at: Completed 08-01-PLAN.md
+last_updated: "2026-03-27T04:41:59.021Z"
 last_activity: 2026-03-26 — Completed 07-02 Trust signals content accuracy
 progress:
   total_phases: 8
   completed_phases: 6
-  total_plans: 16
-  completed_plans: 15
+  total_plans: 18
+  completed_plans: 16
   percent: 100
 ---
 
@@ -46,6 +46,7 @@ Progress: [██████████] 100%
 | - | - | - | - |
 
 *Updated after each plan completion*
+| Phase 08-case-study-accuracy P01 | 2 | 2 tasks | 4 files |
 
 ## Accumulated Context
 
@@ -61,6 +62,8 @@ Progress: [██████████] 100%
 - [Phase 07-01]: Hero metrics replaced with 4 honest values: 5+ years, 6+ systems shipped, 300+ users impacted, 99% error reduction
 - [Phase 07-02]: Keep certifications JSON key to avoid breaking t.raw() call; only displayed title changes to "Technologies"
 - [Phase 07-02]: Spring Boot stays in skills list with generic project description — MySQL and Jenkins SageConnect refs are accurate and unchanged
+- [Phase 08-01]: CarryTrade: replaced 'Live Experiment'/'Experimento en Vivo' tags with 'Paper Trading' in all 4 locale files; businessProblem now opens with explicit paper trading disclaimer
+- [Phase 08-01]: SageConnect: confirmed zero Spring Boot references in caseStudy.json (Phase 7 already cleaned them; Task 2 was verification only)
 
 ### Pending Todos
 
@@ -72,6 +75,6 @@ Note: Phase 6 (Motion & Accessibility) has 2 pending plans (06-01, 06-02) from v
 
 ## Session Continuity
 
-Last session: 2026-03-26
-Stopped at: Completed 07-02-PLAN.md
+Last session: 2026-03-27T04:41:59.017Z
+Stopped at: Completed 08-01-PLAN.md
 Resume file: None

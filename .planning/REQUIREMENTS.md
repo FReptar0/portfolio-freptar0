@@ -87,8 +87,8 @@
 ### Trust & Case Studies
 
 - [ ] **TRST-01**: Case studies show team member roles (e.g. "Backend Dev, QA") instead of anonymous team sizes
-- [ ] **TRST-02**: CarryTrade clearly states paper trading status, not presented as production system
-- [ ] **TRST-03**: SageConnect timeline/descriptions reference JavaScript/Node.js, not Spring Boot
+- [x] **TRST-02**: CarryTrade clearly states paper trading status, not presented as production system
+- [x] **TRST-03**: SageConnect timeline/descriptions reference JavaScript/Node.js, not Spring Boot
 - [ ] **TRST-04**: All tech stacks consistent across projects page, case studies, skills section, and timeline (both EN and ES)
 
 ## Future Requirements
@@ -147,8 +147,8 @@
 | CRED-02 | Phase 7 | Complete |
 | CRED-03 | Phase 7 | Complete |
 | TRST-01 | Phase 8 | Pending |
-| TRST-02 | Phase 8 | Pending |
-| TRST-03 | Phase 8 | Pending |
+| TRST-02 | Phase 8 | Complete |
+| TRST-03 | Phase 8 | Complete |
 | TRST-04 | Phase 8 | Pending |
 
 **Coverage:**
