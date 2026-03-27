@@ -27,9 +27,9 @@
         },
         {
           "name": "Java",
-          "experience": "3 years",
+          "experience": "2 years",
           "level": 85,
-          "project": "Enterprise-grade Spring Boot applications"
+          "project": "Backend services and enterprise applications"
         },
         {
           "name": "Python",
@@ -63,9 +63,9 @@
         },
         {
           "name": "Spring Boot",
-          "experience": "3 years",
-          "level": 85,
-          "project": "SageConnect ERP integration platform"
+          "experience": "2 years",
+          "level": 75,
+          "project": "Enterprise Java backend services and REST APIs"
         },
         {
           "name": "Express",

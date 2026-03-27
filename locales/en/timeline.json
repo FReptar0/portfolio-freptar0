@@ -18,7 +18,7 @@
       "highlight": "SageConnect Project",
       "description0": "Delivered data automation systems reducing manual errors to zero",
       "description1": "Improved operational throughput across departments",
-      "description2": "Built enterprise-grade Spring Boot integrations",
+      "description2": "Built Node.js/Express integrations with Sage 300 Web API",
       "color": "from-purple-400 to-purple-600"
     },
     "cardeal": {

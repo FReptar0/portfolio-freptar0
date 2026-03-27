@@ -4,7 +4,7 @@
   "subtitle": "No solo palabras de moda - experiencia real con impacto medible",
   "proficiencyLabels": {
     "expert": "Experto",
-    "advanced": "Avanzado", 
+    "advanced": "Avanzado",
     "intermediate": "Intermedio",
     "familiar": "Familiar"
   },
@@ -20,16 +20,16 @@
           "project": "Construí aplicaciones web complejas y sistemas de automatización"
         },
         {
-          "name": "TypeScript", 
+          "name": "TypeScript",
           "experience": "3 años",
           "level": 90,
           "project": "Sistemas type-safe reduciendo bugs en 60%"
         },
         {
           "name": "Java",
-          "experience": "3 años",
+          "experience": "2 años",
           "level": 85,
-          "project": "Aplicaciones Spring Boot de grado empresarial"
+          "project": "Servicios backend y aplicaciones empresariales"
         },
         {
           "name": "Python",
@@ -63,9 +63,9 @@
         },
         {
           "name": "Spring Boot",
-          "experience": "3 años",
-          "level": 85,
-          "project": "SageConnect plataforma de integración ERP"
+          "experience": "2 años",
+          "level": 75,
+          "project": "Servicios backend Java empresariales y APIs REST"
         },
         {
           "name": "Express",
