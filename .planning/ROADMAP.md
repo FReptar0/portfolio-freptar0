@@ -140,11 +140,11 @@ Plans:
   2. The section previously labeled "Certifications" is now labeled "Technologies" — no certification claims exist anywhere on the homepage in either EN or ES
   3. Spring Boot does not appear in any SageConnect-specific context on the homepage (skills section, timeline entries, or project card) — it may still appear in the general technology list
   4. All skill proficiency levels and experience year claims on the homepage are accurate and internally consistent across EN and ES locale files
-**Plans**: TBD
+**Plans:** 2 plans
 
 Plans:
-- [ ] 07-01-PLAN.md — Fix Hero metrics (HERO-01–04) and update both locale files
-- [ ] 07-02-PLAN.md — Rename Certifications to Technologies, audit/correct skill years, remove Spring Boot from SageConnect homepage context (CRED-01–03)
+- [ ] 07-01-PLAN.md — Replace inflated Hero metrics with honest values (6+ Systems, 300+ Users, error reduction %, verified years)
+- [ ] 07-02-PLAN.md — Rename Certifications to Technologies, fix Spring Boot-SageConnect association, audit skill accuracy
 
 ### Phase 8: Case Study Accuracy
 **Goal**: Every case study page presents honest, consistent information — correct tech stacks, accurate project statuses, and team roles instead of headcounts
