@@ -6,8 +6,9 @@
   "description": "Ingeniero de Software Senior especializado en transformar desafíos técnicos complejos en soluciones elegantes y rentables",
   "metrics": {
     "experience": "Años de Experiencia",
-    "projects": "Proyectos Enviados",
-    "value": "Valor Entregado"
+    "systems": "Sistemas Enviados",
+    "users": "Usuarios Impactados",
+    "accuracy": "Reducción de Errores"
   },
   "cta": {
     "primary": "Ver Casos de Éxito",

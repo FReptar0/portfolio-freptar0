@@ -6,8 +6,9 @@
   "description": "Senior Software Engineer specializing in transforming complex technical challenges into elegant, profitable solutions",
   "metrics": {
     "experience": "Years Experience",
-    "projects": "Projects Shipped",
-    "value": "Value Delivered"
+    "systems": "Systems Shipped",
+    "users": "Users Impacted",
+    "accuracy": "Error Reduction"
   },
   "cta": {
     "primary": "View Success Stories",

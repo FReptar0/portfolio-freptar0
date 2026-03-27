@@ -45,8 +45,9 @@ export default function Hero() {
               style={stagger.getDelay(1)}
             >
               <MetricItem value="5+" label={t('metrics.experience')} />
-              <MetricItem value="20+" label={t('metrics.projects')} />
-              <MetricItem value="$2M+" label={t('metrics.value')} />
+              <MetricItem value="6+" label={t('metrics.systems')} />
+              <MetricItem value="300+" label={t('metrics.users')} />
+              <MetricItem value="99%" label={t('metrics.accuracy')} />
             </div>
 
             {/* CTAs */}
