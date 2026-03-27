@@ -175,4 +175,4 @@ Phases execute in numeric order: 4 → 5 → 6 → 7 → 8
 | 5. Component Overhaul | v2.0 | 3/3 | Complete | 2026-03-16 |
 | 6. Motion & Accessibility | v2.0 | 1/2 | In progress | - |
 | 7. Homepage Trust Signals | v2.1 | 2/2 | Complete | 2026-03-27 |
-| 8. Case Study Accuracy | 2/2 | Complete   | 2026-03-27 | - |
+| 8. Case Study Accuracy | 2/2 | Complete    | 2026-03-27 | - |
