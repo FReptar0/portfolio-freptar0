@@ -14,6 +14,7 @@ interface Project {
   myContribution: {
     role: string;
     teamSize: number;
+    teamRoles: string[];
     responsibilities: string[];
   };
   technicalSolution: {
@@ -43,6 +44,7 @@ export default function Projects() {
       myContribution: {
         role: t('items.sageconnect.myContribution.role'),
         teamSize: t.raw('items.sageconnect.myContribution.teamSize') as number,
+        teamRoles: t.raw('items.sageconnect.myContribution.teamRoles') as string[],
         responsibilities: [
           t('items.sageconnect.myContribution.responsibility0'),
           t('items.sageconnect.myContribution.responsibility1'),
@@ -76,6 +78,7 @@ export default function Projects() {
       myContribution: {
         role: t('items.sagesync.myContribution.role'),
         teamSize: t.raw('items.sagesync.myContribution.teamSize') as number,
+        teamRoles: t.raw('items.sagesync.myContribution.teamRoles') as string[],
         responsibilities: [
           t('items.sagesync.myContribution.responsibility0'),
           t('items.sagesync.myContribution.responsibility1'),
@@ -109,6 +112,7 @@ export default function Projects() {
       myContribution: {
         role: t('items.cardeal.myContribution.role'),
         teamSize: t.raw('items.cardeal.myContribution.teamSize') as number,
+        teamRoles: t.raw('items.cardeal.myContribution.teamRoles') as string[],
         responsibilities: [
           t('items.cardeal.myContribution.responsibility0'),
           t('items.cardeal.myContribution.responsibility1'),
@@ -142,6 +146,7 @@ export default function Projects() {
       myContribution: {
         role: t('items.odoo.myContribution.role'),
         teamSize: t.raw('items.odoo.myContribution.teamSize') as number,
+        teamRoles: t.raw('items.odoo.myContribution.teamRoles') as string[],
         responsibilities: [
           t('items.odoo.myContribution.responsibility0'),
           t('items.odoo.myContribution.responsibility1'),
@@ -175,6 +180,7 @@ export default function Projects() {
       myContribution: {
         role: t('items.gymmanager.myContribution.role'),
         teamSize: t.raw('items.gymmanager.myContribution.teamSize') as number,
+        teamRoles: t.raw('items.gymmanager.myContribution.teamRoles') as string[],
         responsibilities: [
           t('items.gymmanager.myContribution.responsibility0'),
           t('items.gymmanager.myContribution.responsibility1'),
@@ -208,6 +214,7 @@ export default function Projects() {
       myContribution: {
         role: t('items.cleany.myContribution.role'),
         teamSize: t.raw('items.cleany.myContribution.teamSize') as number,
+        teamRoles: t.raw('items.cleany.myContribution.teamRoles') as string[],
         responsibilities: [
           t('items.cleany.myContribution.responsibility0'),
           t('items.cleany.myContribution.responsibility1'),
@@ -241,6 +248,7 @@ export default function Projects() {
       myContribution: {
         role: t('items.carrytrade.myContribution.role'),
         teamSize: t.raw('items.carrytrade.myContribution.teamSize') as number,
+        teamRoles: t.raw('items.carrytrade.myContribution.teamRoles') as string[],
         responsibilities: [
           t('items.carrytrade.myContribution.responsibility0'),
           t('items.carrytrade.myContribution.responsibility1'),
@@ -368,7 +376,7 @@ export default function Projects() {
                               {project.myContribution.role}
                             </span>
                             <span className="font-mono text-sm" style={{ color: 'var(--text-secondary)' }}>
-                              {t('labels.teamOf')} {project.myContribution.teamSize}
+                              {project.myContribution.teamRoles.join(' / ')}
                             </span>
                           </div>
                           <ul className="space-y-2">

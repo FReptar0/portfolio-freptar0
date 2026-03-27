@@ -19,7 +19,7 @@ export default function CaseStudyHero({ slug, locale }: CaseStudyHeroProps) {
   const headline = t(`projects.${slug}.headline`);
   const tagline = t(`projects.${slug}.tagline`);
   const role = t(`projects.${slug}.role`);
-  const teamSize = t.raw(`projects.${slug}.teamSize`) as number;
+  const teamRoles = t.raw(`projects.${slug}.teamRoles`) as string[];
   const tags = t.raw(`projects.${slug}.tags`) as string[];
 
   let links: Array<{ label: string; url: string; icon: string }> = [];
@@ -58,7 +58,7 @@ export default function CaseStudyHero({ slug, locale }: CaseStudyHeroProps) {
           </span>
           <span className="inline-flex items-center gap-1.5 text-sm text-foreground/60">
             <Users className="w-4 h-4" />
-            Team of {teamSize}
+            {teamRoles.join(' / ')}
           </span>
           <div className="flex flex-wrap gap-2">
             {tags.map((tag) => (
