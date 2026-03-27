@@ -174,5 +174,5 @@ Phases execute in numeric order: 4 → 5 → 6 → 7 → 8
 | 4. Design Tokens & Typography | v2.0 | 2/2 | Complete | 2026-03-16 |
 | 5. Component Overhaul | v2.0 | 3/3 | Complete | 2026-03-16 |
 | 6. Motion & Accessibility | v2.0 | 1/2 | In progress | - |
-| 7. Homepage Trust Signals | 2/2 | Complete   | 2026-03-27 | - |
+| 7. Homepage Trust Signals | 2/2 | Complete    | 2026-03-27 | - |
 | 8. Case Study Accuracy | v2.1 | 0/2 | Not started | - |
