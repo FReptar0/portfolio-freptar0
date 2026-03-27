@@ -1,6 +1,6 @@
 # Requirements: Fernando Rodriguez Portfolio
 
-**Defined:** 2026-03-14 (v1.0), updated 2026-03-16 (v2.0)
+**Defined:** 2026-03-14 (v1.0), updated 2026-03-16 (v2.0), updated 2026-03-26 (v2.1)
 **Core Value:** The portfolio must visually differentiate Fernando from every other AI-generated developer portfolio — distinctive Swiss Precision brand.
 
 ## v1.0 Requirements (Complete)
@@ -69,6 +69,28 @@
 - [x] **PLSH-03**: Bold visual dividers between sections — background color shifts, horizontal rules, or spacing changes that break the uniform rhythm
 - [ ] **PLSH-04**: All existing functionality preserved: i18n (EN/ES), case studies, contact form, SEO metadata, navigation
 
+## v2.1 Requirements
+
+### Hero Metrics
+
+- [ ] **HERO-01**: Hero displays "6+ Systems Shipped" instead of "20+ Projects Shipped"
+- [ ] **HERO-02**: Hero displays measurable error/time reduction % instead of "$2M+ Value Delivered"
+- [ ] **HERO-03**: Hero displays "300+ Users Impacted" metric
+- [ ] **HERO-04**: "Years Experience" metric verified accurate against actual timeline dates
+
+### Credentials & Skills
+
+- [ ] **CRED-01**: "Certifications" section renamed to "Technologies" — no certification claims
+- [ ] **CRED-02**: All Spring Boot references removed from SageConnect context (timeline, skills linking)
+- [ ] **CRED-03**: All skill proficiency levels and experience years audited and corrected for accuracy
+
+### Trust & Case Studies
+
+- [ ] **TRST-01**: Case studies show team member roles (e.g. "Backend Dev, QA") instead of anonymous team sizes
+- [ ] **TRST-02**: CarryTrade clearly states paper trading status, not presented as production system
+- [ ] **TRST-03**: SageConnect timeline/descriptions reference JavaScript/Node.js, not Spring Boot
+- [ ] **TRST-04**: All tech stacks consistent across projects page, case studies, skills section, and timeline (both EN and ES)
+
 ## Future Requirements
 
 ### Enhanced Discovery
@@ -125,4 +147,4 @@
 
 ---
 *Requirements defined: 2026-03-14 (v1.0)*
-*Last updated: 2026-03-16 after v2.0 roadmap creation*
+*Last updated: 2026-03-26 after v2.1 requirements definition*
