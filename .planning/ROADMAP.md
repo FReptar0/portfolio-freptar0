@@ -140,7 +140,7 @@ Plans:
   2. The section previously labeled "Certifications" is now labeled "Technologies" — no certification claims exist anywhere on the homepage in either EN or ES
   3. Spring Boot does not appear in any SageConnect-specific context on the homepage (skills section, timeline entries, or project card) — it may still appear in the general technology list
   4. All skill proficiency levels and experience year claims on the homepage are accurate and internally consistent across EN and ES locale files
-**Plans:** 2 plans
+**Plans:** 1/2 plans executed
 
 Plans:
 - [ ] 07-01-PLAN.md — Replace inflated Hero metrics with honest values (6+ Systems, 300+ Users, error reduction %, verified years)
@@ -174,5 +174,5 @@ Phases execute in numeric order: 4 → 5 → 6 → 7 → 8
 | 4. Design Tokens & Typography | v2.0 | 2/2 | Complete | 2026-03-16 |
 | 5. Component Overhaul | v2.0 | 3/3 | Complete | 2026-03-16 |
 | 6. Motion & Accessibility | v2.0 | 1/2 | In progress | - |
-| 7. Homepage Trust Signals | v2.1 | 0/2 | Not started | - |
+| 7. Homepage Trust Signals | 1/2 | In Progress|  | - |
 | 8. Case Study Accuracy | v2.1 | 0/2 | Not started | - |
