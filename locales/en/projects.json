@@ -256,9 +256,9 @@
       ]
     },
     "carrytrade": {
-      "title": "Carry Trade Algo - Forex Strategy",
+      "title": "Carry Trade Algo - Paper Trading Experiment",
       "githubUrl": "",
-      "businessProblem": "Carry trades are theoretically profitable (4-5% annual spread from JPY interest rate differentials) but manual execution is emotional, inconsistent, and vulnerable to catastrophic drawdowns during risk-off events.",
+      "businessProblem": "An algorithmic trading experiment currently running on OANDA paper trading (no real money at risk). Carry trades are theoretically profitable (4-5% annual spread from JPY interest rate differentials) but manual execution is emotional, inconsistent, and vulnerable to catastrophic drawdowns during risk-off events.",
       "myContribution": {
         "role": "Quantitative Developer",
         "teamSize": 1,
@@ -301,7 +301,7 @@
       "tags": [
         "Algorithmic Trading",
         "Quantitative Finance",
-        "Live Experiment"
+        "Paper Trading"
       ]
     },
     "cleany": {

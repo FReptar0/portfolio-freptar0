@@ -394,11 +394,11 @@
     },
     "carrytrade": {
       "headline": "Carry Trade Algo",
-      "tagline": "Estrategia Forex Algorítmica — Validación en Vivo de 94 Días con $100K",
+      "tagline": "Estrategia Forex Algorítmica — Validación de 94 Días en Paper Trading",
       "overview": "Un sistema de trading algorítmico sistemático que explota los diferenciales de tasas de interés en 6 pares de divisas JPY. Construido desde cero en Python con 473 tests, el sistema opera 24/5 en AWS con ciclos de decisión cada hora, gestión adaptativa de riesgo, filtrado ML de señales, y monitoreo en tiempo real por Telegram. Actualmente en el día 41 de un protocolo de validación de 94 días en paper trading de OANDA — sin dinero real en riesgo.",
       "role": "Desarrollador Cuantitativo",
       "teamSize": 1,
-      "tags": ["Trading Algorítmico", "Finanzas Cuantitativas", "Experimento en Vivo"],
+      "tags": ["Trading Algorítmico", "Finanzas Cuantitativas", "Paper Trading"],
       "problem": {
         "title": "La Hipótesis",
         "paragraphs": [

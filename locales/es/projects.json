@@ -256,9 +256,9 @@
       ]
     },
     "carrytrade": {
-      "title": "Carry Trade Algo - Estrategia Forex",
+      "title": "Carry Trade Algo - Experimento de Paper Trading",
       "githubUrl": "",
-      "businessProblem": "Los carry trades son teóricamente rentables (4-5% de spread anual por diferenciales de tasa de interés JPY) pero la ejecución manual es emocional, inconsistente y vulnerable a drawdowns catastróficos durante eventos risk-off.",
+      "businessProblem": "Un experimento de trading algoritmico ejecutandose actualmente en paper trading de OANDA (sin dinero real en riesgo). Los carry trades son teóricamente rentables (4-5% de spread anual por diferenciales de tasa de interés JPY) pero la ejecución manual es emocional, inconsistente y vulnerable a drawdowns catastróficos durante eventos risk-off.",
       "myContribution": {
         "role": "Desarrollador Cuantitativo",
         "teamSize": 1,
@@ -301,7 +301,7 @@
       "tags": [
         "Trading Algorítmico",
         "Finanzas Cuantitativas",
-        "Experimento en Vivo"
+        "Paper Trading"
       ]
     },
     "cleany": {
