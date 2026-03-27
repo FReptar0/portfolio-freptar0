@@ -66,7 +66,7 @@ Plans:
 
 ### Phase 6: Motion & Accessibility
 **Goal**: The site feels alive with purposeful scroll-triggered animations and varied interactions, while respecting users who prefer reduced motion — and all existing functionality remains intact as a final verification
-**Plans:** 1/2 plans complete
+**Plans:** 2/2 plans complete
 
 Plans:
 - [ ] 06-01-PLAN.md — Create useScrollReveal hook + reduced-motion CSS + integrate scroll-triggered animations into all 8 homepage sections + fix Hero anti-patterns
@@ -107,6 +107,6 @@ Phases execute in numeric order: 4 → 5 → 6 → 7 → 8
 | 3. Evolution and Discovery | v1.0 | 3/3 | Complete | 2026-03-16 |
 | 4. Design Tokens & Typography | v2.0 | 2/2 | Complete | 2026-03-16 |
 | 5. Component Overhaul | v2.0 | 3/3 | Complete | 2026-03-16 |
-| 6. Motion & Accessibility | v2.0 | 1/2 | In progress | - |
+| 6. Motion & Accessibility | 2/2 | Complete   | 2026-03-27 | - |
 | 7. Homepage Trust Signals | v2.1 | 2/2 | Complete | 2026-03-27 |
 | 8. Case Study Accuracy | v2.1 | 2/2 | Complete | 2026-03-27 |
