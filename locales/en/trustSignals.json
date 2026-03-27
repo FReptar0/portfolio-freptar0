@@ -1,7 +1,7 @@
 {
   "mainTitle": "Trust & Credibility",
   "mainSubtitle": "Client testimonials and technical credentials that demonstrate proven expertise and reliability",
-  "certificationsTitle": "Certifications & Technologies",
+  "certificationsTitle": "Technologies",
   "testimonial0": {
     "quote": "Fernando delivered SageConnect, our comprehensive logistics platform. His expertise in full-stack development and system integration was crucial for our operations.",
     "author": "Operations Team",
@@ -27,13 +27,13 @@
     "company": "Steel Zone Gym"
   },
   "certifications": [
-    "AWS Certified",
-    "Google Cloud",
-    "React Expert",
-    "Node.js Specialist",
+    "React",
+    "Next.js",
+    "Node.js",
     "TypeScript",
-    "Docker & K8s",
     "Spring Boot",
-    "PostgreSQL"
+    "Docker & K8s",
+    "PostgreSQL",
+    "AWS"
   ]
 }

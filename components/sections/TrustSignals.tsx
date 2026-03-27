@@ -1,7 +1,6 @@
 "use client";
 
 import { useTranslations } from 'next-intl';
-import { CheckCircle } from 'lucide-react';
 import { useEffect, useState } from 'react';
 import Autoplay from "embla-carousel-autoplay";
 import { useScrollReveal, useStaggerChildren } from '@/hooks/useScrollReveal';
@@ -155,7 +154,7 @@ export default function TrustSignals() {
           </div>
         </div>
 
-        {/* Certifications & Skills Badges */}
+        {/* Technologies */}
         <div className={`text-center transition-all duration-500 ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-5'}`} style={{ transitionDelay: '200ms' }}>
           <h3 className="text-lg font-semibold mb-6" style={{ color: 'var(--text-secondary)' }}>
             {t('certificationsTitle')}
@@ -167,7 +166,7 @@ export default function TrustSignals() {
                 className={`transition-all duration-500 ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-5'}`}
                 style={certStagger.getDelay(index)}
               >
-                <CertBadge text={cert} />
+                <TechBadge text={cert} />
               </div>
             ))}
           </div>
@@ -220,10 +219,9 @@ function TestimonialCard({
   );
 }
 
-function CertBadge({ text }: { text: string }) {
+function TechBadge({ text }: { text: string }) {
   return (
     <div className="px-6 py-3 bg-[var(--color-surface-elevated)] border border-[var(--color-border)] rounded-full text-sm font-medium font-mono hover:border-[var(--color-accent)] transition-colors duration-300 cursor-default">
-      <CheckCircle className="w-4 h-4 mr-2 inline" style={{ color: 'var(--success-500)' }} />
       {text}
     </div>
   );
