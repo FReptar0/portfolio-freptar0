@@ -79,7 +79,7 @@ Plans:
 **Milestone Goal:** Fix all content accuracy issues, inflated metrics, fabricated certifications, and recruiter-visible trust gaps so every claim on the portfolio is honest and verifiable.
 
 - [x] **Phase 7: Homepage Trust Signals** - Fix all Hero metrics and rename Certifications to Technologies — the first-impression claims a recruiter sees above the fold (completed 2026-03-27)
-- [ ] **Phase 8: Case Study Accuracy** - Correct Spring Boot references, clarify CarryTrade status, show team roles, and audit cross-content consistency across all locale files
+- [x] **Phase 8: Case Study Accuracy** - Correct Spring Boot references, clarify CarryTrade status, show team roles, and audit cross-content consistency across all locale files (completed 2026-03-27)
 
 ## Phase Details
 
@@ -155,7 +155,7 @@ Plans:
   2. The CarryTrade case study clearly states it is a paper trading system, not a production deployment — no language implies live trading of real funds
   3. Team credits in all case studies show role labels (e.g. "Backend Dev", "QA") rather than anonymous headcounts (e.g. "team of 3")
   4. The tech stacks shown on the Projects homepage, each case study page, the tech deep-dive, and the Skills section all agree for every project — no technology appears in one place but not another without explanation, in both EN and ES
-**Plans:** 1/2 plans executed
+**Plans:** 2/2 plans complete
 
 Plans:
 - [ ] 08-01-PLAN.md — Clarify CarryTrade as paper trading experiment + verify SageConnect case study has no Spring Boot (TRST-02, TRST-03)
@@ -175,4 +175,4 @@ Phases execute in numeric order: 4 → 5 → 6 → 7 → 8
 | 5. Component Overhaul | v2.0 | 3/3 | Complete | 2026-03-16 |
 | 6. Motion & Accessibility | v2.0 | 1/2 | In progress | - |
 | 7. Homepage Trust Signals | v2.1 | 2/2 | Complete | 2026-03-27 |
-| 8. Case Study Accuracy | 1/2 | In Progress|  | - |
+| 8. Case Study Accuracy | 2/2 | Complete   | 2026-03-27 | - |
