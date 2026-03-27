@@ -8,22 +8,19 @@ Fernando Rodriguez Memije's personal portfolio site, built with Next.js 16 and n
 
 The portfolio must visually differentiate Fernando from every other AI-generated developer portfolio — establishing a distinctive, memorable brand through intentional design choices that communicate precision, systems-thinking, and high-value delivery.
 
-## Current Milestone: v2.0 Swiss Precision Redesign
+## Current Milestone: v2.1 Content Accuracy & Trust
 
-**Goal:** Replace the generic Claude Code design defaults with a distinctive Swiss Modernist visual identity — new typography, color system, layout patterns, and interaction design that no other AI portfolio has.
+**Goal:** Fix all content accuracy issues, inflated metrics, fabricated certifications, and recruiter-visible trust gaps across the portfolio so every claim is honest and verifiable.
 
 **Target features:**
-- New color system (black/white base + electric green accent, kill blue-cyan gradients)
-- New typography (Space Grotesk + DM Sans, kill Geist default)
-- Asymmetric layouts breaking the centered-everything pattern
-- New card/component design replacing glass morphism everywhere
-- Scroll-triggered animations (Intersection Observer) with staggered reveals
-- Redesigned Hero section — typographic, asymmetric, bold
-- Redesigned Navigation with brand personality
-- Varied section backgrounds and visual rhythm
-- Premium spacing and breathing room
-- Dark/light mode with new tokens
-- All existing functionality preserved (i18n, case studies, SEO)
+- Fix Hero metrics: 300+ users impacted, 6+ systems shipped to prod, error/time reduction %
+- Rename "Certifications" section to "Technologies" (no fake certs)
+- Remove all Spring Boot references from SageConnect (keep in general skills)
+- Show team roles without names instead of anonymous team sizes
+- Replace $2M value claim with measurable operational impact metric
+- Fix SageConnect timeline description (JS/Node.js, not Spring Boot)
+- Clarify CarryTrade status (paper trading, not production)
+- Address any additional recruiter-visible trust gaps
 
 ## Requirements
 
@@ -43,7 +40,7 @@ The portfolio must visually differentiate Fernando from every other AI-generated
 
 ### Active
 
-See REQUIREMENTS.md for v2.0 scoped requirements.
+See REQUIREMENTS.md for v2.1 scoped requirements.
 
 ### Out of Scope
 
@@ -88,4 +85,4 @@ See REQUIREMENTS.md for v2.0 scoped requirements.
 | Intersection Observer for scroll animations | No library dependency, native API, progressive enhancement | — Pending |
 
 ---
-*Last updated: 2026-03-16 after v2.0 milestone start*
+*Last updated: 2026-03-26 after v2.1 milestone start*
